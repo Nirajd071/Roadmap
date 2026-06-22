@@ -16367,7 +16367,7 @@ export const roadmapData = [
   {
     "id": 7,
     "title": "Master DSA Roadmap",
-    "days": 389,
+    "days": 388,
     "color": "teal",
     "phases": [
       {
@@ -19181,20 +19181,6 @@ export const roadmapData = [
             "priority": "MUST KNOW",
             "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
             "achievement": "Cleared all backlogs, completed revision loops, and refreshed mind for the next week."
-          }
-        ]
-      },
-      {
-        "id": "7-15",
-        "title": "THE FINAL GRIND",
-        "days": "Day 389",
-        "items": [
-          {
-            "day": 389,
-            "topic": "\ud83d\udd25 BLIND 75 & NEETCODE 150 (Complete Checklist)",
-            "tasks": "**Arrays & Hashing**: Contains Duplicate, Valid Anagram, Two Sum, Group Anagrams, Top K Frequent Elements, Product of Array Except Self, Valid Sudoku, Longest Consecutive Sequence. | **Two Pointers**: Valid Palindrome, Two Sum II, 3Sum, Container With Most Water, Trapping Rain Water. | **Sliding Window**: Best Time to Buy & Sell Stock, Longest Substring, Longest Repeating Character Replacement, Minimum Window Substring. | **Stack**: Valid Parentheses, Min Stack, Evaluate RPN, Generate Parentheses, Daily Temperatures, Car Fleet, Largest Rectangle in Histogram. | **Binary Search**: Binary Search, Search 2D Matrix, Koko Eating Bananas, Find Min in Rotated Sorted Array, Search in Rotated Sorted Array, Time Based KV Store, Median of Two Sorted Arrays. | **Linked List**: Reverse LL, Merge Two Sorted Lists, Reorder List, Remove Nth Node, Copy List with Random Pointer, Add Two Numbers, LL Cycle, Find Duplicate, LRU Cache, Merge K Sorted Lists. | **Trees**: Invert BT, Max Depth, Diameter, Balanced, Same, Subtree, LCA of BST, Level Order, Right Side View, Good Nodes, Validate BST, Kth Smallest, Construct BT, Max Path Sum, Serialize. | **Tries**: Implement Trie, Design Add and Search Words, Word Search II. | **Heap / Priority Queue**: Kth Largest in Stream, Last Stone Weight, K Closest Points, Kth Largest in Array, Task Scheduler, Design Twitter, Find Median from Data Stream. | **Backtracking**: Subsets, Combination Sum, Permutations, Subsets II, Comb Sum II, Word Search, Palindrome Partitioning, N-Queens. | **Graphs**: Islands, Max Area, Clone, Walls & Gates, Rotting Oranges, Pacific Atlantic, Surrounded Regions, Course Schedule I/II, Redundant Conn, Valid Tree, Word Ladder, Reconstruct Itinerary, Network Delay. | **1-D DP**: Climbing Stairs, Min Cost, House Robber I/II, Longest Palindromic Substring, Palindromic Substrings, Decode Ways, Coin Change, Max Product Subarray, Word Break, LIS, Partition Equal Subset Sum. | **2-D DP**: Unique Paths, LCS, Buy/Sell Stock Cooldown, Coin Change II, Target Sum, Interleaving String, Longest Increasing Path, Distinct Subseq, Edit Distance, Burst Balloons, Regex Matching. | **Greedy**: Max Subarray, Jump Game I/II, Gas Station, Hand of Straights, Merge Triplets, Partition Labels, Valid Parenthesis String. | **Intervals**: Insert, Merge, Non-Overlapping, Meeting Rooms I/II, Min Interval. | **Math & Geometry**: Rotate Image, Spiral Matrix, Set Matrix Zeroes, Happy Number, Plus One, Pow(x,n), Multiply Strings, Detect Squares. | **Bit Manipulation**: Single Number, Number of 1 Bits, Counting Bits, Reverse Bits, Missing Number, Sum of Two Integers, Reverse Integer.",
-            "achievement": "Completed all 150 gold-standard questions for placements.",
-            "priority": "MUST KNOW"
           }
         ]
       }

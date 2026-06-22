@@ -5430,3061 +5430,1370 @@ export const roadmapData = [
       }
     ]
   },
-  {
-    "id": 7,
-    "title": "Master DSA Roadmap",
-    "days": 179,
-    "color": "teal",
-    "schedule": [
-      {
-        "day": 1,
-        "title": "Day 1: Big O, Big Theta, Big Omega (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Asymptotic notation — upper bound (O), lower bound (Ω), tight bound (Θ). Growth curve visual diagrams."
-          },
-          {
-            "task": "Code: None — conceptual day."
-          },
-          {
-            "task": "Practice: 5 complexity-classification questions (given code, state its Big O)."
-          }
-        ],
-        "achievement": "Can classify any short code snippet's time complexity and explain worst-case vs average-case.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 2,
-        "title": "Day 2: Nested Loops & Recursive Complexity (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Complexity of nested loops, recursive complexity via recurrence relations (basic intro, full recursion tree later)."
-          },
-          {
-            "task": "Code: Trace 3 nested-loop snippets by hand."
-          },
-          {
-            "task": "Practice: 5 problems — derive complexity from code."
-          }
-        ],
-        "achievement": "Can derive Big O for nested loops and simple recursive calls without running the code.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 3,
-        "title": "Day 3: Java Toolkit for DSA: Arrays & Collections (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Java array/Collection landscape relevant to DSA — when to use `int[]` vs `ArrayList<Integer>`, memory layout comparison."
-          },
-          {
-            "task": "Code: Write equivalent loops using both primitive arrays and ArrayLists; time them."
-          },
-          {
-            "task": "Practice: 4 small syntax exercises."
-          }
-        ],
-        "achievement": "Can explain why `int[]` outperforms `ArrayList<Integer>` for tight loops, citing memory layout.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 4,
-        "title": "Day 4: Java Toolkit: Comparator Tricks (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Comparator chaining (`thenComparing`), lambda comparators, custom sort orders."
-          },
-          {
-            "task": "Code: Write 3 different comparators for the same object (single-field, multi-field, reversed)."
-          },
-          {
-            "task": "Practice: 3 sorting-with-comparator problems."
-          }
-        ],
-        "achievement": "Can write a chained multi-field comparator in one line using lambda syntax.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 5,
-        "title": "Day 5: Java Performance Traps: Autoboxing & Overflow (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Autoboxing/unboxing costs, Integer cache (-128 to 127), integer overflow scenarios in DSA problems."
-          },
-          {
-            "task": "Code: Reproduce the Integer cache gotcha (`==` vs `.equals()` for boxed Integers)."
-          },
-          {
-            "task": "Practice: 3 problems involving overflow-prone calculations (e.g., mid-point calculation in binary search)."
-          }
-        ],
-        "achievement": "Can identify and fix an overflow bug in a binary search midpoint calculation.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 6,
-        "title": "Day 6: Java Performance Traps: Practice Day (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review JDK built-in performance traps table — autoboxing in loops, unnecessary object creation."
-          },
-          {
-            "task": "Code: Refactor a deliberately inefficient snippet to use primitives."
-          },
-          {
-            "task": "Practice: 5 mixed problems combining comparator + overflow-safety concepts."
-          }
-        ],
-        "achievement": "Can review a code snippet and flag 3 distinct Java-specific performance traps.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 7,
-        "title": "Day 7: Hashing Basics: HashMap & HashSet (Light)",
-        "tasks": [
-          {
-            "task": "Learn: HashMap/HashSet internals at a usage level (not full collision internals yet — that's Day 14 in Linear DS). Frequency counting fundamentals."
-          },
-          {
-            "task": "Code: Implement a frequency-count function using HashMap."
-          },
-          {
-            "task": "Practice: 4 frequency-counting problems (e.g., first unique character)."
-          }
-        ],
-        "achievement": "Can solve any \"count occurrences of X\" problem using HashMap in O(N).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 8,
-        "title": "Day 8: Hashing Practice Day (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Review — when to reach for HashMap vs HashSet vs frequency array."
-          },
-          {
-            "task": "Code: None — pure practice day."
-          },
-          {
-            "task": "Practice: 5 hashing problems (mix of HashMap/HashSet use cases)."
-          }
-        ],
-        "achievement": "Can decide within seconds whether a problem needs HashMap, HashSet, or a fixed-size frequency array.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 9,
-        "title": "Day 9: HANDS-ON LAB: Complexity & JVM Profiling + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review the full Foundations cheat sheet."
-          },
-          {
-            "task": "Code: Complete the timed JVM profiling exercises."
-          },
-          {
-            "task": "Practice: Timed mixed-review quiz (5 questions across Days 1–8)."
-          }
-        ],
-        "achievement": "Can recite the Foundations cheat sheet cold and complete the lab within its suggested time.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 10,
-        "title": "Day 10: Arrays: Internals & Memory Layout (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Contiguous memory layout, why array access is O(1), 2D/jagged arrays."
-          },
-          {
-            "task": "Code: Implement matrix operations (transpose, rotate) using 2D arrays."
-          },
-          {
-            "task": "Practice: 3 array-traversal problems."
-          }
-        ],
-        "achievement": "Can explain why array access is O(1) and implement a 2D matrix rotation in-place.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 11,
-        "title": "Day 11: Dynamic Array From Scratch (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: How ArrayList resizes internally — growth factor, amortized O(1) insertion."
-          },
-          {
-            "task": "Code: Begin implementing a dynamic array class from scratch (resize logic)."
-          },
-          {
-            "task": "Practice: None yet — finish implementation first."
-          }
-        ],
-        "achievement": "Has a working `resize()` method that doubles capacity when full.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 12,
-        "title": "Day 12: Dynamic Array Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review gotchas — shrinking strategy, amortized analysis proof sketch."
-          },
-          {
-            "task": "Code: Finish and test the dynamic array class (add, get, remove, resize)."
-          },
-          {
-            "task": "Practice: 5 array problems (e.g., rotate array, move zeroes, remove duplicates in-place)."
-          }
-        ],
-        "achievement": "Has a fully working hand-rolled dynamic array and can solve in-place array manipulation problems.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 13,
-        "title": "Day 13: Linked Lists: Singly Linked List (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Node structure, pointer manipulation, insertion/deletion at head/tail/middle."
-          },
-          {
-            "task": "Code: Implement a singly linked list (insert, delete, traverse)."
-          },
-          {
-            "task": "Practice: 3 problems (reverse a linked list, find middle node)."
-          }
-        ],
-        "achievement": "Can implement singly linked list insert/delete and reverse it iteratively.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 14,
-        "title": "Day 14: Doubly & Circular Linked Lists (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Bidirectional traversal, sentinel nodes, circular queue using linked lists."
-          },
-          {
-            "task": "Code: Begin implementing a doubly linked list with sentinel head/tail nodes."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Sentinel-node DLL skeleton compiles and supports basic insert.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 15,
-        "title": "Day 15: Doubly Linked List Practice + Cycle Detection (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Floyd's Cycle Detection (Tortoise & Hare) — finding cycle, finding cycle start, finding middle node."
-          },
-          {
-            "task": "Code: Finish the DLL implementation; implement Floyd's algorithm."
-          },
-          {
-            "task": "Practice: 4 problems (detect cycle, find cycle start, intersection of two linked lists)."
-          }
-        ],
-        "achievement": "Can implement Floyd's Cycle Detection and explain why the two pointers must meet inside the cycle.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 16,
-        "title": "Day 16: Stacks: LIFO Fundamentals (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Array-based vs linked-list-based stack implementation, push/pop/peek, overflow/underflow."
-          },
-          {
-            "task": "Code: Implement a stack from scratch using an array."
-          },
-          {
-            "task": "Practice: 2 problems (valid parentheses)."
-          }
-        ],
-        "achievement": "Can implement a stack from scratch and solve Valid Parentheses in O(N).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 17,
-        "title": "Day 17: Stack Applications: Expression Evaluation (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Infix/prefix/postfix notation, expression evaluation using two stacks (operator + operand)."
-          },
-          {
-            "task": "Code: Begin implementing an infix expression evaluator."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has a working operator-precedence parsing skeleton.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 18,
-        "title": "Day 18: Min Stack + Stack Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Min Stack design (O(1) min extraction using an auxiliary stack)."
-          },
-          {
-            "task": "Code: Finish expression evaluator; implement Min Stack."
-          },
-          {
-            "task": "Practice: 3 problems (Min Stack, Max Stack, evaluate RPN)."
-          }
-        ],
-        "achievement": "Can implement Min Stack with O(1) push/pop/getMin.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 19,
-        "title": "Day 19: Queues: FIFO Fundamentals (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Simple queue, circular queue, array/list-based implementations."
-          },
-          {
-            "task": "Code: Implement a circular queue from scratch (handling wrap-around)."
-          },
-          {
-            "task": "Practice: 2 problems (implement queue using stacks, or vice versa)."
-          }
-        ],
-        "achievement": "Can implement a circular queue without wasting array slots.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 20,
-        "title": "Day 20: Deque (Double-Ended Queue) (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Deque as both stack and queue, implementation via doubly linked list, `ArrayDeque` preference over `Stack`/`LinkedList` in Java."
-          },
-          {
-            "task": "Code: Implement a basic deque supporting push/pop from both ends."
-          },
-          {
-            "task": "Practice: 2 problems using `ArrayDeque`."
-          }
-        ],
-        "achievement": "Can explain why `ArrayDeque` is preferred over `java.util.Stack` in production Java code.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 21,
-        "title": "Day 21: Hash Tables: Internals — Hash Functions & Collisions (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Hash function design, index calculation, load factor concept."
-          },
-          {
-            "task": "Code: Implement a basic hash function for strings."
-          },
-          {
-            "task": "Practice: 2 conceptual problems on hash distribution quality."
-          }
-        ],
-        "achievement": "Can design a hash function and explain what makes one \"good\" (uniform distribution, low collision rate).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 22,
-        "title": "Day 22: Collision Resolution: Chaining vs Open Addressing (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Chaining (linked list/tree buckets), Open Addressing (linear probing, quadratic probing, double hashing)."
-          },
-          {
-            "task": "Code: Begin implementing a HashMap from scratch using chaining."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Hash table skeleton with chaining-based bucket array compiles and supports insert.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 23,
-        "title": "Day 23: Hash Table From Scratch + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review resizing/rehashing triggers tied to load factor."
-          },
-          {
-            "task": "Code: Finish hand-rolled HashMap (get, put, resize on load factor breach)."
-          },
-          {
-            "task": "Practice: 4 hashing problems (group anagrams, subarray with given sum using hashmap)."
-          }
-        ],
-        "achievement": "Has a working hand-rolled HashMap with chaining and automatic resizing.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 24,
-        "title": "Day 24: Binary Search: The Basic Template (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Classic binary search, avoiding off-by-one errors, loop invariants."
-          },
-          {
-            "task": "Code: Implement binary search from memory, twice (iterative + recursive)."
-          },
-          {
-            "task": "Practice: 2 problems (basic search, search insert position)."
-          }
-        ],
-        "achievement": "Can write binary search from memory without bugs, in both forms.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 25,
-        "title": "Day 25: Binary Search: Lower Bound & Upper Bound (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Lower bound (first occurrence) and upper bound (last occurrence / insertion point) variants."
-          },
-          {
-            "task": "Code: Implement both lower-bound and upper-bound binary search."
-          },
-          {
-            "task": "Practice: 3 problems (first/last occurrence, count occurrences in sorted array)."
-          }
-        ],
-        "achievement": "Can implement lower/upper bound binary search and use them together to count occurrences in O(log N).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 26,
-        "title": "Day 26: Binary Search on Answer Space (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: The \"binary search on answer\" pattern — monotonic predicate functions, search space ≠ input array."
-          },
-          {
-            "task": "Code: Begin implementing Koko Eating Bananas using this pattern."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Can articulate the monotonic predicate for Koko Eating Bananas before finishing the code.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 27,
-        "title": "Day 27: Binary Search on Answer: Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — Capacity to Ship Packages, Allocate Books as more \"search on answer\" examples."
-          },
-          {
-            "task": "Code: Finish Koko Eating Bananas."
-          },
-          {
-            "task": "Practice: 3 problems (Capacity to Ship Packages, Allocate Books, Split Array Largest Sum)."
-          }
-        ],
-        "achievement": "Can recognize a \"search on answer\" problem within the first read and set up the feasibility check correctly.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 28,
-        "title": "Day 28: Sorting Fundamentals: Bubble, Selection, Insertion (Light)",
-        "tasks": [
-          {
-            "task": "Learn: O(N²) sorts — mechanics, stability, in-place behavior."
-          },
-          {
-            "task": "Code: Implement all three from scratch."
-          },
-          {
-            "task": "Practice: 2 problems (sort colors / Dutch national flag as an insertion-sort-adjacent problem)."
-          }
-        ],
-        "achievement": "Can implement all three O(N²) sorts and state which are stable.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 29,
-        "title": "Day 29: Merge Sort (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Divide & conquer, O(N log N), stability, O(N) auxiliary space requirement."
-          },
-          {
-            "task": "Code: Begin implementing merge sort (merge function first, then recursive split)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Merge function correctly merges two sorted halves in O(N).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 30,
-        "title": "Day 30: Merge Sort: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — applications of merge sort (counting inversions)."
-          },
-          {
-            "task": "Code: Finish full merge sort implementation."
-          },
-          {
-            "task": "Practice: 3 problems (sort an array, count inversions using merge sort)."
-          }
-        ],
-        "achievement": "Has a fully working merge sort and can use it to count array inversions in O(N log N).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 31,
-        "title": "Day 31: Quick Sort (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Pivot selection strategies, average O(N log N) vs worst O(N²), why it's unstable but in-place."
-          },
-          {
-            "task": "Code: Begin implementing quicksort (partition function first)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Partition function correctly places the pivot and partitions the array around it.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 32,
-        "title": "Day 32: Quick Sort: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Randomized pivot selection to avoid worst-case on adversarial/sorted input."
-          },
-          {
-            "task": "Code: Finish quicksort with randomized pivot."
-          },
-          {
-            "task": "Practice: 3 problems (Kth largest element using quickselect, sort an array)."
-          }
-        ],
-        "achievement": "Can implement Quickselect (partial quicksort) to find the Kth largest element in average O(N).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 33,
-        "title": "Day 33: Heap Sort (Light)",
-        "tasks": [
-          {
-            "task": "Learn: In-place sorting using a Max-Heap, O(N log N), how heapify builds the heap in O(N)."
-          },
-          {
-            "task": "Code: Implement heap sort from scratch."
-          },
-          {
-            "task": "Practice: 2 problems using heap sort or heap-based thinking."
-          }
-        ],
-        "achievement": "Can implement heap sort and explain why building the heap is O(N), not O(N log N).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 34,
-        "title": "Day 34: 🆕 Counting Sort (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Linear-time sort for small integer ranges — counting array, prefix-sum positioning."
-          },
-          {
-            "task": "Code: Implement Counting Sort from scratch."
-          },
-          {
-            "task": "Practice: 2 problems suited to Counting Sort (e.g., sort an array of 0s/1s/2s — Dutch flag revisited via counting)."
-          }
-        ],
-        "achievement": "Can implement Counting Sort in O(N+k) and explain when k (the range) makes it impractical.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 35,
-        "title": "Day 35: 🆕 Radix Sort & Bucket Sort (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Radix Sort (digit-by-digit, stable counting sort as a subroutine), Bucket Sort (uniform distribution assumption)."
-          },
-          {
-            "task": "Code: Begin implementing Radix Sort (LSD — least significant digit first)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Radix Sort correctly sorts multi-digit numbers using repeated counting-sort passes.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 36,
-        "title": "Day 36: 🆕 Radix & Bucket Sort: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — when Radix beats comparison sorts (fixed-digit-length integers, large datasets)."
-          },
-          {
-            "task": "Code: Finish Radix Sort; implement Bucket Sort for floats in [0,1)."
-          },
-          {
-            "task": "Practice: 2 problems comparing sort choice for different input distributions."
-          }
-        ],
-        "achievement": "Can correctly choose between Counting/Radix/Bucket/comparison sort given any input distribution description.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 37,
-        "title": "Day 37: HANDS-ON LAB: Median of Two Sorted Arrays (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Binary-search-on-partition technique for finding median across two sorted arrays without merging."
-          },
-          {
-            "task": "Code: Begin implementing the O(log(min(N,M))) solution."
-          },
-          {
-            "task": "Practice: None yet — this problem IS the practice."
-          }
-        ],
-        "achievement": "Understands why the partition must satisfy `maxLeft ≤ minRight` on both arrays simultaneously.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 38,
-        "title": "Day 38: Median of Two Sorted Arrays: Finish + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review the full Searching & Sorting cheat sheet."
-          },
-          {
-            "task": "Code: Finish and test the median solution."
-          },
-          {
-            "task": "Practice: Timed mixed-review (3 problems spanning binary search + sorting)."
-          }
-        ],
-        "achievement": "Can solve Median of Two Sorted Arrays cold and recite every sort's complexity/stability from memory.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 39,
-        "title": "Day 39: Two Pointers: Opposite Direction (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Opposite-direction two-pointer pattern — converging pointers on sorted input."
-          },
-          {
-            "task": "Code: Implement Two Sum II (sorted array input)."
-          },
-          {
-            "task": "Practice: 2 problems (Two Sum sorted, Container With Most Water)."
-          }
-        ],
-        "achievement": "Can solve Two Sum on a sorted array in O(N) using two converging pointers.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 40,
-        "title": "Day 40: Two Pointers: Same Direction / Fast-Slow (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Same-direction pointer pattern — removing duplicates in-place, fast-slow for middle-finding (revisit from Day 15's cycle context)."
-          },
-          {
-            "task": "Code: Implement Remove Duplicates from Sorted Array in-place."
-          },
-          {
-            "task": "Practice: 2 problems (remove duplicates, move zeroes)."
-          }
-        ],
-        "achievement": "Can solve in-place array modification problems using same-direction two pointers.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 41,
-        "title": "Day 41: 3Sum: Opposite Pointers with Duplicate Skipping (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Extending two-pointer to 3Sum — fix one element, two-pointer the rest, skip duplicates correctly."
-          },
-          {
-            "task": "Code: Begin implementing 3Sum."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands exactly where and why duplicate-skipping logic goes in the loop.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 42,
-        "title": "Day 42: 3Sum: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — 3Sum Closest, 4Sum as generalizations."
-          },
-          {
-            "task": "Code: Finish and test 3Sum."
-          },
-          {
-            "task": "Practice: 3 problems (3Sum, 3Sum Closest, Trapping Rain Water via two pointers)."
-          }
-        ],
-        "achievement": "Can implement 3Sum in O(N²) with correct duplicate handling, no Set needed.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 43,
-        "title": "Day 43: Sliding Window: Fixed-Size Window (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Fixed-size window mechanics — window slides by exactly one element per step."
-          },
-          {
-            "task": "Code: Implement Max Sum Subarray of Size K."
-          },
-          {
-            "task": "Practice: 2 problems (fixed window problems)."
-          }
-        ],
-        "achievement": "Can implement a fixed-size sliding window in O(N) without recomputing the window sum from scratch each time.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 44,
-        "title": "Day 44: Sliding Window: Variable-Size Window (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Variable window mechanics — grow/shrink conditions, the \"shrink while invalid\" pattern."
-          },
-          {
-            "task": "Code: Begin implementing Longest Substring Without Repeating Characters."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Can articulate the exact shrink condition before finishing the implementation.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 45,
-        "title": "Day 45: Variable Sliding Window: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — Longest Substring with K Distinct Characters as a generalization."
-          },
-          {
-            "task": "Code: Finish Longest Substring Without Repeating Characters."
-          },
-          {
-            "task": "Practice: 2 problems (Max Consecutive Ones III, Longest Substring with K Distinct)."
-          }
-        ],
-        "achievement": "Has a working O(N) solution and can adapt the shrink condition to new constraints.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 46,
-        "title": "Day 46: Minimum Window Substring (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: The hardest variable-window pattern — two frequency maps, \"valid window\" tracking via a counter."
-          },
-          {
-            "task": "Code: Begin implementing Minimum Window Substring (LeetCode 76)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why a single counter (matched characters) avoids comparing two full frequency maps every iteration.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 47,
-        "title": "Day 47: Minimum Window Substring: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review the full solution trace on a worked example."
-          },
-          {
-            "task": "Code: Finish and test Minimum Window Substring."
-          },
-          {
-            "task": "Practice: 2 problems (Minimum Window Substring variants, Permutation in String)."
-          }
-        ],
-        "achievement": "Can implement Minimum Window Substring in O(N) cold, without referencing notes.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 48,
-        "title": "Day 48: Prefix Sum: Range Sum Queries (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Prefix sum array construction, O(1) range sum after O(N) preprocessing."
-          },
-          {
-            "task": "Code: Implement a Range Sum Query class using prefix sums."
-          },
-          {
-            "task": "Practice: 2 problems (range sum query, 2D range sum)."
-          }
-        ],
-        "achievement": "Can answer any range-sum query in O(1) after building the prefix sum array.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 49,
-        "title": "Day 49: Subarray Sum Equals K: Prefix Map Pattern (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Combining prefix sum with a HashMap to count subarrays with a target sum — the \"prefix sum seen before\" trick."
-          },
-          {
-            "task": "Code: Begin implementing Subarray Sum Equals K (LeetCode 560)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why `prefixSum - k` lookup in a HashMap solves this in O(N).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 50,
-        "title": "Day 50: Subarray Sum Equals K: Finish + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review the full Two Pointers & Sliding Window cheat sheet."
-          },
-          {
-            "task": "Code: Finish and test Subarray Sum Equals K."
-          },
-          {
-            "task": "Practice: Timed mixed review (3 problems spanning two pointers, sliding window, prefix sum)."
-          }
-        ],
-        "achievement": "Can solve Subarray Sum Equals K cold and recite the full phase cheat sheet.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 51,
-        "title": "Day 51: Java String Fundamentals for DSA (Light)",
-        "tasks": [
-          {
-            "task": "Learn: String immutability impact on algorithms, char arrays vs String, when to use StringBuilder in tight loops."
-          },
-          {
-            "task": "Code: Convert a naive concatenation-in-loop snippet to use StringBuilder."
-          },
-          {
-            "task": "Practice: 2 problems (reverse a string in-place using char array)."
-          }
-        ],
-        "achievement": "Can explain why string concatenation in a loop is O(N²) total and how StringBuilder fixes it.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 52,
-        "title": "Day 52: Frequency Counting for Strings (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Frequency arrays (fixed alphabet) vs HashMap for string problems."
-          },
-          {
-            "task": "Code: Implement anagram detection using a frequency array."
-          },
-          {
-            "task": "Practice: 2 problems (valid anagram, group anagrams)."
-          }
-        ],
-        "achievement": "Can solve any anagram/permutation-detection problem using frequency counting without a HashMap when the alphabet is small.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 53,
-        "title": "Day 53: Palindrome Problems: Two-Pointer Check (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Two-pointer palindrome verification, handling case/non-alphanumeric characters."
-          },
-          {
-            "task": "Code: Implement Valid Palindrome (with character filtering)."
-          },
-          {
-            "task": "Practice: 2 problems (valid palindrome, valid palindrome II — one deletion allowed)."
-          }
-        ],
-        "achievement": "Can verify a palindrome in O(N) with O(1) space using two pointers.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 54,
-        "title": "Day 54: Longest Palindromic Substring: Expand From Center (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Expand-from-center technique, handling both odd and even-length palindromes."
-          },
-          {
-            "task": "Code: Begin implementing Longest Palindromic Substring."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why two separate expansion calls (odd-center, even-center) are needed per index.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 55,
-        "title": "Day 55: Longest Palindromic Substring: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — Palindromic Substrings (count all) as a close variant."
-          },
-          {
-            "task": "Code: Finish and test the expand-from-center solution."
-          },
-          {
-            "task": "Practice: 2 problems (Longest Palindromic Substring, Palindromic Substrings count)."
-          }
-        ],
-        "achievement": "Can implement Longest Palindromic Substring in O(N²) cold.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 56,
-        "title": "Day 56: String Hashing: Rolling Hash (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Rolling hash concept — computing a hash incrementally as a window slides, avoiding full recomputation."
-          },
-          {
-            "task": "Code: Implement a basic rolling hash function."
-          },
-          {
-            "task": "Practice: 1 conceptual problem (verify rolling hash matches direct hash on a few windows)."
-          }
-        ],
-        "achievement": "Can explain how rolling hash updates in O(1) per window shift instead of O(L) recomputation.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 57,
-        "title": "Day 57: Rabin-Karp Algorithm (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Using rolling hash for substring search — comparing hash values, handling hash collisions with a verification step."
-          },
-          {
-            "task": "Code: Begin implementing Rabin-Karp."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why a hash match still requires a character-by-character verification step.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 58,
-        "title": "Day 58: Rabin-Karp: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review average-case O(N+M) vs worst-case behavior under hash collisions."
-          },
-          {
-            "task": "Code: Finish and test Rabin-Karp against a naive substring search, comparing performance."
-          },
-          {
-            "task": "Practice: 2 problems (repeated substring pattern, find all anagram start indices)."
-          }
-        ],
-        "achievement": "Can implement Rabin-Karp and explain its worst-case degradation scenario.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 59,
-        "title": "Day 59: KMP: Building the LPS Array (Heavy, Day 1/4)",
-        "tasks": [
-          {
-            "task": "Learn: The failure function / LPS (Longest Prefix Suffix) array concept — what it represents and why it enables skipping."
-          },
-          {
-            "task": "Code: Implement the LPS array construction by hand-tracing 2 example patterns first, then in code."
-          },
-          {
-            "task": "Practice: None yet — pure LPS construction focus."
-          }
-        ],
-        "achievement": "Can construct the LPS array for any pattern by hand within 2 minutes.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 60,
-        "title": "Day 60: KMP: Using the LPS Array for Search (Heavy, Day 2/4)",
-        "tasks": [
-          {
-            "task": "Learn: How the LPS array drives the search pointer's fallback behavior on a mismatch."
-          },
-          {
-            "task": "Code: Implement the full KMP search function using the LPS array from Day 59."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has a complete, working KMP implementation achieving O(N+M).",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 61,
-        "title": "Day 61: KMP: Practice Day 1 (Heavy, Day 3/4)",
-        "tasks": [
-          {
-            "task": "Learn: Review the full algorithm trace on an adversarial input (e.g., \"aaaaab\" pattern)."
-          },
-          {
-            "task": "Code: None — pure practice."
-          },
-          {
-            "task": "Practice: 2 problems (implement strStr, repeated substring pattern via KMP)."
-          }
-        ],
-        "achievement": "Can trace KMP's pointer movement on paper for any given text/pattern pair.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 62,
-        "title": "Day 62: KMP: Practice Day 2 (Heavy, Day 4/4)",
-        "tasks": [
-          {
-            "task": "Learn: Comparison — when KMP, Rabin-Karp, or naive search is the right interview answer."
-          },
-          {
-            "task": "Code: None — pure practice."
-          },
-          {
-            "task": "Practice: 2 more problems combining KMP-style thinking with other string patterns."
-          }
-        ],
-        "achievement": "Can justify, in an interview, the choice between naive/Rabin-Karp/KMP for a given constraint set.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 63,
-        "title": "Day 63: HANDS-ON LAB: Substring Search Benchmarking + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review the full String Patterns cheat sheet."
-          },
-          {
-            "task": "Code: Benchmark naive vs Rabin-Karp vs KMP on the same large input."
-          },
-          {
-            "task": "Practice: Timed mixed review (3 problems spanning frequency counting, palindromes, substring search)."
-          }
-        ],
-        "achievement": "Can produce real benchmark numbers showing KMP/Rabin-Karp's advantage on adversarial inputs and recite the phase cheat sheet.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 64,
-        "title": "Day 64: Monotonic Stack: Concept & Next Greater Element (Light)",
-        "tasks": [
-          {
-            "task": "Learn: What makes a stack \"monotonic,\" why it solves Next Greater Element in O(N) vs naive O(N²)."
-          },
-          {
-            "task": "Code: Implement Next Greater Element from scratch."
-          },
-          {
-            "task": "Practice: 2 problems (Next Greater Element I & II — circular variant)."
-          }
-        ],
-        "achievement": "Can implement Next Greater Element in O(N) using a monotonic decreasing stack.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 65,
-        "title": "Day 65: Monotonic Stack: Daily Temperatures & Variants (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Generalizing the pattern — storing indices instead of values when distance matters."
-          },
-          {
-            "task": "Code: Implement Daily Temperatures."
-          },
-          {
-            "task": "Practice: 2 problems (Daily Temperatures, Next Smaller Element)."
-          }
-        ],
-        "achievement": "Can decide when to store values vs indices on the monotonic stack based on what the problem asks for.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 66,
-        "title": "Day 66: Monotonic Queue: Sliding Window Maximum (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Monotonic deque mechanics — maintaining a decreasing deque of candidates for the window max."
-          },
-          {
-            "task": "Code: Begin implementing Sliding Window Maximum."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why elements are evicted from the back of the deque when a larger element arrives.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 67,
-        "title": "Day 67: Sliding Window Maximum: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review the full O(N) proof (amortized analysis of deque operations)."
-          },
-          {
-            "task": "Code: Finish and test Sliding Window Maximum."
-          },
-          {
-            "task": "Practice: 2 problems (Sliding Window Maximum, shortest subarray with sum at least K)."
-          }
-        ],
-        "achievement": "Can implement Sliding Window Maximum in true O(N) cold.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 68,
-        "title": "Day 68: HANDS-ON LAB: Maximal Rectangle Solver + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Reducing Maximal Rectangle to repeated Largest Rectangle in Histogram calls."
-          },
-          {
-            "task": "Code: Implement Largest Rectangle in Histogram using a monotonic stack, then extend to Maximal Rectangle."
-          },
-          {
-            "task": "Practice: Timed review (2 problems)."
-          }
-        ],
-        "achievement": "Can solve Maximal Rectangle by combining histogram-area logic with a monotonic stack, and recite the phase cheat sheet.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 69,
-        "title": "Day 69: Recursion: The Mental Model (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Base case, recursive case, trusting the recursive call, call stack visualization."
-          },
-          {
-            "task": "Code: Trace 3 recursive functions by hand before running them."
-          },
-          {
-            "task": "Practice: 2 problems (factorial, power function via recursion)."
-          }
-        ],
-        "achievement": "Can trace any moderately complex recursive function's call stack by hand.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 70,
-        "title": "Day 70: Recursion: Recursion Tree & Recurrence Relations (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Visualizing recursion as a tree, deriving time complexity from recurrence relations (basic Master Theorem intuition)."
-          },
-          {
-            "task": "Code: Draw and code 2 recursion trees (Fibonacci naive vs memoized)."
-          },
-          {
-            "task": "Practice: 2 problems (climbing stairs via plain recursion, generate parentheses intro)."
-          }
-        ],
-        "achievement": "Can explain why naive recursive Fibonacci is O(2^N) by drawing its recursion tree.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 71,
-        "title": "Day 71: Backtracking: The Blueprint (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Choice — constraint — goal framework, the generic backtracking template (choose, explore, un-choose)."
-          },
-          {
-            "task": "Code: Implement the generic backtracking template as a reusable skeleton."
-          },
-          {
-            "task": "Practice: 2 problems (subsets, then adapt template)."
-          }
-        ],
-        "achievement": "Can write the generic backtracking template from memory in under 2 minutes.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 72,
-        "title": "Day 72: Backtracking: Subsets & Combinations (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Adapting the template for subsets (power set) and combinations (choose K of N)."
-          },
-          {
-            "task": "Code: Implement Subsets and Combination Sum."
-          },
-          {
-            "task": "Practice: 2 problems (subsets, combination sum)."
-          }
-        ],
-        "achievement": "Can adapt the backtracking template to subsets/combinations without re-deriving it from scratch.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 73,
-        "title": "Day 73: Backtracking: Permutations (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Permutations via swap-based backtracking vs used[] array tracking; handling duplicates."
-          },
-          {
-            "task": "Code: Begin implementing Permutations (and Permutations II with duplicates)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands the difference between the swap-based and used-array approaches to permutation generation.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 74,
-        "title": "Day 74: Permutations: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review duplicate-skipping logic for Permutations II."
-          },
-          {
-            "task": "Code: Finish both Permutations and Permutations II."
-          },
-          {
-            "task": "Practice: 2 problems (permutations, permutations with duplicates)."
-          }
-        ],
-        "achievement": "Can generate all permutations, with correct duplicate handling, in both forms.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 75,
-        "title": "Day 75: Pruning Techniques (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Dead-end detection to optimize backtracking — early termination conditions, constraint propagation basics."
-          },
-          {
-            "task": "Code: Add a pruning condition to an existing unpruned backtracking solution and measure the speedup."
-          },
-          {
-            "task": "Practice: 2 problems where pruning matters (combination sum with target, word search)."
-          }
-        ],
-        "achievement": "Can identify and add a pruning condition that meaningfully cuts the search space.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 76,
-        "title": "Day 76: N-Queens: Setup & Naive Approach (Heavy, Day 1/3)",
-        "tasks": [
-          {
-            "task": "Learn: The N-Queens problem statement, naive board-scanning conflict check (before optimization)."
-          },
-          {
-            "task": "Code: Begin implementing N-Queens with naive O(N) conflict checking per placement."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has a working but unoptimized N-Queens solution.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 77,
-        "title": "Day 77: N-Queens: Optimized Conflict Checking (Heavy, Day 2/3)",
-        "tasks": [
-          {
-            "task": "Learn: O(1) conflict checking using sets/booleans for columns, diagonals, anti-diagonals."
-          },
-          {
-            "task": "Code: Refactor N-Queens to use O(1) conflict checks."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "N-Queens now runs with O(1) conflict checking per placement instead of O(N) board scans.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 78,
-        "title": "Day 78: N-Queens: Practice + Variants (Heavy, Day 3/3)",
-        "tasks": [
-          {
-            "task": "Learn: Review — counting solutions vs returning all solutions as a variant."
-          },
-          {
-            "task": "Code: None — pure practice."
-          },
-          {
-            "task": "Practice: 2 problems (N-Queens, N-Queens II — count only)."
-          }
-        ],
-        "achievement": "Can implement N-Queens with optimal conflict checking cold, in either \"return all\" or \"count only\" form.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 79,
-        "title": "Day 79: Sudoku Solver (Heavy, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Constraint propagation for Sudoku — row/column/box validity checks, backtracking with early pruning."
-          },
-          {
-            "task": "Code: Begin implementing the Sudoku solver."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has working row/column/box validity-check functions integrated into the backtracking skeleton.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 80,
-        "title": "Day 80: Sudoku Solver: Finish + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review the full Recursion & Backtracking cheat sheet."
-          },
-          {
-            "task": "Code: Finish and test the Sudoku solver."
-          },
-          {
-            "task": "Practice: Timed mixed review (2 problems spanning recursion + backtracking)."
-          }
-        ],
-        "achievement": "Has a fully working Sudoku solver and can recite the phase cheat sheet.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 81,
-        "title": "Day 81: Binary Trees: Node Structure & Properties (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Tree node structure, height, depth, leaf node counting."
-          },
-          {
-            "task": "Code: Implement basic tree construction and a height-calculation function."
-          },
-          {
-            "task": "Practice: 2 problems (max depth, count leaf nodes)."
-          }
-        ],
-        "achievement": "Can compute tree height/depth recursively in O(N).",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 82,
-        "title": "Day 82: Binary Tree Traversals: Recursive (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Preorder, Inorder, Postorder — recursive implementations."
-          },
-          {
-            "task": "Code: Implement all 3 recursive traversals."
-          },
-          {
-            "task": "Practice: 2 problems (return traversal as a list, verify two trees have same inorder)."
-          }
-        ],
-        "achievement": "Can implement all 3 recursive traversals from memory.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 83,
-        "title": "Day 83: Binary Tree Traversals: Iterative + Level Order (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Iterative traversal using an explicit stack, Level-order traversal (BFS) using a queue."
-          },
-          {
-            "task": "Code: Begin implementing iterative inorder traversal and level-order traversal."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has a working iterative inorder traversal using an explicit stack.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 84,
-        "title": "Day 84: Iterative Traversals: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — iterative preorder/postorder (the trickier ones) using stack tricks."
-          },
-          {
-            "task": "Code: Finish iterative preorder and postorder; finish level-order traversal."
-          },
-          {
-            "task": "Practice: 2 problems (binary tree level order traversal, zigzag level order)."
-          }
-        ],
-        "achievement": "Can implement all 4 traversal types both recursively and iteratively.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 85,
-        "title": "Day 85: Binary Tree: Diameter & Path Sum (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Diameter of a binary tree (combining left+right height at each node), root-to-leaf path sum problems."
-          },
-          {
-            "task": "Code: Implement Diameter of Binary Tree."
-          },
-          {
-            "task": "Practice: 2 problems (diameter, path sum)."
-          }
-        ],
-        "achievement": "Can solve Diameter of Binary Tree in a single O(N) pass (not O(N²)).",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 86,
-        "title": "Day 86: Binary Search Tree: Search, Insert, Delete (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: BST property, search/insert operations, the 3 deletion cases (leaf, one child, two children)."
-          },
-          {
-            "task": "Code: Begin implementing BST insert and search."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has working BST insert and search operations.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 87,
-        "title": "Day 87: BST Delete + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review the two-children deletion case (find successor/predecessor)."
-          },
-          {
-            "task": "Code: Finish BST delete, handling all 3 cases."
-          },
-          {
-            "task": "Practice: 2 problems (delete node in BST, insert into BST)."
-          }
-        ],
-        "achievement": "Can implement BST delete correctly for all 3 cases.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 88,
-        "title": "Day 88: BST: Validate BST & Kth Smallest (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Validating BST property (range-checking, not just parent-child comparison), Kth smallest via inorder traversal."
-          },
-          {
-            "task": "Code: Implement Validate BST and Kth Smallest in BST."
-          },
-          {
-            "task": "Practice: 2 problems (validate BST, kth smallest, kth largest)."
-          }
-        ],
-        "achievement": "Can validate a BST correctly (catching the classic \"only checks immediate children\" bug) and find Kth smallest in O(H+K).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 89,
-        "title": "Day 89: Balanced BSTs: AVL & Red-Black Trees Conceptual (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Balance factor concept, why unbalanced BSTs degrade to O(N), Red-Black tree's role as Java's TreeMap/HashMap bucket backing."
-          },
-          {
-            "task": "Code: None — conceptual day."
-          },
-          {
-            "task": "Practice: 2 conceptual questions (when does a BST become a linked list? why does Java use Red-Black trees internally?)."
-          }
-        ],
-        "achievement": "Can explain why an unbalanced BST degrades to O(N) and name where Red-Black trees are used inside the JDK.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 90,
-        "title": "Day 90: 🆕 AVL Rotations: LL & RR Cases (Heavy, Day 1/3)",
-        "tasks": [
-          {
-            "task": "Learn: Balance factor calculation after insertion, the Left-Left and Right-Right single-rotation cases."
-          },
-          {
-            "task": "Code: Implement AVL node structure, balance factor calculation, and single rotation (LL case) function."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Can identify an LL or RR imbalance from a balance factor calculation and apply the correct single rotation.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 91,
-        "title": "Day 91: 🆕 AVL Rotations: LR & RL Cases (Heavy, Day 2/3)",
-        "tasks": [
-          {
-            "task": "Learn: The Left-Right and Right-Left double-rotation cases (rotate child first, then the node)."
-          },
-          {
-            "task": "Code: Implement the LR and RL double-rotation functions."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Can identify an LR or RL imbalance and apply the correct two-step rotation sequence.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 92,
-        "title": "Day 92: 🆕 AVL Tree: Full Insert with Self-Balancing (Heavy, Day 3/3)",
-        "tasks": [
-          {
-            "task": "Learn: Wiring all 4 rotation cases into a complete AVL insert function that rebalances on the way back up the recursion."
-          },
-          {
-            "task": "Code: Finish a complete, working AVL tree insert method."
-          },
-          {
-            "task": "Practice: 2 problems (insert a sequence into an AVL tree by hand and verify against your code's output)."
-          }
-        ],
-        "achievement": "Has a fully working, self-balancing AVL insert implementation handling all 4 rotation cases correctly.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 93,
-        "title": "Day 93: Heaps: Binary Heap Representation (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Array-based heap representation, parent/child index formulas, Min-Heap vs Max-Heap."
-          },
-          {
-            "task": "Code: Implement siftUp and siftDown functions."
-          },
-          {
-            "task": "Practice: 2 problems (kth largest element using a heap, top K frequent elements)."
-          }
-        ],
-        "achievement": "Can implement siftUp/siftDown from memory and explain the parent/child index math.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 94,
-        "title": "Day 94: Heaps: Heapify & PriorityQueue Usage (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Building a heap from an unsorted array in O(N) (heapify), Java's `PriorityQueue` with custom comparators."
-          },
-          {
-            "task": "Code: Implement heapify and use Java's `PriorityQueue` with a custom comparator for a problem."
-          },
-          {
-            "task": "Practice: 2 problems (merge K sorted lists using a heap, find median from data stream)."
-          }
-        ],
-        "achievement": "Can explain why heapify is O(N) (not O(N log N)) and use `PriorityQueue` fluently with custom orderings.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 95,
-        "title": "Day 95: Tries: Node Structure & Insert/Search (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Trie node structure (array or map of children), insert and search operations."
-          },
-          {
-            "task": "Code: Implement Trie insert and search."
-          },
-          {
-            "task": "Practice: 2 problems (implement Trie, word search II setup)."
-          }
-        ],
-        "achievement": "Can implement Trie insert and search in O(L) per operation.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 96,
-        "title": "Day 96: Tries: Prefix Search & Autocomplete Design (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: `startsWith` prefix matching, extending Trie nodes to support autocomplete suggestions."
-          },
-          {
-            "task": "Code: Begin implementing the autocomplete system (storing top suggestions per node, or DFS-collecting from a prefix)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Trie now supports `startsWith` and can list all words under a given prefix.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 97,
-        "title": "Day 97: Autocomplete System: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — ranking suggestions (frequency-based) for a production-quality autocomplete."
-          },
-          {
-            "task": "Code: Finish the autocomplete system, returning top-K ranked suggestions."
-          },
-          {
-            "task": "Practice: 2 problems (design search autocomplete system, replace words using Trie)."
-          }
-        ],
-        "achievement": "Has a working Trie-based autocomplete system returning ranked top-K suggestions for any prefix.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 98,
-        "title": "Day 98: Segment Trees: Construction & Range Query (Heavy, Day 1/3)",
-        "tasks": [
-          {
-            "task": "Learn: Segment tree structure for range queries, recursive construction, range-sum query logic."
-          },
-          {
-            "task": "Code: Begin implementing segment tree construction and the range sum query function."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has a working segment tree that answers range-sum queries in O(log N).",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 99,
-        "title": "Day 99: Segment Trees: Point Update (Heavy, Day 2/3)",
-        "tasks": [
-          {
-            "task": "Learn: Point update logic — updating a single index and propagating the change up to ancestor nodes."
-          },
-          {
-            "task": "Code: Implement the point-update function."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Segment tree now supports both range queries and point updates correctly.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 100,
-        "title": "Day 100: Segment Trees: Lazy Propagation for Range Updates (Heavy, Day 3/3)",
-        "tasks": [
-          {
-            "task": "Learn: Lazy propagation — deferring updates to child nodes until they're actually queried, avoiding O(N) range updates."
-          },
-          {
-            "task": "Code: Implement lazy propagation for range updates."
-          },
-          {
-            "task": "Practice: 2 problems (range sum query mutable, range update + range query)."
-          }
-        ],
-        "achievement": "Has a complete segment tree supporting range updates AND range queries in O(log N) using lazy propagation.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 101,
-        "title": "Day 101: Fenwick Tree (Binary Indexed Tree) (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Fenwick Tree structure (implicit binary representation), prefix sum query and point update via bit manipulation on indices."
-          },
-          {
-            "task": "Code: Begin implementing Fenwick Tree update and query functions."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands the `i & (-i)` bit trick that drives Fenwick Tree traversal.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 102,
-        "title": "Day 102: Fenwick Tree: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — when to prefer Fenwick over Segment Tree (simpler code, less memory, but point-update/range-query only by default)."
-          },
-          {
-            "task": "Code: Finish and test the Fenwick Tree."
-          },
-          {
-            "task": "Practice: 2 problems (range sum query mutable using Fenwick, count of smaller numbers after self)."
-          }
-        ],
-        "achievement": "Can implement Fenwick Tree from scratch and justify choosing it over a Segment Tree for a given problem.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 103,
-        "title": "Day 103: Disjoint Set Union: Path Compression & Union by Rank (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Union-Find structure, path compression optimization, union by rank optimization."
-          },
-          {
-            "task": "Code: Begin implementing DSU with both optimizations."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has a working `find()` function with path compression.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 104,
-        "title": "Day 104: DSU: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review the near-O(1) amortized complexity argument for combined path compression + union by rank."
-          },
-          {
-            "task": "Code: Finish DSU with union by rank."
-          },
-          {
-            "task": "Practice: 2 problems (number of provinces, redundant connection)."
-          }
-        ],
-        "achievement": "Has a fully optimized DSU achieving near-O(1) amortized find/union.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 105,
-        "title": "Day 105: HANDS-ON LAB: Trie-Based Autocomplete Extension + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review the entire Hierarchical Data Structures cheat sheet (Trees, BST, AVL, Heaps, Tries, Segment/Fenwick, DSU)."
-          },
-          {
-            "task": "Code: Extend the Day 97 autocomplete system with a new feature (e.g., fuzzy matching or recency weighting)."
-          },
-          {
-            "task": "Practice: Timed mixed review (4 problems spanning the entire phase)."
-          }
-        ],
-        "achievement": "Can recite the full phase cheat sheet and confidently pick the right tree-based structure for any new problem.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 106,
-        "title": "Day 106: Graph Fundamentals & Representations (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Adjacency matrix vs adjacency list vs edge list, directed/undirected, weighted/unweighted, cyclic/acyclic (DAG)."
-          },
-          {
-            "task": "Code: Implement both adjacency matrix and adjacency list representations for the same graph."
-          },
-          {
-            "task": "Practice: 2 problems (build graph from edge list, count connected components via simple traversal)."
-          }
-        ],
-        "achievement": "Can choose the correct representation for a given problem based on density and required operations.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 107,
-        "title": "Day 107: Breadth-First Search (BFS) (Light)",
-        "tasks": [
-          {
-            "task": "Learn: BFS using a queue, shortest path in unweighted graphs, level-by-level exploration."
-          },
-          {
-            "task": "Code: Implement BFS from scratch."
-          },
-          {
-            "task": "Practice: 2 problems (shortest path in unweighted graph, rotting oranges — multi-source BFS)."
-          }
-        ],
-        "achievement": "Can implement BFS and use it for shortest path in an unweighted graph.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 108,
-        "title": "Day 108: Depth-First Search (DFS) (Light)",
-        "tasks": [
-          {
-            "task": "Learn: DFS using recursion and explicit stack, connected components via DFS."
-          },
-          {
-            "task": "Code: Implement DFS both recursively and iteratively."
-          },
-          {
-            "task": "Practice: 2 problems (number of islands, flood fill)."
-          }
-        ],
-        "achievement": "Can implement DFS both ways and explain when iterative DFS is necessary (avoiding stack overflow on deep graphs).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 109,
-        "title": "Day 109: Topological Sort: Kahn's Algorithm (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: BFS-based topological sort using in-degree tracking."
-          },
-          {
-            "task": "Code: Begin implementing Kahn's Algorithm."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why nodes with in-degree 0 are the correct starting points.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 110,
-        "title": "Day 110: Topological Sort: DFS-Based + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: DFS-based topological sort (postorder reversal) as an alternative to Kahn's."
-          },
-          {
-            "task": "Code: Finish Kahn's Algorithm; implement DFS-based topological sort."
-          },
-          {
-            "task": "Practice: 2 problems (course schedule, course schedule II)."
-          }
-        ],
-        "achievement": "Can implement topological sort both ways and detect a cycle (no valid ordering exists) in the process.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 111,
-        "title": "Day 111: 🆕 Bipartite Graph Check (Light)",
-        "tasks": [
-          {
-            "task": "Learn: 2-coloring via BFS/DFS — a graph is bipartite iff it has no odd-length cycle."
-          },
-          {
-            "task": "Code: Implement bipartite check using BFS-based 2-coloring."
-          },
-          {
-            "task": "Practice: 2 problems (is graph bipartite, possible bipartition)."
-          }
-        ],
-        "achievement": "Can implement a bipartite check and explain why an odd cycle makes a graph non-bipartite.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 112,
-        "title": "Day 112: Dijkstra's Algorithm: Setup & PriorityQueue Approach (Heavy, Day 1/3)",
-        "tasks": [
-          {
-            "task": "Learn: Single-source shortest path for non-negative weights, edge relaxation, why a PriorityQueue (not a plain queue) is essential."
-          },
-          {
-            "task": "Code: Begin implementing Dijkstra's Algorithm."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands edge relaxation and why Dijkstra fails with negative weights (conceptually, before finishing code).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 113,
-        "title": "Day 113: Dijkstra's Algorithm: Finish Implementation (Heavy, Day 2/3)",
-        "tasks": [
-          {
-            "task": "Learn: Review handling of \"already finalized\" nodes and lazy deletion in the PriorityQueue."
-          },
-          {
-            "task": "Code: Finish and test Dijkstra's Algorithm."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has a fully working Dijkstra's implementation using `PriorityQueue<int[]>`.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 114,
-        "title": "Day 114: Dijkstra's Algorithm: Practice (Heavy, Day 3/3)",
-        "tasks": [
-          {
-            "task": "Learn: Review variants — network delay time, cheapest flights with K stops (Dijkstra variant)."
-          },
-          {
-            "task": "Code: None — pure practice."
-          },
-          {
-            "task": "Practice: 2 problems (network delay time, path with maximum probability)."
-          }
-        ],
-        "achievement": "Can adapt Dijkstra's Algorithm to non-standard variants (probability maximization, K-stop constraints).",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 115,
-        "title": "Day 115: Bellman-Ford Algorithm (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Handling negative weights, V-1 relaxation rounds, negative cycle detection via a Vth round."
-          },
-          {
-            "task": "Code: Begin implementing Bellman-Ford."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why exactly V-1 rounds of relaxation guarantee correctness.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 116,
-        "title": "Day 116: Bellman-Ford: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review negative cycle detection (extra round still relaxes an edge → cycle exists)."
-          },
-          {
-            "task": "Code: Finish Bellman-Ford with negative cycle detection."
-          },
-          {
-            "task": "Practice: 2 problems (cheapest flights with K stops via Bellman-Ford-style relaxation, detect negative cycle)."
-          }
-        ],
-        "achievement": "Can implement Bellman-Ford and correctly detect negative cycles.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 117,
-        "title": "Day 117: Floyd-Warshall Algorithm (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: All-pairs shortest path via DP, the `dp[i][j] = min(dp[i][j], dp[i][k]+dp[k][j])` transition."
-          },
-          {
-            "task": "Code: Begin implementing Floyd-Warshall."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why the loop order (k outermost) is essential for correctness.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 118,
-        "title": "Day 118: Floyd-Warshall: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review when Floyd-Warshall beats running Dijkstra V times (dense small graphs)."
-          },
-          {
-            "task": "Code: Finish and test Floyd-Warshall."
-          },
-          {
-            "task": "Practice: 2 problems (find the city with smallest number of neighbors, all-pairs shortest path applications)."
-          }
-        ],
-        "achievement": "Can implement Floyd-Warshall in O(V³) and justify when it's preferable to V calls to Dijkstra.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 119,
-        "title": "Day 119: Minimum Spanning Tree: Kruskal's Algorithm (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Edge-selection greedy approach using Union-Find to avoid cycles."
-          },
-          {
-            "task": "Code: Begin implementing Kruskal's Algorithm (reusing your Phase 8 DSU)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why sorting edges by weight first makes the greedy choice correct.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 120,
-        "title": "Day 120: Kruskal's: Finish + Prim's Algorithm Intro (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Finish Kruskal's; learn Prim's Algorithm (vertex-addition greedy using a PriorityQueue)."
-          },
-          {
-            "task": "Code: Finish Kruskal's Algorithm; begin Prim's Algorithm."
-          },
-          {
-            "task": "Practice: 1 problem (minimum cost to connect all points using Kruskal's)."
-          }
-        ],
-        "achievement": "Has a working Kruskal's implementation and understands Prim's core mechanic.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 121,
-        "title": "Day 121: Prim's Algorithm: Finish + Practice (Medium, Day 1/2 — continuing)",
-        "tasks": [
-          {
-            "task": "Learn: Review Prim's PriorityQueue-based vertex selection in detail."
-          },
-          {
-            "task": "Code: Finish Prim's Algorithm."
-          },
-          {
-            "task": "Practice: 2 problems (minimum cost to connect all points using Prim's, comparing both MST approaches on the same input)."
-          }
-        ],
-        "achievement": "Can implement both Kruskal's and Prim's, and explain which is more efficient for sparse vs dense graphs.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 122,
-        "title": "Day 122: Cycle Detection: Directed & Undirected Graphs (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Directed graph cycle detection (DFS with 3-color marking: white/gray/black), undirected graph cycle detection (DFS or Union-Find)."
-          },
-          {
-            "task": "Code: Implement cycle detection for both directed and undirected graphs."
-          },
-          {
-            "task": "Practice: 2 problems (course schedule revisited through the cycle-detection lens, redundant connection)."
-          }
-        ],
-        "achievement": "Can implement cycle detection for both graph types and explain why undirected cycle detection can't reuse the directed 3-color approach directly.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 123,
-        "title": "Day 123: Strongly Connected Components: Tarjan's/Kosaraju's (Heavy, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: SCC concept, the high-level idea behind Tarjan's algorithm (low-link values) or Kosaraju's (two-pass DFS)."
-          },
-          {
-            "task": "Code: Begin implementing Tarjan's SCC algorithm."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands what a low-link value represents and how it identifies an SCC root.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 124,
-        "title": "Day 124: SCC: Finish Implementation (Heavy, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review the full algorithm trace on a small example graph."
-          },
-          {
-            "task": "Code: Finish and test the SCC implementation."
-          },
-          {
-            "task": "Practice: 1 problem (number of strongly connected components)."
-          }
-        ],
-        "achievement": "Has a working SCC detection algorithm and can trace it by hand on a small graph.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 125,
-        "title": "Day 125: Graph Bridges: Tarjan's Bridge Discovery (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Bridge-finding via DFS discovery times and low-link values (closely related to SCC's low-link concept from Day 123)."
-          },
-          {
-            "task": "Code: Begin implementing Tarjan's Bridges algorithm."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands the bridge condition (`low[child] > disc[node]`) and why it identifies a critical edge.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 126,
-        "title": "Day 126: Bridges: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review articulation points as a closely related concept (briefly, for awareness)."
-          },
-          {
-            "task": "Code: Finish and test the bridge-finding algorithm (LeetCode 1192 — Critical Connections)."
-          },
-          {
-            "task": "Practice: 2 problems (critical connections in a network, articulation points awareness problem)."
-          }
-        ],
-        "achievement": "Can implement Tarjan's Bridge Discovery and solve Critical Connections in a Network.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 127,
-        "title": "Day 127: HANDS-ON LAB: Network Router Optimizer + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review the full Graphs cheat sheet (representations, BFS/DFS, topo sort, bipartite, shortest path, MST, SCC, bridges)."
-          },
-          {
-            "task": "Code: Complete the Network Router Optimizer lab, combining traversal + shortest-path techniques."
-          },
-          {
-            "task": "Practice: Timed mixed review (4 problems spanning the entire Graphs phase)."
-          }
-        ],
-        "achievement": "Can recite the full Graphs cheat sheet and confidently select the right algorithm family for any new graph problem.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 128,
-        "title": "Day 128: Greedy Fundamentals: Proving Correctness (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Greedy choice property, optimal substructure, how to argue (exchange argument) that a greedy approach is correct."
-          },
-          {
-            "task": "Code: None — conceptual day with worked proof sketches."
-          },
-          {
-            "task": "Practice: 2 conceptual problems (is this greedy approach correct? prove or disprove)."
-          }
-        ],
-        "achievement": "Can sketch an exchange-argument proof for why a proposed greedy strategy is or isn't correct.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 129,
-        "title": "Day 129: Activity Selection / Interval Scheduling (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Sort-by-end-time greedy strategy, why sorting by start time fails."
-          },
-          {
-            "task": "Code: Implement Activity Selection."
-          },
-          {
-            "task": "Practice: 2 problems (activity selection, non-overlapping intervals)."
-          }
-        ],
-        "achievement": "Can solve Activity Selection optimally and explain precisely why sorting by start time produces a wrong answer.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 130,
-        "title": "Day 130: Merge Intervals (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Interval merging — sort by start time, then linear merge pass."
-          },
-          {
-            "task": "Code: Implement Merge Intervals."
-          },
-          {
-            "task": "Practice: 2 problems (merge intervals, insert interval)."
-          }
-        ],
-        "achievement": "Can implement Merge Intervals in O(N log N) and explain why this sort uses start time (unlike Day 129).",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 131,
-        "title": "Day 131: Jump Game Variants (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Reachability (Jump Game I) and minimum jumps (Jump Game II) via greedy range-extension."
-          },
-          {
-            "task": "Code: Begin implementing Jump Game II."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands the \"farthest reachable from current window\" greedy invariant before finishing the code.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 132,
-        "title": "Day 132: Jump Game: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review Jump Game I (simpler reachability-only variant) by contrast."
-          },
-          {
-            "task": "Code: Finish Jump Game II; implement Jump Game I."
-          },
-          {
-            "task": "Practice: 2 problems (Jump Game I & II, Jump Game III as an extension)."
-          }
-        ],
-        "achievement": "Can solve Jump Game II in O(N) using greedy range tracking, distinct from a BFS-based approach.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 133,
-        "title": "Day 133: Huffman Coding (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Optimal prefix-free encoding, building the encoding tree using a min-heap of frequencies."
-          },
-          {
-            "task": "Code: Begin implementing Huffman Coding tree construction."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Can construct a Huffman tree by hand for a small frequency table before finishing the code.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 134,
-        "title": "Day 134: Huffman Coding: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review how the tree generates variable-length prefix codes per character."
-          },
-          {
-            "task": "Code: Finish Huffman Coding, generating the actual code table."
-          },
-          {
-            "task": "Practice: 1 problem (implement Huffman encode/decode end-to-end)."
-          }
-        ],
-        "achievement": "Has a complete working Huffman encoder that produces a valid prefix-free code table.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 135,
-        "title": "Day 135: Task Scheduling: Job Sequencing & Task Scheduler (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Job Sequencing with Deadlines (greedy by profit, then by feasibility), Task Scheduler (LeetCode 621 — frequency-based cooldown logic)."
-          },
-          {
-            "task": "Code: Begin implementing Task Scheduler."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands the formula-based approach to Task Scheduler (max frequency × (n+1) + ties) before finishing code.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 136,
-        "title": "Day 136: Task Scheduling: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review Job Sequencing with Deadlines as a separate but related greedy pattern."
-          },
-          {
-            "task": "Code: Finish Task Scheduler; implement Job Sequencing with Deadlines."
-          },
-          {
-            "task": "Practice: 2 problems (task scheduler, job sequencing with deadlines)."
-          }
-        ],
-        "achievement": "Can implement both task-scheduling variants and explain the formula-based shortcut for Task Scheduler.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 137,
-        "title": "Day 137: Fractional Knapsack + Gas Station (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Fractional Knapsack (value/weight ratio greedy — contrast with 0/1 Knapsack, which is NOT greedy), Gas Station's circular feasibility check."
-          },
-          {
-            "task": "Code: Implement Fractional Knapsack and Gas Station."
-          },
-          {
-            "task": "Practice: 2 problems (fractional knapsack, gas station)."
-          }
-        ],
-        "achievement": "Can explain precisely why Fractional Knapsack is greedy-solvable but 0/1 Knapsack is not, and solve Gas Station in O(N).",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 138,
-        "title": "Day 138: Partitioning & Assignment Problems (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Greedy partitioning patterns (assign cookies, two-city scheduling) — the sorting criterion that enables the greedy choice."
-          },
-          {
-            "task": "Code: Implement Assign Cookies and Two City Scheduling."
-          },
-          {
-            "task": "Practice: 2 problems (assign cookies, two city scheduling)."
-          }
-        ],
-        "achievement": "Can identify the correct sorting criterion for a new greedy partitioning problem within the first read.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 139,
-        "title": "Day 139: Advanced Greedy Problems + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review the handbook's advanced greedy problems section. Review the full Greedy Algorithms phase cheat sheet."
-          },
-          {
-            "task": "Code: None — review day."
-          },
-          {
-            "task": "Practice: Timed mixed review (3 problems spanning the entire Greedy phase)."
-          }
-        ],
-        "achievement": "Can distinguish, for any new unseen problem, whether greedy is provably correct or whether it secretly requires DP.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 140,
-        "title": "Day 140: DP Fundamentals: Memoization vs Tabulation (Light)",
-        "tasks": [
-          {
-            "task": "Learn: State definition, transition relation, base cases; converting brute-force recursion → memoization → tabulation."
-          },
-          {
-            "task": "Code: Take naive recursive Fibonacci and convert it step-by-step to memoized, then tabulated."
-          },
-          {
-            "task": "Practice: 2 problems (Fibonacci variants, climbing stairs via all 3 forms)."
-          }
-        ],
-        "achievement": "Can convert any brute-force recursive solution to memoized, then to tabulated, as a repeatable 3-step process.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 141,
-        "title": "Day 141: 1D DP: Climbing Stairs & House Robber (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Climbing Stairs DP transition, House Robber's \"skip-adjacent\" transition."
-          },
-          {
-            "task": "Code: Implement Climbing Stairs and House Robber."
-          },
-          {
-            "task": "Practice: 2 problems (climbing stairs, house robber)."
-          }
-        ],
-        "achievement": "Can write the House Robber transition and explain why it generalizes to a wide class of \"skip-adjacent\" problems.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 142,
-        "title": "Day 142: 1D DP: House Robber II & Min Cost Climbing Stairs (Light)",
-        "tasks": [
-          {
-            "task": "Learn: House Robber II's circular-array adaptation (run the linear version twice, excluding first/last)."
-          },
-          {
-            "task": "Code: Implement House Robber II and Min Cost Climbing Stairs."
-          },
-          {
-            "task": "Practice: 2 problems (house robber II, min cost climbing stairs)."
-          }
-        ],
-        "achievement": "Can adapt a linear 1D DP solution to a circular-array variant by running it twice with different exclusions.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 143,
-        "title": "Day 143: 0/1 Knapsack: 2D DP Table (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Weight/value representation, the classic 2D DP table construction for 0/1 Knapsack."
-          },
-          {
-            "task": "Code: Begin implementing 0/1 Knapsack with a full 2D DP table."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Has a working 2D Knapsack DP table and can read off the optimal value.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 144,
-        "title": "Day 144: 0/1 Knapsack: Space Optimization + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Reducing 2D DP to 1D by iterating weights in reverse order — why iteration order matters."
-          },
-          {
-            "task": "Code: Refactor to a space-optimized 1D DP array."
-          },
-          {
-            "task": "Practice: 2 problems (partition equal subset sum, target sum — both Knapsack-shaped)."
-          }
-        ],
-        "achievement": "Can implement 0/1 Knapsack with O(capacity) space instead of O(N × capacity).",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 145,
-        "title": "Day 145: Unbounded Knapsack & Coin Change (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Unbounded Knapsack's forward iteration (vs 0/1's reverse iteration) — items can be reused."
-          },
-          {
-            "task": "Code: Begin implementing Coin Change (minimum coins)."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands precisely why forward iteration allows item reuse while reverse iteration (Day 144) prevents it.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 146,
-        "title": "Day 146: Coin Change: Finish + Subset Sum Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review Coin Change II (count combinations, not minimum) as a closely related variant."
-          },
-          {
-            "task": "Code: Finish Coin Change; implement Coin Change II."
-          },
-          {
-            "task": "Practice: 2 problems (coin change, coin change II)."
-          }
-        ],
-        "achievement": "Can distinguish \"minimum coins\" DP from \"count combinations\" DP and implement both correctly.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 147,
-        "title": "Day 147: DP on Strings: Longest Common Subsequence (Light)",
-        "tasks": [
-          {
-            "task": "Learn: LCS 2D DP table construction, the diagonal/up/left transition logic."
-          },
-          {
-            "task": "Code: Implement LCS."
-          },
-          {
-            "task": "Practice: 2 problems (LCS, longest common substring as a contrast)."
-          }
-        ],
-        "achievement": "Can implement LCS in O(N×M) and explain the difference between \"subsequence\" and \"substring\" DP transitions.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 148,
-        "title": "Day 148: DP on Strings: Longest Palindromic Subsequence (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Reframing palindrome-subsequence as LCS(string, reverse(string)) — connecting back to Day 147."
-          },
-          {
-            "task": "Code: Implement Longest Palindromic Subsequence."
-          },
-          {
-            "task": "Practice: 2 problems (longest palindromic subsequence, minimum insertions to make palindrome)."
-          }
-        ],
-        "achievement": "Can solve Longest Palindromic Subsequence by recognizing it as a disguised LCS problem.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 149,
-        "title": "Day 149: Edit Distance (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: The three-operation (insert/delete/replace) DP transition, base case setup for empty-string comparisons."
-          },
-          {
-            "task": "Code: Begin implementing Edit Distance."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Can write all 3 transition cases (insert/delete/replace) for the Edit Distance DP table by hand.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 150,
-        "title": "Day 150: Edit Distance: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review applications — spell-checkers, diff tools."
-          },
-          {
-            "task": "Code: Finish and test Edit Distance."
-          },
-          {
-            "task": "Practice: 2 problems (edit distance, one edit distance — simplified variant)."
-          }
-        ],
-        "achievement": "Can implement Edit Distance in O(N×M) cold and explain each of the three operations' contribution to the transition.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 151,
-        "title": "Day 151: Wildcard & Regex Matching (Heavy, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: DP-based pattern matching with `*` and `?` (wildcard) or `*` and `.` (regex) — the trickiest string DP transition."
-          },
-          {
-            "task": "Code: Begin implementing Wildcard Matching."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands the special handling required for `*` (matches empty OR extends match) before finishing code.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 152,
-        "title": "Day 152: Wildcard/Regex Matching: Finish + Practice (Heavy, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review Regex Matching's `*` semantics (tied to the preceding character, unlike Wildcard's standalone `*`)."
-          },
-          {
-            "task": "Code: Finish Wildcard Matching; implement Regex Matching."
-          },
-          {
-            "task": "Practice: 2 problems (wildcard matching, regular expression matching)."
-          }
-        ],
-        "achievement": "Can implement both Wildcard and Regex matching DP, clearly articulating how their `*` semantics differ.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 153,
-        "title": "Day 153: 🆕 DP on Trees: House Robber III (Heavy, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: DP on trees as a distinct mental model — recursive functions returning a 2-state result per subtree (rob this node / don't rob this node), combined post-order."
-          },
-          {
-            "task": "Code: Begin implementing House Robber III."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why a single return value per node is insufficient and a 2-state return is required.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 154,
-        "title": "Day 154: 🆕 DP on Trees: Diameter & Max Path Sum (Heavy, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Generalizing tree DP to Diameter of Binary Tree (revisited through the DP lens) and Binary Tree Maximum Path Sum."
-          },
-          {
-            "task": "Code: Finish House Robber III; implement Binary Tree Maximum Path Sum."
-          },
-          {
-            "task": "Practice: 2 problems (House Robber III, binary tree maximum path sum)."
-          }
-        ],
-        "achievement": "Can solve House Robber III and Max Path Sum, both using single-pass post-order DP on trees.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 155,
-        "title": "Day 155: 🆕 Interval DP: Matrix Chain Multiplication (Heavy, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: The canonical interval DP pattern — `dp[i][j]` as the optimal cost spanning indices i to j, iterating over all split points k between i and j."
-          },
-          {
-            "task": "Code: Begin implementing Matrix Chain Multiplication."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Can write the MCM transition `dp[i][j] = min over k of dp[i][k] + dp[k+1][j] + cost(k)` from memory.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 156,
-        "title": "Day 156: 🆕 Interval DP: Burst Balloons & Palindrome Partitioning (Heavy, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Recognizing the same \"split point k between i and j\" signature in Burst Balloons (LeetCode 312, the true DP version) and Palindrome Partitioning II."
-          },
-          {
-            "task": "Code: Finish Matrix Chain Multiplication; implement Burst Balloons (DP version)."
-          },
-          {
-            "task": "Practice: 2 problems (Burst Balloons, Palindrome Partitioning II)."
-          }
-        ],
-        "achievement": "Can recognize the interval-DP signature in a new, unseen problem and set up the split-point iteration correctly.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 157,
-        "title": "Day 157: Bitmask DP: Traveling Salesman Problem (Heavy, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Representing visited-vertex sets as integer bitmasks, the `dp[mask][u]` state definition."
-          },
-          {
-            "task": "Code: Begin implementing TSP via Bitmask DP."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why bitmask DP is only feasible for small N (typically N ≤ 20) due to the 2^N state space.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 158,
-        "title": "Day 158: Bitmask DP: Finish + Practice (Heavy, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review — other bitmask DP applications (e.g., Partition to K Equal Sum Subsets)."
-          },
-          {
-            "task": "Code: Finish TSP Bitmask DP."
-          },
-          {
-            "task": "Practice: 2 problems (TSP via bitmask, partition to K equal sum subsets)."
-          }
-        ],
-        "achievement": "Can implement TSP using Bitmask DP in O(N² × 2^N) and adapt the bitmask pattern to a new subset-tracking problem.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 159,
-        "title": "Day 159: Advanced DP Practice Day 1 (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Review — mixed advanced DP problems combining patterns learned so far (e.g., DP + greedy hybrid problems)."
-          },
-          {
-            "task": "Code: None — pure practice."
-          },
-          {
-            "task": "Practice: 3 mixed-pattern problems."
-          }
-        ],
-        "achievement": "Can classify any new DP problem (1D/2D/Knapsack/String/Tree/Interval/Bitmask) within the first minute of reading it.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 160,
-        "title": "Day 160: HANDS-ON LAB: Coin Change Optimization (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Review the Coin Change Optimization hands-on lab problem set."
-          },
-          {
-            "task": "Code: Complete the lab exercises."
-          },
-          {
-            "task": "Practice: 2 problems from the lab."
-          }
-        ],
-        "achievement": "Can complete the Coin Change Optimization lab within its suggested time.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 161,
-        "title": "Day 161: Phase Cheat Sheet + Mixed DP Review",
-        "tasks": [
-          {
-            "task": "Learn: Review the complete Dynamic Programming cheat sheet, including all new additions (Tree DP, Interval DP)."
-          },
-          {
-            "task": "Code: None — review day."
-          },
-          {
-            "task": "Practice: Timed mixed review (4 problems spanning the entire DP phase)."
-          }
-        ],
-        "achievement": "Can recite the full DP phase cheat sheet and correctly classify/solve any of the last 22 days' problem types under time pressure.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 162,
-        "title": "Day 162: The Design Interview Strategy + LRU Cache: Design (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: General strategy for \"design X\" problems (clarify requirements → pick data structures → implement). LRU Cache's HashMap + Doubly Linked List combination."
-          },
-          {
-            "task": "Code: Begin implementing LRU Cache."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands exactly why HashMap alone (no recency tracking) and DLL alone (no O(1) lookup) each fail individually.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 163,
-        "title": "Day 163: LRU Cache: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review eviction logic — moving an accessed node to the front, evicting from the back on overflow."
-          },
-          {
-            "task": "Code: Finish and test LRU Cache with O(1) get/put."
-          },
-          {
-            "task": "Practice: 1 problem (LRU Cache, then re-implement using Java's `LinkedHashMap` access-order mode for comparison)."
-          }
-        ],
-        "achievement": "Has a fully working hand-rolled LRU Cache and can also implement it via `LinkedHashMap` for comparison.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 164,
-        "title": "Day 164: LFU Cache: Design & Frequency Buckets (Heavy, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: LFU's added complexity over LRU — tracking both recency AND frequency, frequency-bucketed DLLs."
-          },
-          {
-            "task": "Code: Begin implementing LFU Cache."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands the frequency-bucket design (each frequency maps to its own DLL of recency-ordered keys) before finishing code.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 165,
-        "title": "Day 165: LFU Cache: Finish + Practice (Heavy, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review the min-frequency tracking that enables O(1) eviction."
-          },
-          {
-            "task": "Code: Finish and test LFU Cache with O(1) get/put."
-          },
-          {
-            "task": "Practice: 1 problem (LFU Cache full implementation)."
-          }
-        ],
-        "achievement": "Has a fully working LFU Cache achieving true O(1) get/put.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 166,
-        "title": "Day 166: Min Stack/Max Stack Revisited + Design Twitter (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Design Twitter's feed-generation problem — merging each followee's recent tweets using a max-heap (similar to Merge K Sorted Lists)."
-          },
-          {
-            "task": "Code: Begin implementing Design Twitter."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why a max-heap merge (not sorting everything) is the efficient approach to `getNewsFeed`.",
-        "priority": "MUST KNOW"
-      },
-      {
-        "day": 167,
-        "title": "Day 167: Design Twitter: Finish + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Review follow/unfollow bookkeeping and timestamp-based tweet ordering."
-          },
-          {
-            "task": "Code: Finish and test Design Twitter."
-          },
-          {
-            "task": "Practice: 1 problem (Design Twitter full implementation)."
-          }
-        ],
-        "achievement": "Has a complete working Design Twitter implementation with efficient `getNewsFeed`.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 168,
-        "title": "Day 168: Browser History + Hit Counter/Rate Limiter (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Browser History (array/stack-based forward-back navigation), Rate Limiter via sliding window counter vs token bucket."
-          },
-          {
-            "task": "Code: Implement Browser History and a sliding-window Rate Limiter."
-          },
-          {
-            "task": "Practice: 2 problems (browser history, design hit counter)."
-          }
-        ],
-        "achievement": "Can implement a sliding-window rate limiter and explain why fixed-window counters allow burst abuse at window boundaries.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 169,
-        "title": "Day 169: HANDS-ON LAB: Designing an LFU Cache Extension + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Review gotchas/edge cases for the entire Custom Design Problems chapter."
-          },
-          {
-            "task": "Code: Extend your LFU Cache (Day 164-165) with a TTL (time-to-live) feature."
-          },
-          {
-            "task": "Practice: Timed mixed review (2 design problems, explained out loud as if in an interview)."
-          }
-        ],
-        "achievement": "Can design and defend, end-to-end, the data structure choices behind any \"design X\" problem in a mock interview setting.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 170,
-        "title": "Day 170: Number Theory: GCD & LCM (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Euclidean algorithm for GCD, deriving LCM from GCD."
-          },
-          {
-            "task": "Code: Implement Euclidean GCD (iterative and recursive) and LCM."
-          },
-          {
-            "task": "Practice: 2 problems (GCD/LCM applications, e.g., simplify fraction)."
-          }
-        ],
-        "achievement": "Can implement Euclidean GCD in both forms and derive LCM from it in O(log(min(A,B))).",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 171,
-        "title": "Day 171: Sieve of Eratosthenes (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Prime generation up to N in O(N log log N), the marking mechanism."
-          },
-          {
-            "task": "Code: Implement the Sieve of Eratosthenes."
-          },
-          {
-            "task": "Practice: 2 problems (count primes, prime factorization using a precomputed sieve)."
-          }
-        ],
-        "achievement": "Can implement the Sieve and explain why it's vastly faster than checking primality one number at a time.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 172,
-        "title": "Day 172: Fast (Binary) Exponentiation (Light)",
-        "tasks": [
-          {
-            "task": "Learn: O(log N) exponentiation via repeated squaring."
-          },
-          {
-            "task": "Code: Implement fast exponentiation (iterative and recursive)."
-          },
-          {
-            "task": "Practice: 2 problems (pow(x,n), super pow with large exponents)."
-          }
-        ],
-        "achievement": "Can implement fast exponentiation in O(log N) and explain the repeated-squaring insight.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 173,
-        "title": "Day 173: 🆕 Modular Arithmetic: Addition, Subtraction, Multiplication (Light)",
-        "tasks": [
-          {
-            "task": "Learn: Modular addition/subtraction/multiplication, handling overflow with modulus applied at each step (not just at the end)."
-          },
-          {
-            "task": "Code: Implement safe modular add/subtract/multiply helper functions."
-          },
-          {
-            "task": "Practice: 2 problems involving large-number modular arithmetic (e.g., count ways mod 10^9+7)."
-          }
-        ],
-        "achievement": "Can implement overflow-safe modular arithmetic helpers and explain why applying the modulus only at the end is unsafe.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 174,
-        "title": "Day 174: 🆕 Modular Multiplicative Inverse via Fermat's Little Theorem (Medium, Day 1/2)",
-        "tasks": [
-          {
-            "task": "Learn: Fermat's Little Theorem, deriving the modular inverse as `a^(p-2) mod p` for prime modulus p, using fast exponentiation (Day 172) to compute it."
-          },
-          {
-            "task": "Code: Begin implementing modular inverse using fast exponentiation."
-          },
-          {
-            "task": "Practice: None yet."
-          }
-        ],
-        "achievement": "Understands why Fermat's Little Theorem requires a PRIME modulus and what breaks if it isn't.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 175,
-        "title": "Day 175: 🆕 Modular Inverse: Computing nCr mod p + Practice (Medium, Day 2/2)",
-        "tasks": [
-          {
-            "task": "Learn: Combining factorials, modular inverse, and modular multiplication to compute nCr mod a large prime — a common combinatorics-DP building block."
-          },
-          {
-            "task": "Code: Finish modular inverse; implement nCr mod p using precomputed factorials and their modular inverses."
-          },
-          {
-            "task": "Practice: 2 problems (combinatorics problems requiring nCr mod 10^9+7)."
-          }
-        ],
-        "achievement": "Can compute nCr mod a large prime in O(1) per query after O(N) precomputation of factorials and inverse factorials.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 176,
-        "title": "Day 176: Bit Manipulation: Core Tricks + HANDS-ON LAB: Bitwise Division Engine + Phase Cheat Sheet",
-        "tasks": [
-          {
-            "task": "Learn: Hamming Weight (Brian Kernighan's algorithm), XOR tricks (single number, swap without temp). Review the full Math & Bit Manipulation cheat sheet including modular arithmetic additions."
-          },
-          {
-            "task": "Code: Implement Brian Kernighan's algorithm; complete the Bitwise Division Engine lab (integer division using only shifts/subtraction)."
-          },
-          {
-            "task": "Practice: 2 problems (single number, counting bits)."
-          }
-        ],
-        "achievement": "Can implement bitwise integer division and recite the full phase cheat sheet, including the new modular arithmetic section.",
-        "priority": "NICE TO HAVE"
-      },
-      {
-        "day": 177,
-        "title": "Day 177: The 15 Problem-Solving Patterns + Interview Framework",
-        "tasks": [
-          {
-            "task": "Learn: The full list of 15 problem-solving patterns as a unified mental map. The step-by-step interview framework (clarify → identify pattern → outline approach → code → test edge cases → analyze complexity)."
-          },
-          {
-            "task": "Code: None — pure strategy day."
-          },
-          {
-            "task": "Practice: Pick 3 random problems from across the entire 176-day journey and apply the framework out loud, mapping each to its pattern within seconds."
-          }
-        ],
-        "achievement": "Can map any previously-solved problem to one of the 15 patterns instantly, and apply the full interview framework live to a brand-new problem.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 178,
-        "title": "Day 178: 🆕 DSA-to-Backend Pattern Bridge + Final Review",
-        "tasks": [
-          {
-            "task": "Learn: Map each major DSA pattern to a real production backend use case: Monotonic Stack → log/event trimming and stock-span-style analytics; Trie → autocomplete/search-suggestion microservices; DSU → network partition/connected-component detection in distributed systems; LRU/LFU Cache → the exact mechanism behind Redis/Caffeine eviction policies; Sliding Window → rate limiters and real-time metrics aggregation; Graph BFS/Dijkstra → service-dependency analysis and shortest-path routing in infrastructure; Segment Tree/Fenwick Tree → real-time analytics dashboards needing fast range aggregation."
-          },
-          {
-            "task": "Code: None — synthesis day."
-          },
-          {
-            "task": "Practice: Use the Java Collections Decision Tree and Complexity Cheat Sheet appendices to rapid-fire answer 5 \"which data structure would you use for X production scenario\" questions."
-          }
-        ],
-        "achievement": "Can answer \"where would you actually use [DSA structure] in a production backend system?\" with a concrete, named example for at least 6 different structures — directly bridging this DSA roadmap into the System Design and Spring Boot phases of your master roadmap.",
-        "priority": "IMPORTANT"
-      },
-      {
-        "day": 179,
-        "title": "Day 179: Top 50+ Frequently Asked Questions (College Placement Focus)",
-        "tasks": [
-          {
-            "task": "Arrays & Strings: Two Sum, Valid Anagram, Longest Substring Without Repeating Characters, Trapping Rain Water, Product of Array Except Self"
-          },
-          {
-            "task": "Linked Lists: Reverse Linked List, Merge Two Sorted Lists, Linked List Cycle, Copy List with Random Pointer"
-          },
-          {
-            "task": "Trees & Graphs: Maximum Depth of Binary Tree, Invert Binary Tree, Number of Islands, Course Schedule, Lowest Common Ancestor"
-          },
-          {
-            "task": "DP & Greedy: Climbing Stairs, Coin Change, Longest Increasing Subsequence, Jump Game, Maximum Subarray"
-          },
-          {
-            "task": "Sorting, Searching & Extras: Binary Search, Merge Intervals, Top K Frequent Elements, LRU Cache, Kth Largest Element in an Array"
-          }
-        ],
-        "achievement": "Completed practice on the top 50+ most frequently asked DSA questions for college placements.",
-        "priority": "MUST KNOW"
-      }
-    ]
-  }
+{
+  "id": 7,
+  "title": "Master DSA Roadmap",
+  "days": 179,
+  "color": "teal",
+  "phases": [
+    {
+      "id": "7-1",
+      "title": "FOUNDATIONS",
+      "days": "",
+      "items": [
+        {
+          "day": 1,
+          "topic": "Big O, Big Theta, Big Omega (Light)",
+          "tasks": "Learn: Asymptotic notation \u2014 upper bound (O), lower bound (\u03a9), tight bound (\u0398). Growth curve visual diagrams. | Code: None \u2014 conceptual day. | Practice: 5 complexity-classification questions (given code, state its Big O).",
+          "achievement": "Can classify any short code snippet's time complexity and explain worst-case vs average-case.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 2,
+          "topic": "Nested Loops & Recursive Complexity (Light)",
+          "tasks": "Learn: Complexity of nested loops, recursive complexity via recurrence relations (basic intro, full recursion tree later). | Code: Trace 3 nested-loop snippets by hand. | Practice: 5 problems \u2014 derive complexity from code.",
+          "achievement": "Can derive Big O for nested loops and simple recursive calls without running the code.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 3,
+          "topic": "Java Toolkit for DSA: Arrays & Collections (Light)",
+          "tasks": "Learn: Java array/Collection landscape relevant to DSA \u2014 when to use `int[]` vs `ArrayList<Integer>`, memory layout comparison. | Code: Write equivalent loops using both primitive arrays and ArrayLists; time them. | Practice: 4 small syntax exercises.",
+          "achievement": "Can explain why `int[]` outperforms `ArrayList<Integer>` for tight loops, citing memory layout.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 4,
+          "topic": "Java Toolkit: Comparator Tricks (Light)",
+          "tasks": "Learn: Comparator chaining (`thenComparing`), lambda comparators, custom sort orders. | Code: Write 3 different comparators for the same object (single-field, multi-field, reversed). | Practice: 3 sorting-with-comparator problems.",
+          "achievement": "Can write a chained multi-field comparator in one line using lambda syntax.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 5,
+          "topic": "Java Performance Traps: Autoboxing & Overflow (Medium, Day 1/2)",
+          "tasks": "Learn: Autoboxing/unboxing costs, Integer cache (-128 to 127), integer overflow scenarios in DSA problems. | Code: Reproduce the Integer cache gotcha (`==` vs `.equals()` for boxed Integers). | Practice: 3 problems involving overflow-prone calculations (e.g., mid-point calculation in binary search).",
+          "achievement": "Can identify and fix an overflow bug in a binary search midpoint calculation.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 6,
+          "topic": "Java Performance Traps: Practice Day (Medium, Day 2/2)",
+          "tasks": "Learn: Review JDK built-in performance traps table \u2014 autoboxing in loops, unnecessary object creation. | Code: Refactor a deliberately inefficient snippet to use primitives. | Practice: 5 mixed problems combining comparator + overflow-safety concepts.",
+          "achievement": "Can review a code snippet and flag 3 distinct Java-specific performance traps.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 7,
+          "topic": "Hashing Basics: HashMap & HashSet (Light)",
+          "tasks": "Learn: HashMap/HashSet internals at a usage level (not full collision internals yet \u2014 that's Day 14 in Linear DS). Frequency counting fundamentals. | Code: Implement a frequency-count function using HashMap. | Practice: 4 frequency-counting problems (e.g., first unique character).",
+          "achievement": "Can solve any \"count occurrences of X\" problem using HashMap in O(N).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 8,
+          "topic": "Hashing Practice Day (Light)",
+          "tasks": "Learn: Review \u2014 when to reach for HashMap vs HashSet vs frequency array. | Code: None \u2014 pure practice day. | Practice: 5 hashing problems (mix of HashMap/HashSet use cases).",
+          "achievement": "Can decide within seconds whether a problem needs HashMap, HashSet, or a fixed-size frequency array.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 9,
+          "topic": "HANDS-ON LAB: Complexity & JVM Profiling + Phase Cheat Sheet",
+          "tasks": "Learn: Review the full Foundations cheat sheet. | Code: Complete the timed JVM profiling exercises. | Practice: Timed mixed-review quiz (5 questions across Days 1\u20138).",
+          "achievement": "Can recite the Foundations cheat sheet cold and complete the lab within its suggested time.",
+          "priority": "MUST KNOW"
+        }
+      ]
+    },
+    {
+      "id": "7-2",
+      "title": "LINEAR DATA STRUCTURES",
+      "days": "",
+      "items": [
+        {
+          "day": 10,
+          "topic": "Arrays: Internals & Memory Layout (Light)",
+          "tasks": "Learn: Contiguous memory layout, why array access is O(1), 2D/jagged arrays. | Code: Implement matrix operations (transpose, rotate) using 2D arrays. | Practice: 3 array-traversal problems.",
+          "achievement": "Can explain why array access is O(1) and implement a 2D matrix rotation in-place.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 11,
+          "topic": "Dynamic Array From Scratch (Medium, Day 1/2)",
+          "tasks": "Learn: How ArrayList resizes internally \u2014 growth factor, amortized O(1) insertion. | Code: Begin implementing a dynamic array class from scratch (resize logic). | Practice: None yet \u2014 finish implementation first.",
+          "achievement": "Has a working `resize()` method that doubles capacity when full.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 12,
+          "topic": "Dynamic Array Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review gotchas \u2014 shrinking strategy, amortized analysis proof sketch. | Code: Finish and test the dynamic array class (add, get, remove, resize). | Practice: 5 array problems (e.g., rotate array, move zeroes, remove duplicates in-place).",
+          "achievement": "Has a fully working hand-rolled dynamic array and can solve in-place array manipulation problems.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 13,
+          "topic": "Linked Lists: Singly Linked List (Light)",
+          "tasks": "Learn: Node structure, pointer manipulation, insertion/deletion at head/tail/middle. | Code: Implement a singly linked list (insert, delete, traverse). | Practice: 3 problems (reverse a linked list, find middle node).",
+          "achievement": "Can implement singly linked list insert/delete and reverse it iteratively.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 14,
+          "topic": "Doubly & Circular Linked Lists (Medium, Day 1/2)",
+          "tasks": "Learn: Bidirectional traversal, sentinel nodes, circular queue using linked lists. | Code: Begin implementing a doubly linked list with sentinel head/tail nodes. | Practice: None yet.",
+          "achievement": "Sentinel-node DLL skeleton compiles and supports basic insert.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 15,
+          "topic": "Doubly Linked List Practice + Cycle Detection (Medium, Day 2/2)",
+          "tasks": "Learn: Floyd's Cycle Detection (Tortoise & Hare) \u2014 finding cycle, finding cycle start, finding middle node. | Code: Finish the DLL implementation; implement Floyd's algorithm. | Practice: 4 problems (detect cycle, find cycle start, intersection of two linked lists).",
+          "achievement": "Can implement Floyd's Cycle Detection and explain why the two pointers must meet inside the cycle.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 16,
+          "topic": "Stacks: LIFO Fundamentals (Light)",
+          "tasks": "Learn: Array-based vs linked-list-based stack implementation, push/pop/peek, overflow/underflow. | Code: Implement a stack from scratch using an array. | Practice: 2 problems (valid parentheses).",
+          "achievement": "Can implement a stack from scratch and solve Valid Parentheses in O(N).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 17,
+          "topic": "Stack Applications: Expression Evaluation (Medium, Day 1/2)",
+          "tasks": "Learn: Infix/prefix/postfix notation, expression evaluation using two stacks (operator + operand). | Code: Begin implementing an infix expression evaluator. | Practice: None yet.",
+          "achievement": "Has a working operator-precedence parsing skeleton.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 18,
+          "topic": "Min Stack + Stack Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Min Stack design (O(1) min extraction using an auxiliary stack). | Code: Finish expression evaluator; implement Min Stack. | Practice: 3 problems (Min Stack, Max Stack, evaluate RPN).",
+          "achievement": "Can implement Min Stack with O(1) push/pop/getMin.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 19,
+          "topic": "Queues: FIFO Fundamentals (Light)",
+          "tasks": "Learn: Simple queue, circular queue, array/list-based implementations. | Code: Implement a circular queue from scratch (handling wrap-around). | Practice: 2 problems (implement queue using stacks, or vice versa).",
+          "achievement": "Can implement a circular queue without wasting array slots.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 20,
+          "topic": "Deque (Double-Ended Queue) (Light)",
+          "tasks": "Learn: Deque as both stack and queue, implementation via doubly linked list, `ArrayDeque` preference over `Stack`/`LinkedList` in Java. | Code: Implement a basic deque supporting push/pop from both ends. | Practice: 2 problems using `ArrayDeque`.",
+          "achievement": "Can explain why `ArrayDeque` is preferred over `java.util.Stack` in production Java code.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 21,
+          "topic": "Hash Tables: Internals \u2014 Hash Functions & Collisions (Light)",
+          "tasks": "Learn: Hash function design, index calculation, load factor concept. | Code: Implement a basic hash function for strings. | Practice: 2 conceptual problems on hash distribution quality.",
+          "achievement": "Can design a hash function and explain what makes one \"good\" (uniform distribution, low collision rate).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 22,
+          "topic": "Collision Resolution: Chaining vs Open Addressing (Medium, Day 1/2)",
+          "tasks": "Learn: Chaining (linked list/tree buckets), Open Addressing (linear probing, quadratic probing, double hashing). | Code: Begin implementing a HashMap from scratch using chaining. | Practice: None yet.",
+          "achievement": "Hash table skeleton with chaining-based bucket array compiles and supports insert.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 23,
+          "topic": "Hash Table From Scratch + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review resizing/rehashing triggers tied to load factor. | Code: Finish hand-rolled HashMap (get, put, resize on load factor breach). | Practice: 4 hashing problems (group anagrams, subarray with given sum using hashmap).",
+          "achievement": "Has a working hand-rolled HashMap with chaining and automatic resizing.",
+          "priority": "MUST KNOW"
+        }
+      ]
+    },
+    {
+      "id": "7-3",
+      "title": "SEARCHING & SORTING",
+      "days": "",
+      "items": [
+        {
+          "day": 24,
+          "topic": "Binary Search: The Basic Template (Light)",
+          "tasks": "Learn: Classic binary search, avoiding off-by-one errors, loop invariants. | Code: Implement binary search from memory, twice (iterative + recursive). | Practice: 2 problems (basic search, search insert position).",
+          "achievement": "Can write binary search from memory without bugs, in both forms.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 25,
+          "topic": "Binary Search: Lower Bound & Upper Bound (Light)",
+          "tasks": "Learn: Lower bound (first occurrence) and upper bound (last occurrence / insertion point) variants. | Code: Implement both lower-bound and upper-bound binary search. | Practice: 3 problems (first/last occurrence, count occurrences in sorted array).",
+          "achievement": "Can implement lower/upper bound binary search and use them together to count occurrences in O(log N).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 26,
+          "topic": "Binary Search on Answer Space (Medium, Day 1/2)",
+          "tasks": "Learn: The \"binary search on answer\" pattern \u2014 monotonic predicate functions, search space \u2260 input array. | Code: Begin implementing Koko Eating Bananas using this pattern. | Practice: None yet.",
+          "achievement": "Can articulate the monotonic predicate for Koko Eating Bananas before finishing the code.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 27,
+          "topic": "Binary Search on Answer: Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 Capacity to Ship Packages, Allocate Books as more \"search on answer\" examples. | Code: Finish Koko Eating Bananas. | Practice: 3 problems (Capacity to Ship Packages, Allocate Books, Split Array Largest Sum).",
+          "achievement": "Can recognize a \"search on answer\" problem within the first read and set up the feasibility check correctly.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 28,
+          "topic": "Sorting Fundamentals: Bubble, Selection, Insertion (Light)",
+          "tasks": "Learn: O(N\u00b2) sorts \u2014 mechanics, stability, in-place behavior. | Code: Implement all three from scratch. | Practice: 2 problems (sort colors / Dutch national flag as an insertion-sort-adjacent problem).",
+          "achievement": "Can implement all three O(N\u00b2) sorts and state which are stable.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 29,
+          "topic": "Merge Sort (Medium, Day 1/2)",
+          "tasks": "Learn: Divide & conquer, O(N log N), stability, O(N) auxiliary space requirement. | Code: Begin implementing merge sort (merge function first, then recursive split). | Practice: None yet.",
+          "achievement": "Merge function correctly merges two sorted halves in O(N).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 30,
+          "topic": "Merge Sort: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 applications of merge sort (counting inversions). | Code: Finish full merge sort implementation. | Practice: 3 problems (sort an array, count inversions using merge sort).",
+          "achievement": "Has a fully working merge sort and can use it to count array inversions in O(N log N).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 31,
+          "topic": "Quick Sort (Medium, Day 1/2)",
+          "tasks": "Learn: Pivot selection strategies, average O(N log N) vs worst O(N\u00b2), why it's unstable but in-place. | Code: Begin implementing quicksort (partition function first). | Practice: None yet.",
+          "achievement": "Partition function correctly places the pivot and partitions the array around it.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 32,
+          "topic": "Quick Sort: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Randomized pivot selection to avoid worst-case on adversarial/sorted input. | Code: Finish quicksort with randomized pivot. | Practice: 3 problems (Kth largest element using quickselect, sort an array).",
+          "achievement": "Can implement Quickselect (partial quicksort) to find the Kth largest element in average O(N).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 33,
+          "topic": "Heap Sort (Light)",
+          "tasks": "Learn: In-place sorting using a Max-Heap, O(N log N), how heapify builds the heap in O(N). | Code: Implement heap sort from scratch. | Practice: 2 problems using heap sort or heap-based thinking.",
+          "achievement": "Can implement heap sort and explain why building the heap is O(N), not O(N log N).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 34,
+          "topic": "\ud83c\udd95 Counting Sort (Light)",
+          "tasks": "Learn: Linear-time sort for small integer ranges \u2014 counting array, prefix-sum positioning. | Code: Implement Counting Sort from scratch. | Practice: 2 problems suited to Counting Sort (e.g., sort an array of 0s/1s/2s \u2014 Dutch flag revisited via counting).",
+          "achievement": "Can implement Counting Sort in O(N+k) and explain when k (the range) makes it impractical.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 35,
+          "topic": "\ud83c\udd95 Radix Sort & Bucket Sort (Medium, Day 1/2)",
+          "tasks": "Learn: Radix Sort (digit-by-digit, stable counting sort as a subroutine), Bucket Sort (uniform distribution assumption). | Code: Begin implementing Radix Sort (LSD \u2014 least significant digit first). | Practice: None yet.",
+          "achievement": "Radix Sort correctly sorts multi-digit numbers using repeated counting-sort passes.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 36,
+          "topic": "\ud83c\udd95 Radix & Bucket Sort: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 when Radix beats comparison sorts (fixed-digit-length integers, large datasets). | Code: Finish Radix Sort; implement Bucket Sort for floats in [0,1). | Practice: 2 problems comparing sort choice for different input distributions.",
+          "achievement": "Can correctly choose between Counting/Radix/Bucket/comparison sort given any input distribution description.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 37,
+          "topic": "HANDS-ON LAB: Median of Two Sorted Arrays (Medium, Day 1/2)",
+          "tasks": "Learn: Binary-search-on-partition technique for finding median across two sorted arrays without merging. | Code: Begin implementing the O(log(min(N,M))) solution. | Practice: None yet \u2014 this problem IS the practice.",
+          "achievement": "Understands why the partition must satisfy `maxLeft \u2264 minRight` on both arrays simultaneously.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 38,
+          "topic": "Median of Two Sorted Arrays: Finish + Phase Cheat Sheet",
+          "tasks": "Learn: Review the full Searching & Sorting cheat sheet. | Code: Finish and test the median solution. | Practice: Timed mixed-review (3 problems spanning binary search + sorting).",
+          "achievement": "Can solve Median of Two Sorted Arrays cold and recite every sort's complexity/stability from memory.",
+          "priority": "MUST KNOW"
+        }
+      ]
+    },
+    {
+      "id": "7-4",
+      "title": "TWO POINTERS & SLIDING WINDOW",
+      "days": "",
+      "items": [
+        {
+          "day": 39,
+          "topic": "Two Pointers: Opposite Direction (Light)",
+          "tasks": "Learn: Opposite-direction two-pointer pattern \u2014 converging pointers on sorted input. | Code: Implement Two Sum II (sorted array input). | Practice: 2 problems (Two Sum sorted, Container With Most Water).",
+          "achievement": "Can solve Two Sum on a sorted array in O(N) using two converging pointers.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 40,
+          "topic": "Two Pointers: Same Direction / Fast-Slow (Light)",
+          "tasks": "Learn: Same-direction pointer pattern \u2014 removing duplicates in-place, fast-slow for middle-finding (revisit from Day 15's cycle context). | Code: Implement Remove Duplicates from Sorted Array in-place. | Practice: 2 problems (remove duplicates, move zeroes).",
+          "achievement": "Can solve in-place array modification problems using same-direction two pointers.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 41,
+          "topic": "3Sum: Opposite Pointers with Duplicate Skipping (Medium, Day 1/2)",
+          "tasks": "Learn: Extending two-pointer to 3Sum \u2014 fix one element, two-pointer the rest, skip duplicates correctly. | Code: Begin implementing 3Sum. | Practice: None yet.",
+          "achievement": "Understands exactly where and why duplicate-skipping logic goes in the loop.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 42,
+          "topic": "3Sum: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 3Sum Closest, 4Sum as generalizations. | Code: Finish and test 3Sum. | Practice: 3 problems (3Sum, 3Sum Closest, Trapping Rain Water via two pointers).",
+          "achievement": "Can implement 3Sum in O(N\u00b2) with correct duplicate handling, no Set needed.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 43,
+          "topic": "Sliding Window: Fixed-Size Window (Light)",
+          "tasks": "Learn: Fixed-size window mechanics \u2014 window slides by exactly one element per step. | Code: Implement Max Sum Subarray of Size K. | Practice: 2 problems (fixed window problems).",
+          "achievement": "Can implement a fixed-size sliding window in O(N) without recomputing the window sum from scratch each time.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 44,
+          "topic": "Sliding Window: Variable-Size Window (Medium, Day 1/2)",
+          "tasks": "Learn: Variable window mechanics \u2014 grow/shrink conditions, the \"shrink while invalid\" pattern. | Code: Begin implementing Longest Substring Without Repeating Characters. | Practice: None yet.",
+          "achievement": "Can articulate the exact shrink condition before finishing the implementation.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 45,
+          "topic": "Variable Sliding Window: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 Longest Substring with K Distinct Characters as a generalization. | Code: Finish Longest Substring Without Repeating Characters. | Practice: 2 problems (Max Consecutive Ones III, Longest Substring with K Distinct).",
+          "achievement": "Has a working O(N) solution and can adapt the shrink condition to new constraints.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 46,
+          "topic": "Minimum Window Substring (Medium, Day 1/2)",
+          "tasks": "Learn: The hardest variable-window pattern \u2014 two frequency maps, \"valid window\" tracking via a counter. | Code: Begin implementing Minimum Window Substring (LeetCode 76). | Practice: None yet.",
+          "achievement": "Understands why a single counter (matched characters) avoids comparing two full frequency maps every iteration.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 47,
+          "topic": "Minimum Window Substring: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review the full solution trace on a worked example. | Code: Finish and test Minimum Window Substring. | Practice: 2 problems (Minimum Window Substring variants, Permutation in String).",
+          "achievement": "Can implement Minimum Window Substring in O(N) cold, without referencing notes.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 48,
+          "topic": "Prefix Sum: Range Sum Queries (Light)",
+          "tasks": "Learn: Prefix sum array construction, O(1) range sum after O(N) preprocessing. | Code: Implement a Range Sum Query class using prefix sums. | Practice: 2 problems (range sum query, 2D range sum).",
+          "achievement": "Can answer any range-sum query in O(1) after building the prefix sum array.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 49,
+          "topic": "Subarray Sum Equals K: Prefix Map Pattern (Medium, Day 1/2)",
+          "tasks": "Learn: Combining prefix sum with a HashMap to count subarrays with a target sum \u2014 the \"prefix sum seen before\" trick. | Code: Begin implementing Subarray Sum Equals K (LeetCode 560). | Practice: None yet.",
+          "achievement": "Understands why `prefixSum - k` lookup in a HashMap solves this in O(N).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 50,
+          "topic": "Subarray Sum Equals K: Finish + Phase Cheat Sheet",
+          "tasks": "Learn: Review the full Two Pointers & Sliding Window cheat sheet. | Code: Finish and test Subarray Sum Equals K. | Practice: Timed mixed review (3 problems spanning two pointers, sliding window, prefix sum).",
+          "achievement": "Can solve Subarray Sum Equals K cold and recite the full phase cheat sheet.",
+          "priority": "MUST KNOW"
+        }
+      ]
+    },
+    {
+      "id": "7-5",
+      "title": "STRING PATTERNS & SUBSTRING SEARCH",
+      "days": "",
+      "items": [
+        {
+          "day": 51,
+          "topic": "Java String Fundamentals for DSA (Light)",
+          "tasks": "Learn: String immutability impact on algorithms, char arrays vs String, when to use StringBuilder in tight loops. | Code: Convert a naive concatenation-in-loop snippet to use StringBuilder. | Practice: 2 problems (reverse a string in-place using char array).",
+          "achievement": "Can explain why string concatenation in a loop is O(N\u00b2) total and how StringBuilder fixes it.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 52,
+          "topic": "Frequency Counting for Strings (Light)",
+          "tasks": "Learn: Frequency arrays (fixed alphabet) vs HashMap for string problems. | Code: Implement anagram detection using a frequency array. | Practice: 2 problems (valid anagram, group anagrams).",
+          "achievement": "Can solve any anagram/permutation-detection problem using frequency counting without a HashMap when the alphabet is small.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 53,
+          "topic": "Palindrome Problems: Two-Pointer Check (Light)",
+          "tasks": "Learn: Two-pointer palindrome verification, handling case/non-alphanumeric characters. | Code: Implement Valid Palindrome (with character filtering). | Practice: 2 problems (valid palindrome, valid palindrome II \u2014 one deletion allowed).",
+          "achievement": "Can verify a palindrome in O(N) with O(1) space using two pointers.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 54,
+          "topic": "Longest Palindromic Substring: Expand From Center (Medium, Day 1/2)",
+          "tasks": "Learn: Expand-from-center technique, handling both odd and even-length palindromes. | Code: Begin implementing Longest Palindromic Substring. | Practice: None yet.",
+          "achievement": "Understands why two separate expansion calls (odd-center, even-center) are needed per index.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 55,
+          "topic": "Longest Palindromic Substring: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 Palindromic Substrings (count all) as a close variant. | Code: Finish and test the expand-from-center solution. | Practice: 2 problems (Longest Palindromic Substring, Palindromic Substrings count).",
+          "achievement": "Can implement Longest Palindromic Substring in O(N\u00b2) cold.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 56,
+          "topic": "String Hashing: Rolling Hash (Light)",
+          "tasks": "Learn: Rolling hash concept \u2014 computing a hash incrementally as a window slides, avoiding full recomputation. | Code: Implement a basic rolling hash function. | Practice: 1 conceptual problem (verify rolling hash matches direct hash on a few windows).",
+          "achievement": "Can explain how rolling hash updates in O(1) per window shift instead of O(L) recomputation.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 57,
+          "topic": "Rabin-Karp Algorithm (Medium, Day 1/2)",
+          "tasks": "Learn: Using rolling hash for substring search \u2014 comparing hash values, handling hash collisions with a verification step. | Code: Begin implementing Rabin-Karp. | Practice: None yet.",
+          "achievement": "Understands why a hash match still requires a character-by-character verification step.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 58,
+          "topic": "Rabin-Karp: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review average-case O(N+M) vs worst-case behavior under hash collisions. | Code: Finish and test Rabin-Karp against a naive substring search, comparing performance. | Practice: 2 problems (repeated substring pattern, find all anagram start indices).",
+          "achievement": "Can implement Rabin-Karp and explain its worst-case degradation scenario.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 59,
+          "topic": "KMP: Building the LPS Array (Heavy, Day 1/4)",
+          "tasks": "Learn: The failure function / LPS (Longest Prefix Suffix) array concept \u2014 what it represents and why it enables skipping. | Code: Implement the LPS array construction by hand-tracing 2 example patterns first, then in code. | Practice: None yet \u2014 pure LPS construction focus.",
+          "achievement": "Can construct the LPS array for any pattern by hand within 2 minutes.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 60,
+          "topic": "KMP: Using the LPS Array for Search (Heavy, Day 2/4)",
+          "tasks": "Learn: How the LPS array drives the search pointer's fallback behavior on a mismatch. | Code: Implement the full KMP search function using the LPS array from Day 59. | Practice: None yet.",
+          "achievement": "Has a complete, working KMP implementation achieving O(N+M).",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 61,
+          "topic": "KMP: Practice Day 1 (Heavy, Day 3/4)",
+          "tasks": "Learn: Review the full algorithm trace on an adversarial input (e.g., \"aaaaab\" pattern). | Code: None \u2014 pure practice. | Practice: 2 problems (implement strStr, repeated substring pattern via KMP).",
+          "achievement": "Can trace KMP's pointer movement on paper for any given text/pattern pair.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 62,
+          "topic": "KMP: Practice Day 2 (Heavy, Day 4/4)",
+          "tasks": "Learn: Comparison \u2014 when KMP, Rabin-Karp, or naive search is the right interview answer. | Code: None \u2014 pure practice. | Practice: 2 more problems combining KMP-style thinking with other string patterns.",
+          "achievement": "Can justify, in an interview, the choice between naive/Rabin-Karp/KMP for a given constraint set.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 63,
+          "topic": "HANDS-ON LAB: Substring Search Benchmarking + Phase Cheat Sheet",
+          "tasks": "Learn: Review the full String Patterns cheat sheet. | Code: Benchmark naive vs Rabin-Karp vs KMP on the same large input. | Practice: Timed mixed review (3 problems spanning frequency counting, palindromes, substring search).",
+          "achievement": "Can produce real benchmark numbers showing KMP/Rabin-Karp's advantage on adversarial inputs and recite the phase cheat sheet.",
+          "priority": "MUST KNOW"
+        }
+      ]
+    },
+    {
+      "id": "7-6",
+      "title": "MONOTONIC STACK & MONOTONIC QUEUE",
+      "days": "",
+      "items": [
+        {
+          "day": 64,
+          "topic": "Monotonic Stack: Concept & Next Greater Element (Light)",
+          "tasks": "Learn: What makes a stack \"monotonic,\" why it solves Next Greater Element in O(N) vs naive O(N\u00b2). | Code: Implement Next Greater Element from scratch. | Practice: 2 problems (Next Greater Element I & II \u2014 circular variant).",
+          "achievement": "Can implement Next Greater Element in O(N) using a monotonic decreasing stack.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 65,
+          "topic": "Monotonic Stack: Daily Temperatures & Variants (Light)",
+          "tasks": "Learn: Generalizing the pattern \u2014 storing indices instead of values when distance matters. | Code: Implement Daily Temperatures. | Practice: 2 problems (Daily Temperatures, Next Smaller Element).",
+          "achievement": "Can decide when to store values vs indices on the monotonic stack based on what the problem asks for.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 66,
+          "topic": "Monotonic Queue: Sliding Window Maximum (Medium, Day 1/2)",
+          "tasks": "Learn: Monotonic deque mechanics \u2014 maintaining a decreasing deque of candidates for the window max. | Code: Begin implementing Sliding Window Maximum. | Practice: None yet.",
+          "achievement": "Understands why elements are evicted from the back of the deque when a larger element arrives.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 67,
+          "topic": "Sliding Window Maximum: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review the full O(N) proof (amortized analysis of deque operations). | Code: Finish and test Sliding Window Maximum. | Practice: 2 problems (Sliding Window Maximum, shortest subarray with sum at least K).",
+          "achievement": "Can implement Sliding Window Maximum in true O(N) cold.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 68,
+          "topic": "HANDS-ON LAB: Maximal Rectangle Solver + Phase Cheat Sheet",
+          "tasks": "Learn: Reducing Maximal Rectangle to repeated Largest Rectangle in Histogram calls. | Code: Implement Largest Rectangle in Histogram using a monotonic stack, then extend to Maximal Rectangle. | Practice: Timed review (2 problems).",
+          "achievement": "Can solve Maximal Rectangle by combining histogram-area logic with a monotonic stack, and recite the phase cheat sheet.",
+          "priority": "MUST KNOW"
+        }
+      ]
+    },
+    {
+      "id": "7-7",
+      "title": "RECURSION & BACKTRACKING",
+      "days": "",
+      "items": [
+        {
+          "day": 69,
+          "topic": "Recursion: The Mental Model (Light)",
+          "tasks": "Learn: Base case, recursive case, trusting the recursive call, call stack visualization. | Code: Trace 3 recursive functions by hand before running them. | Practice: 2 problems (factorial, power function via recursion).",
+          "achievement": "Can trace any moderately complex recursive function's call stack by hand.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 70,
+          "topic": "Recursion: Recursion Tree & Recurrence Relations (Light)",
+          "tasks": "Learn: Visualizing recursion as a tree, deriving time complexity from recurrence relations (basic Master Theorem intuition). | Code: Draw and code 2 recursion trees (Fibonacci naive vs memoized). | Practice: 2 problems (climbing stairs via plain recursion, generate parentheses intro).",
+          "achievement": "Can explain why naive recursive Fibonacci is O(2^N) by drawing its recursion tree.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 71,
+          "topic": "Backtracking: The Blueprint (Light)",
+          "tasks": "Learn: Choice \u2014 constraint \u2014 goal framework, the generic backtracking template (choose, explore, un-choose). | Code: Implement the generic backtracking template as a reusable skeleton. | Practice: 2 problems (subsets, then adapt template).",
+          "achievement": "Can write the generic backtracking template from memory in under 2 minutes.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 72,
+          "topic": "Backtracking: Subsets & Combinations (Light)",
+          "tasks": "Learn: Adapting the template for subsets (power set) and combinations (choose K of N). | Code: Implement Subsets and Combination Sum. | Practice: 2 problems (subsets, combination sum).",
+          "achievement": "Can adapt the backtracking template to subsets/combinations without re-deriving it from scratch.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 73,
+          "topic": "Backtracking: Permutations (Medium, Day 1/2)",
+          "tasks": "Learn: Permutations via swap-based backtracking vs used[] array tracking; handling duplicates. | Code: Begin implementing Permutations (and Permutations II with duplicates). | Practice: None yet.",
+          "achievement": "Understands the difference between the swap-based and used-array approaches to permutation generation.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 74,
+          "topic": "Permutations: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review duplicate-skipping logic for Permutations II. | Code: Finish both Permutations and Permutations II. | Practice: 2 problems (permutations, permutations with duplicates).",
+          "achievement": "Can generate all permutations, with correct duplicate handling, in both forms.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 75,
+          "topic": "Pruning Techniques (Light)",
+          "tasks": "Learn: Dead-end detection to optimize backtracking \u2014 early termination conditions, constraint propagation basics. | Code: Add a pruning condition to an existing unpruned backtracking solution and measure the speedup. | Practice: 2 problems where pruning matters (combination sum with target, word search).",
+          "achievement": "Can identify and add a pruning condition that meaningfully cuts the search space.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 76,
+          "topic": "N-Queens: Setup & Naive Approach (Heavy, Day 1/3)",
+          "tasks": "Learn: The N-Queens problem statement, naive board-scanning conflict check (before optimization). | Code: Begin implementing N-Queens with naive O(N) conflict checking per placement. | Practice: None yet.",
+          "achievement": "Has a working but unoptimized N-Queens solution.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 77,
+          "topic": "N-Queens: Optimized Conflict Checking (Heavy, Day 2/3)",
+          "tasks": "Learn: O(1) conflict checking using sets/booleans for columns, diagonals, anti-diagonals. | Code: Refactor N-Queens to use O(1) conflict checks. | Practice: None yet.",
+          "achievement": "N-Queens now runs with O(1) conflict checking per placement instead of O(N) board scans.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 78,
+          "topic": "N-Queens: Practice + Variants (Heavy, Day 3/3)",
+          "tasks": "Learn: Review \u2014 counting solutions vs returning all solutions as a variant. | Code: None \u2014 pure practice. | Practice: 2 problems (N-Queens, N-Queens II \u2014 count only).",
+          "achievement": "Can implement N-Queens with optimal conflict checking cold, in either \"return all\" or \"count only\" form.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 79,
+          "topic": "Sudoku Solver (Heavy, Day 1/2)",
+          "tasks": "Learn: Constraint propagation for Sudoku \u2014 row/column/box validity checks, backtracking with early pruning. | Code: Begin implementing the Sudoku solver. | Practice: None yet.",
+          "achievement": "Has working row/column/box validity-check functions integrated into the backtracking skeleton.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 80,
+          "topic": "Sudoku Solver: Finish + Phase Cheat Sheet",
+          "tasks": "Learn: Review the full Recursion & Backtracking cheat sheet. | Code: Finish and test the Sudoku solver. | Practice: Timed mixed review (2 problems spanning recursion + backtracking).",
+          "achievement": "Has a fully working Sudoku solver and can recite the phase cheat sheet.",
+          "priority": "MUST KNOW"
+        }
+      ]
+    },
+    {
+      "id": "7-8",
+      "title": "HIERARCHICAL DATA STRUCTURES",
+      "days": "",
+      "items": [
+        {
+          "day": 81,
+          "topic": "Binary Trees: Node Structure & Properties (Light)",
+          "tasks": "Learn: Tree node structure, height, depth, leaf node counting. | Code: Implement basic tree construction and a height-calculation function. | Practice: 2 problems (max depth, count leaf nodes).",
+          "achievement": "Can compute tree height/depth recursively in O(N).",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 82,
+          "topic": "Binary Tree Traversals: Recursive (Light)",
+          "tasks": "Learn: Preorder, Inorder, Postorder \u2014 recursive implementations. | Code: Implement all 3 recursive traversals. | Practice: 2 problems (return traversal as a list, verify two trees have same inorder).",
+          "achievement": "Can implement all 3 recursive traversals from memory.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 83,
+          "topic": "Binary Tree Traversals: Iterative + Level Order (Medium, Day 1/2)",
+          "tasks": "Learn: Iterative traversal using an explicit stack, Level-order traversal (BFS) using a queue. | Code: Begin implementing iterative inorder traversal and level-order traversal. | Practice: None yet.",
+          "achievement": "Has a working iterative inorder traversal using an explicit stack.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 84,
+          "topic": "Iterative Traversals: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 iterative preorder/postorder (the trickier ones) using stack tricks. | Code: Finish iterative preorder and postorder; finish level-order traversal. | Practice: 2 problems (binary tree level order traversal, zigzag level order).",
+          "achievement": "Can implement all 4 traversal types both recursively and iteratively.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 85,
+          "topic": "Binary Tree: Diameter & Path Sum (Light)",
+          "tasks": "Learn: Diameter of a binary tree (combining left+right height at each node), root-to-leaf path sum problems. | Code: Implement Diameter of Binary Tree. | Practice: 2 problems (diameter, path sum).",
+          "achievement": "Can solve Diameter of Binary Tree in a single O(N) pass (not O(N\u00b2)).",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 86,
+          "topic": "Binary Search Tree: Search, Insert, Delete (Medium, Day 1/2)",
+          "tasks": "Learn: BST property, search/insert operations, the 3 deletion cases (leaf, one child, two children). | Code: Begin implementing BST insert and search. | Practice: None yet.",
+          "achievement": "Has working BST insert and search operations.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 87,
+          "topic": "BST Delete + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review the two-children deletion case (find successor/predecessor). | Code: Finish BST delete, handling all 3 cases. | Practice: 2 problems (delete node in BST, insert into BST).",
+          "achievement": "Can implement BST delete correctly for all 3 cases.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 88,
+          "topic": "BST: Validate BST & Kth Smallest (Light)",
+          "tasks": "Learn: Validating BST property (range-checking, not just parent-child comparison), Kth smallest via inorder traversal. | Code: Implement Validate BST and Kth Smallest in BST. | Practice: 2 problems (validate BST, kth smallest, kth largest).",
+          "achievement": "Can validate a BST correctly (catching the classic \"only checks immediate children\" bug) and find Kth smallest in O(H+K).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 89,
+          "topic": "Balanced BSTs: AVL & Red-Black Trees Conceptual (Light)",
+          "tasks": "Learn: Balance factor concept, why unbalanced BSTs degrade to O(N), Red-Black tree's role as Java's TreeMap/HashMap bucket backing. | Code: None \u2014 conceptual day. | Practice: 2 conceptual questions (when does a BST become a linked list? why does Java use Red-Black trees internally?).",
+          "achievement": "Can explain why an unbalanced BST degrades to O(N) and name where Red-Black trees are used inside the JDK.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 90,
+          "topic": "\ud83c\udd95 AVL Rotations: LL & RR Cases (Heavy, Day 1/3)",
+          "tasks": "Learn: Balance factor calculation after insertion, the Left-Left and Right-Right single-rotation cases. | Code: Implement AVL node structure, balance factor calculation, and single rotation (LL case) function. | Practice: None yet.",
+          "achievement": "Can identify an LL or RR imbalance from a balance factor calculation and apply the correct single rotation.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 91,
+          "topic": "\ud83c\udd95 AVL Rotations: LR & RL Cases (Heavy, Day 2/3)",
+          "tasks": "Learn: The Left-Right and Right-Left double-rotation cases (rotate child first, then the node). | Code: Implement the LR and RL double-rotation functions. | Practice: None yet.",
+          "achievement": "Can identify an LR or RL imbalance and apply the correct two-step rotation sequence.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 92,
+          "topic": "\ud83c\udd95 AVL Tree: Full Insert with Self-Balancing (Heavy, Day 3/3)",
+          "tasks": "Learn: Wiring all 4 rotation cases into a complete AVL insert function that rebalances on the way back up the recursion. | Code: Finish a complete, working AVL tree insert method. | Practice: 2 problems (insert a sequence into an AVL tree by hand and verify against your code's output).",
+          "achievement": "Has a fully working, self-balancing AVL insert implementation handling all 4 rotation cases correctly.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 93,
+          "topic": "Heaps: Binary Heap Representation (Light)",
+          "tasks": "Learn: Array-based heap representation, parent/child index formulas, Min-Heap vs Max-Heap. | Code: Implement siftUp and siftDown functions. | Practice: 2 problems (kth largest element using a heap, top K frequent elements).",
+          "achievement": "Can implement siftUp/siftDown from memory and explain the parent/child index math.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 94,
+          "topic": "Heaps: Heapify & PriorityQueue Usage (Light)",
+          "tasks": "Learn: Building a heap from an unsorted array in O(N) (heapify), Java's `PriorityQueue` with custom comparators. | Code: Implement heapify and use Java's `PriorityQueue` with a custom comparator for a problem. | Practice: 2 problems (merge K sorted lists using a heap, find median from data stream).",
+          "achievement": "Can explain why heapify is O(N) (not O(N log N)) and use `PriorityQueue` fluently with custom orderings.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 95,
+          "topic": "Tries: Node Structure & Insert/Search (Light)",
+          "tasks": "Learn: Trie node structure (array or map of children), insert and search operations. | Code: Implement Trie insert and search. | Practice: 2 problems (implement Trie, word search II setup).",
+          "achievement": "Can implement Trie insert and search in O(L) per operation.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 96,
+          "topic": "Tries: Prefix Search & Autocomplete Design (Medium, Day 1/2)",
+          "tasks": "Learn: `startsWith` prefix matching, extending Trie nodes to support autocomplete suggestions. | Code: Begin implementing the autocomplete system (storing top suggestions per node, or DFS-collecting from a prefix). | Practice: None yet.",
+          "achievement": "Trie now supports `startsWith` and can list all words under a given prefix.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 97,
+          "topic": "Autocomplete System: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 ranking suggestions (frequency-based) for a production-quality autocomplete. | Code: Finish the autocomplete system, returning top-K ranked suggestions. | Practice: 2 problems (design search autocomplete system, replace words using Trie).",
+          "achievement": "Has a working Trie-based autocomplete system returning ranked top-K suggestions for any prefix.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 98,
+          "topic": "Segment Trees: Construction & Range Query (Heavy, Day 1/3)",
+          "tasks": "Learn: Segment tree structure for range queries, recursive construction, range-sum query logic. | Code: Begin implementing segment tree construction and the range sum query function. | Practice: None yet.",
+          "achievement": "Has a working segment tree that answers range-sum queries in O(log N).",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 99,
+          "topic": "Segment Trees: Point Update (Heavy, Day 2/3)",
+          "tasks": "Learn: Point update logic \u2014 updating a single index and propagating the change up to ancestor nodes. | Code: Implement the point-update function. | Practice: None yet.",
+          "achievement": "Segment tree now supports both range queries and point updates correctly.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 100,
+          "topic": "Segment Trees: Lazy Propagation for Range Updates (Heavy, Day 3/3)",
+          "tasks": "Learn: Lazy propagation \u2014 deferring updates to child nodes until they're actually queried, avoiding O(N) range updates. | Code: Implement lazy propagation for range updates. | Practice: 2 problems (range sum query mutable, range update + range query).",
+          "achievement": "Has a complete segment tree supporting range updates AND range queries in O(log N) using lazy propagation.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 101,
+          "topic": "Fenwick Tree (Binary Indexed Tree) (Medium, Day 1/2)",
+          "tasks": "Learn: Fenwick Tree structure (implicit binary representation), prefix sum query and point update via bit manipulation on indices. | Code: Begin implementing Fenwick Tree update and query functions. | Practice: None yet.",
+          "achievement": "Understands the `i & (-i)` bit trick that drives Fenwick Tree traversal.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 102,
+          "topic": "Fenwick Tree: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review \u2014 when to prefer Fenwick over Segment Tree (simpler code, less memory, but point-update/range-query only by default). | Code: Finish and test the Fenwick Tree. | Practice: 2 problems (range sum query mutable using Fenwick, count of smaller numbers after self).",
+          "achievement": "Can implement Fenwick Tree from scratch and justify choosing it over a Segment Tree for a given problem.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 103,
+          "topic": "Disjoint Set Union: Path Compression & Union by Rank (Medium, Day 1/2)",
+          "tasks": "Learn: Union-Find structure, path compression optimization, union by rank optimization. | Code: Begin implementing DSU with both optimizations. | Practice: None yet.",
+          "achievement": "Has a working `find()` function with path compression.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 104,
+          "topic": "DSU: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review the near-O(1) amortized complexity argument for combined path compression + union by rank. | Code: Finish DSU with union by rank. | Practice: 2 problems (number of provinces, redundant connection).",
+          "achievement": "Has a fully optimized DSU achieving near-O(1) amortized find/union.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 105,
+          "topic": "HANDS-ON LAB: Trie-Based Autocomplete Extension + Phase Cheat Sheet",
+          "tasks": "Learn: Review the entire Hierarchical Data Structures cheat sheet (Trees, BST, AVL, Heaps, Tries, Segment/Fenwick, DSU). | Code: Extend the Day 97 autocomplete system with a new feature (e.g., fuzzy matching or recency weighting). | Practice: Timed mixed review (4 problems spanning the entire phase).",
+          "achievement": "Can recite the full phase cheat sheet and confidently pick the right tree-based structure for any new problem.",
+          "priority": "IMPORTANT"
+        }
+      ]
+    },
+    {
+      "id": "7-1",
+      "title": "GRAPHS & GRAPH ALGORITHMS",
+      "days": "",
+      "items": [
+        {
+          "day": 106,
+          "topic": "Graph Fundamentals & Representations (Light)",
+          "tasks": "Learn: Adjacency matrix vs adjacency list vs edge list, directed/undirected, weighted/unweighted, cyclic/acyclic (DAG). | Code: Implement both adjacency matrix and adjacency list representations for the same graph. | Practice: 2 problems (build graph from edge list, count connected components via simple traversal).",
+          "achievement": "Can choose the correct representation for a given problem based on density and required operations.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 107,
+          "topic": "Breadth-First Search (BFS) (Light)",
+          "tasks": "Learn: BFS using a queue, shortest path in unweighted graphs, level-by-level exploration. | Code: Implement BFS from scratch. | Practice: 2 problems (shortest path in unweighted graph, rotting oranges \u2014 multi-source BFS).",
+          "achievement": "Can implement BFS and use it for shortest path in an unweighted graph.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 108,
+          "topic": "Depth-First Search (DFS) (Light)",
+          "tasks": "Learn: DFS using recursion and explicit stack, connected components via DFS. | Code: Implement DFS both recursively and iteratively. | Practice: 2 problems (number of islands, flood fill).",
+          "achievement": "Can implement DFS both ways and explain when iterative DFS is necessary (avoiding stack overflow on deep graphs).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 109,
+          "topic": "Topological Sort: Kahn's Algorithm (Medium, Day 1/2)",
+          "tasks": "Learn: BFS-based topological sort using in-degree tracking. | Code: Begin implementing Kahn's Algorithm. | Practice: None yet.",
+          "achievement": "Understands why nodes with in-degree 0 are the correct starting points.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 110,
+          "topic": "Topological Sort: DFS-Based + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: DFS-based topological sort (postorder reversal) as an alternative to Kahn's. | Code: Finish Kahn's Algorithm; implement DFS-based topological sort. | Practice: 2 problems (course schedule, course schedule II).",
+          "achievement": "Can implement topological sort both ways and detect a cycle (no valid ordering exists) in the process.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 111,
+          "topic": "\ud83c\udd95 Bipartite Graph Check (Light)",
+          "tasks": "Learn: 2-coloring via BFS/DFS \u2014 a graph is bipartite iff it has no odd-length cycle. | Code: Implement bipartite check using BFS-based 2-coloring. | Practice: 2 problems (is graph bipartite, possible bipartition).",
+          "achievement": "Can implement a bipartite check and explain why an odd cycle makes a graph non-bipartite.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 112,
+          "topic": "Dijkstra's Algorithm: Setup & PriorityQueue Approach (Heavy, Day 1/3)",
+          "tasks": "Learn: Single-source shortest path for non-negative weights, edge relaxation, why a PriorityQueue (not a plain queue) is essential. | Code: Begin implementing Dijkstra's Algorithm. | Practice: None yet.",
+          "achievement": "Understands edge relaxation and why Dijkstra fails with negative weights (conceptually, before finishing code).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 113,
+          "topic": "Dijkstra's Algorithm: Finish Implementation (Heavy, Day 2/3)",
+          "tasks": "Learn: Review handling of \"already finalized\" nodes and lazy deletion in the PriorityQueue. | Code: Finish and test Dijkstra's Algorithm. | Practice: None yet.",
+          "achievement": "Has a fully working Dijkstra's implementation using `PriorityQueue<int[]>`.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 114,
+          "topic": "Dijkstra's Algorithm: Practice (Heavy, Day 3/3)",
+          "tasks": "Learn: Review variants \u2014 network delay time, cheapest flights with K stops (Dijkstra variant). | Code: None \u2014 pure practice. | Practice: 2 problems (network delay time, path with maximum probability).",
+          "achievement": "Can adapt Dijkstra's Algorithm to non-standard variants (probability maximization, K-stop constraints).",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 115,
+          "topic": "Bellman-Ford Algorithm (Medium, Day 1/2)",
+          "tasks": "Learn: Handling negative weights, V-1 relaxation rounds, negative cycle detection via a Vth round. | Code: Begin implementing Bellman-Ford. | Practice: None yet.",
+          "achievement": "Understands why exactly V-1 rounds of relaxation guarantee correctness.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 116,
+          "topic": "Bellman-Ford: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review negative cycle detection (extra round still relaxes an edge \u2192 cycle exists). | Code: Finish Bellman-Ford with negative cycle detection. | Practice: 2 problems (cheapest flights with K stops via Bellman-Ford-style relaxation, detect negative cycle).",
+          "achievement": "Can implement Bellman-Ford and correctly detect negative cycles.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 117,
+          "topic": "Floyd-Warshall Algorithm (Medium, Day 1/2)",
+          "tasks": "Learn: All-pairs shortest path via DP, the `dp[i][j] = min(dp[i][j], dp[i][k]+dp[k][j])` transition. | Code: Begin implementing Floyd-Warshall. | Practice: None yet.",
+          "achievement": "Understands why the loop order (k outermost) is essential for correctness.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 118,
+          "topic": "Floyd-Warshall: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review when Floyd-Warshall beats running Dijkstra V times (dense small graphs). | Code: Finish and test Floyd-Warshall. | Practice: 2 problems (find the city with smallest number of neighbors, all-pairs shortest path applications).",
+          "achievement": "Can implement Floyd-Warshall in O(V\u00b3) and justify when it's preferable to V calls to Dijkstra.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 119,
+          "topic": "Minimum Spanning Tree: Kruskal's Algorithm (Medium, Day 1/2)",
+          "tasks": "Learn: Edge-selection greedy approach using Union-Find to avoid cycles. | Code: Begin implementing Kruskal's Algorithm (reusing your Phase 8 DSU). | Practice: None yet.",
+          "achievement": "Understands why sorting edges by weight first makes the greedy choice correct.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 120,
+          "topic": "Kruskal's: Finish + Prim's Algorithm Intro (Medium, Day 2/2)",
+          "tasks": "Learn: Finish Kruskal's; learn Prim's Algorithm (vertex-addition greedy using a PriorityQueue). | Code: Finish Kruskal's Algorithm; begin Prim's Algorithm. | Practice: 1 problem (minimum cost to connect all points using Kruskal's).",
+          "achievement": "Has a working Kruskal's implementation and understands Prim's core mechanic.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 121,
+          "topic": "Prim's Algorithm: Finish + Practice (Medium, Day 1/2 \u2014 continuing)",
+          "tasks": "Learn: Review Prim's PriorityQueue-based vertex selection in detail. | Code: Finish Prim's Algorithm. | Practice: 2 problems (minimum cost to connect all points using Prim's, comparing both MST approaches on the same input).",
+          "achievement": "Can implement both Kruskal's and Prim's, and explain which is more efficient for sparse vs dense graphs.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 122,
+          "topic": "Cycle Detection: Directed & Undirected Graphs (Light)",
+          "tasks": "Learn: Directed graph cycle detection (DFS with 3-color marking: white/gray/black), undirected graph cycle detection (DFS or Union-Find). | Code: Implement cycle detection for both directed and undirected graphs. | Practice: 2 problems (course schedule revisited through the cycle-detection lens, redundant connection).",
+          "achievement": "Can implement cycle detection for both graph types and explain why undirected cycle detection can't reuse the directed 3-color approach directly.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 123,
+          "topic": "Strongly Connected Components: Tarjan's/Kosaraju's (Heavy, Day 1/2)",
+          "tasks": "Learn: SCC concept, the high-level idea behind Tarjan's algorithm (low-link values) or Kosaraju's (two-pass DFS). | Code: Begin implementing Tarjan's SCC algorithm. | Practice: None yet.",
+          "achievement": "Understands what a low-link value represents and how it identifies an SCC root.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 124,
+          "topic": "SCC: Finish Implementation (Heavy, Day 2/2)",
+          "tasks": "Learn: Review the full algorithm trace on a small example graph. | Code: Finish and test the SCC implementation. | Practice: 1 problem (number of strongly connected components).",
+          "achievement": "Has a working SCC detection algorithm and can trace it by hand on a small graph.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 125,
+          "topic": "Graph Bridges: Tarjan's Bridge Discovery (Medium, Day 1/2)",
+          "tasks": "Learn: Bridge-finding via DFS discovery times and low-link values (closely related to SCC's low-link concept from Day 123). | Code: Begin implementing Tarjan's Bridges algorithm. | Practice: None yet.",
+          "achievement": "Understands the bridge condition (`low[child] > disc[node]`) and why it identifies a critical edge.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 126,
+          "topic": "Bridges: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review articulation points as a closely related concept (briefly, for awareness). | Code: Finish and test the bridge-finding algorithm (LeetCode 1192 \u2014 Critical Connections). | Practice: 2 problems (critical connections in a network, articulation points awareness problem).",
+          "achievement": "Can implement Tarjan's Bridge Discovery and solve Critical Connections in a Network.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 127,
+          "topic": "HANDS-ON LAB: Network Router Optimizer + Phase Cheat Sheet",
+          "tasks": "Learn: Review the full Graphs cheat sheet (representations, BFS/DFS, topo sort, bipartite, shortest path, MST, SCC, bridges). | Code: Complete the Network Router Optimizer lab, combining traversal + shortest-path techniques. | Practice: Timed mixed review (4 problems spanning the entire Graphs phase).",
+          "achievement": "Can recite the full Graphs cheat sheet and confidently select the right algorithm family for any new graph problem.",
+          "priority": "IMPORTANT"
+        }
+      ]
+    },
+    {
+      "id": "7-2",
+      "title": "GREEDY ALGORITHMS",
+      "days": "",
+      "items": [
+        {
+          "day": 128,
+          "topic": "Greedy Fundamentals: Proving Correctness (Light)",
+          "tasks": "Learn: Greedy choice property, optimal substructure, how to argue (exchange argument) that a greedy approach is correct. | Code: None \u2014 conceptual day with worked proof sketches. | Practice: 2 conceptual problems (is this greedy approach correct? prove or disprove).",
+          "achievement": "Can sketch an exchange-argument proof for why a proposed greedy strategy is or isn't correct.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 129,
+          "topic": "Activity Selection / Interval Scheduling (Light)",
+          "tasks": "Learn: Sort-by-end-time greedy strategy, why sorting by start time fails. | Code: Implement Activity Selection. | Practice: 2 problems (activity selection, non-overlapping intervals).",
+          "achievement": "Can solve Activity Selection optimally and explain precisely why sorting by start time produces a wrong answer.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 130,
+          "topic": "Merge Intervals (Light)",
+          "tasks": "Learn: Interval merging \u2014 sort by start time, then linear merge pass. | Code: Implement Merge Intervals. | Practice: 2 problems (merge intervals, insert interval).",
+          "achievement": "Can implement Merge Intervals in O(N log N) and explain why this sort uses start time (unlike Day 129).",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 131,
+          "topic": "Jump Game Variants (Medium, Day 1/2)",
+          "tasks": "Learn: Reachability (Jump Game I) and minimum jumps (Jump Game II) via greedy range-extension. | Code: Begin implementing Jump Game II. | Practice: None yet.",
+          "achievement": "Understands the \"farthest reachable from current window\" greedy invariant before finishing the code.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 132,
+          "topic": "Jump Game: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review Jump Game I (simpler reachability-only variant) by contrast. | Code: Finish Jump Game II; implement Jump Game I. | Practice: 2 problems (Jump Game I & II, Jump Game III as an extension).",
+          "achievement": "Can solve Jump Game II in O(N) using greedy range tracking, distinct from a BFS-based approach.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 133,
+          "topic": "Huffman Coding (Medium, Day 1/2)",
+          "tasks": "Learn: Optimal prefix-free encoding, building the encoding tree using a min-heap of frequencies. | Code: Begin implementing Huffman Coding tree construction. | Practice: None yet.",
+          "achievement": "Can construct a Huffman tree by hand for a small frequency table before finishing the code.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 134,
+          "topic": "Huffman Coding: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review how the tree generates variable-length prefix codes per character. | Code: Finish Huffman Coding, generating the actual code table. | Practice: 1 problem (implement Huffman encode/decode end-to-end).",
+          "achievement": "Has a complete working Huffman encoder that produces a valid prefix-free code table.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 135,
+          "topic": "Task Scheduling: Job Sequencing & Task Scheduler (Medium, Day 1/2)",
+          "tasks": "Learn: Job Sequencing with Deadlines (greedy by profit, then by feasibility), Task Scheduler (LeetCode 621 \u2014 frequency-based cooldown logic). | Code: Begin implementing Task Scheduler. | Practice: None yet.",
+          "achievement": "Understands the formula-based approach to Task Scheduler (max frequency \u00d7 (n+1) + ties) before finishing code.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 136,
+          "topic": "Task Scheduling: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review Job Sequencing with Deadlines as a separate but related greedy pattern. | Code: Finish Task Scheduler; implement Job Sequencing with Deadlines. | Practice: 2 problems (task scheduler, job sequencing with deadlines).",
+          "achievement": "Can implement both task-scheduling variants and explain the formula-based shortcut for Task Scheduler.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 137,
+          "topic": "Fractional Knapsack + Gas Station (Light)",
+          "tasks": "Learn: Fractional Knapsack (value/weight ratio greedy \u2014 contrast with 0/1 Knapsack, which is NOT greedy), Gas Station's circular feasibility check. | Code: Implement Fractional Knapsack and Gas Station. | Practice: 2 problems (fractional knapsack, gas station).",
+          "achievement": "Can explain precisely why Fractional Knapsack is greedy-solvable but 0/1 Knapsack is not, and solve Gas Station in O(N).",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 138,
+          "topic": "Partitioning & Assignment Problems (Light)",
+          "tasks": "Learn: Greedy partitioning patterns (assign cookies, two-city scheduling) \u2014 the sorting criterion that enables the greedy choice. | Code: Implement Assign Cookies and Two City Scheduling. | Practice: 2 problems (assign cookies, two city scheduling).",
+          "achievement": "Can identify the correct sorting criterion for a new greedy partitioning problem within the first read.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 139,
+          "topic": "Advanced Greedy Problems + Phase Cheat Sheet",
+          "tasks": "Learn: Review the handbook's advanced greedy problems section. Review the full Greedy Algorithms phase cheat sheet. | Code: None \u2014 review day. | Practice: Timed mixed review (3 problems spanning the entire Greedy phase).",
+          "achievement": "Can distinguish, for any new unseen problem, whether greedy is provably correct or whether it secretly requires DP.",
+          "priority": "IMPORTANT"
+        }
+      ]
+    },
+    {
+      "id": "7-3",
+      "title": "DYNAMIC PROGRAMMING",
+      "days": "",
+      "items": [
+        {
+          "day": 140,
+          "topic": "DP Fundamentals: Memoization vs Tabulation (Light)",
+          "tasks": "Learn: State definition, transition relation, base cases; converting brute-force recursion \u2192 memoization \u2192 tabulation. | Code: Take naive recursive Fibonacci and convert it step-by-step to memoized, then tabulated. | Practice: 2 problems (Fibonacci variants, climbing stairs via all 3 forms).",
+          "achievement": "Can convert any brute-force recursive solution to memoized, then to tabulated, as a repeatable 3-step process.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 141,
+          "topic": "1D DP: Climbing Stairs & House Robber (Light)",
+          "tasks": "Learn: Climbing Stairs DP transition, House Robber's \"skip-adjacent\" transition. | Code: Implement Climbing Stairs and House Robber. | Practice: 2 problems (climbing stairs, house robber).",
+          "achievement": "Can write the House Robber transition and explain why it generalizes to a wide class of \"skip-adjacent\" problems.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 142,
+          "topic": "1D DP: House Robber II & Min Cost Climbing Stairs (Light)",
+          "tasks": "Learn: House Robber II's circular-array adaptation (run the linear version twice, excluding first/last). | Code: Implement House Robber II and Min Cost Climbing Stairs. | Practice: 2 problems (house robber II, min cost climbing stairs).",
+          "achievement": "Can adapt a linear 1D DP solution to a circular-array variant by running it twice with different exclusions.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 143,
+          "topic": "0/1 Knapsack: 2D DP Table (Medium, Day 1/2)",
+          "tasks": "Learn: Weight/value representation, the classic 2D DP table construction for 0/1 Knapsack. | Code: Begin implementing 0/1 Knapsack with a full 2D DP table. | Practice: None yet.",
+          "achievement": "Has a working 2D Knapsack DP table and can read off the optimal value.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 144,
+          "topic": "0/1 Knapsack: Space Optimization + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Reducing 2D DP to 1D by iterating weights in reverse order \u2014 why iteration order matters. | Code: Refactor to a space-optimized 1D DP array. | Practice: 2 problems (partition equal subset sum, target sum \u2014 both Knapsack-shaped).",
+          "achievement": "Can implement 0/1 Knapsack with O(capacity) space instead of O(N \u00d7 capacity).",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 145,
+          "topic": "Unbounded Knapsack & Coin Change (Medium, Day 1/2)",
+          "tasks": "Learn: Unbounded Knapsack's forward iteration (vs 0/1's reverse iteration) \u2014 items can be reused. | Code: Begin implementing Coin Change (minimum coins). | Practice: None yet.",
+          "achievement": "Understands precisely why forward iteration allows item reuse while reverse iteration (Day 144) prevents it.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 146,
+          "topic": "Coin Change: Finish + Subset Sum Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review Coin Change II (count combinations, not minimum) as a closely related variant. | Code: Finish Coin Change; implement Coin Change II. | Practice: 2 problems (coin change, coin change II).",
+          "achievement": "Can distinguish \"minimum coins\" DP from \"count combinations\" DP and implement both correctly.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 147,
+          "topic": "DP on Strings: Longest Common Subsequence (Light)",
+          "tasks": "Learn: LCS 2D DP table construction, the diagonal/up/left transition logic. | Code: Implement LCS. | Practice: 2 problems (LCS, longest common substring as a contrast).",
+          "achievement": "Can implement LCS in O(N\u00d7M) and explain the difference between \"subsequence\" and \"substring\" DP transitions.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 148,
+          "topic": "DP on Strings: Longest Palindromic Subsequence (Light)",
+          "tasks": "Learn: Reframing palindrome-subsequence as LCS(string, reverse(string)) \u2014 connecting back to Day 147. | Code: Implement Longest Palindromic Subsequence. | Practice: 2 problems (longest palindromic subsequence, minimum insertions to make palindrome).",
+          "achievement": "Can solve Longest Palindromic Subsequence by recognizing it as a disguised LCS problem.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 149,
+          "topic": "Edit Distance (Medium, Day 1/2)",
+          "tasks": "Learn: The three-operation (insert/delete/replace) DP transition, base case setup for empty-string comparisons. | Code: Begin implementing Edit Distance. | Practice: None yet.",
+          "achievement": "Can write all 3 transition cases (insert/delete/replace) for the Edit Distance DP table by hand.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 150,
+          "topic": "Edit Distance: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review applications \u2014 spell-checkers, diff tools. | Code: Finish and test Edit Distance. | Practice: 2 problems (edit distance, one edit distance \u2014 simplified variant).",
+          "achievement": "Can implement Edit Distance in O(N\u00d7M) cold and explain each of the three operations' contribution to the transition.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 151,
+          "topic": "Wildcard & Regex Matching (Heavy, Day 1/2)",
+          "tasks": "Learn: DP-based pattern matching with `*` and `?` (wildcard) or `*` and `.` (regex) \u2014 the trickiest string DP transition. | Code: Begin implementing Wildcard Matching. | Practice: None yet.",
+          "achievement": "Understands the special handling required for `*` (matches empty OR extends match) before finishing code.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 152,
+          "topic": "Wildcard/Regex Matching: Finish + Practice (Heavy, Day 2/2)",
+          "tasks": "Learn: Review Regex Matching's `*` semantics (tied to the preceding character, unlike Wildcard's standalone `*`). | Code: Finish Wildcard Matching; implement Regex Matching. | Practice: 2 problems (wildcard matching, regular expression matching).",
+          "achievement": "Can implement both Wildcard and Regex matching DP, clearly articulating how their `*` semantics differ.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 153,
+          "topic": "\ud83c\udd95 DP on Trees: House Robber III (Heavy, Day 1/2)",
+          "tasks": "Learn: DP on trees as a distinct mental model \u2014 recursive functions returning a 2-state result per subtree (rob this node / don't rob this node), combined post-order. | Code: Begin implementing House Robber III. | Practice: None yet.",
+          "achievement": "Understands why a single return value per node is insufficient and a 2-state return is required.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 154,
+          "topic": "\ud83c\udd95 DP on Trees: Diameter & Max Path Sum (Heavy, Day 2/2)",
+          "tasks": "Learn: Generalizing tree DP to Diameter of Binary Tree (revisited through the DP lens) and Binary Tree Maximum Path Sum. | Code: Finish House Robber III; implement Binary Tree Maximum Path Sum. | Practice: 2 problems (House Robber III, binary tree maximum path sum).",
+          "achievement": "Can solve House Robber III and Max Path Sum, both using single-pass post-order DP on trees.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 155,
+          "topic": "\ud83c\udd95 Interval DP: Matrix Chain Multiplication (Heavy, Day 1/2)",
+          "tasks": "Learn: The canonical interval DP pattern \u2014 `dp[i][j]` as the optimal cost spanning indices i to j, iterating over all split points k between i and j. | Code: Begin implementing Matrix Chain Multiplication. | Practice: None yet.",
+          "achievement": "Can write the MCM transition `dp[i][j] = min over k of dp[i][k] + dp[k+1][j] + cost(k)` from memory.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 156,
+          "topic": "\ud83c\udd95 Interval DP: Burst Balloons & Palindrome Partitioning (Heavy, Day 2/2)",
+          "tasks": "Learn: Recognizing the same \"split point k between i and j\" signature in Burst Balloons (LeetCode 312, the true DP version) and Palindrome Partitioning II. | Code: Finish Matrix Chain Multiplication; implement Burst Balloons (DP version). | Practice: 2 problems (Burst Balloons, Palindrome Partitioning II).",
+          "achievement": "Can recognize the interval-DP signature in a new, unseen problem and set up the split-point iteration correctly.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 157,
+          "topic": "Bitmask DP: Traveling Salesman Problem (Heavy, Day 1/2)",
+          "tasks": "Learn: Representing visited-vertex sets as integer bitmasks, the `dp[mask][u]` state definition. | Code: Begin implementing TSP via Bitmask DP. | Practice: None yet.",
+          "achievement": "Understands why bitmask DP is only feasible for small N (typically N \u2264 20) due to the 2^N state space.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 158,
+          "topic": "Bitmask DP: Finish + Practice (Heavy, Day 2/2)",
+          "tasks": "Learn: Review \u2014 other bitmask DP applications (e.g., Partition to K Equal Sum Subsets). | Code: Finish TSP Bitmask DP. | Practice: 2 problems (TSP via bitmask, partition to K equal sum subsets).",
+          "achievement": "Can implement TSP using Bitmask DP in O(N\u00b2 \u00d7 2^N) and adapt the bitmask pattern to a new subset-tracking problem.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 159,
+          "topic": "Advanced DP Practice Day 1 (Light)",
+          "tasks": "Learn: Review \u2014 mixed advanced DP problems combining patterns learned so far (e.g., DP + greedy hybrid problems). | Code: None \u2014 pure practice. | Practice: 3 mixed-pattern problems.",
+          "achievement": "Can classify any new DP problem (1D/2D/Knapsack/String/Tree/Interval/Bitmask) within the first minute of reading it.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 160,
+          "topic": "HANDS-ON LAB: Coin Change Optimization (Light)",
+          "tasks": "Learn: Review the Coin Change Optimization hands-on lab problem set. | Code: Complete the lab exercises. | Practice: 2 problems from the lab.",
+          "achievement": "Can complete the Coin Change Optimization lab within its suggested time.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 161,
+          "topic": "Phase Cheat Sheet + Mixed DP Review",
+          "tasks": "Learn: Review the complete Dynamic Programming cheat sheet, including all new additions (Tree DP, Interval DP). | Code: None \u2014 review day. | Practice: Timed mixed review (4 problems spanning the entire DP phase).",
+          "achievement": "Can recite the full DP phase cheat sheet and correctly classify/solve any of the last 22 days' problem types under time pressure.",
+          "priority": "IMPORTANT"
+        }
+      ]
+    },
+    {
+      "id": "7-4",
+      "title": "CUSTOM DESIGN PROBLEMS",
+      "days": "",
+      "items": [
+        {
+          "day": 162,
+          "topic": "The Design Interview Strategy + LRU Cache: Design (Medium, Day 1/2)",
+          "tasks": "Learn: General strategy for \"design X\" problems (clarify requirements \u2192 pick data structures \u2192 implement). LRU Cache's HashMap + Doubly Linked List combination. | Code: Begin implementing LRU Cache. | Practice: None yet.",
+          "achievement": "Understands exactly why HashMap alone (no recency tracking) and DLL alone (no O(1) lookup) each fail individually.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 163,
+          "topic": "LRU Cache: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review eviction logic \u2014 moving an accessed node to the front, evicting from the back on overflow. | Code: Finish and test LRU Cache with O(1) get/put. | Practice: 1 problem (LRU Cache, then re-implement using Java's `LinkedHashMap` access-order mode for comparison).",
+          "achievement": "Has a fully working hand-rolled LRU Cache and can also implement it via `LinkedHashMap` for comparison.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 164,
+          "topic": "LFU Cache: Design & Frequency Buckets (Heavy, Day 1/2)",
+          "tasks": "Learn: LFU's added complexity over LRU \u2014 tracking both recency AND frequency, frequency-bucketed DLLs. | Code: Begin implementing LFU Cache. | Practice: None yet.",
+          "achievement": "Understands the frequency-bucket design (each frequency maps to its own DLL of recency-ordered keys) before finishing code.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 165,
+          "topic": "LFU Cache: Finish + Practice (Heavy, Day 2/2)",
+          "tasks": "Learn: Review the min-frequency tracking that enables O(1) eviction. | Code: Finish and test LFU Cache with O(1) get/put. | Practice: 1 problem (LFU Cache full implementation).",
+          "achievement": "Has a fully working LFU Cache achieving true O(1) get/put.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 166,
+          "topic": "Min Stack/Max Stack Revisited + Design Twitter (Medium, Day 1/2)",
+          "tasks": "Learn: Design Twitter's feed-generation problem \u2014 merging each followee's recent tweets using a max-heap (similar to Merge K Sorted Lists). | Code: Begin implementing Design Twitter. | Practice: None yet.",
+          "achievement": "Understands why a max-heap merge (not sorting everything) is the efficient approach to `getNewsFeed`.",
+          "priority": "MUST KNOW"
+        },
+        {
+          "day": 167,
+          "topic": "Design Twitter: Finish + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Review follow/unfollow bookkeeping and timestamp-based tweet ordering. | Code: Finish and test Design Twitter. | Practice: 1 problem (Design Twitter full implementation).",
+          "achievement": "Has a complete working Design Twitter implementation with efficient `getNewsFeed`.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 168,
+          "topic": "Browser History + Hit Counter/Rate Limiter (Light)",
+          "tasks": "Learn: Browser History (array/stack-based forward-back navigation), Rate Limiter via sliding window counter vs token bucket. | Code: Implement Browser History and a sliding-window Rate Limiter. | Practice: 2 problems (browser history, design hit counter).",
+          "achievement": "Can implement a sliding-window rate limiter and explain why fixed-window counters allow burst abuse at window boundaries.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 169,
+          "topic": "HANDS-ON LAB: Designing an LFU Cache Extension + Phase Cheat Sheet",
+          "tasks": "Learn: Review gotchas/edge cases for the entire Custom Design Problems chapter. | Code: Extend your LFU Cache (Day 164-165) with a TTL (time-to-live) feature. | Practice: Timed mixed review (2 design problems, explained out loud as if in an interview).",
+          "achievement": "Can design and defend, end-to-end, the data structure choices behind any \"design X\" problem in a mock interview setting.",
+          "priority": "IMPORTANT"
+        }
+      ]
+    },
+    {
+      "id": "7-5",
+      "title": "MATH & BIT MANIPULATION",
+      "days": "",
+      "items": [
+        {
+          "day": 170,
+          "topic": "Number Theory: GCD & LCM (Light)",
+          "tasks": "Learn: Euclidean algorithm for GCD, deriving LCM from GCD. | Code: Implement Euclidean GCD (iterative and recursive) and LCM. | Practice: 2 problems (GCD/LCM applications, e.g., simplify fraction).",
+          "achievement": "Can implement Euclidean GCD in both forms and derive LCM from it in O(log(min(A,B))).",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 171,
+          "topic": "Sieve of Eratosthenes (Light)",
+          "tasks": "Learn: Prime generation up to N in O(N log log N), the marking mechanism. | Code: Implement the Sieve of Eratosthenes. | Practice: 2 problems (count primes, prime factorization using a precomputed sieve).",
+          "achievement": "Can implement the Sieve and explain why it's vastly faster than checking primality one number at a time.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 172,
+          "topic": "Fast (Binary) Exponentiation (Light)",
+          "tasks": "Learn: O(log N) exponentiation via repeated squaring. | Code: Implement fast exponentiation (iterative and recursive). | Practice: 2 problems (pow(x,n), super pow with large exponents).",
+          "achievement": "Can implement fast exponentiation in O(log N) and explain the repeated-squaring insight.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 173,
+          "topic": "\ud83c\udd95 Modular Arithmetic: Addition, Subtraction, Multiplication (Light)",
+          "tasks": "Learn: Modular addition/subtraction/multiplication, handling overflow with modulus applied at each step (not just at the end). | Code: Implement safe modular add/subtract/multiply helper functions. | Practice: 2 problems involving large-number modular arithmetic (e.g., count ways mod 10^9+7).",
+          "achievement": "Can implement overflow-safe modular arithmetic helpers and explain why applying the modulus only at the end is unsafe.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 174,
+          "topic": "\ud83c\udd95 Modular Multiplicative Inverse via Fermat's Little Theorem (Medium, Day 1/2)",
+          "tasks": "Learn: Fermat's Little Theorem, deriving the modular inverse as `a^(p-2) mod p` for prime modulus p, using fast exponentiation (Day 172) to compute it. | Code: Begin implementing modular inverse using fast exponentiation. | Practice: None yet.",
+          "achievement": "Understands why Fermat's Little Theorem requires a PRIME modulus and what breaks if it isn't.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 175,
+          "topic": "\ud83c\udd95 Modular Inverse: Computing nCr mod p + Practice (Medium, Day 2/2)",
+          "tasks": "Learn: Combining factorials, modular inverse, and modular multiplication to compute nCr mod a large prime \u2014 a common combinatorics-DP building block. | Code: Finish modular inverse; implement nCr mod p using precomputed factorials and their modular inverses. | Practice: 2 problems (combinatorics problems requiring nCr mod 10^9+7).",
+          "achievement": "Can compute nCr mod a large prime in O(1) per query after O(N) precomputation of factorials and inverse factorials.",
+          "priority": "NICE TO HAVE"
+        },
+        {
+          "day": 176,
+          "topic": "Bit Manipulation: Core Tricks + HANDS-ON LAB: Bitwise Division Engine + Phase Cheat Sheet",
+          "tasks": "Learn: Hamming Weight (Brian Kernighan's algorithm), XOR tricks (single number, swap without temp). Review the full Math & Bit Manipulation cheat sheet including modular arithmetic additions. | Code: Implement Brian Kernighan's algorithm; complete the Bitwise Division Engine lab (integer division using only shifts/subtraction). | Practice: 2 problems (single number, counting bits).",
+          "achievement": "Can implement bitwise integer division and recite the full phase cheat sheet, including the new modular arithmetic section.",
+          "priority": "NICE TO HAVE"
+        }
+      ]
+    },
+    {
+      "id": "7-6",
+      "title": "INTERVIEW STRATEGY & BACKEND BRIDGE",
+      "days": "",
+      "items": [
+        {
+          "day": 177,
+          "topic": "The 15 Problem-Solving Patterns + Interview Framework",
+          "tasks": "Learn: The full list of 15 problem-solving patterns as a unified mental map. The step-by-step interview framework (clarify \u2192 identify pattern \u2192 outline approach \u2192 code \u2192 test edge cases \u2192 analyze complexity). | Code: None \u2014 pure strategy day. | Practice: Pick 3 random problems from across the entire 176-day journey and apply the framework out loud, mapping each to its pattern within seconds.",
+          "achievement": "Can map any previously-solved problem to one of the 15 patterns instantly, and apply the full interview framework live to a brand-new problem.",
+          "priority": "IMPORTANT"
+        },
+        {
+          "day": 178,
+          "topic": "\ud83c\udd95 DSA-to-Backend Pattern Bridge + Final Review",
+          "tasks": "Learn: Map each major DSA pattern to a real production backend use case: Monotonic Stack \u2192 log/event trimming and stock-span-style analytics; Trie \u2192 autocomplete/search-suggestion microservices; DSU \u2192 network partition/connected-component detection in distributed systems; LRU/LFU Cache \u2192 the exact mechanism behind Redis/Caffeine eviction policies; Sliding Window \u2192 rate limiters and real-time metrics aggregation; Graph BFS/Dijkstra \u2192 service-dependency analysis and shortest-path routing in infrastructure; Segment Tree/Fenwick Tree \u2192 real-time analytics dashboards needing fast range aggregation. | Code: None \u2014 synthesis day. | Practice: Use the Java Collections Decision Tree and Complexity Cheat Sheet appendices to rapid-fire answer 5 \"which data structure would you use for X production scenario\" questions.",
+          "achievement": "Can answer \"where would you actually use [DSA structure] in a production backend system?\" with a concrete, named example for at least 6 different structures \u2014 directly bridging this DSA roadmap into the System Design and Spring Boot phases of your master roadmap.",
+          "priority": "IMPORTANT"
+        }
+      ]
+    },
+    {
+      "id": "7-15",
+      "title": "FREQUENTLY ASKED QUESTIONS (COLLEGE PLACEMENT)",
+      "days": "Day 179",
+      "items": [
+        {
+          "day": 179,
+          "topic": "Top 50+ Frequently Asked Questions",
+          "tasks": "Arrays & Strings: Two Sum, Valid Anagram, Longest Substring... | Linked Lists: Reverse Linked List, Merge Two Sorted Lists... | Trees & Graphs: Max Depth, Number of Islands, Course Schedule... | DP & Greedy: Climbing Stairs, Coin Change, LIS... | Sorting, Searching: Binary Search, Merge Intervals, Top K...",
+          "achievement": "Completed practice on the top 50+ most frequently asked DSA questions for college placements.",
+          "priority": "MUST KNOW"
+        }
+      ]
+    }
+  ]
+}
 ];

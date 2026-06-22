@@ -1,11 +1,11 @@
 🚀 **[View the Interactive Dashboard Live](https://Nirajd071.github.io/Roadmap)**
 
-Welcome to the ultimate, comprehensive 635-day journey from Backend basics to advanced AI & LLM Engineering. 
+Welcome to the ultimate, comprehensive 739-day journey from Backend basics to advanced AI & LLM Engineering. 
 This repository contains the source code for the interactive React dashboard and the full daily curriculum below.
 
 ---
 
-# 635-Day Master Backend & AI Engineering Roadmap
+# 739-Day Master Backend & AI Engineering Roadmap
 
 ## System Design & Architecture (128 Days)
 
@@ -3237,4 +3237,543 @@ This repository contains the source code for the interactive React dashboard and
 - **Priority:** MUST KNOW
 - **Tasks:** Reflect on mastering AWS, Kubernetes, Terraform, and MLOps. You have bridged the gap between code and reality.
 - **Achievement:** You are now an Elite DevOps & MLOps Engineer.
+
+## Java Core & Advanced (104 Days)
+
+### JAVA BASICS & SYNTAX (Days 1–15)
+
+#### Day 1: Introduction to Java & JVM Architecture
+- **Priority:** MUST KNOW
+- **Tasks:** Learn what makes Java "write once, run anywhere." Understand the relationship between JDK, JRE, and JVM. Learn the compile-to-bytecode-then-interpret/JIT model.
+- **Achievement:** Can explain the journey of a .java file from source code to execution, naming each component involved.
+
+#### Day 2: Variables, Data Types & Literals
+- **Priority:** MUST KNOW
+- **Tasks:** Study primitive types (byte, short, int, long, float, double, char, boolean) and their memory sizes. Learn literal notations (hex, octal, binary, underscore in numbers).
+- **Achievement:** Can correctly choose the most memory-efficient primitive type for a given value range.
+
+#### Day 3: Type Casting & Conversion
+- **Priority:** MUST KNOW
+- **Tasks:** Understand widening (implicit) vs narrowing (explicit) casting. Study overflow behavior when narrowing.
+- **Achievement:** Can predict the output of tricky casting expressions involving overflow and precision loss.
+
+#### Day 4: Operators in Java
+- **Priority:** MUST KNOW
+- **Tasks:** Cover arithmetic, relational, logical, bitwise, assignment, ternary, and the instanceof operator. Study operator precedence.
+- **Achievement:** Can evaluate complex multi-operator expressions by hand, respecting precedence rules.
+
+#### Day 5: Control Flow: if-else & switch
+- **Priority:** MUST KNOW
+- **Tasks:** Master if-else-if ladders. Learn classic switch-case with fall-through and the modern switch expression (Java 14+) with arrow syntax and yield.
+- **Achievement:** Can rewrite a nested if-else chain as a clean switch expression.
+
+#### Day 6: Loops: for, while, do-while
+- **Priority:** MUST KNOW
+- **Tasks:** Study all three loop types, the enhanced for-each loop, labeled breaks/continues, and infinite loop patterns.
+- **Achievement:** Can choose the correct loop type for a given iteration scenario and use labeled breaks to exit nested loops cleanly.
+
+#### Day 7: Arrays (1D & Multi-Dimensional)
+- **Priority:** MUST KNOW
+- **Tasks:** Learn array declaration, initialization, default values, and memory layout (contiguous block on heap). Study 2D/jagged arrays.
+- **Achievement:** Can implement matrix operations using 2D arrays and explain why array access is O(1).
+
+#### Day 8: Array Utility Methods (Arrays class)
+- **Priority:** MUST KNOW
+- **Tasks:** Study Arrays.sort(), Arrays.binarySearch(), Arrays.fill(), Arrays.copyOf(), and Arrays.equals().
+- **Achievement:** Can use built-in utilities instead of hand-rolling common array operations.
+
+#### Day 9: Methods: Declaration, Overloading
+- **Priority:** MUST KNOW
+- **Tasks:** Learn method signatures, return types, parameter passing (pass-by-value for primitives, pass-by-reference-value for objects). Study method overloading rules.
+- **Achievement:** Can explain why Java is technically "pass-by-value" even for objects, using a clear example.
+
+#### Day 10: Varargs & Recursion
+- **Priority:** MUST KNOW
+- **Tasks:** Study variable-length arguments (...). Deep dive into recursion: base case, recursive case, call stack visualization.
+- **Achievement:** Can write a recursive function and manually trace its call stack to detect a missing base case.
+
+#### Day 11: Strings: Basics & Immutability
+- **Priority:** MUST KNOW
+- **Tasks:** Learn why Strings are immutable in Java. Study the String Pool (intern pool) and new String() vs literal creation.
+- **Achievement:** Can explain with a diagram why s1 == s2 may be true or false depending on creation method.
+
+#### Day 12: StringBuilder & StringBuffer
+- **Priority:** MUST KNOW
+- **Tasks:** Understand why mutable string builders exist. Compare StringBuilder (non-thread-safe, fast) vs StringBuffer (thread-safe, synchronized).
+- **Achievement:** Can refactor a string-concatenation-in-a-loop anti-pattern into an efficient StringBuilder-based solution.
+
+#### Day 13: Wrapper Classes & Autoboxing
+- **Priority:** MUST KNOW
+- **Tasks:** Study Integer, Double, Boolean, etc. Understand autoboxing/unboxing and the Integer cache (-128 to 127).
+- **Achievement:** Can explain the classic Integer i1 = 127; Integer i2 = 127; vs 200 comparison gotcha.
+
+#### Day 14: Scanner, User Input & Basic I/O
+- **Priority:** MUST KNOW
+- **Tasks:** Learn to read console input using Scanner and BufferedReader. Compare their performance and use cases.
+- **Achievement:** Can write a program that robustly reads mixed input types (int, String, double) from the console.
+
+#### Day 15: Phase 1 Review: Mini Project
+- **Priority:** MUST KNOW
+- **Tasks:** Build a small console app (e.g., a basic calculator or grade calculator) using only Phase 1 concepts.
+- **Achievement:** Can confidently write a complete, working Java program without an IDE's auto-complete.
+
+### OBJECT-ORIENTED PROGRAMMING (Days 16–35)
+
+#### Day 16: Classes & Objects Fundamentals
+- **Priority:** MUST KNOW
+- **Tasks:** Learn class structure, fields, methods, and object instantiation. Understand the this keyword and object references on the heap.
+- **Achievement:** Can draw a memory diagram showing stack references pointing to heap objects.
+
+#### Day 17: Constructors & Constructor Overloading
+- **Priority:** MUST KNOW
+- **Tasks:** Study default, parameterized, and copy constructors. Learn constructor chaining with this().
+- **Achievement:** Can design a class with multiple constructors that avoid code duplication via chaining.
+
+#### Day 18: The Four Pillars of OOP (Overview)
+- **Priority:** MUST KNOW
+- **Tasks:** Get a conceptual overview of Encapsulation, Abstraction, Inheritance, and Polymorphism before going deep on each.
+- **Achievement:** Can give a one-sentence, interview-ready definition of each pillar with a real-world analogy.
+
+#### Day 19: Encapsulation & Access Modifiers
+- **Priority:** MUST KNOW
+- **Tasks:** Study public, private, protected, and default (package-private) access. Learn getter/setter conventions and why encapsulation matters.
+- **Achievement:** Can design a class that fully protects its internal state while exposing a clean public API.
+
+#### Day 20: Static Keyword Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Understand static variables, static methods, static blocks, and static nested classes. Learn class-loading-time initialization order.
+- **Achievement:** Can trace the exact execution order of static blocks, instance blocks, and constructors when an object is created.
+
+#### Day 21: Inheritance Fundamentals
+- **Priority:** MUST KNOW
+- **Tasks:** Learn extends, the super keyword, and constructor chaining in inheritance hierarchies. Understand why Java doesn't support multiple class inheritance.
+- **Achievement:** Can design a 3-level class hierarchy and explain the diamond problem Java avoids.
+
+#### Day 22: Method Overriding & the @Override Annotation
+- **Priority:** MUST KNOW
+- **Tasks:** Study overriding rules (signature, access modifier widening, covariant return types). Compare overriding vs overloading directly.
+- **Achievement:** Can list 5 rules that must be satisfied for valid method overriding.
+
+#### Day 23: Polymorphism: Compile-Time vs Runtime
+- **Priority:** MUST KNOW
+- **Tasks:** Deep dive into static binding (overloading) vs dynamic binding (overriding). Study upcasting and downcasting with instanceof checks.
+- **Achievement:** Can explain dynamic method dispatch and predict output of polymorphic method calls through a class hierarchy.
+
+#### Day 24: Abstract Classes
+- **Priority:** MUST KNOW
+- **Tasks:** Learn abstract classes and abstract methods. Understand when a class must be declared abstract and constructor rules for abstract classes.
+- **Achievement:** Can design an abstract base class that enforces a contract while sharing common implementation.
+
+#### Day 25: Interfaces Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Study interface declaration, multiple interface implementation, and constant fields. Learn default and static methods in interfaces (Java 8+).
+- **Achievement:** Can explain how default methods solve the "interface evolution" problem without breaking existing implementers.
+
+#### Day 26: Abstract Class vs Interface
+- **Priority:** MUST KNOW
+- **Tasks:** Compare use cases directly: "is-a" vs "can-do" relationships, state vs pure contract, single vs multiple inheritance.
+- **Achievement:** Can justify, in an interview setting, when to choose an abstract class over an interface and vice versa.
+
+#### Day 27: Composition vs Inheritance
+- **Priority:** MUST KNOW
+- **Tasks:** Study "has-a" vs "is-a" relationships in depth. Learn the delegation pattern, and why Effective Java's "favor composition over inheritance" guideline exists. Study real Spring examples (a service class composing repository/utility dependencies rather than extending them).
+- **Achievement:** Can refactor a fragile inheritance hierarchy into a composition-based design and explain, with a concrete example, why it's more maintainable.
+
+#### Day 28: Immutability & Defensive Copying
+- **Priority:** MUST KNOW
+- **Tasks:** Learn how to design a fully immutable class (final fields, no setters, no mutator methods). Study defensive copying for mutable fields (arrays, Date, collections) in both constructors and getters. Understand why immutability matters for thread safety and for backend DTOs. Compare hand-rolled immutable classes vs Java records.
+- **Achievement:** Can design an immutable class containing a mutable field (e.g., a List or Date) without leaking a reference to internal state.
+
+#### Day 29: SOLID Principles in Java
+- **Priority:** MUST KNOW
+- **Tasks:** Study all five SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) with concrete Java code examples for each. Identify common SOLID violations in poorly designed code and how to fix them. Connect Dependency Inversion directly to how Spring's DI container works.
+- **Achievement:** Can review a Java class that violates 2–3 SOLID principles and refactor it while explaining which principle each fix satisfies.
+
+#### Day 30: Object Class Methods
+- **Priority:** MUST KNOW
+- **Tasks:** Study equals(), hashCode(), toString(), clone(), and getClass() from java.lang.Object. Learn the equals-hashCode contract.
+- **Achievement:** Can correctly override equals() and hashCode() together for a custom class used in a HashMap.
+
+#### Day 31: Object Cloning (Shallow vs Deep)
+- **Priority:** MUST KNOW
+- **Tasks:** Study the Cloneable interface, shallow copy vs deep copy, and copy constructors as an alternative to clone().
+- **Achievement:** Can implement a deep clone for a class containing nested mutable objects.
+
+#### Day 32: Inner Classes & Nested Classes
+- **Priority:** MUST KNOW
+- **Tasks:** Learn member inner classes, static nested classes, local classes, and anonymous inner classes. Understand the implicit outer-class reference.
+- **Achievement:** Can choose the correct type of nested class for a given encapsulation scenario.
+
+#### Day 33: Enums Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Study enums as type-safe constants, enums with fields/methods/constructors, and abstract methods inside enums.
+- **Achievement:** Can design an enum that encapsulates behavior (e.g., a calculator operation enum with an abstract apply() method).
+
+#### Day 34: Packages & Access Control
+- **Priority:** MUST KNOW
+- **Tasks:** Learn package declaration, imports (including static imports), and how packages relate to default access modifiers.
+- **Achievement:** Can organize a multi-class project into a clean, logically separated package structure.
+
+#### Day 35: Phase 2 Review: OOP Mini Project
+- **Priority:** MUST KNOW
+- **Tasks:** Design a small system (e.g., a Library Management or Shape Calculator) using inheritance, interfaces, composition, immutability, and SOLID principles together.
+- **Achievement:** Can confidently model a real-world domain using all four OOP pillars plus composition and SOLID in a cohesive class design.
+
+### COLLECTIONS, GENERICS & STRINGS (Days 36–55)
+
+#### Day 36: Collections Framework Overview
+- **Priority:** MUST KNOW
+- **Tasks:** Study the Collection hierarchy: List, Set, Queue, Map interfaces and their relationship to Iterable and Collection.
+- **Achievement:** Can draw the full Collections Framework hierarchy diagram from memory.
+
+#### Day 37: ArrayList Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Study internal array-backed implementation, dynamic resizing (growth factor), and time complexity of get/add/remove.
+- **Achievement:** Can explain why ArrayList.add() is amortized O(1) but remove(0) is O(n).
+
+#### Day 38: LinkedList Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Study doubly-linked-list internal structure. Compare ArrayList vs LinkedList trade-offs for different access patterns.
+- **Achievement:** Can recommend ArrayList or LinkedList based on whether a use case is read-heavy or insert/delete-heavy.
+
+#### Day 39: Iterator & ListIterator
+- **Priority:** MUST KNOW
+- **Tasks:** Learn safe iteration and removal using Iterator. Understand ConcurrentModificationException and fail-fast behavior.
+- **Achievement:** Can safely remove elements from a list while iterating, without triggering ConcurrentModificationException.
+
+#### Day 40: HashSet & LinkedHashSet
+- **Priority:** MUST KNOW
+- **Tasks:** Study how HashSet uses hashCode()/equals() internally (backed by HashMap). Learn LinkedHashSet's insertion-order guarantee.
+- **Achievement:** Can explain why a custom object needs a correct hashCode() override to work properly in a HashSet.
+
+#### Day 41: TreeSet & Sorted Collections
+- **Priority:** MUST KNOW
+- **Tasks:** Study TreeSet's Red-Black tree backing, natural ordering via Comparable, and custom ordering via Comparator.
+- **Achievement:** Can implement Comparable and a separate Comparator for the same class to support two different sort orders.
+
+#### Day 42: HashMap Internals (Deep Dive)
+- **Priority:** MUST KNOW
+- **Tasks:** Study bucket array, hashing, collision handling (linked list → red-black tree conversion since Java 8), load factor, and resizing.
+- **Achievement:** Can explain step-by-step what happens internally when put() is called and a hash collision occurs.
+
+#### Day 43: Hashing Internals Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Go deeper than HashMap mechanics into hash function design itself. Study the hashCode() contract in detail (equal objects must have equal hash codes), collision resolution strategies (chaining vs open addressing — linear/quadratic probing, double hashing), and the mathematics behind load factor and rehashing thresholds. Study why String and Integer's hashCode() implementations are designed the way they are (distribution quality, avoiding clustering).
+- **Achievement:** Can design a custom hashCode() for a multi-field class that minimizes collisions and explain the trade-off between a fast hash and a well-distributed hash.
+
+#### Day 44: LinkedHashMap & TreeMap
+- **Priority:** MUST KNOW
+- **Tasks:** Learn LinkedHashMap's access-order mode (useful for LRU caches) and TreeMap's sorted-key navigation methods (firstKey, ceilingKey, etc.).
+- **Achievement:** Can implement a basic LRU cache using LinkedHashMap's access-order feature.
+
+#### Day 45: Map Iteration & Common Patterns
+- **Priority:** MUST KNOW
+- **Tasks:** Study entrySet(), keySet(), values() iteration, and Java 8 methods: computeIfAbsent, merge, getOrDefault, forEach.
+- **Achievement:** Can refactor verbose null-check-heavy Map code into clean one-liners using modern Map methods.
+
+#### Day 46: Queue, Deque & PriorityQueue
+- **Priority:** MUST KNOW
+- **Tasks:** Study FIFO Queue semantics, Deque as both stack and queue, and PriorityQueue's heap-based ordering.
+- **Achievement:** Can use a PriorityQueue with a custom comparator to solve a "find K largest elements" problem.
+
+#### Day 47: Stack & Algorithm Use Cases
+- **Priority:** MUST KNOW
+- **Tasks:** Study the Stack class (and Deque-as-stack preference). Practice classic use cases: balanced parentheses, expression evaluation.
+- **Achievement:** Can solve a balanced-bracket-validation problem using a stack in under 10 minutes.
+
+#### Day 48: Generics Fundamentals
+- **Priority:** MUST KNOW
+- **Tasks:** Learn why generics exist (compile-time type safety), generic classes, generic methods, and type erasure.
+- **Achievement:** Can explain what "type erasure" means and why you can't do new T[] directly in Java.
+
+#### Day 49: Generic Type Erasure — Full Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Go beyond the type erasure overview into bridge methods (generated by the compiler for overridden generic methods), raw types and their dangers, reflection's limitations when inspecting generic type parameters at runtime, heap pollution scenarios, and the purpose of @SafeVarargs.
+- **Achievement:** Can explain, with a code example, why heap pollution occurs with varargs and generics, and how @SafeVarargs addresses it.
+
+#### Day 50: Bounded Types & Wildcards
+- **Priority:** MUST KNOW
+- **Tasks:** Study bounded type parameters (<T extends Number>), and wildcards (? extends, ? super). Learn PECS (Producer Extends, Consumer Super).
+- **Achievement:** Can correctly apply the PECS principle when designing a generic method that copies between collections.
+
+#### Day 51: Comparable vs Comparator
+- **Priority:** MUST KNOW
+- **Tasks:** Deep dive into the differences, multi-field comparator chaining (thenComparing), and lambda-based comparators.
+- **Achievement:** Can write a chained comparator that sorts objects by multiple fields in one line using Java 8 syntax.
+
+#### Day 52: Collections Utility Class
+- **Priority:** MUST KNOW
+- **Tasks:** Study Collections.sort(), Collections.unmodifiableList(), Collections.synchronizedList(), and Collections.emptyList().
+- **Achievement:** Can correctly make a collection read-only or thread-safe using built-in utility wrappers.
+
+#### Day 53: String Internals: Pool & Memory
+- **Priority:** MUST KNOW
+- **Tasks:** Revisit String pool with the lens of intern(), memory implications of large numbers of string literals, and why Strings are good HashMap keys.
+- **Achievement:** Can explain why caching immutable Strings is safe across multiple threads without synchronization.
+
+#### Day 54: Regular Expressions in Java
+- **Priority:** MUST KNOW
+- **Tasks:** Learn Pattern and Matcher classes, common regex syntax, and String's built-in regex methods (matches, replaceAll, split).
+- **Achievement:** Can write a regex to validate an email format and extract groups from a matched string.
+
+#### Day 55: Phase 3 Review: Data Structures Project
+- **Priority:** MUST KNOW
+- **Tasks:** Build a small inventory or contact-management system using the right mix of List, Map, Set, and Generics.
+- **Achievement:** Can justify every collection choice made in the project based on its access pattern requirements.
+
+### EXCEPTION HANDLING, I/O, REFLECTION & ANNOTATIONS (Days 56–67)
+
+#### Day 56: Exception Hierarchy & Basics
+- **Priority:** MUST KNOW
+- **Tasks:** Study the Throwable hierarchy: Error vs Exception, checked vs unchecked exceptions. Learn try-catch-finally mechanics.
+- **Achievement:** Can correctly classify any given exception as checked or unchecked and explain why the distinction matters.
+
+#### Day 57: Multi-Catch, Try-With-Resources
+- **Priority:** MUST KNOW
+- **Tasks:** Learn multi-catch blocks, the AutoCloseable interface, and try-with-resources for automatic resource cleanup.
+- **Achievement:** Can convert a verbose finally-based resource-closing block into clean try-with-resources syntax.
+
+#### Day 58: Custom Exceptions
+- **Priority:** MUST KNOW
+- **Tasks:** Learn to design meaningful custom checked and unchecked exceptions, including exception chaining (cause).
+- **Achievement:** Can design a custom exception hierarchy for a domain (e.g., InsufficientFundsException for a banking app).
+
+#### Day 59: Exception Best Practices
+- **Priority:** MUST KNOW
+- **Tasks:** Study anti-patterns: swallowing exceptions, catching generic Exception, and over-using checked exceptions. Learn fail-fast principles.
+- **Achievement:** Can review and fix poorly-handled exception code in a code review setting.
+
+#### Day 60: File I/O: java.io Basics
+- **Priority:** MUST KNOW
+- **Tasks:** Learn File, FileReader/FileWriter, BufferedReader/BufferedWriter, and byte streams vs character streams.
+- **Achievement:** Can read and write a text file line-by-line using buffered streams efficiently.
+
+#### Day 61: NIO.2 (java.nio.file)
+- **Priority:** MUST KNOW
+- **Tasks:** Study the modern Path, Files, and Paths APIs introduced in Java 7+. Compare with legacy java.io.
+- **Achievement:** Can perform common file operations (copy, move, delete, walk a directory tree) using the NIO.2 API.
+
+#### Day 62: Serialization & Deserialization
+- **Priority:** MUST KNOW
+- **Tasks:** Learn the Serializable interface, serialVersionUID, transient keyword, and the security risks of native Java serialization.
+- **Achievement:** Can explain why transient fields are excluded and why deserialization of untrusted data is a security risk.
+
+#### Day 63: Serialization Alternatives
+- **Priority:** MUST KNOW
+- **Tasks:** Study why native Java serialization is largely avoided in modern backend systems (versioning fragility, security risk, performance). Learn how JSON serialization works under the hood (Jackson's ObjectMapper mechanics — reflection + annotations), and get an overview of Protobuf (schema-defined binary serialization). Build a comparison table covering size, speed, schema evolution, and security for native serialization vs JSON vs Protobuf.
+- **Achievement:** Can justify, in an interview setting, why a production Spring Boot API uses JSON (Jackson) instead of native Java serialization, and when Protobuf would be the better choice.
+
+#### Day 64: Reflection API (Part 1)
+- **Priority:** MUST KNOW
+- **Tasks:** Learn the core reflection classes: Class, Method, Field, and Constructor. Study how to obtain a Class object (three ways), use getDeclaredFields()/getDeclaredMethods() to inspect a class at runtime, and invoke methods reflectively using Method.invoke().
+- **Achievement:** Can write a small program that, given any object, prints out all its field names, types, and current values using only reflection.
+
+#### Day 65: Reflection API (Part 2)
+- **Priority:** MUST KNOW
+- **Tasks:** Learn how to access and modify private fields/methods using setAccessible(true), and study the performance cost of reflection versus direct calls. Connect this directly to backend frameworks: study why Spring depends on reflection for bean instantiation, constructor/field injection resolution, and how @Autowired is satisfied behind the scenes.
+- **Achievement:** Can explain, step by step, what Spring does with reflection between scanning a @Component-annotated class and having a fully wired bean ready in the ApplicationContext.
+
+#### Day 66: Annotations Deep Dive (Part 1)
+- **Priority:** MUST KNOW
+- **Tasks:** Study Java's built-in annotations: @Override, @Deprecated, @FunctionalInterface, @SuppressWarnings, and @SafeVarargs. Learn the four key meta-annotations that control annotation behavior: @Retention (SOURCE/CLASS/RUNTIME), @Target, @Documented, and @Inherited.
+- **Achievement:** Can explain why an annotation meant to be read by Spring at runtime (like @Service) must use @Retention(RUNTIME), while @Override does not need runtime retention.
+
+#### Day 67: Annotations Deep Dive (Part 2)
+- **Priority:** MUST KNOW
+- **Tasks:** Design a custom annotation from scratch (e.g., a @LogExecutionTime annotation), including its meta-annotations. Get an overview of annotation processing (compile-time vs runtime processing). Study how Spring scans the classpath for annotations like @Component, @RestController, and @Service, and how that scanning result drives bean registration.
+- **Achievement:** Can design and "read" (via reflection) a custom annotation end-to-end, explaining the full lifecycle from declaration to runtime inspection.
+
+#### Day 67b: Phase 4 Review: Robust File Processor
+- **Priority:** MUST KNOW
+- **Tasks:** Build a small program that reads a file, processes records, and handles all failure modes (missing file, bad data) with proper exceptions.
+- **Achievement:** Can build a program that never crashes ungracefully, regardless of malformed input.
+
+### MULTITHREADING & CONCURRENCY (Days 68–86)
+
+#### Day 68: Process vs Thread & Thread Basics
+- **Priority:** MUST KNOW
+- **Tasks:** Understand the difference between processes and threads. Learn the Thread class, Runnable interface, and thread lifecycle states.
+- **Achievement:** Can draw and explain the full thread lifecycle diagram (New → Runnable → Running → Blocked/Waiting → Terminated).
+
+#### Day 69: Creating Threads: Thread vs Runnable
+- **Priority:** MUST KNOW
+- **Tasks:** Compare extending Thread vs implementing Runnable. Learn why implementing Runnable is generally preferred.
+- **Achievement:** Can explain why implementing Runnable allows for better design flexibility than extending Thread.
+
+#### Day 70: Thread Synchronization Basics
+- **Priority:** MUST KNOW
+- **Tasks:** Study race conditions with a hands-on example (e.g., two threads incrementing a shared counter). Learn the synchronized keyword on methods and blocks.
+- **Achievement:** Can reproduce a race condition in code, then fix it using synchronized.
+
+#### Day 71: Intrinsic Locks & Monitor Concept
+- **Priority:** MUST KNOW
+- **Tasks:** Deep dive into how synchronized works using the object monitor concept. Study reentrant locking behavior.
+- **Achievement:** Can explain why a thread holding a lock can re-enter another synchronized method on the same object without deadlocking itself.
+
+#### Day 72: Deadlock, Livelock & Starvation
+- **Priority:** MUST KNOW
+- **Tasks:** Study the four conditions for deadlock. Reproduce a classic two-lock deadlock scenario and learn prevention strategies (lock ordering).
+- **Achievement:** Can identify a deadlock-prone code pattern and redesign it using consistent lock ordering.
+
+#### Day 73: volatile Keyword & Memory Visibility
+- **Priority:** MUST KNOW
+- **Tasks:** Study the Java Memory Model (JMM), CPU caching issues, and how volatile guarantees visibility (but not atomicity).
+- **Achievement:** Can explain why volatile alone is insufficient for a counter increment but sufficient for a simple flag.
+
+#### Day 74: Java Memory Model (JMM) Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Go far beyond the volatile-level intro. Study the happens-before relationship formally, visibility guarantees across threads, instruction/compiler reordering, and memory barriers. Connect this theory back to exactly how synchronized, volatile, and Lock implementations achieve their guarantees under the hood.
+- **Achievement:** Can explain, using the happens-before relationship, why a non-volatile flag written by one thread might never be seen by another thread, even without a compiler bug.
+
+#### Day 75: wait(), notify(), notifyAll()
+- **Priority:** MUST KNOW
+- **Tasks:** Learn low-level thread coordination using Object's wait/notify mechanism. Build a classic Producer-Consumer example.
+- **Achievement:** Can implement a working Producer-Consumer pattern using wait() and notifyAll() from scratch.
+
+#### Day 76: java.util.concurrent.atomic
+- **Priority:** MUST KNOW
+- **Tasks:** Study AtomicInteger, AtomicLong, and AtomicReference. Understand Compare-And-Swap (CAS) as a lock-free alternative.
+- **Achievement:** Can replace a synchronized counter with an AtomicInteger and explain the underlying CAS performance benefit.
+
+#### Day 77: Lock Interface & ReentrantLock
+- **Priority:** MUST KNOW
+- **Tasks:** Study the Lock interface, ReentrantLock, tryLock() with timeout, and fairness policies. Compare with synchronized.
+- **Achievement:** Can justify when to choose ReentrantLock over synchronized (e.g., needing tryLock or interruptible locking).
+
+#### Day 78: ReadWriteLock & StampedLock
+- **Priority:** MUST KNOW
+- **Tasks:** Learn ReentrantReadWriteLock for read-heavy/write-light scenarios, and an overview of StampedLock's optimistic reading.
+- **Achievement:** Can design a thread-safe cache that allows many concurrent readers but exclusive writers.
+
+#### Day 79: Executor Framework Basics
+- **Priority:** MUST KNOW
+- **Tasks:** Study ExecutorService, the Executors factory methods (fixed, cached, scheduled thread pools), and why raw thread creation should be avoided.
+- **Achievement:** Can choose the correct thread pool type for a given workload (CPU-bound vs I/O-bound).
+
+#### Day 80: Callable, Future & CompletableFuture
+- **Priority:** MUST KNOW
+- **Tasks:** Learn Callable for tasks with return values, Future for blocking retrieval, and CompletableFuture for non-blocking composition (thenApply, thenCombine).
+- **Achievement:** Can chain multiple asynchronous operations together using CompletableFuture without blocking threads.
+
+#### Day 81: ForkJoinPool
+- **Priority:** MUST KNOW
+- **Tasks:** Study the work-stealing algorithm that powers ForkJoinPool, and learn RecursiveTask (returns a value) vs RecursiveAction (no return value). Understand the direct relationship between ForkJoinPool and parallel streams' internal execution, and learn why ForkJoinPool is unsuitable for blocking I/O workloads.
+- **Achievement:** Can explain why calling a blocking I/O operation inside a parallel stream can starve the common ForkJoinPool and degrade unrelated parts of an application.
+
+#### Day 82: ThreadPoolExecutor Internals
+- **Priority:** MUST KNOW
+- **Tasks:** Study core pool size, max pool size, queue capacity, and rejection policies. Understand how a custom ThreadPoolExecutor is tuned.
+- **Achievement:** Can configure a custom ThreadPoolExecutor with an appropriate queue and rejection policy for a bursty workload.
+
+#### Day 83: Concurrent Collections
+- **Priority:** MUST KNOW
+- **Tasks:** Study ConcurrentHashMap internals (segment/bucket-level locking), CopyOnWriteArrayList, and BlockingQueue implementations.
+- **Achievement:** Can explain why ConcurrentHashMap outperforms a synchronized HashMap under high contention.
+
+#### Day 84: Concurrency Utilities: Latches, Barriers, Semaphores
+- **Priority:** MUST KNOW
+- **Tasks:** Learn CountDownLatch, CyclicBarrier, and Semaphore for coordinating groups of threads.
+- **Achievement:** Can use CountDownLatch to make a main thread wait until several worker threads complete initialization.
+
+#### Day 85: Structured Concurrency & Scoped Values (Java 21+)
+- **Priority:** MUST KNOW
+- **Tasks:** Learn the StructuredTaskScope API for treating a group of related concurrent subtasks as a single unit of work with a clear parent-child lifecycle and automatic cancellation propagation. Study ScopedValue as a safer, immutable alternative to ThreadLocal for passing context across virtual threads. Learn about virtual thread pinning issues (when a virtual thread gets stuck on a platform thread) and how Java 24 improves this.
+- **Achievement:** Can rewrite a manually-coordinated multi-task CompletableFuture workflow using StructuredTaskScope and explain the cancellation/error-propagation benefit gained.
+
+#### Day 86: Phase 5 Review: Concurrent Application
+- **Priority:** MUST KNOW
+- **Tasks:** Build a multi-threaded application (e.g., a parallel file processor or a thread-safe task queue) applying executors and concurrent collections together.
+- **Achievement:** Can design and defend a complete concurrent system architecture, justifying every synchronization choice.
+
+### JVM INTERNALS & MODERN JAVA (Days 87–104)
+
+#### Day 87: JVM Architecture Deep Dive
+- **Priority:** MUST KNOW
+- **Tasks:** Study the Class Loader subsystem, Runtime Data Areas (Method Area, Heap, Stack, PC Registers, Native Stacks), and the Execution Engine.
+- **Achievement:** Can draw the complete JVM architecture diagram and explain what lives in each memory area.
+
+#### Day 88: Class Loading Mechanism
+- **Priority:** MUST KNOW
+- **Tasks:** Learn the three built-in class loaders (Bootstrap, Platform, Application) and the parent delegation model.
+- **Achievement:** Can explain why parent delegation prevents core Java classes from being maliciously overridden.
+
+#### Day 89: Heap Memory Structure
+- **Priority:** MUST KNOW
+- **Tasks:** Study Young Generation (Eden, Survivor spaces) and Old Generation. Understand object aging and promotion.
+- **Achievement:** Can explain the journey of an object from creation in Eden to potential promotion into Old Gen.
+
+#### Day 90: Garbage Collection Algorithms
+- **Priority:** MUST KNOW
+- **Tasks:** Study Mark-and-Sweep, Serial, Parallel, G1, and ZGC garbage collectors at a conceptual level. Learn stop-the-world pauses.
+- **Achievement:** Can recommend an appropriate GC algorithm based on application latency vs throughput requirements.
+
+#### Day 91: Memory Leaks & Common Pitfalls
+- **Priority:** MUST KNOW
+- **Tasks:** Study common Java memory leak patterns (static collections holding references, unclosed resources, listener leaks), and the role of WeakReference/SoftReference in preventing them.
+- **Achievement:** Can identify a memory leak pattern in code and propose a fix using weak references or proper lifecycle management.
+
+#### Day 92: JVM Profiling & Diagnostic Tools
+- **Priority:** MUST KNOW
+- **Tasks:** Learn the core JVM diagnostic toolkit: jstack for thread dumps, jmap for heap dumps, JVisualVM for live monitoring, and Java Mission Control (JMC) for production-grade profiling. Practice reading a thread dump to diagnose a deadlock, and a heap dump to identify a suspected memory leak.
+- **Achievement:** Can take a thread dump from a hanging application, locate the two threads in a deadlock, and identify exactly which locks they're each waiting on.
+
+#### Day 93: GC Tuning & JVM Performance Tuning
+- **Priority:** MUST KNOW
+- **Tasks:** Learn the core heap sizing flags (-Xms, -Xmx, -Xmn), how to enable and read GC logs, and the practical trade-off framework for choosing a GC algorithm based on whether an application prioritizes low pause latency or high throughput.
+- **Achievement:** Can read a GC log excerpt, identify whether the application is suffering from frequent minor GCs or long major GC pauses, and recommend a tuning change.
+
+#### Day 94: Lambda Expressions (Java 8)
+- **Priority:** MUST KNOW
+- **Tasks:** Learn lambda syntax, functional interfaces, and the @FunctionalInterface annotation. Study effectively-final variable capture.
+- **Achievement:** Can convert an anonymous inner class implementation into a clean lambda expression.
+
+#### Day 95: Functional Interfaces (java.util.function)
+- **Priority:** MUST KNOW
+- **Tasks:** Study Function, Predicate, Consumer, Supplier, BiFunction, and their primitive specializations.
+- **Achievement:** Can select the correct built-in functional interface for a given method signature without writing a custom one.
+
+#### Day 96: Streams API Fundamentals
+- **Priority:** MUST KNOW
+- **Tasks:** Learn stream creation, intermediate operations (map, filter, sorted), and terminal operations (collect, reduce, forEach). Understand laziness.
+- **Achievement:** Can rewrite an imperative loop-based data transformation as a clean, readable stream pipeline.
+
+#### Day 97: Streams: Collectors & Advanced Operations
+- **Priority:** MUST KNOW
+- **Tasks:** Study Collectors.groupingBy, partitioningBy, toMap, and joining. Learn parallel streams and when they actually help.
+- **Achievement:** Can group a list of objects by a property and produce a summary Map using a single Collector pipeline.
+
+#### Day 98: Optional Class
+- **Priority:** MUST KNOW
+- **Tasks:** Learn Optional as a null-safety tool. Study correct usage patterns (map, filter, orElseGet) and anti-patterns (calling get() without checking).
+- **Achievement:** Can refactor null-check-riddled code into a clean Optional-based chain.
+
+#### Day 99: Date & Time API (java.time)
+- **Priority:** MUST KNOW
+- **Tasks:** Study LocalDate, LocalDateTime, ZonedDateTime, Duration, and Period. Understand why this replaced legacy Date/Calendar.
+- **Achievement:** Can correctly calculate the difference between two dates and handle time zone conversions.
+
+#### Day 100: Java 9–17 Features
+- **Priority:** MUST KNOW
+- **Tasks:** Study modules (Java 9), var local type inference (Java 10), text blocks (Java 13+), and sealed classes (Java 17).
+- **Achievement:** Can identify and use the appropriate modern syntax feature to simplify legacy-style code.
+
+#### Day 101: Records & Pattern Matching (Java 14–21)
+- **Priority:** MUST KNOW
+- **Tasks:** Deep dive into records as concise immutable data carriers. Study pattern matching for instanceof and switch (Java 21).
+- **Achievement:** Can convert a verbose POJO with boilerplate getters/equals/hashCode into a single-line record.
+
+#### Day 102: Virtual Threads (Java 21)
+- **Priority:** MUST KNOW
+- **Tasks:** Learn Project Loom's virtual threads, how they differ from platform threads, and their impact on high-concurrency I/O-bound applications.
+- **Achievement:** Can explain why virtual threads make the thread-per-request model viable again at massive scale.
+
+#### Day 103: Java Interview Patterns & Tricky Outputs
+- **Priority:** MUST KNOW
+- **Tasks:** Review classic "predict the output" interview questions covering static initialization order, overloading ambiguity, and autoboxing edge cases.
+- **Achievement:** Can correctly predict the output of 10+ classic tricky Java code snippets without running them.
+
+#### Day 104: Final Review & Mock Interview
+- **Priority:** MUST KNOW
+- **Tasks:** Run a full mock technical interview covering OOP design, a collections-based coding problem, and a concurrency conceptual question.
+- **Achievement:** Ready to confidently handle a Core + Advanced Java technical interview round.
 

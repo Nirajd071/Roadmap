@@ -136,7 +136,7 @@ function App() {
               <div className="p-2 bg-indigo-500/20 rounded-lg">
                 <BookOpen className="w-6 h-6 text-indigo-400" />
               </div>
-              <h1 className="text-xl md:text-2xl font-bold text-zinc-100">604-Day Master AI Roadmap</h1>
+              <h1 className="text-xl md:text-2xl font-bold text-zinc-100">{globalProgress.total}-Day Master AI Roadmap</h1>
             </div>
             
             <div className="w-full md:w-1/3">

@@ -8,7 +8,7 @@ export const roadmapData = [
       {
         "id": "1-1",
         "title": "THE FOUNDATIONS OF DISTRIBUTED SYSTEMS",
-        "days": "Days 0–22",
+        "days": "Days 0\u201322",
         "items": [
           {
             "day": 0,
@@ -169,7 +169,7 @@ export const roadmapData = [
       {
         "id": "1-2",
         "title": "DATABASES & DATA MANAGEMENT",
-        "days": "Days 22–46",
+        "days": "Days 22\u201346",
         "items": [
           {
             "day": 22,
@@ -351,7 +351,7 @@ export const roadmapData = [
       {
         "id": "1-3",
         "title": "MICROSERVICES & REAL-WORLD PATTERNS",
-        "days": "Days 47–75",
+        "days": "Days 47\u201375",
         "items": [
           {
             "day": 47,
@@ -554,7 +554,7 @@ export const roadmapData = [
       {
         "id": "1-4",
         "title": "THE SYSTEM DESIGN INTERVIEW FRAMEWORK",
-        "days": "Days 75–88",
+        "days": "Days 75\u201388",
         "items": [
           {
             "day": 75,
@@ -659,7 +659,7 @@ export const roadmapData = [
       {
         "id": "1-5",
         "title": "PRACTICAL SYSTEM DESIGN (REAL WORLD)",
-        "days": "Days 89–128",
+        "days": "Days 89\u2013128",
         "items": [
           {
             "day": 89,
@@ -941,13 +941,13 @@ export const roadmapData = [
   {
     "id": 2,
     "title": "Spring Boot & Microservices",
-    "days": 140,
+    "days": 156,
     "color": "emerald",
     "phases": [
       {
         "id": "2-1",
         "title": "JVM & CORE JAVA INTERNALS",
-        "days": "Days 1–27",
+        "days": "Days 1\u201327",
         "items": [
           {
             "day": 1,
@@ -1143,7 +1143,7 @@ export const roadmapData = [
       {
         "id": "2-2",
         "title": "SPRING FRAMEWORK & REST APIs",
-        "days": "Days 28–65",
+        "days": "Days 28\u201369",
         "items": [
           {
             "day": 28,
@@ -1238,177 +1238,205 @@ export const roadmapData = [
           },
           {
             "day": 41,
+            "topic": "Idempotency Keys for Unsafe Operations",
+            "priority": "MUST KNOW",
+            "tasks": "Implement an `Idempotency-Key` header pattern for POST endpoints (e.g. payments, order creation). Store request fingerprints in Redis/DB with a TTL and return the cached response on retry instead of double-processing.",
+            "achievement": "Can prevent duplicate charges or duplicate order creation caused by client retries or network blips."
+          },
+          {
+            "day": 42,
             "topic": "API Versioning (URI & Header)",
             "priority": "MUST KNOW",
             "tasks": "Implement API versioning using URI path (e.g. /v1/users) and HTTP Headers (e.g. Accept-Version: v1). Understand compatibility trade-offs.",
             "achievement": "Can design and implement backward-compatible APIs supporting multiple client versions."
           },
           {
-            "day": 42,
+            "day": 43,
             "topic": "Swagger/OpenAPI Integration",
             "priority": "MUST KNOW",
             "tasks": "Configure springdoc-openapi in Spring Boot. Annotate controllers with @Operation and @ApiResponses. Generate OpenAPI JSON and test endpoints via Swagger UI.",
             "achievement": "Can automatically document and test REST endpoints using industry-standard OpenAPI schemas."
           },
           {
-            "day": 43,
+            "day": 44,
             "topic": "API Rate Limiting & Throttling",
             "priority": "MUST KNOW",
             "tasks": "Implement API rate limiting using the Bucket4j library or a custom Servlet Filter. Learn to read and write rate-limit headers (X-RateLimit-Limit, X-RateLimit-Remaining).",
             "achievement": "Can protect Spring Boot APIs from resource abuse and denial-of-service attempts."
           },
           {
-            "day": 44,
+            "day": 45,
             "topic": "ResponseEntity & Status Codes",
             "priority": "MUST KNOW",
             "tasks": "Stop returning raw objects. Wrap responses in `ResponseEntity` to explicitly control HTTP status codes (200, 201, 404, 400).",
             "achievement": "Can return predictable, standard HTTP responses that frontend clients expect."
           },
           {
-            "day": 45,
+            "day": 46,
             "topic": "Global Exception Handling",
             "priority": "MUST KNOW",
             "tasks": "Create a `@RestControllerAdvice` class. Catch specific exceptions (e.g., `UserNotFoundException`) and return a formatted 404 JSON response.",
             "achievement": "Can prevent ugly stack traces from leaking to clients and unify API error formats."
           },
           {
-            "day": 46,
+            "day": 47,
             "topic": "RFC 7807 Problem Details",
             "priority": "IMPORTANT",
             "tasks": "Upgrade your exception handler to return `ProblemDetail` objects (Spring Boot 3 feature) for standardized error reporting.",
             "achievement": "Can adhere to strict, modern API design specifications (RFC 7807)."
           },
           {
-            "day": 47,
+            "day": 48,
             "topic": "DTO Pattern (Data Transfer Objects)",
             "priority": "MUST KNOW",
             "tasks": "Stop returning JPA entities from controllers! Create separate RequestDTOs and ResponseDTOs to decouple the database from the API contract.",
             "achievement": "Can prevent data leakage (like exposing hashed passwords) and prevent infinite recursion."
           },
           {
-            "day": 48,
+            "day": 49,
             "topic": "Bean Validation",
             "priority": "MUST KNOW",
             "tasks": "Add `spring-boot-starter-validation`. Use `@NotNull`, `@Size`, and `@Email` on DTOs. Validate them in the controller using `@Valid`.",
             "achievement": "Can reject bad data instantly before it ever touches business logic."
           },
           {
-            "day": 49,
+            "day": 50,
             "topic": "MapStruct for Object Mapping",
             "priority": "MUST KNOW",
             "tasks": "Stop writing manual getter/setter mapping code. Configure MapStruct to auto-generate mapping code between Entities and DTOs.",
             "achievement": "Can write highly performant, type-safe data conversion layers with zero boilerplate."
           },
           {
-            "day": 50,
+            "day": 51,
             "topic": "Swagger / OpenAPI Documentation",
             "priority": "MUST KNOW",
             "tasks": "Integrate `springdoc-openapi`. Annotate controllers to generate a beautiful, interactive Swagger UI documentation page.",
             "achievement": "Can automatically generate API documentation that stays perfectly in sync with the code."
           },
           {
-            "day": 51,
+            "day": 52,
             "topic": "File Uploads & Downloads",
             "priority": "IMPORTANT",
             "tasks": "Implement an endpoint that accepts `MultipartFile`. Save it to the local disk and write an endpoint to download it via `Resource`.",
             "achievement": "Can handle binary data streams and manage user file uploads securely."
           },
           {
-            "day": 52,
+            "day": 53,
             "topic": "Pagination & Sorting (API Layer)",
             "priority": "MUST KNOW",
             "tasks": "Accept `page`, `size`, and `sort` parameters in your API. Return a structured `Page` response containing metadata (total elements, total pages).",
             "achievement": "Can build APIs capable of serving millions of records safely to a UI data table."
           },
           {
-            "day": 53,
+            "day": 54,
             "topic": "Content Negotiation",
             "priority": "IMPORTANT",
             "tasks": "Configure your API to return XML instead of JSON if the client sends an `Accept: application/xml` header.",
             "achievement": "Can build highly flexible APIs that support legacy B2B clients."
           },
           {
-            "day": 54,
+            "day": 55,
+            "topic": "ETags & Conditional Requests",
+            "priority": "IMPORTANT",
+            "tasks": "Generate an `ETag` header from a resource's hash or version. Handle `If-None-Match` requests by returning `304 Not Made` when the resource hasn't changed. Combine with `Cache-Control` headers.",
+            "achievement": "Can reduce bandwidth and server load by letting clients cache and revalidate resources correctly."
+          },
+          {
+            "day": 56,
             "topic": "CORS Configuration",
             "priority": "MUST KNOW",
             "tasks": "Implement a `WebMvcConfigurer` to configure Cross-Origin Resource Sharing. Understand why browsers block cross-domain AJAX requests.",
             "achievement": "Can securely allow specific single-page applications (React/Angular) to consume your API."
           },
           {
-            "day": 55,
+            "day": 57,
             "topic": "Testing Controllers (WebMvcTest)",
             "priority": "MUST KNOW",
             "tasks": "Write `@WebMvcTest` slices to mock the service layer and test HTTP endpoints using `MockMvc` without starting the full server.",
             "achievement": "Can mathematically prove your API routing, validation, and serialization works perfectly."
           },
           {
-            "day": 56,
+            "day": 58,
             "topic": "RestTemplate / WebClient",
             "priority": "MUST KNOW",
             "tasks": "Write a service that calls an external API (like GitHub API) using `RestTemplate` or the reactive `WebClient`.",
             "achievement": "Can integrate your microservice with external third-party systems."
           },
           {
-            "day": 57,
+            "day": 59,
             "topic": "HTTP Declarative Clients",
             "priority": "IMPORTANT",
             "tasks": "Refactor yesterday's code using Spring Boot 3 `@HttpExchange` interfaces to call the external API without writing implementation code.",
             "achievement": "Can write modern, boilerplate-free HTTP clients similar to Feign or Retrofit."
           },
           {
-            "day": 58,
+            "day": 60,
             "topic": "Integration Testing (SpringBootTest)",
             "priority": "MUST KNOW",
             "tasks": "Write an `@SpringBootTest` that boots the entire context. Call the controller, hit a real (in-memory) database, and verify the response.",
             "achievement": "Can perform end-to-end testing of the entire application stack."
           },
           {
-            "day": 59,
+            "day": 61,
             "topic": "Testcontainers",
             "priority": "MUST KNOW",
             "tasks": "Throw away H2 in-memory databases! Use Testcontainers to spin up a real PostgreSQL Docker container during the test phase.",
             "achievement": "Can guarantee that tests perfectly simulate the production database environment."
           },
           {
-            "day": 60,
+            "day": 62,
             "topic": "WireMock",
             "priority": "MUST KNOW",
             "tasks": "Use WireMock in your integration tests to stub the responses of external third-party APIs.",
             "achievement": "Can test code that relies on external services without making actual network calls."
           },
           {
-            "day": 61,
+            "day": 63,
             "topic": "Dockerizing Spring Boot",
             "priority": "MUST KNOW",
             "tasks": "Write a multi-stage Dockerfile. Package your Spring Boot JAR and run it in an Alpine JRE container. Optimize layers for caching.",
             "achievement": "Can package the entire application into a portable, production-ready artifact."
           },
           {
-            "day": 62,
+            "day": 64,
             "topic": "Docker Compose for Local Dev",
             "priority": "MUST KNOW",
             "tasks": "Write a `docker-compose.yml` that boots your Spring Boot app alongside a PostgreSQL database and a Redis cache.",
             "achievement": "Can onboard new developers instantly with a single terminal command."
           },
           {
-            "day": 63,
+            "day": 65,
             "topic": "Caching with Spring Cache",
             "priority": "MUST KNOW",
             "tasks": "Enable `@EnableCaching`. Annotate expensive methods with `@Cacheable`. Configure a Redis cache provider.",
             "achievement": "Can drastically reduce database load by caching heavy computational or query results."
           },
           {
-            "day": 64,
+            "day": 66,
             "topic": "Scheduling Tasks",
             "priority": "IMPORTANT",
             "tasks": "Use `@Scheduled` to write a cron job that cleans up expired database records every night at midnight.",
             "achievement": "Can automate recurring background maintenance tasks directly within Spring."
           },
           {
-            "day": 65,
+            "day": 67,
+            "topic": "HATEOAS & Hypermedia APIs",
+            "priority": "GOOD TO KNOW",
+            "tasks": "Add `spring-boot-starter-hateoas`. Wrap responses in `EntityModel` and add navigational `Link` objects (self, next, prev) so clients can discover related actions.",
+            "achievement": "Can build self-descriptive APIs that reduce client-side hardcoding of URLs, useful for legacy enterprise REST standards."
+          },
+          {
+            "day": 68,
+            "topic": "GraphQL Integration",
+            "priority": "IMPORTANT",
+            "tasks": "Add `spring-boot-starter-graphql`. Create a schema file and implement `@QueryMapping` and `@SchemaMapping` to resolve complex object graphs.",
+            "achievement": "Can build modern, flexible APIs for frontend clients suffering from over-fetching."
+          },
+          {
+            "day": 69,
             "topic": "Phase 2 Capstone",
             "priority": "MUST KNOW",
-            "tasks": "Build a fully documented, tested, and dockerized REST API for a \"Task Management System\" using DTOs, global exceptions, and validation.",
+            "tasks": "Build a fully documented, tested, and dockerized REST API for a \"Task Management System\" using DTOs, global exceptions, validation, ETags, and idempotency keys.",
             "achievement": "Can build a production-grade backend service completely from scratch."
           }
         ]
@@ -1416,262 +1444,290 @@ export const roadmapData = [
       {
         "id": "2-3",
         "title": "DATA PERSISTENCE & SECURITY",
-        "days": "Days 66–102",
+        "days": "Days 70\u2013110",
         "items": [
           {
-            "day": 66,
+            "day": 70,
             "topic": "Raw JDBC & Connection Pools",
             "priority": "MUST KNOW",
             "tasks": "Connect to Postgres using pure JDBC. Understand `PreparedStatement`. Learn why HikariCP connection pooling is essential.",
             "achievement": "Can explain how Java communicates with databases at the lowest driver level."
           },
           {
-            "day": 67,
+            "day": 71,
+            "topic": "HikariCP Pool Sizing & Tuning",
+            "priority": "IMPORTANT",
+            "tasks": "Study HikariCP's pool-sizing formula (connections = ((core_count * 2) + effective_spindle_count)). Tune `maximumPoolSize`, `connectionTimeout`, and `leakDetectionThreshold` under simulated load.",
+            "achievement": "Can prevent connection pool exhaustion and diagnose leaked connections in production traffic spikes."
+          },
+          {
+            "day": 72,
             "topic": "Object-Relational Mapping (ORM)",
             "priority": "MUST KNOW",
             "tasks": "Study the impedance mismatch between objects and relational tables. Understand what Hibernate actually does under the hood.",
             "achievement": "Can explain why ORMs are used and when they should be avoided (e.g., massive batch inserts)."
           },
           {
-            "day": 68,
+            "day": 73,
             "topic": "JPA Entities & Primary Keys",
             "priority": "MUST KNOW",
             "tasks": "Create `@Entity` classes. Map columns. Use `@Id` and `@GeneratedValue(strategy = GenerationType.IDENTITY)` or `UUID`.",
             "achievement": "Can map Java classes directly to database tables securely."
           },
           {
-            "day": 69,
+            "day": 74,
             "topic": "Spring Data JPA Basics",
             "priority": "MUST KNOW",
             "tasks": "Create an interface extending `JpaRepository`. Use derived query methods (e.g., `findByLastNameAndAgeGreaterThan`).",
             "achievement": "Can perform basic CRUD operations without writing a single line of SQL."
           },
           {
-            "day": 70,
+            "day": 75,
             "topic": "JPA Relationships: One-to-Many",
             "priority": "MUST KNOW",
             "tasks": "Map an Author to many Books. Understand `@OneToMany`, `@ManyToOne`, and the importance of the `mappedBy` attribute.",
             "achievement": "Can implement bidirectional relationships without causing infinite loops."
           },
           {
-            "day": 71,
+            "day": 76,
             "topic": "JPA Relationships: Many-to-Many",
             "priority": "MUST KNOW",
             "tasks": "Map Students to Courses. Understand how Hibernate automatically creates the hidden join table using `@JoinTable`.",
             "achievement": "Can design complex, interconnected domain models in Java."
           },
           {
-            "day": 72,
+            "day": 77,
             "topic": "Cascade Types & Orphan Removal",
             "priority": "MUST KNOW",
             "tasks": "Study `CascadeType.ALL` vs `PERSIST`. Understand when deleting an Author should automatically delete their Books.",
             "achievement": "Can safely manage the lifecycle of child entities without leaving orphaned database rows."
           },
           {
-            "day": 73,
+            "day": 78,
             "topic": "Transactions (@Transactional)",
             "priority": "MUST KNOW",
             "tasks": "Annotate a service method with `@Transactional`. Intentionally throw a RuntimeException and observe the database rollback.",
             "achievement": "Can guarantee ACID properties across complex, multi-step business logic operations."
           },
           {
-            "day": 74,
+            "day": 79,
             "topic": "Fetch Strategies (Lazy vs Eager)",
             "priority": "MUST KNOW",
             "tasks": "Study `FetchType.LAZY`. Understand why Eager fetching is considered an anti-pattern and leads to performance nightmares.",
             "achievement": "Can design entities that do not accidentally load the entire database into memory."
           },
           {
-            "day": 75,
+            "day": 80,
             "topic": "The N+1 Query Problem",
             "priority": "MUST KNOW",
             "tasks": "Observe the N+1 problem in the logs when fetching a list of Authors and their Books. Fix it using `@EntityGraph` or `JOIN FETCH`.",
             "achievement": "Can diagnose and fix the most common performance killer in Spring Boot applications."
           },
           {
-            "day": 76,
+            "day": 81,
+            "topic": "Hibernate Second-Level Cache",
+            "priority": "IMPORTANT",
+            "tasks": "Enable Hibernate L2 cache with Ehcache or a Redis-backed provider. Configure `@Cacheable` at the entity level and study cache regions, eviction policies, and when L2 cache causes stale-read bugs.",
+            "achievement": "Can reduce repeated identical entity loads across transactions without introducing data staleness risk."
+          },
+          {
+            "day": 82,
             "topic": "JPQL & Native Queries",
             "priority": "MUST KNOW",
             "tasks": "Write custom `@Query` annotations using JPQL for complex joins. Fall back to `nativeQuery = true` for database-specific features.",
             "achievement": "Can bypass ORM limitations to execute highly optimized custom SQL queries."
           },
           {
-            "day": 77,
+            "day": 83,
             "topic": "Pagination in Spring Data",
             "priority": "MUST KNOW",
             "tasks": "Pass a `PageRequest.of(0, 10)` to a repository method. Understand how Hibernate generates the specific SQL `LIMIT`/`OFFSET` clauses.",
             "achievement": "Can fetch data in small, memory-safe chunks directly from the database."
           },
           {
-            "day": 78,
+            "day": 84,
             "topic": "Projections",
             "priority": "IMPORTANT",
             "tasks": "Create an interface projection to fetch ONLY the `firstName` and `email` columns instead of the entire User entity.",
             "achievement": "Can optimize read performance by preventing `SELECT *` on massive tables."
           },
           {
-            "day": 79,
+            "day": 85,
             "topic": "Database Migrations (Flyway)",
             "priority": "MUST KNOW",
             "tasks": "Integrate Flyway. Write `V1__init.sql` and `V2__add_column.sql`. Understand why `spring.jpa.hibernate.ddl-auto=update` is illegal in production.",
             "achievement": "Can safely version-control and deploy database schema changes across environments."
           },
           {
-            "day": 80,
+            "day": 86,
+            "topic": "Liquibase as a Flyway Alternative",
+            "priority": "GOOD TO KNOW",
+            "tasks": "Recreate Day 85's migrations using Liquibase changelogs (XML/YAML/SQL format). Compare rollback support and changelog-tracking differences against Flyway.",
+            "achievement": "Can speak intelligently to either migration tool in interviews and onboard onto teams using either standard."
+          },
+          {
+            "day": 87,
             "topic": "Optimistic Locking",
             "priority": "MUST KNOW",
             "tasks": "Add an `@Version` column. Simulate two users updating the same record simultaneously and handle the `OptimisticLockException`.",
             "achievement": "Can prevent lost updates in highly concurrent business applications (like inventory management)."
           },
           {
-            "day": 81,
+            "day": 88,
             "topic": "Data Auditing",
             "priority": "IMPORTANT",
             "tasks": "Enable `@EnableJpaAuditing`. Use `@CreatedDate` and `@LastModifiedDate` to automatically track when rows are inserted or updated.",
             "achievement": "Can implement automatic auditing required for enterprise compliance."
           },
           {
-            "day": 82,
+            "day": 89,
             "topic": "Soft Deletes",
             "priority": "IMPORTANT",
             "tasks": "Implement Soft Deletes using `@SQLDelete` and `@Where`. When a user deletes an item, update a `deleted` flag instead of removing the row.",
             "achievement": "Can prevent catastrophic data loss while maintaining a clean application view."
           },
           {
-            "day": 83,
+            "day": 90,
+            "topic": "Multi-Tenancy Patterns",
+            "priority": "IMPORTANT",
+            "tasks": "Implement a discriminator-column multi-tenancy strategy (a `tenant_id` column filtered via Hibernate `@Filter` or `@PostFilter`). Study the trade-offs against schema-per-tenant and database-per-tenant approaches.",
+            "achievement": "Can design a single Spring Boot application that safely serves multiple isolated customers (SaaS architecture)."
+          },
+          {
+            "day": 91,
             "topic": "Testing the Data Layer (@DataJpaTest)",
             "priority": "MUST KNOW",
             "tasks": "Write tests focused purely on repository queries using `@DataJpaTest`. Validate custom JPQL logic without booting web servers.",
             "achievement": "Can mathematically prove that custom database queries return the exact expected data."
           },
           {
-            "day": 84,
+            "day": 92,
             "topic": "Spring Security Architecture",
             "priority": "MUST KNOW",
             "tasks": "Study the `SecurityFilterChain`, `AuthenticationManager`, and `Filter` order. Do not write code yet, just understand the request flow.",
             "achievement": "Can explain how Spring intercepts HTTP requests to enforce security rules."
           },
           {
-            "day": 85,
+            "day": 93,
             "topic": "Basic Authentication & Users",
             "priority": "MUST KNOW",
             "tasks": "Implement `UserDetailsService`. Load users from the database. Encode passwords using `BCryptPasswordEncoder`.",
             "achievement": "Can securely store passwords and authenticate users against a relational database."
           },
           {
-            "day": 86,
+            "day": 94,
             "topic": "Role-Based Access Control (RBAC)",
             "priority": "MUST KNOW",
             "tasks": "Configure URL-based security (`.requestMatchers(\"/admin/**\").hasRole(\"ADMIN\")`). Add method-level security using `@PreAuthorize`.",
             "achievement": "Can build complex authorization hierarchies to restrict feature access."
           },
           {
-            "day": 87,
+            "day": 95,
             "topic": "Attribute-Based Access Control (ABAC)",
             "priority": "MUST KNOW",
             "tasks": "Implement ABAC using Spring Security and custom evaluation context. Define access control rules based on user attributes, resource type, and environmental variables.",
             "achievement": "Can secure microservices using fine-grained, attribute-based access control rules."
           },
           {
-            "day": 88,
+            "day": 96,
             "topic": "Stateless Security & JWT",
             "priority": "MUST KNOW",
             "tasks": "Disable session management (Cookies/JSESSIONID). Generate a JWT containing user roles upon successful login.",
             "achievement": "Can architect stateless security required for horizontally scaling microservices."
           },
           {
-            "day": 89,
+            "day": 97,
             "topic": "JWT Filter Implementation",
             "priority": "MUST KNOW",
             "tasks": "Write a custom `OncePerRequestFilter` that intercepts all incoming requests, extracts the JWT from the Authorization header, and validates the signature.",
             "achievement": "Can secure an entire API ecosystem using cryptographically signed tokens."
           },
           {
-            "day": 90,
+            "day": 98,
             "topic": "Refresh Tokens",
             "priority": "MUST KNOW",
             "tasks": "Implement a short-lived Access Token (15 mins) and a long-lived Refresh Token stored securely in an HTTP-only cookie.",
             "achievement": "Can balance high security with excellent user experience (avoiding constant logins)."
           },
           {
-            "day": 91,
+            "day": 99,
             "topic": "CORS & CSRF Defenses",
             "priority": "MUST KNOW",
             "tasks": "Understand Cross-Site Request Forgery. Why is CSRF mostly disabled in stateless API architectures? Properly configure CORS in the security chain.",
             "achievement": "Can secure APIs against browser-based exploitation techniques."
           },
           {
-            "day": 92,
+            "day": 100,
             "topic": "OWASP Top 10 for Java/Spring",
             "priority": "MUST KNOW",
             "tasks": "Study the OWASP Top 10 vulnerabilities in the context of Java and Spring Boot. Learn to secure endpoints against Injection, Broken Authentication, Sensitive Data Exposure, and XML External Entities (XXE).",
             "achievement": "Can audit and harden Spring Boot microservices against the most common security exploits."
           },
           {
-            "day": 93,
+            "day": 101,
             "topic": "OAuth2 Fundamentals",
             "priority": "MUST KNOW",
             "tasks": "Study the OAuth2 standard. Understand Authorization Servers, Resource Servers, and the Authorization Code flow.",
             "achievement": "Can explain how a user can grant an application access to their data without sharing passwords."
           },
           {
-            "day": 94,
+            "day": 102,
             "topic": "Spring Security OAuth2 Client",
             "priority": "MUST KNOW",
             "tasks": "Implement \"Login with Google/GitHub\" using `spring-boot-starter-oauth2-client`. Extract user details from the provider.",
             "achievement": "Can seamlessly integrate third-party social logins into your application."
           },
           {
-            "day": 95,
+            "day": 103,
             "topic": "OAuth2 Resource Server",
             "priority": "MUST KNOW",
-            "tasks": "Configure your API to act as a Resource Server that accepts and validates opaque tokens or JWTs issued by an external provider (like Keycloak).",
+            "tasks": "Configure your API to act as a Resource Server that accepts and validates opaque or JWTs issued by an external provider (like Keycloak).",
             "achievement": "Can decouple authentication infrastructure from core business APIs."
           },
           {
-            "day": 96,
+            "day": 104,
             "topic": "Keycloak Integration",
             "priority": "IMPORTANT",
             "tasks": "Spin up Keycloak in Docker. Configure a Realm and a Client. Protect your Spring Boot application by delegating authentication to Keycloak.",
             "achievement": "Can leverage enterprise Identity and Access Management (IAM) systems."
           },
           {
-            "day": 97,
+            "day": 105,
             "topic": "Method Security Extravaganza",
             "priority": "IMPORTANT",
             "tasks": "Use `@PostFilter` to filter a returned list so the user only sees data belonging to their tenant id.",
             "achievement": "Can implement highly granular, row-level data security constraints."
           },
           {
-            "day": 98,
+            "day": 106,
             "topic": "Phase 3 Capstone - Part 1",
             "priority": "MUST KNOW",
             "tasks": "Design the database schema for a \"Blogging Platform\". Write Flyway scripts, Entities, and complex JPQL queries for search.",
             "achievement": "Can build a robust, optimized persistence layer from scratch."
           },
           {
-            "day": 99,
+            "day": 107,
             "topic": "Phase 3 Capstone - Part 2",
             "priority": "MUST KNOW",
             "tasks": "Wrap the persistence layer in a REST API and secure it with custom JWT authentication and Role-based method security.",
             "achievement": "Can integrate database design, web routing, and strict security into a unified backend."
           },
           {
-            "day": 100,
+            "day": 108,
             "topic": "Interview Prep: Persistence",
             "priority": "MUST KNOW",
             "tasks": "Review N+1 problems, transaction propagation (`REQUIRES_NEW`), and Isolation Levels.",
             "achievement": "Ready to answer advanced database-related Java interview questions."
           },
           {
-            "day": 101,
+            "day": 109,
             "topic": "Interview Prep: Security",
             "priority": "MUST KNOW",
             "tasks": "Review JWT vulnerabilities, the OAuth2 flow, and the internal workings of the SecurityFilterChain.",
             "achievement": "Ready to confidently discuss modern API security architectures."
           },
           {
-            "day": 102,
+            "day": 110,
             "topic": "Architecture Review",
             "priority": "MUST KNOW",
             "tasks": "Draw a diagram of your Capstone project indicating where Validation, Security Filters, Transactions, and Caching occur.",
@@ -1681,274 +1737,330 @@ export const roadmapData = [
       },
       {
         "id": "2-4",
-        "title": "MICROSERVICES, KAFKA & RESILIENCY",
-        "days": "Days 103–140",
+        "title": "MICROSERVICES, KAFKA, SPRING AI & RESILIENCY",
+        "days": "Days 111\u2013156",
         "items": [
           {
-            "day": 103,
+            "day": 111,
             "topic": "gRPC Services in Spring Boot",
             "priority": "MUST KNOW",
             "tasks": "Configure grpc-spring-boot-starter. Define service schemas in .proto files, compile them to Java code, and implement a gRPC server and client stub.",
             "achievement": "Can build high-performance, strongly typed RPC communication protocols between internal microservices."
           },
           {
-            "day": 104,
+            "day": 112,
             "topic": "Distributed Tracing with OpenTelemetry",
             "priority": "MUST KNOW",
             "tasks": "Configure OpenTelemetry Java Agent or Micrometer Tracing. Propagate Span and Trace IDs from client request to gRPC call, exporting trace telemetry to Jaeger.",
             "achievement": "Can debug performance leaks and visualize request journeys across a microservice fleet."
           },
           {
-            "day": 105,
+            "day": 113,
             "topic": "Reactive Programming with Spring WebFlux",
             "priority": "IMPORTANT",
             "tasks": "Build reactive endpoints using Spring WebFlux, Mono, and Flux. Connect to a database using R2DBC. Differentiate non-blocking I/O (Netty) from thread-per-request (Tomcat).",
             "achievement": "Can architect ultra-high-concurrency, non-blocking APIs that handle massive event streams."
           },
           {
-            "day": 106,
+            "day": 114,
+            "topic": "Spring AI: Fundamentals & ChatClient",
+            "priority": "MUST KNOW",
+            "tasks": "Add `spring-ai-openai-spring-boot-starter` (or Anthropic/Ollama starter). Configure a `ChatClient` bean. Build a simple `@RestController` endpoint that sends a user prompt to an LLM and streams the response back using the reactive `ChatClient` API built on WebFlux.",
+            "achievement": "Can wire any LLM provider into a Spring Boot service using a single, swappable abstraction."
+          },
+          {
+            "day": 115,
+            "topic": "Spring AI: Prompt Templates & Output Parsing",
+            "priority": "IMPORTANT",
+            "tasks": "Use `PromptTemplate` to build reusable, parameterized prompts. Use `BeanOutputConverter` to force the LLM to return structured JSON that deserializes directly into a Java record.",
+            "achievement": "Can turn unpredictable LLM text output into strongly-typed, reliable Java objects."
+          },
+          {
+            "day": 116,
+            "topic": "Spring AI: Function/Tool Calling",
+            "priority": "MUST KNOW",
+            "tasks": "Register a Java method as a `@Tool` (or `FunctionCallback`) that the LLM can invoke, e.g. `getWeather(city)`. Observe the model deciding when to call it and how Spring AI executes and returns the result back into the conversation.",
+            "achievement": "Can build LLM-powered services that take real actions instead of just generating text \u2014 the foundation for Agentic AI."
+          },
+          {
+            "day": 117,
+            "topic": "Spring AI: VectorStore & RAG Basics",
+            "priority": "MUST KNOW",
+            "tasks": "Configure a `VectorStore` (pgvector or Qdrant). Use `DocumentReader`/`TokenTextSplitter` to chunk a PDF, embed it, and store it. Implement `QuestionAnswerAdvisor` to retrieve relevant chunks before calling the LLM.",
+            "achievement": "Can build a basic Retrieval-Augmented Generation pipeline entirely inside Spring Boot, directly bridging into your Phase 9 RAG work."
+          },
+          {
+            "day": 118,
+            "topic": "Spring AI: MCP Client/Server Integration",
+            "priority": "IMPORTANT",
+            "tasks": "Use Spring AI's MCP starter to expose a Spring Boot service as an MCP server, and separately configure a Spring AI `ChatClient` as an MCP client consuming external tools.",
+            "achievement": "Can connect Spring Boot services into the broader Model Context Protocol ecosystem you're studying in Phase 10."
+          },
+          {
+            "day": 119,
             "topic": "Centralized Secret Management (Spring Cloud Vault)",
             "priority": "MUST KNOW",
             "tasks": "Integrate Spring Cloud Vault with a local HashiCorp Vault instance. Store database credentials dynamically and configure automatic runtime credential rotation.",
             "achievement": "Can protect backend applications from hardcoded credentials by injecting configuration secrets dynamically at startup."
           },
           {
-            "day": 107,
+            "day": 120,
             "topic": "Microservices vs Monoliths",
             "priority": "MUST KNOW",
             "tasks": "Study the Fallacies of Distributed Computing. Define bounded contexts using Domain-Driven Design (DDD).",
             "achievement": "Can justify exactly when a project should (and should not) use microservices."
           },
           {
-            "day": 108,
+            "day": 121,
             "topic": "Service Discovery (Eureka)",
             "priority": "MUST KNOW",
             "tasks": "Create a Eureka Server. Register an Order Service and an Inventory Service so they can find each other without hardcoding IPs.",
             "achievement": "Can build dynamically scaling microservice clusters."
           },
           {
-            "day": 109,
+            "day": 122,
             "topic": "API Gateway (Spring Cloud Gateway)",
             "priority": "MUST KNOW",
             "tasks": "Create a Gateway service. Route requests to Order (`/api/orders/**`) and Inventory based on URL paths. Implement a Global Pre-Filter.",
             "achievement": "Can build a unified entry point that routes traffic across a massive microservice ecosystem."
           },
           {
-            "day": 110,
+            "day": 123,
             "topic": "Centralized Security at Gateway",
             "priority": "MUST KNOW",
             "tasks": "Move JWT validation to the API Gateway. Let the downstream microservices trust the Gateway via internal headers.",
             "achievement": "Can drastically simplify security across dozens of microservices."
           },
           {
-            "day": 111,
+            "day": 124,
             "topic": "Synchronous Communication (Feign)",
             "priority": "MUST KNOW",
             "tasks": "Use Spring Cloud OpenFeign. Create an interface in the Order Service that declaratively calls the Inventory Service via Eureka.",
             "achievement": "Can implement service-to-service HTTP communication cleanly and elegantly."
           },
           {
-            "day": 112,
+            "day": 125,
             "topic": "Distributed Tracing (Micrometer)",
             "priority": "MUST KNOW",
             "tasks": "Add Micrometer Tracing. Send traces to a Zipkin or Jaeger Docker container. View a request flowing through the Gateway -> Order -> Inventory.",
             "achievement": "Can debug latency issues hidden deep within a distributed microservice call chain."
           },
           {
-            "day": 113,
+            "day": 126,
+            "topic": "Service Mesh Fundamentals (Istio/Linkerd)",
+            "priority": "IMPORTANT",
+            "tasks": "Install Istio (or Linkerd) on a local Kubernetes cluster (Minikube/Kind). Inject sidecar proxies into your Order and Inventory services. Observe traffic routing, mTLS, and retries handled entirely outside application code.",
+            "achievement": "Can explain when cross-cutting concerns (security, retries, observability) should move from Spring code into mesh-level infrastructure."
+          },
+          {
+            "day": 127,
             "topic": "Resilience4j: Circuit Breaker",
             "priority": "MUST KNOW",
             "tasks": "Wrap the Feign client with a Circuit Breaker. Provide a fallback method if the Inventory Service is down (e.g., return \"Try again later\").",
             "achievement": "Can prevent a single failing microservice from taking down the entire application."
           },
           {
-            "day": 114,
+            "day": 128,
             "topic": "Resilience4j: Retries & Rate Limiting",
             "priority": "MUST KNOW",
             "tasks": "Add exponential backoff retries for transient network failures. Add a Rate Limiter at the API Gateway to prevent DDoS attacks.",
             "achievement": "Can build highly robust APIs that gracefully survive traffic spikes and network blips."
           },
           {
-            "day": 115,
+            "day": 129,
             "topic": "Centralized Configuration",
             "priority": "IMPORTANT",
             "tasks": "Set up Spring Cloud Config Server backed by a Git repository. Update an application property dynamically without restarting the service.",
             "achievement": "Can manage configuration for 50+ microservices from a single secure location."
           },
           {
-            "day": 116,
+            "day": 130,
             "topic": "Introduction to Apache Kafka",
             "priority": "MUST KNOW",
             "tasks": "Spin up Kafka and Zookeeper/Kraft in Docker. Understand Topics, Partitions, Producers, and Consumer Groups.",
             "achievement": "Can explain the architecture of an append-only distributed event log."
           },
           {
-            "day": 117,
+            "day": 131,
+            "topic": "Kafka Schema Registry (Avro/Protobuf)",
+            "priority": "MUST KNOW",
+            "tasks": "Spin up Confluent Schema Registry in Docker. Define an Avro or Protobuf schema for `OrderCreatedEvent`. Configure producer/consumer serializers to enforce schema compatibility rules (BACKWARD, FORWARD, FULL).",
+            "achievement": "Can prevent breaking changes from crashing downstream consumers as event schemas evolve over time."
+          },
+          {
+            "day": 132,
             "topic": "Spring Kafka: Producers",
             "priority": "MUST KNOW",
             "tasks": "Configure a `KafkaTemplate`. Publish a JSON `OrderCreatedEvent` to a Kafka topic when an order is placed.",
             "achievement": "Can emit asynchronous events to decouple business processes."
           },
           {
-            "day": 118,
+            "day": 133,
             "topic": "Spring Kafka: Consumers",
             "priority": "MUST KNOW",
             "tasks": "Use `@KafkaListener` in the Inventory Service to listen for `OrderCreatedEvent`. Update inventory asynchronously.",
             "achievement": "Can process distributed events in real-time, completely decoupling microservices."
           },
           {
-            "day": 119,
+            "day": 134,
+            "topic": "Kafka: Idempotent Consumers & Exactly-Once Semantics",
+            "priority": "MUST KNOW",
+            "tasks": "Implement idempotent consumption by tracking processed message IDs in a dedup table. Enable Kafka's transactional producer (`enable.idempotence=true`, `transactional.id`) and study exactly-once vs at-least-once trade-offs.",
+            "achievement": "Can guarantee that reprocessed or redelivered Kafka messages never corrupt downstream state."
+          },
+          {
+            "day": 135,
             "topic": "Kafka: Consumer Groups & Scaling",
             "priority": "MUST KNOW",
             "tasks": "Spin up 3 instances of the Inventory Service. Observe how Kafka distributes the partitions across the Consumer Group for parallel processing.",
             "achievement": "Can horizontally scale background event processing infinitely."
           },
           {
-            "day": 120,
+            "day": 136,
             "topic": "Kafka: Error Handling & DLQs",
             "priority": "MUST KNOW",
             "tasks": "Simulate a database failure during event processing. Configure a Dead Letter Queue (DLQ) to catch and store the failed message for manual review.",
             "achievement": "Can build resilient event pipelines that never lose data during crashes."
           },
           {
-            "day": 121,
+            "day": 137,
+            "topic": "Kafka Streams Fundamentals",
+            "priority": "IMPORTANT",
+            "tasks": "Build a Kafka Streams topology that consumes `OrderCreatedEvent`, performs a windowed aggregation (e.g. orders-per-minute), and publishes results to a new topic using the Streams DSL (`KStream`, `KTable`).",
+            "achievement": "Can process and transform event streams in real time without an external processing cluster like Spark or Flink."
+          },
+          {
+            "day": 138,
             "topic": "The Transactional Outbox Pattern",
             "priority": "MUST KNOW",
             "tasks": "Understand the dual-write problem (DB save + Kafka publish). Implement the Outbox pattern using a separate table and a background publisher.",
             "achievement": "Can guarantee 100% data consistency between microservice databases and Kafka topics."
           },
           {
-            "day": 122,
+            "day": 139,
             "topic": "Distributed Transactions: Saga (Choreography)",
             "priority": "MUST KNOW",
             "tasks": "Implement a Saga. Order Service emits event -> Inventory Service consumes, updates DB, emits \"InventoryReserved\" event -> Order Service finalizes.",
             "achievement": "Can maintain data consistency across microservices without using distributed database locks."
           },
           {
-            "day": 123,
+            "day": 140,
             "topic": "Distributed Transactions: Saga (Orchestration)",
             "priority": "IMPORTANT",
             "tasks": "Understand the Orchestration approach using a centralized state machine to coordinate the Saga steps and compensations.",
             "achievement": "Can evaluate and select the correct Saga architecture based on workflow complexity."
           },
           {
-            "day": 124,
+            "day": 141,
             "topic": "Compensating Transactions",
             "priority": "MUST KNOW",
             "tasks": "Implement the failure path of a Saga. If Payment fails, emit an event that triggers the Inventory service to add the items back.",
             "achievement": "Can cleanly rollback distributed transactions across multiple disparate databases."
           },
           {
-            "day": 125,
+            "day": 142,
             "topic": "Event Sourcing Fundamentals",
             "priority": "IMPORTANT",
             "tasks": "Study the theory of storing every state change as an event rather than overwriting rows. Look at frameworks like Axon.",
             "achievement": "Can architect audit-proof financial systems using pure event sourcing."
           },
           {
-            "day": 126,
+            "day": 143,
             "topic": "CQRS Implementation",
             "priority": "IMPORTANT",
             "tasks": "Separate the Write API (hitting a relational DB) from the Read API (hitting an Elasticsearch cluster populated via Kafka events).",
             "achievement": "Can scale read-heavy applications infinitely without impacting write performance."
           },
           {
-            "day": 127,
-            "topic": "GraphQL Integration",
-            "priority": "IMPORTANT",
-            "tasks": "Add `spring-boot-starter-graphql`. Create a schema file and implement `@QueryMapping` and `@SchemaMapping` to resolve complex object graphs.",
-            "achievement": "Can build modern, flexible APIs for frontend clients suffering from over-fetching."
-          },
-          {
-            "day": 128,
+            "day": 144,
             "topic": "WebSocket Communication",
             "priority": "IMPORTANT",
             "tasks": "Implement STOMP over WebSockets in Spring. Build a real-time notification endpoint that pushes alerts to connected clients.",
             "achievement": "Can push data from the server to the browser instantly without polling."
           },
           {
-            "day": 129,
+            "day": 145,
             "topic": "Redis for Distributed Locking",
             "priority": "MUST KNOW",
             "tasks": "Use Redisson to acquire a distributed lock before executing a scheduled task, ensuring it only runs on one microservice instance.",
             "achievement": "Can prevent data corruption caused by background jobs running concurrently across a cluster."
           },
           {
-            "day": 130,
+            "day": 146,
             "topic": "API Versioning Strategies",
             "priority": "MUST KNOW",
             "tasks": "Implement URL versioning (`/v1/api`), Header versioning, and Content Negotiation versioning.",
             "achievement": "Can evolve APIs safely without breaking existing mobile app clients in production."
           },
           {
-            "day": 131,
+            "day": 147,
+            "topic": "Blue-Green & Canary Deployments",
+            "priority": "IMPORTANT",
+            "tasks": "Configure two parallel environments (blue/green) behind your API Gateway or a Kubernetes Service. Practice shifting traffic gradually (canary %) to a new version and instantly rolling back on error-rate spikes.",
+            "achievement": "Can ship new microservice versions to production with zero downtime and a safe, fast rollback path."
+          },
+          {
+            "day": 148,
             "topic": "Phase 4 Capstone - Architecture (Part 1)",
             "priority": "MUST KNOW",
-            "tasks": "Design an E-Commerce microservice architecture: Gateway, Auth Service, Order Service, Inventory Service, and Payment Service. Spin up Kafka and DBs in Docker.",
+            "tasks": "Design an E-Commerce microservice architecture: Gateway, Auth Service, Order Service, Inventory Service, Payment Service, and an AI-powered Support Service. Spin up Kafka and DBs in Docker.",
             "achievement": "Can bootstrap a massive, enterprise-grade distributed system infrastructure."
           },
           {
-            "day": 132,
+            "day": 149,
             "topic": "Phase 4 Capstone - Security & Routing (Part 2)",
             "priority": "MUST KNOW",
             "tasks": "Implement the Gateway, configure routes, and centralize JWT validation. Ensure downstream services are secure.",
             "achievement": "Can secure an entire ecosystem of microservices perfectly."
           },
           {
-            "day": 133,
+            "day": 150,
             "topic": "Phase 4 Capstone - Business Logic (Part 3)",
             "priority": "MUST KNOW",
             "tasks": "Implement the core CRUD and persistence logic for Orders and Inventory using Spring Data JPA and MapStruct.",
             "achievement": "Can rapidly develop robust domain-driven microservices."
           },
           {
-            "day": 134,
+            "day": 151,
             "topic": "Phase 4 Capstone - Kafka Sagas (Part 4)",
             "priority": "MUST KNOW",
             "tasks": "Wire the services together using Kafka. Implement a fully functioning Saga with compensating transactions for failed payments.",
             "achievement": "Can build bulletproof, eventually-consistent distributed workflows."
           },
           {
-            "day": 135,
-            "topic": "Phase 4 Capstone - Resiliency (Part 5)",
+            "day": 152,
+            "topic": "Phase 4 Capstone - Spring AI Support Service (Part 5)",
+            "priority": "MUST KNOW",
+            "tasks": "Build an AI-powered customer support microservice using Spring AI's `ChatClient` with RAG over your product/order documentation (VectorStore), plus a tool-calling function that can query real order status from the Order Service.",
+            "achievement": "Can integrate a production LLM-powered microservice into a larger event-driven architecture \u2014 completing the bridge between Spring Boot and your AI/Agentic roadmap."
+          },
+          {
+            "day": 153,
+            "topic": "Phase 4 Capstone - Resiliency (Part 6)",
             "priority": "MUST KNOW",
             "tasks": "Add Circuit Breakers to external calls, export Micrometer traces to Zipkin, and add global exception handling.",
             "achievement": "Can harden a system against network failures and provide deep observability."
           },
           {
-            "day": 136,
-            "topic": "Interview Prep: Spring Framework",
+            "day": 154,
+            "topic": "Interview Prep: Spring Framework & Spring AI",
             "priority": "MUST KNOW",
-            "tasks": "Review IoC, Bean Lifecycles, AOP, and `@Transactional` propagation behaviors.",
-            "achievement": "Ready to dominate the foundational Spring boot technical interview."
+            "tasks": "Review IoC, Bean Lifecycles, AOP, `@Transactional` propagation behaviors, and Spring AI's ChatClient/VectorStore/Tool-calling abstractions.",
+            "achievement": "Ready to dominate the foundational Spring Boot and Spring AI technical interview."
           },
           {
-            "day": 137,
-            "topic": "Interview Prep: Microservices",
+            "day": 155,
+            "topic": "Interview Prep: Microservices & Kafka",
             "priority": "MUST KNOW",
-            "tasks": "Review Circuit Breakers, API Gateways, Service Discovery, and the Outbox Pattern.",
-            "achievement": "Ready to ace system design interviews focusing on microservice architecture."
+            "tasks": "Review Circuit Breakers, API Gateways, Service Discovery, the Outbox Pattern, Kafka partitions, consumer groups, offset management, and exactly-once delivery semantics.",
+            "achievement": "Ready to ace system design interviews focusing on microservice and event-driven architecture."
           },
           {
-            "day": 138,
-            "topic": "Interview Prep: Kafka & Async",
+            "day": 156,
+            "topic": "Resume, GitHub Polish & Graduation Day",
             "priority": "MUST KNOW",
-            "tasks": "Review Kafka partitions, consumer groups, offset management, and at-least-once delivery semantics.",
-            "achievement": "Ready to discuss high-throughput data pipelines with senior engineers."
-          },
-          {
-            "day": 139,
-            "topic": "Resume & GitHub Polish",
-            "priority": "MUST KNOW",
-            "tasks": "Push your capstone to GitHub. Write an exceptional README detailing the architecture, Saga flow, and how to run it via Docker Compose.",
-            "achievement": "Can present a FAANG-tier portfolio project to hiring managers."
-          },
-          {
-            "day": 140,
-            "topic": "Graduation Day",
-            "priority": "MUST KNOW",
-            "tasks": "Reflect on your journey from basic Java syntax to architecting distributed, event-driven microservices.",
-            "achievement": "You are now a highly capable, job-ready Senior Backend Engineer."
+            "tasks": "Push your capstone to GitHub. Write an exceptional README detailing the architecture, Saga flow, Spring AI integration, and how to run it via Docker Compose. Reflect on your journey from basic Java syntax to architecting distributed, event-driven, AI-augmented microservices.",
+            "achievement": "You are now a highly capable, job-ready Senior Backend + AI Engineer."
           }
         ]
       }
@@ -1963,7 +2075,7 @@ export const roadmapData = [
       {
         "id": "3-1",
         "title": "PYTHON, MATH & CLASSICAL ML",
-        "days": "Days 1–25",
+        "days": "Days 1\u201325",
         "items": [
           {
             "day": 1,
@@ -2145,7 +2257,7 @@ export const roadmapData = [
       {
         "id": "3-2",
         "title": "DEEP LEARNING, NLP & TRANSFORMERS",
-        "days": "Days 26–57",
+        "days": "Days 26\u201357",
         "items": [
           {
             "day": 26,
@@ -2376,7 +2488,7 @@ export const roadmapData = [
       {
         "id": "3-3",
         "title": "ENTERPRISE RAG & AI SECURITY",
-        "days": "Days 58–92",
+        "days": "Days 58\u201392",
         "items": [
           {
             "day": 58,
@@ -2628,7 +2740,7 @@ export const roadmapData = [
       {
         "id": "3-4",
         "title": "AUTONOMOUS AGENTS & LANGGRAPH",
-        "days": "Days 93–141",
+        "days": "Days 93\u2013141",
         "items": [
           {
             "day": 93,
@@ -2986,7 +3098,7 @@ export const roadmapData = [
       {
         "id": "4-1",
         "title": "LINUX & OS INTERNALS",
-        "days": "Days 1–29",
+        "days": "Days 1\u201329",
         "items": [
           {
             "day": 1,
@@ -3196,7 +3308,7 @@ export const roadmapData = [
       {
         "id": "4-2",
         "title": "BASH, NGINX & GIT ENGINEERING",
-        "days": "Days 30–54",
+        "days": "Days 30\u201354",
         "items": [
           {
             "day": 30,
@@ -3378,7 +3490,7 @@ export const roadmapData = [
       {
         "id": "4-3",
         "title": "RELATIONAL DBs & SQL MASTERY",
-        "days": "Days 55–81",
+        "days": "Days 55\u201381",
         "items": [
           {
             "day": 55,
@@ -3574,7 +3686,7 @@ export const roadmapData = [
       {
         "id": "4-4",
         "title": "NOSQL, ELASTICSEARCH & CACHING",
-        "days": "Days 82–101",
+        "days": "Days 82\u2013101",
         "items": [
           {
             "day": 82,
@@ -3721,7 +3833,7 @@ export const roadmapData = [
       {
         "id": "4-5",
         "title": "DB ADMINISTRATION & REAL-WORLD ARCHITECTURE",
-        "days": "Days 102–112",
+        "days": "Days 102\u2013112",
         "items": [
           {
             "day": 102,
@@ -3813,7 +3925,7 @@ export const roadmapData = [
       {
         "id": "5-1",
         "title": "CONTAINERIZATION & CLOUD FUNDAMENTALS",
-        "days": "Days 1–27",
+        "days": "Days 1\u201327",
         "items": [
           {
             "day": 1,
@@ -4009,7 +4121,7 @@ export const roadmapData = [
       {
         "id": "5-2",
         "title": "INFRASTRUCTURE AS CODE & CI/CD",
-        "days": "Days 28–52",
+        "days": "Days 28\u201352",
         "items": [
           {
             "day": 28,
@@ -4191,7 +4303,7 @@ export const roadmapData = [
       {
         "id": "5-3",
         "title": "KUBERNETES & OBSERVABILITY",
-        "days": "Days 53–77",
+        "days": "Days 53\u201377",
         "items": [
           {
             "day": 53,
@@ -4373,13 +4485,13 @@ export const roadmapData = [
       {
         "id": "5-4",
         "title": "MLOPS & AI INFRASTRUCTURE",
-        "days": "Days 78–104",
+        "days": "Days 78\u2013104",
         "items": [
           {
             "day": 78,
             "topic": "Introduction to MLOps",
             "priority": "MUST KNOW",
-            "tasks": "Study the difference between DevOps and MLOps. Understand why tracking code versions is not enough—you must track Data versions and Model versions.",
+            "tasks": "Study the difference between DevOps and MLOps. Understand why tracking code versions is not enough\u2014you must track Data versions and Model versions.",
             "achievement": "Can explain the massive operational complexity of deploying AI to production."
           },
           {
@@ -4569,7 +4681,7 @@ export const roadmapData = [
       {
         "id": "5-5",
         "title": "THE FINAL MILE",
-        "days": "Days 105–114",
+        "days": "Days 105\u2013114",
         "items": [
           {
             "day": 105,
@@ -4654,7 +4766,7 @@ export const roadmapData = [
       {
         "id": "6-1",
         "title": "JAVA BASICS & SYNTAX",
-        "days": "Days 1–15",
+        "days": "Days 1\u201315",
         "items": [
           {
             "day": 1,
@@ -4766,7 +4878,7 @@ export const roadmapData = [
       {
         "id": "6-2",
         "title": "OBJECT-ORIENTED PROGRAMMING",
-        "days": "Days 16–35",
+        "days": "Days 16\u201335",
         "items": [
           {
             "day": 16,
@@ -4864,7 +4976,7 @@ export const roadmapData = [
             "topic": "SOLID Principles in Java",
             "priority": "MUST KNOW",
             "tasks": "Study all five SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) with concrete Java code examples for each. Identify common SOLID violations in poorly designed code and how to fix them. Connect Dependency Inversion directly to how Spring's DI container works.",
-            "achievement": "Can review a Java class that violates 2–3 SOLID principles and refactor it while explaining which principle each fix satisfies."
+            "achievement": "Can review a Java class that violates 2\u20133 SOLID principles and refactor it while explaining which principle each fix satisfies."
           },
           {
             "day": 30,
@@ -4913,7 +5025,7 @@ export const roadmapData = [
       {
         "id": "6-3",
         "title": "COLLECTIONS, GENERICS & STRINGS",
-        "days": "Days 36–55",
+        "days": "Days 36\u201355",
         "items": [
           {
             "day": 36,
@@ -4961,14 +5073,14 @@ export const roadmapData = [
             "day": 42,
             "topic": "HashMap Internals (Deep Dive)",
             "priority": "MUST KNOW",
-            "tasks": "Study bucket array, hashing, collision handling (linked list → red-black tree conversion since Java 8), load factor, and resizing.",
+            "tasks": "Study bucket array, hashing, collision handling (linked list \u2192 red-black tree conversion since Java 8), load factor, and resizing.",
             "achievement": "Can explain step-by-step what happens internally when put() is called and a hash collision occurs."
           },
           {
             "day": 43,
             "topic": "Hashing Internals Deep Dive",
             "priority": "MUST KNOW",
-            "tasks": "Go deeper than HashMap mechanics into hash function design itself. Study the hashCode() contract in detail (equal objects must have equal hash codes), collision resolution strategies (chaining vs open addressing — linear/quadratic probing, double hashing), and the mathematics behind load factor and rehashing thresholds. Study why String and Integer's hashCode() implementations are designed the way they are (distribution quality, avoiding clustering).",
+            "tasks": "Go deeper than HashMap mechanics into hash function design itself. Study the hashCode() contract in detail (equal objects must have equal hash codes), collision resolution strategies (chaining vs open addressing \u2014 linear/quadratic probing, double hashing), and the mathematics behind load factor and rehashing thresholds. Study why String and Integer's hashCode() implementations are designed the way they are (distribution quality, avoiding clustering).",
             "achievement": "Can design a custom hashCode() for a multi-field class that minimizes collisions and explain the trade-off between a fast hash and a well-distributed hash."
           },
           {
@@ -5008,7 +5120,7 @@ export const roadmapData = [
           },
           {
             "day": 49,
-            "topic": "Generic Type Erasure — Full Deep Dive",
+            "topic": "Generic Type Erasure \u2014 Full Deep Dive",
             "priority": "MUST KNOW",
             "tasks": "Go beyond the type erasure overview into bridge methods (generated by the compiler for overridden generic methods), raw types and their dangers, reflection's limitations when inspecting generic type parameters at runtime, heap pollution scenarios, and the purpose of @SafeVarargs.",
             "achievement": "Can explain, with a code example, why heap pollution occurs with varargs and generics, and how @SafeVarargs addresses it."
@@ -5060,7 +5172,7 @@ export const roadmapData = [
       {
         "id": "6-4",
         "title": "EXCEPTION HANDLING, I/O, REFLECTION & ANNOTATIONS",
-        "days": "Days 56–67",
+        "days": "Days 56\u201367",
         "items": [
           {
             "day": 56,
@@ -5115,7 +5227,7 @@ export const roadmapData = [
             "day": 63,
             "topic": "Serialization Alternatives",
             "priority": "MUST KNOW",
-            "tasks": "Study why native Java serialization is largely avoided in modern backend systems (versioning fragility, security risk, performance). Learn how JSON serialization works under the hood (Jackson's ObjectMapper mechanics — reflection + annotations), and get an overview of Protobuf (schema-defined binary serialization). Build a comparison table covering size, speed, schema evolution, and security for native serialization vs JSON vs Protobuf.",
+            "tasks": "Study why native Java serialization is largely avoided in modern backend systems (versioning fragility, security risk, performance). Learn how JSON serialization works under the hood (Jackson's ObjectMapper mechanics \u2014 reflection + annotations), and get an overview of Protobuf (schema-defined binary serialization). Build a comparison table covering size, speed, schema evolution, and security for native serialization vs JSON vs Protobuf.",
             "achievement": "Can justify, in an interview setting, why a production Spring Boot API uses JSON (Jackson) instead of native Java serialization, and when Protobuf would be the better choice."
           },
           {
@@ -5158,14 +5270,14 @@ export const roadmapData = [
       {
         "id": "6-5",
         "title": "MULTITHREADING & CONCURRENCY",
-        "days": "Days 68–86",
+        "days": "Days 68\u201386",
         "items": [
           {
             "day": 68,
             "topic": "Process vs Thread & Thread Basics",
             "priority": "MUST KNOW",
             "tasks": "Understand the difference between processes and threads. Learn the Thread class, Runnable interface, and thread lifecycle states.",
-            "achievement": "Can draw and explain the full thread lifecycle diagram (New → Runnable → Running → Blocked/Waiting → Terminated)."
+            "achievement": "Can draw and explain the full thread lifecycle diagram (New \u2192 Runnable \u2192 Running \u2192 Blocked/Waiting \u2192 Terminated)."
           },
           {
             "day": 69,
@@ -5298,7 +5410,7 @@ export const roadmapData = [
       {
         "id": "6-6",
         "title": "JVM INTERNALS & MODERN JAVA",
-        "days": "Days 87–104",
+        "days": "Days 87\u2013104",
         "items": [
           {
             "day": 87,
@@ -5393,14 +5505,14 @@ export const roadmapData = [
           },
           {
             "day": 100,
-            "topic": "Java 9–17 Features",
+            "topic": "Java 9\u201317 Features",
             "priority": "MUST KNOW",
             "tasks": "Study modules (Java 9), var local type inference (Java 10), text blocks (Java 13+), and sealed classes (Java 17).",
             "achievement": "Can identify and use the appropriate modern syntax feature to simplify legacy-style code."
           },
           {
             "day": 101,
-            "topic": "Records & Pattern Matching (Java 14–21)",
+            "topic": "Records & Pattern Matching (Java 14\u201321)",
             "priority": "MUST KNOW",
             "tasks": "Deep dive into records as concise immutable data carriers. Study pattern matching for instanceof and switch (Java 21).",
             "achievement": "Can convert a verbose POJO with boilerplate getters/equals/hashCode into a single-line record."
@@ -5444,21 +5556,21 @@ export const roadmapData = [
           {
             "day": 1,
             "topic": "Big O, Big Theta, Big Omega (Light)",
-            "tasks": "Learn: Asymptotic notation — upper bound (O), lower bound (Ω), tight bound (Θ). Growth curve visual diagrams. | Code: None — conceptual day. | Practice: 5 complexity-classification questions (given code, state its Big O).",
+            "tasks": "Learn: Asymptotic notation \u2014 upper bound (O), lower bound (\u03a9), tight bound (\u0398). Growth curve visual diagrams. | Code: None \u2014 conceptual day. | Practice: 5 complexity-classification questions (given code, state its Big O).",
             "achievement": "Can classify any short code snippet's time complexity and explain worst-case vs average-case.",
             "priority": "MUST KNOW"
           },
           {
             "day": 2,
             "topic": "Nested Loops & Recursive Complexity (Light)",
-            "tasks": "Learn: Complexity of nested loops, recursive complexity via recurrence relations (basic intro, full recursion tree later). | Code: Trace 3 nested-loop snippets by hand. | Practice: 5 problems — derive complexity from code.",
+            "tasks": "Learn: Complexity of nested loops, recursive complexity via recurrence relations (basic intro, full recursion tree later). | Code: Trace 3 nested-loop snippets by hand. | Practice: 5 problems \u2014 derive complexity from code.",
             "achievement": "Can derive Big O for nested loops and simple recursive calls without running the code.",
             "priority": "MUST KNOW"
           },
           {
             "day": 3,
             "topic": "Java Toolkit for DSA: Arrays & Collections (Light)",
-            "tasks": "Learn: Java array/Collection landscape relevant to DSA — when to use `int[]` vs `ArrayList<Integer>`, memory layout comparison. | Code: Write equivalent loops using both primitive arrays and ArrayLists; time them. | Practice: 4 small syntax exercises.",
+            "tasks": "Learn: Java array/Collection landscape relevant to DSA \u2014 when to use `int[]` vs `ArrayList<Integer>`, memory layout comparison. | Code: Write equivalent loops using both primitive arrays and ArrayLists; time them. | Practice: 4 small syntax exercises.",
             "achievement": "Can explain why `int[]` outperforms `ArrayList<Integer>` for tight loops, citing memory layout.",
             "priority": "MUST KNOW"
           },
@@ -5479,28 +5591,28 @@ export const roadmapData = [
           {
             "day": 6,
             "topic": "Java Performance Traps: Practice Day (Medium, Day 2/2)",
-            "tasks": "Learn: Review JDK built-in performance traps table — autoboxing in loops, unnecessary object creation. | Code: Refactor a deliberately inefficient snippet to use primitives. | Practice: 5 mixed problems combining comparator + overflow-safety concepts.",
+            "tasks": "Learn: Review JDK built-in performance traps table \u2014 autoboxing in loops, unnecessary object creation. | Code: Refactor a deliberately inefficient snippet to use primitives. | Practice: 5 mixed problems combining comparator + overflow-safety concepts.",
             "achievement": "Can review a code snippet and flag 3 distinct Java-specific performance traps.",
             "priority": "MUST KNOW"
           },
           {
             "day": 7,
             "topic": "Hashing Basics: HashMap & HashSet (Light)",
-            "tasks": "Learn: HashMap/HashSet internals at a usage level (not full collision internals yet — that's Day 14 in Linear DS). Frequency counting fundamentals. | Code: Implement a frequency-count function using HashMap. | Practice: 4 frequency-counting problems (e.g., first unique character).",
+            "tasks": "Learn: HashMap/HashSet internals at a usage level (not full collision internals yet \u2014 that's Day 14 in Linear DS). Frequency counting fundamentals. | Code: Implement a frequency-count function using HashMap. | Practice: 4 frequency-counting problems (e.g., first unique character).",
             "achievement": "Can solve any \"count occurrences of X\" problem using HashMap in O(N).",
             "priority": "MUST KNOW"
           },
           {
             "day": 8,
             "topic": "Hashing Practice Day (Light)",
-            "tasks": "Learn: Review — when to reach for HashMap vs HashSet vs frequency array. | Code: None — pure practice day. | Practice: 5 hashing problems (mix of HashMap/HashSet use cases).",
+            "tasks": "Learn: Review \u2014 when to reach for HashMap vs HashSet vs frequency array. | Code: None \u2014 pure practice day. | Practice: 5 hashing problems (mix of HashMap/HashSet use cases).",
             "achievement": "Can decide within seconds whether a problem needs HashMap, HashSet, or a fixed-size frequency array.",
             "priority": "MUST KNOW"
           },
           {
             "day": 9,
             "topic": "HANDS-ON LAB: Complexity & JVM Profiling + Phase Cheat Sheet",
-            "tasks": "Learn: Review the full Foundations cheat sheet. | Code: Complete the timed JVM profiling exercises. | Practice: Timed mixed-review quiz (5 questions across Days 1–8).",
+            "tasks": "Learn: Review the full Foundations cheat sheet. | Code: Complete the timed JVM profiling exercises. | Practice: Timed mixed-review quiz (5 questions across Days 1\u20138).",
             "achievement": "Can recite the Foundations cheat sheet cold and complete the lab within its suggested time.",
             "priority": "MUST KNOW"
           }
@@ -5521,14 +5633,14 @@ export const roadmapData = [
           {
             "day": 11,
             "topic": "Dynamic Array From Scratch (Medium, Day 1/2)",
-            "tasks": "Learn: How ArrayList resizes internally — growth factor, amortized O(1) insertion. | Code: Begin implementing a dynamic array class from scratch (resize logic). | Practice: None yet — finish implementation first.",
+            "tasks": "Learn: How ArrayList resizes internally \u2014 growth factor, amortized O(1) insertion. | Code: Begin implementing a dynamic array class from scratch (resize logic). | Practice: None yet \u2014 finish implementation first.",
             "achievement": "Has a working `resize()` method that doubles capacity when full.",
             "priority": "MUST KNOW"
           },
           {
             "day": 12,
             "topic": "Dynamic Array Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review gotchas — shrinking strategy, amortized analysis proof sketch. | Code: Finish and test the dynamic array class (add, get, remove, resize). | Practice: 5 array problems (e.g., rotate array, move zeroes, remove duplicates in-place).",
+            "tasks": "Learn: Review gotchas \u2014 shrinking strategy, amortized analysis proof sketch. | Code: Finish and test the dynamic array class (add, get, remove, resize). | Practice: 5 array problems (e.g., rotate array, move zeroes, remove duplicates in-place).",
             "achievement": "Has a fully working hand-rolled dynamic array and can solve in-place array manipulation problems.",
             "priority": "MUST KNOW"
           },
@@ -5549,7 +5661,7 @@ export const roadmapData = [
           {
             "day": 15,
             "topic": "Doubly Linked List Practice + Cycle Detection (Medium, Day 2/2)",
-            "tasks": "Learn: Floyd's Cycle Detection (Tortoise & Hare) — finding cycle, finding cycle start, finding middle node. | Code: Finish the DLL implementation; implement Floyd's algorithm. | Practice: 4 problems (detect cycle, find cycle start, intersection of two linked lists).",
+            "tasks": "Learn: Floyd's Cycle Detection (Tortoise & Hare) \u2014 finding cycle, finding cycle start, finding middle node. | Code: Finish the DLL implementation; implement Floyd's algorithm. | Practice: 4 problems (detect cycle, find cycle start, intersection of two linked lists).",
             "achievement": "Can implement Floyd's Cycle Detection and explain why the two pointers must meet inside the cycle.",
             "priority": "MUST KNOW"
           },
@@ -5590,7 +5702,7 @@ export const roadmapData = [
           },
           {
             "day": 21,
-            "topic": "Hash Tables: Internals — Hash Functions & Collisions (Light)",
+            "topic": "Hash Tables: Internals \u2014 Hash Functions & Collisions (Light)",
             "tasks": "Learn: Hash function design, index calculation, load factor concept. | Code: Implement a basic hash function for strings. | Practice: 2 conceptual problems on hash distribution quality.",
             "achievement": "Can design a hash function and explain what makes one \"good\" (uniform distribution, low collision rate).",
             "priority": "MUST KNOW"
@@ -5633,22 +5745,22 @@ export const roadmapData = [
           {
             "day": 26,
             "topic": "Binary Search on Answer Space (Medium, Day 1/2)",
-            "tasks": "Learn: The \"binary search on answer\" pattern — monotonic predicate functions, search space ≠ input array. | Code: Begin implementing Koko Eating Bananas using this pattern. | Practice: None yet.",
+            "tasks": "Learn: The \"binary search on answer\" pattern \u2014 monotonic predicate functions, search space \u2260 input array. | Code: Begin implementing Koko Eating Bananas using this pattern. | Practice: None yet.",
             "achievement": "Can articulate the monotonic predicate for Koko Eating Bananas before finishing the code.",
             "priority": "MUST KNOW"
           },
           {
             "day": 27,
             "topic": "Binary Search on Answer: Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — Capacity to Ship Packages, Allocate Books as more \"search on answer\" examples. | Code: Finish Koko Eating Bananas. | Practice: 3 problems (Capacity to Ship Packages, Allocate Books, Split Array Largest Sum).",
+            "tasks": "Learn: Review \u2014 Capacity to Ship Packages, Allocate Books as more \"search on answer\" examples. | Code: Finish Koko Eating Bananas. | Practice: 3 problems (Capacity to Ship Packages, Allocate Books, Split Array Largest Sum).",
             "achievement": "Can recognize a \"search on answer\" problem within the first read and set up the feasibility check correctly.",
             "priority": "MUST KNOW"
           },
           {
             "day": 28,
             "topic": "Sorting Fundamentals: Bubble, Selection, Insertion (Light)",
-            "tasks": "Learn: O(N²) sorts — mechanics, stability, in-place behavior. | Code: Implement all three from scratch. | Practice: 2 problems (sort colors / Dutch national flag as an insertion-sort-adjacent problem).",
-            "achievement": "Can implement all three O(N²) sorts and state which are stable.",
+            "tasks": "Learn: O(N\u00b2) sorts \u2014 mechanics, stability, in-place behavior. | Code: Implement all three from scratch. | Practice: 2 problems (sort colors / Dutch national flag as an insertion-sort-adjacent problem).",
+            "achievement": "Can implement all three O(N\u00b2) sorts and state which are stable.",
             "priority": "MUST KNOW"
           },
           {
@@ -5661,14 +5773,14 @@ export const roadmapData = [
           {
             "day": 30,
             "topic": "Merge Sort: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — applications of merge sort (counting inversions). | Code: Finish full merge sort implementation. | Practice: 3 problems (sort an array, count inversions using merge sort).",
+            "tasks": "Learn: Review \u2014 applications of merge sort (counting inversions). | Code: Finish full merge sort implementation. | Practice: 3 problems (sort an array, count inversions using merge sort).",
             "achievement": "Has a fully working merge sort and can use it to count array inversions in O(N log N).",
             "priority": "MUST KNOW"
           },
           {
             "day": 31,
             "topic": "Quick Sort (Medium, Day 1/2)",
-            "tasks": "Learn: Pivot selection strategies, average O(N log N) vs worst O(N²), why it's unstable but in-place. | Code: Begin implementing quicksort (partition function first). | Practice: None yet.",
+            "tasks": "Learn: Pivot selection strategies, average O(N log N) vs worst O(N\u00b2), why it's unstable but in-place. | Code: Begin implementing quicksort (partition function first). | Practice: None yet.",
             "achievement": "Partition function correctly places the pivot and partitions the array around it.",
             "priority": "MUST KNOW"
           },
@@ -5688,30 +5800,30 @@ export const roadmapData = [
           },
           {
             "day": 34,
-            "topic": "🆕 Counting Sort (Light)",
-            "tasks": "Learn: Linear-time sort for small integer ranges — counting array, prefix-sum positioning. | Code: Implement Counting Sort from scratch. | Practice: 2 problems suited to Counting Sort (e.g., sort an array of 0s/1s/2s — Dutch flag revisited via counting).",
+            "topic": "\ud83c\udd95 Counting Sort (Light)",
+            "tasks": "Learn: Linear-time sort for small integer ranges \u2014 counting array, prefix-sum positioning. | Code: Implement Counting Sort from scratch. | Practice: 2 problems suited to Counting Sort (e.g., sort an array of 0s/1s/2s \u2014 Dutch flag revisited via counting).",
             "achievement": "Can implement Counting Sort in O(N+k) and explain when k (the range) makes it impractical.",
             "priority": "MUST KNOW"
           },
           {
             "day": 35,
-            "topic": "🆕 Radix Sort & Bucket Sort (Medium, Day 1/2)",
-            "tasks": "Learn: Radix Sort (digit-by-digit, stable counting sort as a subroutine), Bucket Sort (uniform distribution assumption). | Code: Begin implementing Radix Sort (LSD — least significant digit first). | Practice: None yet.",
+            "topic": "\ud83c\udd95 Radix Sort & Bucket Sort (Medium, Day 1/2)",
+            "tasks": "Learn: Radix Sort (digit-by-digit, stable counting sort as a subroutine), Bucket Sort (uniform distribution assumption). | Code: Begin implementing Radix Sort (LSD \u2014 least significant digit first). | Practice: None yet.",
             "achievement": "Radix Sort correctly sorts multi-digit numbers using repeated counting-sort passes.",
             "priority": "MUST KNOW"
           },
           {
             "day": 36,
-            "topic": "🆕 Radix & Bucket Sort: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — when Radix beats comparison sorts (fixed-digit-length integers, large datasets). | Code: Finish Radix Sort; implement Bucket Sort for floats in [0,1). | Practice: 2 problems comparing sort choice for different input distributions.",
+            "topic": "\ud83c\udd95 Radix & Bucket Sort: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 when Radix beats comparison sorts (fixed-digit-length integers, large datasets). | Code: Finish Radix Sort; implement Bucket Sort for floats in [0,1). | Practice: 2 problems comparing sort choice for different input distributions.",
             "achievement": "Can correctly choose between Counting/Radix/Bucket/comparison sort given any input distribution description.",
             "priority": "MUST KNOW"
           },
           {
             "day": 37,
             "topic": "HANDS-ON LAB: Median of Two Sorted Arrays (Medium, Day 1/2)",
-            "tasks": "Learn: Binary-search-on-partition technique for finding median across two sorted arrays without merging. | Code: Begin implementing the O(log(min(N,M))) solution. | Practice: None yet — this problem IS the practice.",
-            "achievement": "Understands why the partition must satisfy `maxLeft ≤ minRight` on both arrays simultaneously.",
+            "tasks": "Learn: Binary-search-on-partition technique for finding median across two sorted arrays without merging. | Code: Begin implementing the O(log(min(N,M))) solution. | Practice: None yet \u2014 this problem IS the practice.",
+            "achievement": "Understands why the partition must satisfy `maxLeft \u2264 minRight` on both arrays simultaneously.",
             "priority": "MUST KNOW"
           },
           {
@@ -5731,56 +5843,56 @@ export const roadmapData = [
           {
             "day": 39,
             "topic": "Two Pointers: Opposite Direction (Light)",
-            "tasks": "Learn: Opposite-direction two-pointer pattern — converging pointers on sorted input. | Code: Implement Two Sum II (sorted array input). | Practice: 2 problems (Two Sum sorted, Container With Most Water).",
+            "tasks": "Learn: Opposite-direction two-pointer pattern \u2014 converging pointers on sorted input. | Code: Implement Two Sum II (sorted array input). | Practice: 2 problems (Two Sum sorted, Container With Most Water).",
             "achievement": "Can solve Two Sum on a sorted array in O(N) using two converging pointers.",
             "priority": "MUST KNOW"
           },
           {
             "day": 40,
             "topic": "Two Pointers: Same Direction / Fast-Slow (Light)",
-            "tasks": "Learn: Same-direction pointer pattern — removing duplicates in-place, fast-slow for middle-finding (revisit from Day 15's cycle context). | Code: Implement Remove Duplicates from Sorted Array in-place. | Practice: 2 problems (remove duplicates, move zeroes).",
+            "tasks": "Learn: Same-direction pointer pattern \u2014 removing duplicates in-place, fast-slow for middle-finding (revisit from Day 15's cycle context). | Code: Implement Remove Duplicates from Sorted Array in-place. | Practice: 2 problems (remove duplicates, move zeroes).",
             "achievement": "Can solve in-place array modification problems using same-direction two pointers.",
             "priority": "MUST KNOW"
           },
           {
             "day": 41,
             "topic": "3Sum: Opposite Pointers with Duplicate Skipping (Medium, Day 1/2)",
-            "tasks": "Learn: Extending two-pointer to 3Sum — fix one element, two-pointer the rest, skip duplicates correctly. | Code: Begin implementing 3Sum. | Practice: None yet.",
+            "tasks": "Learn: Extending two-pointer to 3Sum \u2014 fix one element, two-pointer the rest, skip duplicates correctly. | Code: Begin implementing 3Sum. | Practice: None yet.",
             "achievement": "Understands exactly where and why duplicate-skipping logic goes in the loop.",
             "priority": "MUST KNOW"
           },
           {
             "day": 42,
             "topic": "3Sum: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — 3Sum Closest, 4Sum as generalizations. | Code: Finish and test 3Sum. | Practice: 3 problems (3Sum, 3Sum Closest, Trapping Rain Water via two pointers).",
-            "achievement": "Can implement 3Sum in O(N²) with correct duplicate handling, no Set needed.",
+            "tasks": "Learn: Review \u2014 3Sum Closest, 4Sum as generalizations. | Code: Finish and test 3Sum. | Practice: 3 problems (3Sum, 3Sum Closest, Trapping Rain Water via two pointers).",
+            "achievement": "Can implement 3Sum in O(N\u00b2) with correct duplicate handling, no Set needed.",
             "priority": "MUST KNOW"
           },
           {
             "day": 43,
             "topic": "Sliding Window: Fixed-Size Window (Light)",
-            "tasks": "Learn: Fixed-size window mechanics — window slides by exactly one element per step. | Code: Implement Max Sum Subarray of Size K. | Practice: 2 problems (fixed window problems).",
+            "tasks": "Learn: Fixed-size window mechanics \u2014 window slides by exactly one element per step. | Code: Implement Max Sum Subarray of Size K. | Practice: 2 problems (fixed window problems).",
             "achievement": "Can implement a fixed-size sliding window in O(N) without recomputing the window sum from scratch each time.",
             "priority": "MUST KNOW"
           },
           {
             "day": 44,
             "topic": "Sliding Window: Variable-Size Window (Medium, Day 1/2)",
-            "tasks": "Learn: Variable window mechanics — grow/shrink conditions, the \"shrink while invalid\" pattern. | Code: Begin implementing Longest Substring Without Repeating Characters. | Practice: None yet.",
+            "tasks": "Learn: Variable window mechanics \u2014 grow/shrink conditions, the \"shrink while invalid\" pattern. | Code: Begin implementing Longest Substring Without Repeating Characters. | Practice: None yet.",
             "achievement": "Can articulate the exact shrink condition before finishing the implementation.",
             "priority": "MUST KNOW"
           },
           {
             "day": 45,
             "topic": "Variable Sliding Window: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — Longest Substring with K Distinct Characters as a generalization. | Code: Finish Longest Substring Without Repeating Characters. | Practice: 2 problems (Max Consecutive Ones III, Longest Substring with K Distinct).",
+            "tasks": "Learn: Review \u2014 Longest Substring with K Distinct Characters as a generalization. | Code: Finish Longest Substring Without Repeating Characters. | Practice: 2 problems (Max Consecutive Ones III, Longest Substring with K Distinct).",
             "achievement": "Has a working O(N) solution and can adapt the shrink condition to new constraints.",
             "priority": "MUST KNOW"
           },
           {
             "day": 46,
             "topic": "Minimum Window Substring (Medium, Day 1/2)",
-            "tasks": "Learn: The hardest variable-window pattern — two frequency maps, \"valid window\" tracking via a counter. | Code: Begin implementing Minimum Window Substring (LeetCode 76). | Practice: None yet.",
+            "tasks": "Learn: The hardest variable-window pattern \u2014 two frequency maps, \"valid window\" tracking via a counter. | Code: Begin implementing Minimum Window Substring (LeetCode 76). | Practice: None yet.",
             "achievement": "Understands why a single counter (matched characters) avoids comparing two full frequency maps every iteration.",
             "priority": "MUST KNOW"
           },
@@ -5801,7 +5913,7 @@ export const roadmapData = [
           {
             "day": 49,
             "topic": "Subarray Sum Equals K: Prefix Map Pattern (Medium, Day 1/2)",
-            "tasks": "Learn: Combining prefix sum with a HashMap to count subarrays with a target sum — the \"prefix sum seen before\" trick. | Code: Begin implementing Subarray Sum Equals K (LeetCode 560). | Practice: None yet.",
+            "tasks": "Learn: Combining prefix sum with a HashMap to count subarrays with a target sum \u2014 the \"prefix sum seen before\" trick. | Code: Begin implementing Subarray Sum Equals K (LeetCode 560). | Practice: None yet.",
             "achievement": "Understands why `prefixSum - k` lookup in a HashMap solves this in O(N).",
             "priority": "MUST KNOW"
           },
@@ -5823,7 +5935,7 @@ export const roadmapData = [
             "day": 51,
             "topic": "Java String Fundamentals for DSA (Light)",
             "tasks": "Learn: String immutability impact on algorithms, char arrays vs String, when to use StringBuilder in tight loops. | Code: Convert a naive concatenation-in-loop snippet to use StringBuilder. | Practice: 2 problems (reverse a string in-place using char array).",
-            "achievement": "Can explain why string concatenation in a loop is O(N²) total and how StringBuilder fixes it.",
+            "achievement": "Can explain why string concatenation in a loop is O(N\u00b2) total and how StringBuilder fixes it.",
             "priority": "MUST KNOW"
           },
           {
@@ -5836,7 +5948,7 @@ export const roadmapData = [
           {
             "day": 53,
             "topic": "Palindrome Problems: Two-Pointer Check (Light)",
-            "tasks": "Learn: Two-pointer palindrome verification, handling case/non-alphanumeric characters. | Code: Implement Valid Palindrome (with character filtering). | Practice: 2 problems (valid palindrome, valid palindrome II — one deletion allowed).",
+            "tasks": "Learn: Two-pointer palindrome verification, handling case/non-alphanumeric characters. | Code: Implement Valid Palindrome (with character filtering). | Practice: 2 problems (valid palindrome, valid palindrome II \u2014 one deletion allowed).",
             "achievement": "Can verify a palindrome in O(N) with O(1) space using two pointers.",
             "priority": "MUST KNOW"
           },
@@ -5850,21 +5962,21 @@ export const roadmapData = [
           {
             "day": 55,
             "topic": "Longest Palindromic Substring: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — Palindromic Substrings (count all) as a close variant. | Code: Finish and test the expand-from-center solution. | Practice: 2 problems (Longest Palindromic Substring, Palindromic Substrings count).",
-            "achievement": "Can implement Longest Palindromic Substring in O(N²) cold.",
+            "tasks": "Learn: Review \u2014 Palindromic Substrings (count all) as a close variant. | Code: Finish and test the expand-from-center solution. | Practice: 2 problems (Longest Palindromic Substring, Palindromic Substrings count).",
+            "achievement": "Can implement Longest Palindromic Substring in O(N\u00b2) cold.",
             "priority": "MUST KNOW"
           },
           {
             "day": 56,
             "topic": "String Hashing: Rolling Hash (Light)",
-            "tasks": "Learn: Rolling hash concept — computing a hash incrementally as a window slides, avoiding full recomputation. | Code: Implement a basic rolling hash function. | Practice: 1 conceptual problem (verify rolling hash matches direct hash on a few windows).",
+            "tasks": "Learn: Rolling hash concept \u2014 computing a hash incrementally as a window slides, avoiding full recomputation. | Code: Implement a basic rolling hash function. | Practice: 1 conceptual problem (verify rolling hash matches direct hash on a few windows).",
             "achievement": "Can explain how rolling hash updates in O(1) per window shift instead of O(L) recomputation.",
             "priority": "MUST KNOW"
           },
           {
             "day": 57,
             "topic": "Rabin-Karp Algorithm (Medium, Day 1/2)",
-            "tasks": "Learn: Using rolling hash for substring search — comparing hash values, handling hash collisions with a verification step. | Code: Begin implementing Rabin-Karp. | Practice: None yet.",
+            "tasks": "Learn: Using rolling hash for substring search \u2014 comparing hash values, handling hash collisions with a verification step. | Code: Begin implementing Rabin-Karp. | Practice: None yet.",
             "achievement": "Understands why a hash match still requires a character-by-character verification step.",
             "priority": "NICE TO HAVE"
           },
@@ -5878,7 +5990,7 @@ export const roadmapData = [
           {
             "day": 59,
             "topic": "KMP: Building the LPS Array (Heavy, Day 1/4)",
-            "tasks": "Learn: The failure function / LPS (Longest Prefix Suffix) array concept — what it represents and why it enables skipping. | Code: Implement the LPS array construction by hand-tracing 2 example patterns first, then in code. | Practice: None yet — pure LPS construction focus.",
+            "tasks": "Learn: The failure function / LPS (Longest Prefix Suffix) array concept \u2014 what it represents and why it enables skipping. | Code: Implement the LPS array construction by hand-tracing 2 example patterns first, then in code. | Practice: None yet \u2014 pure LPS construction focus.",
             "achievement": "Can construct the LPS array for any pattern by hand within 2 minutes.",
             "priority": "NICE TO HAVE"
           },
@@ -5892,14 +6004,14 @@ export const roadmapData = [
           {
             "day": 61,
             "topic": "KMP: Practice Day 1 (Heavy, Day 3/4)",
-            "tasks": "Learn: Review the full algorithm trace on an adversarial input (e.g., \"aaaaab\" pattern). | Code: None — pure practice. | Practice: 2 problems (implement strStr, repeated substring pattern via KMP).",
+            "tasks": "Learn: Review the full algorithm trace on an adversarial input (e.g., \"aaaaab\" pattern). | Code: None \u2014 pure practice. | Practice: 2 problems (implement strStr, repeated substring pattern via KMP).",
             "achievement": "Can trace KMP's pointer movement on paper for any given text/pattern pair.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 62,
             "topic": "KMP: Practice Day 2 (Heavy, Day 4/4)",
-            "tasks": "Learn: Comparison — when KMP, Rabin-Karp, or naive search is the right interview answer. | Code: None — pure practice. | Practice: 2 more problems combining KMP-style thinking with other string patterns.",
+            "tasks": "Learn: Comparison \u2014 when KMP, Rabin-Karp, or naive search is the right interview answer. | Code: None \u2014 pure practice. | Practice: 2 more problems combining KMP-style thinking with other string patterns.",
             "achievement": "Can justify, in an interview, the choice between naive/Rabin-Karp/KMP for a given constraint set.",
             "priority": "NICE TO HAVE"
           },
@@ -5920,21 +6032,21 @@ export const roadmapData = [
           {
             "day": 64,
             "topic": "Monotonic Stack: Concept & Next Greater Element (Light)",
-            "tasks": "Learn: What makes a stack \"monotonic,\" why it solves Next Greater Element in O(N) vs naive O(N²). | Code: Implement Next Greater Element from scratch. | Practice: 2 problems (Next Greater Element I & II — circular variant).",
+            "tasks": "Learn: What makes a stack \"monotonic,\" why it solves Next Greater Element in O(N) vs naive O(N\u00b2). | Code: Implement Next Greater Element from scratch. | Practice: 2 problems (Next Greater Element I & II \u2014 circular variant).",
             "achievement": "Can implement Next Greater Element in O(N) using a monotonic decreasing stack.",
             "priority": "MUST KNOW"
           },
           {
             "day": 65,
             "topic": "Monotonic Stack: Daily Temperatures & Variants (Light)",
-            "tasks": "Learn: Generalizing the pattern — storing indices instead of values when distance matters. | Code: Implement Daily Temperatures. | Practice: 2 problems (Daily Temperatures, Next Smaller Element).",
+            "tasks": "Learn: Generalizing the pattern \u2014 storing indices instead of values when distance matters. | Code: Implement Daily Temperatures. | Practice: 2 problems (Daily Temperatures, Next Smaller Element).",
             "achievement": "Can decide when to store values vs indices on the monotonic stack based on what the problem asks for.",
             "priority": "MUST KNOW"
           },
           {
             "day": 66,
             "topic": "Monotonic Queue: Sliding Window Maximum (Medium, Day 1/2)",
-            "tasks": "Learn: Monotonic deque mechanics — maintaining a decreasing deque of candidates for the window max. | Code: Begin implementing Sliding Window Maximum. | Practice: None yet.",
+            "tasks": "Learn: Monotonic deque mechanics \u2014 maintaining a decreasing deque of candidates for the window max. | Code: Begin implementing Sliding Window Maximum. | Practice: None yet.",
             "achievement": "Understands why elements are evicted from the back of the deque when a larger element arrives.",
             "priority": "MUST KNOW"
           },
@@ -5976,7 +6088,7 @@ export const roadmapData = [
           {
             "day": 71,
             "topic": "Backtracking: The Blueprint (Light)",
-            "tasks": "Learn: Choice — constraint — goal framework, the generic backtracking template (choose, explore, un-choose). | Code: Implement the generic backtracking template as a reusable skeleton. | Practice: 2 problems (subsets, then adapt template).",
+            "tasks": "Learn: Choice \u2014 constraint \u2014 goal framework, the generic backtracking template (choose, explore, un-choose). | Code: Implement the generic backtracking template as a reusable skeleton. | Practice: 2 problems (subsets, then adapt template).",
             "achievement": "Can write the generic backtracking template from memory in under 2 minutes.",
             "priority": "MUST KNOW"
           },
@@ -6004,7 +6116,7 @@ export const roadmapData = [
           {
             "day": 75,
             "topic": "Pruning Techniques (Light)",
-            "tasks": "Learn: Dead-end detection to optimize backtracking — early termination conditions, constraint propagation basics. | Code: Add a pruning condition to an existing unpruned backtracking solution and measure the speedup. | Practice: 2 problems where pruning matters (combination sum with target, word search).",
+            "tasks": "Learn: Dead-end detection to optimize backtracking \u2014 early termination conditions, constraint propagation basics. | Code: Add a pruning condition to an existing unpruned backtracking solution and measure the speedup. | Practice: 2 problems where pruning matters (combination sum with target, word search).",
             "achievement": "Can identify and add a pruning condition that meaningfully cuts the search space.",
             "priority": "MUST KNOW"
           },
@@ -6025,14 +6137,14 @@ export const roadmapData = [
           {
             "day": 78,
             "topic": "N-Queens: Practice + Variants (Heavy, Day 3/3)",
-            "tasks": "Learn: Review — counting solutions vs returning all solutions as a variant. | Code: None — pure practice. | Practice: 2 problems (N-Queens, N-Queens II — count only).",
+            "tasks": "Learn: Review \u2014 counting solutions vs returning all solutions as a variant. | Code: None \u2014 pure practice. | Practice: 2 problems (N-Queens, N-Queens II \u2014 count only).",
             "achievement": "Can implement N-Queens with optimal conflict checking cold, in either \"return all\" or \"count only\" form.",
             "priority": "MUST KNOW"
           },
           {
             "day": 79,
             "topic": "Sudoku Solver (Heavy, Day 1/2)",
-            "tasks": "Learn: Constraint propagation for Sudoku — row/column/box validity checks, backtracking with early pruning. | Code: Begin implementing the Sudoku solver. | Practice: None yet.",
+            "tasks": "Learn: Constraint propagation for Sudoku \u2014 row/column/box validity checks, backtracking with early pruning. | Code: Begin implementing the Sudoku solver. | Practice: None yet.",
             "achievement": "Has working row/column/box validity-check functions integrated into the backtracking skeleton.",
             "priority": "MUST KNOW"
           },
@@ -6060,7 +6172,7 @@ export const roadmapData = [
           {
             "day": 82,
             "topic": "Binary Tree Traversals: Recursive (Light)",
-            "tasks": "Learn: Preorder, Inorder, Postorder — recursive implementations. | Code: Implement all 3 recursive traversals. | Practice: 2 problems (return traversal as a list, verify two trees have same inorder).",
+            "tasks": "Learn: Preorder, Inorder, Postorder \u2014 recursive implementations. | Code: Implement all 3 recursive traversals. | Practice: 2 problems (return traversal as a list, verify two trees have same inorder).",
             "achievement": "Can implement all 3 recursive traversals from memory.",
             "priority": "MUST KNOW"
           },
@@ -6074,7 +6186,7 @@ export const roadmapData = [
           {
             "day": 84,
             "topic": "Iterative Traversals: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — iterative preorder/postorder (the trickier ones) using stack tricks. | Code: Finish iterative preorder and postorder; finish level-order traversal. | Practice: 2 problems (binary tree level order traversal, zigzag level order).",
+            "tasks": "Learn: Review \u2014 iterative preorder/postorder (the trickier ones) using stack tricks. | Code: Finish iterative preorder and postorder; finish level-order traversal. | Practice: 2 problems (binary tree level order traversal, zigzag level order).",
             "achievement": "Can implement all 4 traversal types both recursively and iteratively.",
             "priority": "IMPORTANT"
           },
@@ -6082,7 +6194,7 @@ export const roadmapData = [
             "day": 85,
             "topic": "Binary Tree: Diameter & Path Sum (Light)",
             "tasks": "Learn: Diameter of a binary tree (combining left+right height at each node), root-to-leaf path sum problems. | Code: Implement Diameter of Binary Tree. | Practice: 2 problems (diameter, path sum).",
-            "achievement": "Can solve Diameter of Binary Tree in a single O(N) pass (not O(N²)).",
+            "achievement": "Can solve Diameter of Binary Tree in a single O(N) pass (not O(N\u00b2)).",
             "priority": "IMPORTANT"
           },
           {
@@ -6109,27 +6221,27 @@ export const roadmapData = [
           {
             "day": 89,
             "topic": "Balanced BSTs: AVL & Red-Black Trees Conceptual (Light)",
-            "tasks": "Learn: Balance factor concept, why unbalanced BSTs degrade to O(N), Red-Black tree's role as Java's TreeMap/HashMap bucket backing. | Code: None — conceptual day. | Practice: 2 conceptual questions (when does a BST become a linked list? why does Java use Red-Black trees internally?).",
+            "tasks": "Learn: Balance factor concept, why unbalanced BSTs degrade to O(N), Red-Black tree's role as Java's TreeMap/HashMap bucket backing. | Code: None \u2014 conceptual day. | Practice: 2 conceptual questions (when does a BST become a linked list? why does Java use Red-Black trees internally?).",
             "achievement": "Can explain why an unbalanced BST degrades to O(N) and name where Red-Black trees are used inside the JDK.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 90,
-            "topic": "🆕 AVL Rotations: LL & RR Cases (Heavy, Day 1/3)",
+            "topic": "\ud83c\udd95 AVL Rotations: LL & RR Cases (Heavy, Day 1/3)",
             "tasks": "Learn: Balance factor calculation after insertion, the Left-Left and Right-Right single-rotation cases. | Code: Implement AVL node structure, balance factor calculation, and single rotation (LL case) function. | Practice: None yet.",
             "achievement": "Can identify an LL or RR imbalance from a balance factor calculation and apply the correct single rotation.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 91,
-            "topic": "🆕 AVL Rotations: LR & RL Cases (Heavy, Day 2/3)",
+            "topic": "\ud83c\udd95 AVL Rotations: LR & RL Cases (Heavy, Day 2/3)",
             "tasks": "Learn: The Left-Right and Right-Left double-rotation cases (rotate child first, then the node). | Code: Implement the LR and RL double-rotation functions. | Practice: None yet.",
             "achievement": "Can identify an LR or RL imbalance and apply the correct two-step rotation sequence.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 92,
-            "topic": "🆕 AVL Tree: Full Insert with Self-Balancing (Heavy, Day 3/3)",
+            "topic": "\ud83c\udd95 AVL Tree: Full Insert with Self-Balancing (Heavy, Day 3/3)",
             "tasks": "Learn: Wiring all 4 rotation cases into a complete AVL insert function that rebalances on the way back up the recursion. | Code: Finish a complete, working AVL tree insert method. | Practice: 2 problems (insert a sequence into an AVL tree by hand and verify against your code's output).",
             "achievement": "Has a fully working, self-balancing AVL insert implementation handling all 4 rotation cases correctly.",
             "priority": "NICE TO HAVE"
@@ -6165,7 +6277,7 @@ export const roadmapData = [
           {
             "day": 97,
             "topic": "Autocomplete System: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — ranking suggestions (frequency-based) for a production-quality autocomplete. | Code: Finish the autocomplete system, returning top-K ranked suggestions. | Practice: 2 problems (design search autocomplete system, replace words using Trie).",
+            "tasks": "Learn: Review \u2014 ranking suggestions (frequency-based) for a production-quality autocomplete. | Code: Finish the autocomplete system, returning top-K ranked suggestions. | Practice: 2 problems (design search autocomplete system, replace words using Trie).",
             "achievement": "Has a working Trie-based autocomplete system returning ranked top-K suggestions for any prefix.",
             "priority": "IMPORTANT"
           },
@@ -6179,14 +6291,14 @@ export const roadmapData = [
           {
             "day": 99,
             "topic": "Segment Trees: Point Update (Heavy, Day 2/3)",
-            "tasks": "Learn: Point update logic — updating a single index and propagating the change up to ancestor nodes. | Code: Implement the point-update function. | Practice: None yet.",
+            "tasks": "Learn: Point update logic \u2014 updating a single index and propagating the change up to ancestor nodes. | Code: Implement the point-update function. | Practice: None yet.",
             "achievement": "Segment tree now supports both range queries and point updates correctly.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 100,
             "topic": "Segment Trees: Lazy Propagation for Range Updates (Heavy, Day 3/3)",
-            "tasks": "Learn: Lazy propagation — deferring updates to child nodes until they're actually queried, avoiding O(N) range updates. | Code: Implement lazy propagation for range updates. | Practice: 2 problems (range sum query mutable, range update + range query).",
+            "tasks": "Learn: Lazy propagation \u2014 deferring updates to child nodes until they're actually queried, avoiding O(N) range updates. | Code: Implement lazy propagation for range updates. | Practice: 2 problems (range sum query mutable, range update + range query).",
             "achievement": "Has a complete segment tree supporting range updates AND range queries in O(log N) using lazy propagation.",
             "priority": "NICE TO HAVE"
           },
@@ -6200,7 +6312,7 @@ export const roadmapData = [
           {
             "day": 102,
             "topic": "Fenwick Tree: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review — when to prefer Fenwick over Segment Tree (simpler code, less memory, but point-update/range-query only by default). | Code: Finish and test the Fenwick Tree. | Practice: 2 problems (range sum query mutable using Fenwick, count of smaller numbers after self).",
+            "tasks": "Learn: Review \u2014 when to prefer Fenwick over Segment Tree (simpler code, less memory, but point-update/range-query only by default). | Code: Finish and test the Fenwick Tree. | Practice: 2 problems (range sum query mutable using Fenwick, count of smaller numbers after self).",
             "achievement": "Can implement Fenwick Tree from scratch and justify choosing it over a Segment Tree for a given problem.",
             "priority": "NICE TO HAVE"
           },
@@ -6242,7 +6354,7 @@ export const roadmapData = [
           {
             "day": 107,
             "topic": "Breadth-First Search (BFS) (Light)",
-            "tasks": "Learn: BFS using a queue, shortest path in unweighted graphs, level-by-level exploration. | Code: Implement BFS from scratch. | Practice: 2 problems (shortest path in unweighted graph, rotting oranges — multi-source BFS).",
+            "tasks": "Learn: BFS using a queue, shortest path in unweighted graphs, level-by-level exploration. | Code: Implement BFS from scratch. | Practice: 2 problems (shortest path in unweighted graph, rotting oranges \u2014 multi-source BFS).",
             "achievement": "Can implement BFS and use it for shortest path in an unweighted graph.",
             "priority": "MUST KNOW"
           },
@@ -6269,8 +6381,8 @@ export const roadmapData = [
           },
           {
             "day": 111,
-            "topic": "🆕 Bipartite Graph Check (Light)",
-            "tasks": "Learn: 2-coloring via BFS/DFS — a graph is bipartite iff it has no odd-length cycle. | Code: Implement bipartite check using BFS-based 2-coloring. | Practice: 2 problems (is graph bipartite, possible bipartition).",
+            "topic": "\ud83c\udd95 Bipartite Graph Check (Light)",
+            "tasks": "Learn: 2-coloring via BFS/DFS \u2014 a graph is bipartite iff it has no odd-length cycle. | Code: Implement bipartite check using BFS-based 2-coloring. | Practice: 2 problems (is graph bipartite, possible bipartition).",
             "achievement": "Can implement a bipartite check and explain why an odd cycle makes a graph non-bipartite.",
             "priority": "IMPORTANT"
           },
@@ -6291,7 +6403,7 @@ export const roadmapData = [
           {
             "day": 114,
             "topic": "Dijkstra's Algorithm: Practice (Heavy, Day 3/3)",
-            "tasks": "Learn: Review variants — network delay time, cheapest flights with K stops (Dijkstra variant). | Code: None — pure practice. | Practice: 2 problems (network delay time, path with maximum probability).",
+            "tasks": "Learn: Review variants \u2014 network delay time, cheapest flights with K stops (Dijkstra variant). | Code: None \u2014 pure practice. | Practice: 2 problems (network delay time, path with maximum probability).",
             "achievement": "Can adapt Dijkstra's Algorithm to non-standard variants (probability maximization, K-stop constraints).",
             "priority": "IMPORTANT"
           },
@@ -6305,7 +6417,7 @@ export const roadmapData = [
           {
             "day": 116,
             "topic": "Bellman-Ford: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review negative cycle detection (extra round still relaxes an edge → cycle exists). | Code: Finish Bellman-Ford with negative cycle detection. | Practice: 2 problems (cheapest flights with K stops via Bellman-Ford-style relaxation, detect negative cycle).",
+            "tasks": "Learn: Review negative cycle detection (extra round still relaxes an edge \u2192 cycle exists). | Code: Finish Bellman-Ford with negative cycle detection. | Practice: 2 problems (cheapest flights with K stops via Bellman-Ford-style relaxation, detect negative cycle).",
             "achievement": "Can implement Bellman-Ford and correctly detect negative cycles.",
             "priority": "IMPORTANT"
           },
@@ -6320,7 +6432,7 @@ export const roadmapData = [
             "day": 118,
             "topic": "Floyd-Warshall: Finish + Practice (Medium, Day 2/2)",
             "tasks": "Learn: Review when Floyd-Warshall beats running Dijkstra V times (dense small graphs). | Code: Finish and test Floyd-Warshall. | Practice: 2 problems (find the city with smallest number of neighbors, all-pairs shortest path applications).",
-            "achievement": "Can implement Floyd-Warshall in O(V³) and justify when it's preferable to V calls to Dijkstra.",
+            "achievement": "Can implement Floyd-Warshall in O(V\u00b3) and justify when it's preferable to V calls to Dijkstra.",
             "priority": "IMPORTANT"
           },
           {
@@ -6339,7 +6451,7 @@ export const roadmapData = [
           },
           {
             "day": 121,
-            "topic": "Prim's Algorithm: Finish + Practice (Medium, Day 1/2 — continuing)",
+            "topic": "Prim's Algorithm: Finish + Practice (Medium, Day 1/2 \u2014 continuing)",
             "tasks": "Learn: Review Prim's PriorityQueue-based vertex selection in detail. | Code: Finish Prim's Algorithm. | Practice: 2 problems (minimum cost to connect all points using Prim's, comparing both MST approaches on the same input).",
             "achievement": "Can implement both Kruskal's and Prim's, and explain which is more efficient for sparse vs dense graphs.",
             "priority": "NICE TO HAVE"
@@ -6375,7 +6487,7 @@ export const roadmapData = [
           {
             "day": 126,
             "topic": "Bridges: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review articulation points as a closely related concept (briefly, for awareness). | Code: Finish and test the bridge-finding algorithm (LeetCode 1192 — Critical Connections). | Practice: 2 problems (critical connections in a network, articulation points awareness problem).",
+            "tasks": "Learn: Review articulation points as a closely related concept (briefly, for awareness). | Code: Finish and test the bridge-finding algorithm (LeetCode 1192 \u2014 Critical Connections). | Practice: 2 problems (critical connections in a network, articulation points awareness problem).",
             "achievement": "Can implement Tarjan's Bridge Discovery and solve Critical Connections in a Network.",
             "priority": "IMPORTANT"
           },
@@ -6396,7 +6508,7 @@ export const roadmapData = [
           {
             "day": 128,
             "topic": "Greedy Fundamentals: Proving Correctness (Light)",
-            "tasks": "Learn: Greedy choice property, optimal substructure, how to argue (exchange argument) that a greedy approach is correct. | Code: None — conceptual day with worked proof sketches. | Practice: 2 conceptual problems (is this greedy approach correct? prove or disprove).",
+            "tasks": "Learn: Greedy choice property, optimal substructure, how to argue (exchange argument) that a greedy approach is correct. | Code: None \u2014 conceptual day with worked proof sketches. | Practice: 2 conceptual problems (is this greedy approach correct? prove or disprove).",
             "achievement": "Can sketch an exchange-argument proof for why a proposed greedy strategy is or isn't correct.",
             "priority": "IMPORTANT"
           },
@@ -6410,7 +6522,7 @@ export const roadmapData = [
           {
             "day": 130,
             "topic": "Merge Intervals (Light)",
-            "tasks": "Learn: Interval merging — sort by start time, then linear merge pass. | Code: Implement Merge Intervals. | Practice: 2 problems (merge intervals, insert interval).",
+            "tasks": "Learn: Interval merging \u2014 sort by start time, then linear merge pass. | Code: Implement Merge Intervals. | Practice: 2 problems (merge intervals, insert interval).",
             "achievement": "Can implement Merge Intervals in O(N log N) and explain why this sort uses start time (unlike Day 129).",
             "priority": "IMPORTANT"
           },
@@ -6445,8 +6557,8 @@ export const roadmapData = [
           {
             "day": 135,
             "topic": "Task Scheduling: Job Sequencing & Task Scheduler (Medium, Day 1/2)",
-            "tasks": "Learn: Job Sequencing with Deadlines (greedy by profit, then by feasibility), Task Scheduler (LeetCode 621 — frequency-based cooldown logic). | Code: Begin implementing Task Scheduler. | Practice: None yet.",
-            "achievement": "Understands the formula-based approach to Task Scheduler (max frequency × (n+1) + ties) before finishing code.",
+            "tasks": "Learn: Job Sequencing with Deadlines (greedy by profit, then by feasibility), Task Scheduler (LeetCode 621 \u2014 frequency-based cooldown logic). | Code: Begin implementing Task Scheduler. | Practice: None yet.",
+            "achievement": "Understands the formula-based approach to Task Scheduler (max frequency \u00d7 (n+1) + ties) before finishing code.",
             "priority": "IMPORTANT"
           },
           {
@@ -6459,21 +6571,21 @@ export const roadmapData = [
           {
             "day": 137,
             "topic": "Fractional Knapsack + Gas Station (Light)",
-            "tasks": "Learn: Fractional Knapsack (value/weight ratio greedy — contrast with 0/1 Knapsack, which is NOT greedy), Gas Station's circular feasibility check. | Code: Implement Fractional Knapsack and Gas Station. | Practice: 2 problems (fractional knapsack, gas station).",
+            "tasks": "Learn: Fractional Knapsack (value/weight ratio greedy \u2014 contrast with 0/1 Knapsack, which is NOT greedy), Gas Station's circular feasibility check. | Code: Implement Fractional Knapsack and Gas Station. | Practice: 2 problems (fractional knapsack, gas station).",
             "achievement": "Can explain precisely why Fractional Knapsack is greedy-solvable but 0/1 Knapsack is not, and solve Gas Station in O(N).",
             "priority": "IMPORTANT"
           },
           {
             "day": 138,
             "topic": "Partitioning & Assignment Problems (Light)",
-            "tasks": "Learn: Greedy partitioning patterns (assign cookies, two-city scheduling) — the sorting criterion that enables the greedy choice. | Code: Implement Assign Cookies and Two City Scheduling. | Practice: 2 problems (assign cookies, two city scheduling).",
+            "tasks": "Learn: Greedy partitioning patterns (assign cookies, two-city scheduling) \u2014 the sorting criterion that enables the greedy choice. | Code: Implement Assign Cookies and Two City Scheduling. | Practice: 2 problems (assign cookies, two city scheduling).",
             "achievement": "Can identify the correct sorting criterion for a new greedy partitioning problem within the first read.",
             "priority": "IMPORTANT"
           },
           {
             "day": 139,
             "topic": "Advanced Greedy Problems + Phase Cheat Sheet",
-            "tasks": "Learn: Review the handbook's advanced greedy problems section. Review the full Greedy Algorithms phase cheat sheet. | Code: None — review day. | Practice: Timed mixed review (3 problems spanning the entire Greedy phase).",
+            "tasks": "Learn: Review the handbook's advanced greedy problems section. Review the full Greedy Algorithms phase cheat sheet. | Code: None \u2014 review day. | Practice: Timed mixed review (3 problems spanning the entire Greedy phase).",
             "achievement": "Can distinguish, for any new unseen problem, whether greedy is provably correct or whether it secretly requires DP.",
             "priority": "IMPORTANT"
           }
@@ -6487,7 +6599,7 @@ export const roadmapData = [
           {
             "day": 140,
             "topic": "DP Fundamentals: Memoization vs Tabulation (Light)",
-            "tasks": "Learn: State definition, transition relation, base cases; converting brute-force recursion → memoization → tabulation. | Code: Take naive recursive Fibonacci and convert it step-by-step to memoized, then tabulated. | Practice: 2 problems (Fibonacci variants, climbing stairs via all 3 forms).",
+            "tasks": "Learn: State definition, transition relation, base cases; converting brute-force recursion \u2192 memoization \u2192 tabulation. | Code: Take naive recursive Fibonacci and convert it step-by-step to memoized, then tabulated. | Practice: 2 problems (Fibonacci variants, climbing stairs via all 3 forms).",
             "achievement": "Can convert any brute-force recursive solution to memoized, then to tabulated, as a repeatable 3-step process.",
             "priority": "MUST KNOW"
           },
@@ -6515,14 +6627,14 @@ export const roadmapData = [
           {
             "day": 144,
             "topic": "0/1 Knapsack: Space Optimization + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Reducing 2D DP to 1D by iterating weights in reverse order — why iteration order matters. | Code: Refactor to a space-optimized 1D DP array. | Practice: 2 problems (partition equal subset sum, target sum — both Knapsack-shaped).",
-            "achievement": "Can implement 0/1 Knapsack with O(capacity) space instead of O(N × capacity).",
+            "tasks": "Learn: Reducing 2D DP to 1D by iterating weights in reverse order \u2014 why iteration order matters. | Code: Refactor to a space-optimized 1D DP array. | Practice: 2 problems (partition equal subset sum, target sum \u2014 both Knapsack-shaped).",
+            "achievement": "Can implement 0/1 Knapsack with O(capacity) space instead of O(N \u00d7 capacity).",
             "priority": "MUST KNOW"
           },
           {
             "day": 145,
             "topic": "Unbounded Knapsack & Coin Change (Medium, Day 1/2)",
-            "tasks": "Learn: Unbounded Knapsack's forward iteration (vs 0/1's reverse iteration) — items can be reused. | Code: Begin implementing Coin Change (minimum coins). | Practice: None yet.",
+            "tasks": "Learn: Unbounded Knapsack's forward iteration (vs 0/1's reverse iteration) \u2014 items can be reused. | Code: Begin implementing Coin Change (minimum coins). | Practice: None yet.",
             "achievement": "Understands precisely why forward iteration allows item reuse while reverse iteration (Day 144) prevents it.",
             "priority": "IMPORTANT"
           },
@@ -6537,13 +6649,13 @@ export const roadmapData = [
             "day": 147,
             "topic": "DP on Strings: Longest Common Subsequence (Light)",
             "tasks": "Learn: LCS 2D DP table construction, the diagonal/up/left transition logic. | Code: Implement LCS. | Practice: 2 problems (LCS, longest common substring as a contrast).",
-            "achievement": "Can implement LCS in O(N×M) and explain the difference between \"subsequence\" and \"substring\" DP transitions.",
+            "achievement": "Can implement LCS in O(N\u00d7M) and explain the difference between \"subsequence\" and \"substring\" DP transitions.",
             "priority": "MUST KNOW"
           },
           {
             "day": 148,
             "topic": "DP on Strings: Longest Palindromic Subsequence (Light)",
-            "tasks": "Learn: Reframing palindrome-subsequence as LCS(string, reverse(string)) — connecting back to Day 147. | Code: Implement Longest Palindromic Subsequence. | Practice: 2 problems (longest palindromic subsequence, minimum insertions to make palindrome).",
+            "tasks": "Learn: Reframing palindrome-subsequence as LCS(string, reverse(string)) \u2014 connecting back to Day 147. | Code: Implement Longest Palindromic Subsequence. | Practice: 2 problems (longest palindromic subsequence, minimum insertions to make palindrome).",
             "achievement": "Can solve Longest Palindromic Subsequence by recognizing it as a disguised LCS problem.",
             "priority": "MUST KNOW"
           },
@@ -6557,14 +6669,14 @@ export const roadmapData = [
           {
             "day": 150,
             "topic": "Edit Distance: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review applications — spell-checkers, diff tools. | Code: Finish and test Edit Distance. | Practice: 2 problems (edit distance, one edit distance — simplified variant).",
-            "achievement": "Can implement Edit Distance in O(N×M) cold and explain each of the three operations' contribution to the transition.",
+            "tasks": "Learn: Review applications \u2014 spell-checkers, diff tools. | Code: Finish and test Edit Distance. | Practice: 2 problems (edit distance, one edit distance \u2014 simplified variant).",
+            "achievement": "Can implement Edit Distance in O(N\u00d7M) cold and explain each of the three operations' contribution to the transition.",
             "priority": "IMPORTANT"
           },
           {
             "day": 151,
             "topic": "Wildcard & Regex Matching (Heavy, Day 1/2)",
-            "tasks": "Learn: DP-based pattern matching with `*` and `?` (wildcard) or `*` and `.` (regex) — the trickiest string DP transition. | Code: Begin implementing Wildcard Matching. | Practice: None yet.",
+            "tasks": "Learn: DP-based pattern matching with `*` and `?` (wildcard) or `*` and `.` (regex) \u2014 the trickiest string DP transition. | Code: Begin implementing Wildcard Matching. | Practice: None yet.",
             "achievement": "Understands the special handling required for `*` (matches empty OR extends match) before finishing code.",
             "priority": "NICE TO HAVE"
           },
@@ -6577,28 +6689,28 @@ export const roadmapData = [
           },
           {
             "day": 153,
-            "topic": "🆕 DP on Trees: House Robber III (Heavy, Day 1/2)",
-            "tasks": "Learn: DP on trees as a distinct mental model — recursive functions returning a 2-state result per subtree (rob this node / don't rob this node), combined post-order. | Code: Begin implementing House Robber III. | Practice: None yet.",
+            "topic": "\ud83c\udd95 DP on Trees: House Robber III (Heavy, Day 1/2)",
+            "tasks": "Learn: DP on trees as a distinct mental model \u2014 recursive functions returning a 2-state result per subtree (rob this node / don't rob this node), combined post-order. | Code: Begin implementing House Robber III. | Practice: None yet.",
             "achievement": "Understands why a single return value per node is insufficient and a 2-state return is required.",
             "priority": "IMPORTANT"
           },
           {
             "day": 154,
-            "topic": "🆕 DP on Trees: Diameter & Max Path Sum (Heavy, Day 2/2)",
+            "topic": "\ud83c\udd95 DP on Trees: Diameter & Max Path Sum (Heavy, Day 2/2)",
             "tasks": "Learn: Generalizing tree DP to Diameter of Binary Tree (revisited through the DP lens) and Binary Tree Maximum Path Sum. | Code: Finish House Robber III; implement Binary Tree Maximum Path Sum. | Practice: 2 problems (House Robber III, binary tree maximum path sum).",
             "achievement": "Can solve House Robber III and Max Path Sum, both using single-pass post-order DP on trees.",
             "priority": "IMPORTANT"
           },
           {
             "day": 155,
-            "topic": "🆕 Interval DP: Matrix Chain Multiplication (Heavy, Day 1/2)",
-            "tasks": "Learn: The canonical interval DP pattern — `dp[i][j]` as the optimal cost spanning indices i to j, iterating over all split points k between i and j. | Code: Begin implementing Matrix Chain Multiplication. | Practice: None yet.",
+            "topic": "\ud83c\udd95 Interval DP: Matrix Chain Multiplication (Heavy, Day 1/2)",
+            "tasks": "Learn: The canonical interval DP pattern \u2014 `dp[i][j]` as the optimal cost spanning indices i to j, iterating over all split points k between i and j. | Code: Begin implementing Matrix Chain Multiplication. | Practice: None yet.",
             "achievement": "Can write the MCM transition `dp[i][j] = min over k of dp[i][k] + dp[k+1][j] + cost(k)` from memory.",
             "priority": "IMPORTANT"
           },
           {
             "day": 156,
-            "topic": "🆕 Interval DP: Burst Balloons & Palindrome Partitioning (Heavy, Day 2/2)",
+            "topic": "\ud83c\udd95 Interval DP: Burst Balloons & Palindrome Partitioning (Heavy, Day 2/2)",
             "tasks": "Learn: Recognizing the same \"split point k between i and j\" signature in Burst Balloons (LeetCode 312, the true DP version) and Palindrome Partitioning II. | Code: Finish Matrix Chain Multiplication; implement Burst Balloons (DP version). | Practice: 2 problems (Burst Balloons, Palindrome Partitioning II).",
             "achievement": "Can recognize the interval-DP signature in a new, unseen problem and set up the split-point iteration correctly.",
             "priority": "IMPORTANT"
@@ -6607,20 +6719,20 @@ export const roadmapData = [
             "day": 157,
             "topic": "Bitmask DP: Traveling Salesman Problem (Heavy, Day 1/2)",
             "tasks": "Learn: Representing visited-vertex sets as integer bitmasks, the `dp[mask][u]` state definition. | Code: Begin implementing TSP via Bitmask DP. | Practice: None yet.",
-            "achievement": "Understands why bitmask DP is only feasible for small N (typically N ≤ 20) due to the 2^N state space.",
+            "achievement": "Understands why bitmask DP is only feasible for small N (typically N \u2264 20) due to the 2^N state space.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 158,
             "topic": "Bitmask DP: Finish + Practice (Heavy, Day 2/2)",
-            "tasks": "Learn: Review — other bitmask DP applications (e.g., Partition to K Equal Sum Subsets). | Code: Finish TSP Bitmask DP. | Practice: 2 problems (TSP via bitmask, partition to K equal sum subsets).",
-            "achievement": "Can implement TSP using Bitmask DP in O(N² × 2^N) and adapt the bitmask pattern to a new subset-tracking problem.",
+            "tasks": "Learn: Review \u2014 other bitmask DP applications (e.g., Partition to K Equal Sum Subsets). | Code: Finish TSP Bitmask DP. | Practice: 2 problems (TSP via bitmask, partition to K equal sum subsets).",
+            "achievement": "Can implement TSP using Bitmask DP in O(N\u00b2 \u00d7 2^N) and adapt the bitmask pattern to a new subset-tracking problem.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 159,
             "topic": "Advanced DP Practice Day 1 (Light)",
-            "tasks": "Learn: Review — mixed advanced DP problems combining patterns learned so far (e.g., DP + greedy hybrid problems). | Code: None — pure practice. | Practice: 3 mixed-pattern problems.",
+            "tasks": "Learn: Review \u2014 mixed advanced DP problems combining patterns learned so far (e.g., DP + greedy hybrid problems). | Code: None \u2014 pure practice. | Practice: 3 mixed-pattern problems.",
             "achievement": "Can classify any new DP problem (1D/2D/Knapsack/String/Tree/Interval/Bitmask) within the first minute of reading it.",
             "priority": "NICE TO HAVE"
           },
@@ -6634,7 +6746,7 @@ export const roadmapData = [
           {
             "day": 161,
             "topic": "Phase Cheat Sheet + Mixed DP Review",
-            "tasks": "Learn: Review the complete Dynamic Programming cheat sheet, including all new additions (Tree DP, Interval DP). | Code: None — review day. | Practice: Timed mixed review (4 problems spanning the entire DP phase).",
+            "tasks": "Learn: Review the complete Dynamic Programming cheat sheet, including all new additions (Tree DP, Interval DP). | Code: None \u2014 review day. | Practice: Timed mixed review (4 problems spanning the entire DP phase).",
             "achievement": "Can recite the full DP phase cheat sheet and correctly classify/solve any of the last 22 days' problem types under time pressure.",
             "priority": "IMPORTANT"
           }
@@ -6648,21 +6760,21 @@ export const roadmapData = [
           {
             "day": 162,
             "topic": "The Design Interview Strategy + LRU Cache: Design (Medium, Day 1/2)",
-            "tasks": "Learn: General strategy for \"design X\" problems (clarify requirements → pick data structures → implement). LRU Cache's HashMap + Doubly Linked List combination. | Code: Begin implementing LRU Cache. | Practice: None yet.",
+            "tasks": "Learn: General strategy for \"design X\" problems (clarify requirements \u2192 pick data structures \u2192 implement). LRU Cache's HashMap + Doubly Linked List combination. | Code: Begin implementing LRU Cache. | Practice: None yet.",
             "achievement": "Understands exactly why HashMap alone (no recency tracking) and DLL alone (no O(1) lookup) each fail individually.",
             "priority": "IMPORTANT"
           },
           {
             "day": 163,
             "topic": "LRU Cache: Finish + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Review eviction logic — moving an accessed node to the front, evicting from the back on overflow. | Code: Finish and test LRU Cache with O(1) get/put. | Practice: 1 problem (LRU Cache, then re-implement using Java's `LinkedHashMap` access-order mode for comparison).",
+            "tasks": "Learn: Review eviction logic \u2014 moving an accessed node to the front, evicting from the back on overflow. | Code: Finish and test LRU Cache with O(1) get/put. | Practice: 1 problem (LRU Cache, then re-implement using Java's `LinkedHashMap` access-order mode for comparison).",
             "achievement": "Has a fully working hand-rolled LRU Cache and can also implement it via `LinkedHashMap` for comparison.",
             "priority": "IMPORTANT"
           },
           {
             "day": 164,
             "topic": "LFU Cache: Design & Frequency Buckets (Heavy, Day 1/2)",
-            "tasks": "Learn: LFU's added complexity over LRU — tracking both recency AND frequency, frequency-bucketed DLLs. | Code: Begin implementing LFU Cache. | Practice: None yet.",
+            "tasks": "Learn: LFU's added complexity over LRU \u2014 tracking both recency AND frequency, frequency-bucketed DLLs. | Code: Begin implementing LFU Cache. | Practice: None yet.",
             "achievement": "Understands the frequency-bucket design (each frequency maps to its own DLL of recency-ordered keys) before finishing code.",
             "priority": "IMPORTANT"
           },
@@ -6676,7 +6788,7 @@ export const roadmapData = [
           {
             "day": 166,
             "topic": "Min Stack/Max Stack Revisited + Design Twitter (Medium, Day 1/2)",
-            "tasks": "Learn: Design Twitter's feed-generation problem — merging each followee's recent tweets using a max-heap (similar to Merge K Sorted Lists). | Code: Begin implementing Design Twitter. | Practice: None yet.",
+            "tasks": "Learn: Design Twitter's feed-generation problem \u2014 merging each followee's recent tweets using a max-heap (similar to Merge K Sorted Lists). | Code: Begin implementing Design Twitter. | Practice: None yet.",
             "achievement": "Understands why a max-heap merge (not sorting everything) is the efficient approach to `getNewsFeed`.",
             "priority": "MUST KNOW"
           },
@@ -6731,22 +6843,22 @@ export const roadmapData = [
           },
           {
             "day": 173,
-            "topic": "🆕 Modular Arithmetic: Addition, Subtraction, Multiplication (Light)",
+            "topic": "\ud83c\udd95 Modular Arithmetic: Addition, Subtraction, Multiplication (Light)",
             "tasks": "Learn: Modular addition/subtraction/multiplication, handling overflow with modulus applied at each step (not just at the end). | Code: Implement safe modular add/subtract/multiply helper functions. | Practice: 2 problems involving large-number modular arithmetic (e.g., count ways mod 10^9+7).",
             "achievement": "Can implement overflow-safe modular arithmetic helpers and explain why applying the modulus only at the end is unsafe.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 174,
-            "topic": "🆕 Modular Multiplicative Inverse via Fermat's Little Theorem (Medium, Day 1/2)",
+            "topic": "\ud83c\udd95 Modular Multiplicative Inverse via Fermat's Little Theorem (Medium, Day 1/2)",
             "tasks": "Learn: Fermat's Little Theorem, deriving the modular inverse as `a^(p-2) mod p` for prime modulus p, using fast exponentiation (Day 172) to compute it. | Code: Begin implementing modular inverse using fast exponentiation. | Practice: None yet.",
             "achievement": "Understands why Fermat's Little Theorem requires a PRIME modulus and what breaks if it isn't.",
             "priority": "NICE TO HAVE"
           },
           {
             "day": 175,
-            "topic": "🆕 Modular Inverse: Computing nCr mod p + Practice (Medium, Day 2/2)",
-            "tasks": "Learn: Combining factorials, modular inverse, and modular multiplication to compute nCr mod a large prime — a common combinatorics-DP building block. | Code: Finish modular inverse; implement nCr mod p using precomputed factorials and their modular inverses. | Practice: 2 problems (combinatorics problems requiring nCr mod 10^9+7).",
+            "topic": "\ud83c\udd95 Modular Inverse: Computing nCr mod p + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Combining factorials, modular inverse, and modular multiplication to compute nCr mod a large prime \u2014 a common combinatorics-DP building block. | Code: Finish modular inverse; implement nCr mod p using precomputed factorials and their modular inverses. | Practice: 2 problems (combinatorics problems requiring nCr mod 10^9+7).",
             "achievement": "Can compute nCr mod a large prime in O(1) per query after O(N) precomputation of factorials and inverse factorials.",
             "priority": "NICE TO HAVE"
           },
@@ -6767,15 +6879,1381 @@ export const roadmapData = [
           {
             "day": 177,
             "topic": "The 15 Problem-Solving Patterns + Interview Framework",
-            "tasks": "Learn: The full list of 15 problem-solving patterns as a unified mental map. The step-by-step interview framework (clarify → identify pattern → outline approach → code → test edge cases → analyze complexity). | Code: None — pure strategy day. | Practice: Pick 3 random problems from across the entire 176-day journey and apply the framework out loud, mapping each to its pattern within seconds.",
+            "tasks": "Learn: The full list of 15 problem-solving patterns as a unified mental map. The step-by-step interview framework (clarify \u2192 identify pattern \u2192 outline approach \u2192 code \u2192 test edge cases \u2192 analyze complexity). | Code: None \u2014 pure strategy day. | Practice: Pick 3 random problems from across the entire 176-day journey and apply the framework out loud, mapping each to its pattern within seconds.",
             "achievement": "Can map any previously-solved problem to one of the 15 patterns instantly, and apply the full interview framework live to a brand-new problem.",
             "priority": "IMPORTANT"
           },
           {
             "day": 178,
-            "topic": "🆕 DSA-to-Backend Pattern Bridge + Final Review",
-            "tasks": "Learn: Map each major DSA pattern to a real production backend use case: Monotonic Stack → log/event trimming and stock-span-style analytics; Trie → autocomplete/search-suggestion microservices; DSU → network partition/connected-component detection in distributed systems; LRU/LFU Cache → the exact mechanism behind Redis/Caffeine eviction policies; Sliding Window → rate limiters and real-time metrics aggregation; Graph BFS/Dijkstra → service-dependency analysis and shortest-path routing in infrastructure; Segment Tree/Fenwick Tree → real-time analytics dashboards needing fast range aggregation. | Code: None — synthesis day. | Practice: Use the Java Collections Decision Tree and Complexity Cheat Sheet appendices to rapid-fire answer 5 \"which data structure would you use for X production scenario\" questions.",
-            "achievement": "Can answer \"where would you actually use [DSA structure] in a production backend system?\" with a concrete, named example for at least 6 different structures — directly bridging this DSA roadmap into the System Design and Spring Boot phases of your master roadmap.",
+            "topic": "\ud83c\udd95 DSA-to-Backend Pattern Bridge + Final Review",
+            "tasks": "Learn: Map each major DSA pattern to a real production backend use case: Monotonic Stack \u2192 log/event trimming and stock-span-style analytics; Trie \u2192 autocomplete/search-suggestion microservices; DSU \u2192 network partition/connected-component detection in distributed systems; LRU/LFU Cache \u2192 the exact mechanism behind Redis/Caffeine eviction policies; Sliding Window \u2192 rate limiters and real-time metrics aggregation; Graph BFS/Dijkstra \u2192 service-dependency analysis and shortest-path routing in infrastructure; Segment Tree/Fenwick Tree \u2192 real-time analytics dashboards needing fast range aggregation. | Code: None \u2014 synthesis day. | Practice: Use the Java Collections Decision Tree and Complexity Cheat Sheet appendices to rapid-fire answer 5 \"which data structure would you use for X production scenario\" questions.",
+            "achievement": "Can answer \"where would you actually use [DSA structure] in a production backend system?\" with a concrete, named example for at least 6 different structures \u2014 directly bridging this DSA roadmap into the System Design and Spring Boot phases of your master roadmap.",
+            "priority": "IMPORTANT"
+          }
+        ]
+      },
+      {
+        "id": "7-15",
+        "title": "FREQUENTLY ASKED QUESTIONS (COLLEGE PLACEMENT)",
+        "days": "Day 179",
+        "items": [
+          {
+            "day": 179,
+            "topic": "Top 50+ Frequently Asked Questions",
+            "tasks": "Arrays & Strings: Two Sum, Valid Anagram, Longest Substring... | Linked Lists: Reverse Linked List, Merge Two Sorted Lists... | Trees & Graphs: Max Depth, Number of Islands, Course Schedule... | DP & Greedy: Climbing Stairs, Coin Change, LIS... | Sorting, Searching: Binary Search, Merge Intervals, Top K...",
+            "achievement": "Completed practice on the top 50+ most frequently asked DSA questions for college placements.",
+            "priority": "MUST KNOW"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Master DSA Roadmap",
+    "days": 179,
+    "color": "teal",
+    "phases": [
+      {
+        "id": "7-1",
+        "title": "FOUNDATIONS",
+        "days": "",
+        "items": [
+          {
+            "day": 1,
+            "topic": "Big O, Big Theta, Big Omega (Light)",
+            "tasks": "Learn: Asymptotic notation \u2014 upper bound (O), lower bound (\u03a9), tight bound (\u0398). Growth curve visual diagrams. | Code: None \u2014 conceptual day. | Practice: 5 complexity-classification questions (given code, state its Big O).",
+            "achievement": "Can classify any short code snippet's time complexity and explain worst-case vs average-case.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 2,
+            "topic": "Nested Loops & Recursive Complexity (Light)",
+            "tasks": "Learn: Complexity of nested loops, recursive complexity via recurrence relations (basic intro, full recursion tree later). | Code: Trace 3 nested-loop snippets by hand. | Practice: 5 problems \u2014 derive complexity from code.",
+            "achievement": "Can derive Big O for nested loops and simple recursive calls without running the code.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 3,
+            "topic": "Java Toolkit for DSA: Arrays & Collections (Light)",
+            "tasks": "Learn: Java array/Collection landscape relevant to DSA \u2014 when to use `int[]` vs `ArrayList<Integer>`, memory layout comparison. | Code: Write equivalent loops using both primitive arrays and ArrayLists; time them. | Practice: 4 small syntax exercises.",
+            "achievement": "Can explain why `int[]` outperforms `ArrayList<Integer>` for tight loops, citing memory layout.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 4,
+            "topic": "Java Toolkit: Comparator Tricks (Light)",
+            "tasks": "Learn: Comparator chaining (`thenComparing`), lambda comparators, custom sort orders. | Code: Write 3 different comparators for the same object (single-field, multi-field, reversed). | Practice: 3 sorting-with-comparator problems.",
+            "achievement": "Can write a chained multi-field comparator in one line using lambda syntax.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 5,
+            "topic": "Java Performance Traps: Autoboxing & Overflow (Medium, Day 1/2)",
+            "tasks": "Learn: Autoboxing/unboxing costs, Integer cache (-128 to 127), integer overflow scenarios in DSA problems. | Code: Reproduce the Integer cache gotcha (`==` vs `.equals()` for boxed Integers). | Practice: 3 problems involving overflow-prone calculations (e.g., mid-point calculation in binary search).",
+            "achievement": "Can identify and fix an overflow bug in a binary search midpoint calculation.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 6,
+            "topic": "Java Performance Traps: Practice Day (Medium, Day 2/2)",
+            "tasks": "Learn: Review JDK built-in performance traps table \u2014 autoboxing in loops, unnecessary object creation. | Code: Refactor a deliberately inefficient snippet to use primitives. | Practice: 5 mixed problems combining comparator + overflow-safety concepts.",
+            "achievement": "Can review a code snippet and flag 3 distinct Java-specific performance traps.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 7,
+            "topic": "Hashing Basics: HashMap & HashSet (Light)",
+            "tasks": "Learn: HashMap/HashSet internals at a usage level (not full collision internals yet \u2014 that's Day 14 in Linear DS). Frequency counting fundamentals. | Code: Implement a frequency-count function using HashMap. | Practice: 4 frequency-counting problems (e.g., first unique character).",
+            "achievement": "Can solve any \"count occurrences of X\" problem using HashMap in O(N).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 8,
+            "topic": "Hashing Practice Day (Light)",
+            "tasks": "Learn: Review \u2014 when to reach for HashMap vs HashSet vs frequency array. | Code: None \u2014 pure practice day. | Practice: 5 hashing problems (mix of HashMap/HashSet use cases).",
+            "achievement": "Can decide within seconds whether a problem needs HashMap, HashSet, or a fixed-size frequency array.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 9,
+            "topic": "HANDS-ON LAB: Complexity & JVM Profiling + Phase Cheat Sheet",
+            "tasks": "Learn: Review the full Foundations cheat sheet. | Code: Complete the timed JVM profiling exercises. | Practice: Timed mixed-review quiz (5 questions across Days 1\u20138).",
+            "achievement": "Can recite the Foundations cheat sheet cold and complete the lab within its suggested time.",
+            "priority": "MUST KNOW"
+          }
+        ]
+      },
+      {
+        "id": "7-2",
+        "title": "LINEAR DATA STRUCTURES",
+        "days": "",
+        "items": [
+          {
+            "day": 10,
+            "topic": "Arrays: Internals & Memory Layout (Light)",
+            "tasks": "Learn: Contiguous memory layout, why array access is O(1), 2D/jagged arrays. | Code: Implement matrix operations (transpose, rotate) using 2D arrays. | Practice: 3 array-traversal problems.",
+            "achievement": "Can explain why array access is O(1) and implement a 2D matrix rotation in-place.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 11,
+            "topic": "Dynamic Array From Scratch (Medium, Day 1/2)",
+            "tasks": "Learn: How ArrayList resizes internally \u2014 growth factor, amortized O(1) insertion. | Code: Begin implementing a dynamic array class from scratch (resize logic). | Practice: None yet \u2014 finish implementation first.",
+            "achievement": "Has a working `resize()` method that doubles capacity when full.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 12,
+            "topic": "Dynamic Array Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review gotchas \u2014 shrinking strategy, amortized analysis proof sketch. | Code: Finish and test the dynamic array class (add, get, remove, resize). | Practice: 5 array problems (e.g., rotate array, move zeroes, remove duplicates in-place).",
+            "achievement": "Has a fully working hand-rolled dynamic array and can solve in-place array manipulation problems.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 13,
+            "topic": "Linked Lists: Singly Linked List (Light)",
+            "tasks": "Learn: Node structure, pointer manipulation, insertion/deletion at head/tail/middle. | Code: Implement a singly linked list (insert, delete, traverse). | Practice: 3 problems (reverse a linked list, find middle node).",
+            "achievement": "Can implement singly linked list insert/delete and reverse it iteratively.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 14,
+            "topic": "Doubly & Circular Linked Lists (Medium, Day 1/2)",
+            "tasks": "Learn: Bidirectional traversal, sentinel nodes, circular queue using linked lists. | Code: Begin implementing a doubly linked list with sentinel head/tail nodes. | Practice: None yet.",
+            "achievement": "Sentinel-node DLL skeleton compiles and supports basic insert.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 15,
+            "topic": "Doubly Linked List Practice + Cycle Detection (Medium, Day 2/2)",
+            "tasks": "Learn: Floyd's Cycle Detection (Tortoise & Hare) \u2014 finding cycle, finding cycle start, finding middle node. | Code: Finish the DLL implementation; implement Floyd's algorithm. | Practice: 4 problems (detect cycle, find cycle start, intersection of two linked lists).",
+            "achievement": "Can implement Floyd's Cycle Detection and explain why the two pointers must meet inside the cycle.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 16,
+            "topic": "Stacks: LIFO Fundamentals (Light)",
+            "tasks": "Learn: Array-based vs linked-list-based stack implementation, push/pop/peek, overflow/underflow. | Code: Implement a stack from scratch using an array. | Practice: 2 problems (valid parentheses).",
+            "achievement": "Can implement a stack from scratch and solve Valid Parentheses in O(N).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 17,
+            "topic": "Stack Applications: Expression Evaluation (Medium, Day 1/2)",
+            "tasks": "Learn: Infix/prefix/postfix notation, expression evaluation using two stacks (operator + operand). | Code: Begin implementing an infix expression evaluator. | Practice: None yet.",
+            "achievement": "Has a working operator-precedence parsing skeleton.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 18,
+            "topic": "Min Stack + Stack Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Min Stack design (O(1) min extraction using an auxiliary stack). | Code: Finish expression evaluator; implement Min Stack. | Practice: 3 problems (Min Stack, Max Stack, evaluate RPN).",
+            "achievement": "Can implement Min Stack with O(1) push/pop/getMin.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 19,
+            "topic": "Queues: FIFO Fundamentals (Light)",
+            "tasks": "Learn: Simple queue, circular queue, array/list-based implementations. | Code: Implement a circular queue from scratch (handling wrap-around). | Practice: 2 problems (implement queue using stacks, or vice versa).",
+            "achievement": "Can implement a circular queue without wasting array slots.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 20,
+            "topic": "Deque (Double-Ended Queue) (Light)",
+            "tasks": "Learn: Deque as both stack and queue, implementation via doubly linked list, `ArrayDeque` preference over `Stack`/`LinkedList` in Java. | Code: Implement a basic deque supporting push/pop from both ends. | Practice: 2 problems using `ArrayDeque`.",
+            "achievement": "Can explain why `ArrayDeque` is preferred over `java.util.Stack` in production Java code.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 21,
+            "topic": "Hash Tables: Internals \u2014 Hash Functions & Collisions (Light)",
+            "tasks": "Learn: Hash function design, index calculation, load factor concept. | Code: Implement a basic hash function for strings. | Practice: 2 conceptual problems on hash distribution quality.",
+            "achievement": "Can design a hash function and explain what makes one \"good\" (uniform distribution, low collision rate).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 22,
+            "topic": "Collision Resolution: Chaining vs Open Addressing (Medium, Day 1/2)",
+            "tasks": "Learn: Chaining (linked list/tree buckets), Open Addressing (linear probing, quadratic probing, double hashing). | Code: Begin implementing a HashMap from scratch using chaining. | Practice: None yet.",
+            "achievement": "Hash table skeleton with chaining-based bucket array compiles and supports insert.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 23,
+            "topic": "Hash Table From Scratch + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review resizing/rehashing triggers tied to load factor. | Code: Finish hand-rolled HashMap (get, put, resize on load factor breach). | Practice: 4 hashing problems (group anagrams, subarray with given sum using hashmap).",
+            "achievement": "Has a working hand-rolled HashMap with chaining and automatic resizing.",
+            "priority": "MUST KNOW"
+          }
+        ]
+      },
+      {
+        "id": "7-3",
+        "title": "SEARCHING & SORTING",
+        "days": "",
+        "items": [
+          {
+            "day": 24,
+            "topic": "Binary Search: The Basic Template (Light)",
+            "tasks": "Learn: Classic binary search, avoiding off-by-one errors, loop invariants. | Code: Implement binary search from memory, twice (iterative + recursive). | Practice: 2 problems (basic search, search insert position).",
+            "achievement": "Can write binary search from memory without bugs, in both forms.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 25,
+            "topic": "Binary Search: Lower Bound & Upper Bound (Light)",
+            "tasks": "Learn: Lower bound (first occurrence) and upper bound (last occurrence / insertion point) variants. | Code: Implement both lower-bound and upper-bound binary search. | Practice: 3 problems (first/last occurrence, count occurrences in sorted array).",
+            "achievement": "Can implement lower/upper bound binary search and use them together to count occurrences in O(log N).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 26,
+            "topic": "Binary Search on Answer Space (Medium, Day 1/2)",
+            "tasks": "Learn: The \"binary search on answer\" pattern \u2014 monotonic predicate functions, search space \u2260 input array. | Code: Begin implementing Koko Eating Bananas using this pattern. | Practice: None yet.",
+            "achievement": "Can articulate the monotonic predicate for Koko Eating Bananas before finishing the code.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 27,
+            "topic": "Binary Search on Answer: Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 Capacity to Ship Packages, Allocate Books as more \"search on answer\" examples. | Code: Finish Koko Eating Bananas. | Practice: 3 problems (Capacity to Ship Packages, Allocate Books, Split Array Largest Sum).",
+            "achievement": "Can recognize a \"search on answer\" problem within the first read and set up the feasibility check correctly.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 28,
+            "topic": "Sorting Fundamentals: Bubble, Selection, Insertion (Light)",
+            "tasks": "Learn: O(N\u00b2) sorts \u2014 mechanics, stability, in-place behavior. | Code: Implement all three from scratch. | Practice: 2 problems (sort colors / Dutch national flag as an insertion-sort-adjacent problem).",
+            "achievement": "Can implement all three O(N\u00b2) sorts and state which are stable.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 29,
+            "topic": "Merge Sort (Medium, Day 1/2)",
+            "tasks": "Learn: Divide & conquer, O(N log N), stability, O(N) auxiliary space requirement. | Code: Begin implementing merge sort (merge function first, then recursive split). | Practice: None yet.",
+            "achievement": "Merge function correctly merges two sorted halves in O(N).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 30,
+            "topic": "Merge Sort: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 applications of merge sort (counting inversions). | Code: Finish full merge sort implementation. | Practice: 3 problems (sort an array, count inversions using merge sort).",
+            "achievement": "Has a fully working merge sort and can use it to count array inversions in O(N log N).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 31,
+            "topic": "Quick Sort (Medium, Day 1/2)",
+            "tasks": "Learn: Pivot selection strategies, average O(N log N) vs worst O(N\u00b2), why it's unstable but in-place. | Code: Begin implementing quicksort (partition function first). | Practice: None yet.",
+            "achievement": "Partition function correctly places the pivot and partitions the array around it.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 32,
+            "topic": "Quick Sort: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Randomized pivot selection to avoid worst-case on adversarial/sorted input. | Code: Finish quicksort with randomized pivot. | Practice: 3 problems (Kth largest element using quickselect, sort an array).",
+            "achievement": "Can implement Quickselect (partial quicksort) to find the Kth largest element in average O(N).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 33,
+            "topic": "Heap Sort (Light)",
+            "tasks": "Learn: In-place sorting using a Max-Heap, O(N log N), how heapify builds the heap in O(N). | Code: Implement heap sort from scratch. | Practice: 2 problems using heap sort or heap-based thinking.",
+            "achievement": "Can implement heap sort and explain why building the heap is O(N), not O(N log N).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 34,
+            "topic": "\ud83c\udd95 Counting Sort (Light)",
+            "tasks": "Learn: Linear-time sort for small integer ranges \u2014 counting array, prefix-sum positioning. | Code: Implement Counting Sort from scratch. | Practice: 2 problems suited to Counting Sort (e.g., sort an array of 0s/1s/2s \u2014 Dutch flag revisited via counting).",
+            "achievement": "Can implement Counting Sort in O(N+k) and explain when k (the range) makes it impractical.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 35,
+            "topic": "\ud83c\udd95 Radix Sort & Bucket Sort (Medium, Day 1/2)",
+            "tasks": "Learn: Radix Sort (digit-by-digit, stable counting sort as a subroutine), Bucket Sort (uniform distribution assumption). | Code: Begin implementing Radix Sort (LSD \u2014 least significant digit first). | Practice: None yet.",
+            "achievement": "Radix Sort correctly sorts multi-digit numbers using repeated counting-sort passes.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 36,
+            "topic": "\ud83c\udd95 Radix & Bucket Sort: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 when Radix beats comparison sorts (fixed-digit-length integers, large datasets). | Code: Finish Radix Sort; implement Bucket Sort for floats in [0,1). | Practice: 2 problems comparing sort choice for different input distributions.",
+            "achievement": "Can correctly choose between Counting/Radix/Bucket/comparison sort given any input distribution description.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 37,
+            "topic": "HANDS-ON LAB: Median of Two Sorted Arrays (Medium, Day 1/2)",
+            "tasks": "Learn: Binary-search-on-partition technique for finding median across two sorted arrays without merging. | Code: Begin implementing the O(log(min(N,M))) solution. | Practice: None yet \u2014 this problem IS the practice.",
+            "achievement": "Understands why the partition must satisfy `maxLeft \u2264 minRight` on both arrays simultaneously.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 38,
+            "topic": "Median of Two Sorted Arrays: Finish + Phase Cheat Sheet",
+            "tasks": "Learn: Review the full Searching & Sorting cheat sheet. | Code: Finish and test the median solution. | Practice: Timed mixed-review (3 problems spanning binary search + sorting).",
+            "achievement": "Can solve Median of Two Sorted Arrays cold and recite every sort's complexity/stability from memory.",
+            "priority": "MUST KNOW"
+          }
+        ]
+      },
+      {
+        "id": "7-4",
+        "title": "TWO POINTERS & SLIDING WINDOW",
+        "days": "",
+        "items": [
+          {
+            "day": 39,
+            "topic": "Two Pointers: Opposite Direction (Light)",
+            "tasks": "Learn: Opposite-direction two-pointer pattern \u2014 converging pointers on sorted input. | Code: Implement Two Sum II (sorted array input). | Practice: 2 problems (Two Sum sorted, Container With Most Water).",
+            "achievement": "Can solve Two Sum on a sorted array in O(N) using two converging pointers.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 40,
+            "topic": "Two Pointers: Same Direction / Fast-Slow (Light)",
+            "tasks": "Learn: Same-direction pointer pattern \u2014 removing duplicates in-place, fast-slow for middle-finding (revisit from Day 15's cycle context). | Code: Implement Remove Duplicates from Sorted Array in-place. | Practice: 2 problems (remove duplicates, move zeroes).",
+            "achievement": "Can solve in-place array modification problems using same-direction two pointers.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 41,
+            "topic": "3Sum: Opposite Pointers with Duplicate Skipping (Medium, Day 1/2)",
+            "tasks": "Learn: Extending two-pointer to 3Sum \u2014 fix one element, two-pointer the rest, skip duplicates correctly. | Code: Begin implementing 3Sum. | Practice: None yet.",
+            "achievement": "Understands exactly where and why duplicate-skipping logic goes in the loop.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 42,
+            "topic": "3Sum: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 3Sum Closest, 4Sum as generalizations. | Code: Finish and test 3Sum. | Practice: 3 problems (3Sum, 3Sum Closest, Trapping Rain Water via two pointers).",
+            "achievement": "Can implement 3Sum in O(N\u00b2) with correct duplicate handling, no Set needed.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 43,
+            "topic": "Sliding Window: Fixed-Size Window (Light)",
+            "tasks": "Learn: Fixed-size window mechanics \u2014 window slides by exactly one element per step. | Code: Implement Max Sum Subarray of Size K. | Practice: 2 problems (fixed window problems).",
+            "achievement": "Can implement a fixed-size sliding window in O(N) without recomputing the window sum from scratch each time.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 44,
+            "topic": "Sliding Window: Variable-Size Window (Medium, Day 1/2)",
+            "tasks": "Learn: Variable window mechanics \u2014 grow/shrink conditions, the \"shrink while invalid\" pattern. | Code: Begin implementing Longest Substring Without Repeating Characters. | Practice: None yet.",
+            "achievement": "Can articulate the exact shrink condition before finishing the implementation.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 45,
+            "topic": "Variable Sliding Window: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 Longest Substring with K Distinct Characters as a generalization. | Code: Finish Longest Substring Without Repeating Characters. | Practice: 2 problems (Max Consecutive Ones III, Longest Substring with K Distinct).",
+            "achievement": "Has a working O(N) solution and can adapt the shrink condition to new constraints.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 46,
+            "topic": "Minimum Window Substring (Medium, Day 1/2)",
+            "tasks": "Learn: The hardest variable-window pattern \u2014 two frequency maps, \"valid window\" tracking via a counter. | Code: Begin implementing Minimum Window Substring (LeetCode 76). | Practice: None yet.",
+            "achievement": "Understands why a single counter (matched characters) avoids comparing two full frequency maps every iteration.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 47,
+            "topic": "Minimum Window Substring: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review the full solution trace on a worked example. | Code: Finish and test Minimum Window Substring. | Practice: 2 problems (Minimum Window Substring variants, Permutation in String).",
+            "achievement": "Can implement Minimum Window Substring in O(N) cold, without referencing notes.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 48,
+            "topic": "Prefix Sum: Range Sum Queries (Light)",
+            "tasks": "Learn: Prefix sum array construction, O(1) range sum after O(N) preprocessing. | Code: Implement a Range Sum Query class using prefix sums. | Practice: 2 problems (range sum query, 2D range sum).",
+            "achievement": "Can answer any range-sum query in O(1) after building the prefix sum array.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 49,
+            "topic": "Subarray Sum Equals K: Prefix Map Pattern (Medium, Day 1/2)",
+            "tasks": "Learn: Combining prefix sum with a HashMap to count subarrays with a target sum \u2014 the \"prefix sum seen before\" trick. | Code: Begin implementing Subarray Sum Equals K (LeetCode 560). | Practice: None yet.",
+            "achievement": "Understands why `prefixSum - k` lookup in a HashMap solves this in O(N).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 50,
+            "topic": "Subarray Sum Equals K: Finish + Phase Cheat Sheet",
+            "tasks": "Learn: Review the full Two Pointers & Sliding Window cheat sheet. | Code: Finish and test Subarray Sum Equals K. | Practice: Timed mixed review (3 problems spanning two pointers, sliding window, prefix sum).",
+            "achievement": "Can solve Subarray Sum Equals K cold and recite the full phase cheat sheet.",
+            "priority": "MUST KNOW"
+          }
+        ]
+      },
+      {
+        "id": "7-5",
+        "title": "STRING PATTERNS & SUBSTRING SEARCH",
+        "days": "",
+        "items": [
+          {
+            "day": 51,
+            "topic": "Java String Fundamentals for DSA (Light)",
+            "tasks": "Learn: String immutability impact on algorithms, char arrays vs String, when to use StringBuilder in tight loops. | Code: Convert a naive concatenation-in-loop snippet to use StringBuilder. | Practice: 2 problems (reverse a string in-place using char array).",
+            "achievement": "Can explain why string concatenation in a loop is O(N\u00b2) total and how StringBuilder fixes it.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 52,
+            "topic": "Frequency Counting for Strings (Light)",
+            "tasks": "Learn: Frequency arrays (fixed alphabet) vs HashMap for string problems. | Code: Implement anagram detection using a frequency array. | Practice: 2 problems (valid anagram, group anagrams).",
+            "achievement": "Can solve any anagram/permutation-detection problem using frequency counting without a HashMap when the alphabet is small.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 53,
+            "topic": "Palindrome Problems: Two-Pointer Check (Light)",
+            "tasks": "Learn: Two-pointer palindrome verification, handling case/non-alphanumeric characters. | Code: Implement Valid Palindrome (with character filtering). | Practice: 2 problems (valid palindrome, valid palindrome II \u2014 one deletion allowed).",
+            "achievement": "Can verify a palindrome in O(N) with O(1) space using two pointers.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 54,
+            "topic": "Longest Palindromic Substring: Expand From Center (Medium, Day 1/2)",
+            "tasks": "Learn: Expand-from-center technique, handling both odd and even-length palindromes. | Code: Begin implementing Longest Palindromic Substring. | Practice: None yet.",
+            "achievement": "Understands why two separate expansion calls (odd-center, even-center) are needed per index.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 55,
+            "topic": "Longest Palindromic Substring: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 Palindromic Substrings (count all) as a close variant. | Code: Finish and test the expand-from-center solution. | Practice: 2 problems (Longest Palindromic Substring, Palindromic Substrings count).",
+            "achievement": "Can implement Longest Palindromic Substring in O(N\u00b2) cold.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 56,
+            "topic": "String Hashing: Rolling Hash (Light)",
+            "tasks": "Learn: Rolling hash concept \u2014 computing a hash incrementally as a window slides, avoiding full recomputation. | Code: Implement a basic rolling hash function. | Practice: 1 conceptual problem (verify rolling hash matches direct hash on a few windows).",
+            "achievement": "Can explain how rolling hash updates in O(1) per window shift instead of O(L) recomputation.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 57,
+            "topic": "Rabin-Karp Algorithm (Medium, Day 1/2)",
+            "tasks": "Learn: Using rolling hash for substring search \u2014 comparing hash values, handling hash collisions with a verification step. | Code: Begin implementing Rabin-Karp. | Practice: None yet.",
+            "achievement": "Understands why a hash match still requires a character-by-character verification step.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 58,
+            "topic": "Rabin-Karp: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review average-case O(N+M) vs worst-case behavior under hash collisions. | Code: Finish and test Rabin-Karp against a naive substring search, comparing performance. | Practice: 2 problems (repeated substring pattern, find all anagram start indices).",
+            "achievement": "Can implement Rabin-Karp and explain its worst-case degradation scenario.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 59,
+            "topic": "KMP: Building the LPS Array (Heavy, Day 1/4)",
+            "tasks": "Learn: The failure function / LPS (Longest Prefix Suffix) array concept \u2014 what it represents and why it enables skipping. | Code: Implement the LPS array construction by hand-tracing 2 example patterns first, then in code. | Practice: None yet \u2014 pure LPS construction focus.",
+            "achievement": "Can construct the LPS array for any pattern by hand within 2 minutes.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 60,
+            "topic": "KMP: Using the LPS Array for Search (Heavy, Day 2/4)",
+            "tasks": "Learn: How the LPS array drives the search pointer's fallback behavior on a mismatch. | Code: Implement the full KMP search function using the LPS array from Day 59. | Practice: None yet.",
+            "achievement": "Has a complete, working KMP implementation achieving O(N+M).",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 61,
+            "topic": "KMP: Practice Day 1 (Heavy, Day 3/4)",
+            "tasks": "Learn: Review the full algorithm trace on an adversarial input (e.g., \"aaaaab\" pattern). | Code: None \u2014 pure practice. | Practice: 2 problems (implement strStr, repeated substring pattern via KMP).",
+            "achievement": "Can trace KMP's pointer movement on paper for any given text/pattern pair.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 62,
+            "topic": "KMP: Practice Day 2 (Heavy, Day 4/4)",
+            "tasks": "Learn: Comparison \u2014 when KMP, Rabin-Karp, or naive search is the right interview answer. | Code: None \u2014 pure practice. | Practice: 2 more problems combining KMP-style thinking with other string patterns.",
+            "achievement": "Can justify, in an interview, the choice between naive/Rabin-Karp/KMP for a given constraint set.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 63,
+            "topic": "HANDS-ON LAB: Substring Search Benchmarking + Phase Cheat Sheet",
+            "tasks": "Learn: Review the full String Patterns cheat sheet. | Code: Benchmark naive vs Rabin-Karp vs KMP on the same large input. | Practice: Timed mixed review (3 problems spanning frequency counting, palindromes, substring search).",
+            "achievement": "Can produce real benchmark numbers showing KMP/Rabin-Karp's advantage on adversarial inputs and recite the phase cheat sheet.",
+            "priority": "MUST KNOW"
+          }
+        ]
+      },
+      {
+        "id": "7-6",
+        "title": "MONOTONIC STACK & MONOTONIC QUEUE",
+        "days": "",
+        "items": [
+          {
+            "day": 64,
+            "topic": "Monotonic Stack: Concept & Next Greater Element (Light)",
+            "tasks": "Learn: What makes a stack \"monotonic,\" why it solves Next Greater Element in O(N) vs naive O(N\u00b2). | Code: Implement Next Greater Element from scratch. | Practice: 2 problems (Next Greater Element I & II \u2014 circular variant).",
+            "achievement": "Can implement Next Greater Element in O(N) using a monotonic decreasing stack.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 65,
+            "topic": "Monotonic Stack: Daily Temperatures & Variants (Light)",
+            "tasks": "Learn: Generalizing the pattern \u2014 storing indices instead of values when distance matters. | Code: Implement Daily Temperatures. | Practice: 2 problems (Daily Temperatures, Next Smaller Element).",
+            "achievement": "Can decide when to store values vs indices on the monotonic stack based on what the problem asks for.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 66,
+            "topic": "Monotonic Queue: Sliding Window Maximum (Medium, Day 1/2)",
+            "tasks": "Learn: Monotonic deque mechanics \u2014 maintaining a decreasing deque of candidates for the window max. | Code: Begin implementing Sliding Window Maximum. | Practice: None yet.",
+            "achievement": "Understands why elements are evicted from the back of the deque when a larger element arrives.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 67,
+            "topic": "Sliding Window Maximum: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review the full O(N) proof (amortized analysis of deque operations). | Code: Finish and test Sliding Window Maximum. | Practice: 2 problems (Sliding Window Maximum, shortest subarray with sum at least K).",
+            "achievement": "Can implement Sliding Window Maximum in true O(N) cold.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 68,
+            "topic": "HANDS-ON LAB: Maximal Rectangle Solver + Phase Cheat Sheet",
+            "tasks": "Learn: Reducing Maximal Rectangle to repeated Largest Rectangle in Histogram calls. | Code: Implement Largest Rectangle in Histogram using a monotonic stack, then extend to Maximal Rectangle. | Practice: Timed review (2 problems).",
+            "achievement": "Can solve Maximal Rectangle by combining histogram-area logic with a monotonic stack, and recite the phase cheat sheet.",
+            "priority": "MUST KNOW"
+          }
+        ]
+      },
+      {
+        "id": "7-7",
+        "title": "RECURSION & BACKTRACKING",
+        "days": "",
+        "items": [
+          {
+            "day": 69,
+            "topic": "Recursion: The Mental Model (Light)",
+            "tasks": "Learn: Base case, recursive case, trusting the recursive call, call stack visualization. | Code: Trace 3 recursive functions by hand before running them. | Practice: 2 problems (factorial, power function via recursion).",
+            "achievement": "Can trace any moderately complex recursive function's call stack by hand.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 70,
+            "topic": "Recursion: Recursion Tree & Recurrence Relations (Light)",
+            "tasks": "Learn: Visualizing recursion as a tree, deriving time complexity from recurrence relations (basic Master Theorem intuition). | Code: Draw and code 2 recursion trees (Fibonacci naive vs memoized). | Practice: 2 problems (climbing stairs via plain recursion, generate parentheses intro).",
+            "achievement": "Can explain why naive recursive Fibonacci is O(2^N) by drawing its recursion tree.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 71,
+            "topic": "Backtracking: The Blueprint (Light)",
+            "tasks": "Learn: Choice \u2014 constraint \u2014 goal framework, the generic backtracking template (choose, explore, un-choose). | Code: Implement the generic backtracking template as a reusable skeleton. | Practice: 2 problems (subsets, then adapt template).",
+            "achievement": "Can write the generic backtracking template from memory in under 2 minutes.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 72,
+            "topic": "Backtracking: Subsets & Combinations (Light)",
+            "tasks": "Learn: Adapting the template for subsets (power set) and combinations (choose K of N). | Code: Implement Subsets and Combination Sum. | Practice: 2 problems (subsets, combination sum).",
+            "achievement": "Can adapt the backtracking template to subsets/combinations without re-deriving it from scratch.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 73,
+            "topic": "Backtracking: Permutations (Medium, Day 1/2)",
+            "tasks": "Learn: Permutations via swap-based backtracking vs used[] array tracking; handling duplicates. | Code: Begin implementing Permutations (and Permutations II with duplicates). | Practice: None yet.",
+            "achievement": "Understands the difference between the swap-based and used-array approaches to permutation generation.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 74,
+            "topic": "Permutations: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review duplicate-skipping logic for Permutations II. | Code: Finish both Permutations and Permutations II. | Practice: 2 problems (permutations, permutations with duplicates).",
+            "achievement": "Can generate all permutations, with correct duplicate handling, in both forms.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 75,
+            "topic": "Pruning Techniques (Light)",
+            "tasks": "Learn: Dead-end detection to optimize backtracking \u2014 early termination conditions, constraint propagation basics. | Code: Add a pruning condition to an existing unpruned backtracking solution and measure the speedup. | Practice: 2 problems where pruning matters (combination sum with target, word search).",
+            "achievement": "Can identify and add a pruning condition that meaningfully cuts the search space.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 76,
+            "topic": "N-Queens: Setup & Naive Approach (Heavy, Day 1/3)",
+            "tasks": "Learn: The N-Queens problem statement, naive board-scanning conflict check (before optimization). | Code: Begin implementing N-Queens with naive O(N) conflict checking per placement. | Practice: None yet.",
+            "achievement": "Has a working but unoptimized N-Queens solution.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 77,
+            "topic": "N-Queens: Optimized Conflict Checking (Heavy, Day 2/3)",
+            "tasks": "Learn: O(1) conflict checking using sets/booleans for columns, diagonals, anti-diagonals. | Code: Refactor N-Queens to use O(1) conflict checks. | Practice: None yet.",
+            "achievement": "N-Queens now runs with O(1) conflict checking per placement instead of O(N) board scans.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 78,
+            "topic": "N-Queens: Practice + Variants (Heavy, Day 3/3)",
+            "tasks": "Learn: Review \u2014 counting solutions vs returning all solutions as a variant. | Code: None \u2014 pure practice. | Practice: 2 problems (N-Queens, N-Queens II \u2014 count only).",
+            "achievement": "Can implement N-Queens with optimal conflict checking cold, in either \"return all\" or \"count only\" form.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 79,
+            "topic": "Sudoku Solver (Heavy, Day 1/2)",
+            "tasks": "Learn: Constraint propagation for Sudoku \u2014 row/column/box validity checks, backtracking with early pruning. | Code: Begin implementing the Sudoku solver. | Practice: None yet.",
+            "achievement": "Has working row/column/box validity-check functions integrated into the backtracking skeleton.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 80,
+            "topic": "Sudoku Solver: Finish + Phase Cheat Sheet",
+            "tasks": "Learn: Review the full Recursion & Backtracking cheat sheet. | Code: Finish and test the Sudoku solver. | Practice: Timed mixed review (2 problems spanning recursion + backtracking).",
+            "achievement": "Has a fully working Sudoku solver and can recite the phase cheat sheet.",
+            "priority": "MUST KNOW"
+          }
+        ]
+      },
+      {
+        "id": "7-8",
+        "title": "HIERARCHICAL DATA STRUCTURES",
+        "days": "",
+        "items": [
+          {
+            "day": 81,
+            "topic": "Binary Trees: Node Structure & Properties (Light)",
+            "tasks": "Learn: Tree node structure, height, depth, leaf node counting. | Code: Implement basic tree construction and a height-calculation function. | Practice: 2 problems (max depth, count leaf nodes).",
+            "achievement": "Can compute tree height/depth recursively in O(N).",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 82,
+            "topic": "Binary Tree Traversals: Recursive (Light)",
+            "tasks": "Learn: Preorder, Inorder, Postorder \u2014 recursive implementations. | Code: Implement all 3 recursive traversals. | Practice: 2 problems (return traversal as a list, verify two trees have same inorder).",
+            "achievement": "Can implement all 3 recursive traversals from memory.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 83,
+            "topic": "Binary Tree Traversals: Iterative + Level Order (Medium, Day 1/2)",
+            "tasks": "Learn: Iterative traversal using an explicit stack, Level-order traversal (BFS) using a queue. | Code: Begin implementing iterative inorder traversal and level-order traversal. | Practice: None yet.",
+            "achievement": "Has a working iterative inorder traversal using an explicit stack.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 84,
+            "topic": "Iterative Traversals: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 iterative preorder/postorder (the trickier ones) using stack tricks. | Code: Finish iterative preorder and postorder; finish level-order traversal. | Practice: 2 problems (binary tree level order traversal, zigzag level order).",
+            "achievement": "Can implement all 4 traversal types both recursively and iteratively.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 85,
+            "topic": "Binary Tree: Diameter & Path Sum (Light)",
+            "tasks": "Learn: Diameter of a binary tree (combining left+right height at each node), root-to-leaf path sum problems. | Code: Implement Diameter of Binary Tree. | Practice: 2 problems (diameter, path sum).",
+            "achievement": "Can solve Diameter of Binary Tree in a single O(N) pass (not O(N\u00b2)).",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 86,
+            "topic": "Binary Search Tree: Search, Insert, Delete (Medium, Day 1/2)",
+            "tasks": "Learn: BST property, search/insert operations, the 3 deletion cases (leaf, one child, two children). | Code: Begin implementing BST insert and search. | Practice: None yet.",
+            "achievement": "Has working BST insert and search operations.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 87,
+            "topic": "BST Delete + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review the two-children deletion case (find successor/predecessor). | Code: Finish BST delete, handling all 3 cases. | Practice: 2 problems (delete node in BST, insert into BST).",
+            "achievement": "Can implement BST delete correctly for all 3 cases.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 88,
+            "topic": "BST: Validate BST & Kth Smallest (Light)",
+            "tasks": "Learn: Validating BST property (range-checking, not just parent-child comparison), Kth smallest via inorder traversal. | Code: Implement Validate BST and Kth Smallest in BST. | Practice: 2 problems (validate BST, kth smallest, kth largest).",
+            "achievement": "Can validate a BST correctly (catching the classic \"only checks immediate children\" bug) and find Kth smallest in O(H+K).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 89,
+            "topic": "Balanced BSTs: AVL & Red-Black Trees Conceptual (Light)",
+            "tasks": "Learn: Balance factor concept, why unbalanced BSTs degrade to O(N), Red-Black tree's role as Java's TreeMap/HashMap bucket backing. | Code: None \u2014 conceptual day. | Practice: 2 conceptual questions (when does a BST become a linked list? why does Java use Red-Black trees internally?).",
+            "achievement": "Can explain why an unbalanced BST degrades to O(N) and name where Red-Black trees are used inside the JDK.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 90,
+            "topic": "\ud83c\udd95 AVL Rotations: LL & RR Cases (Heavy, Day 1/3)",
+            "tasks": "Learn: Balance factor calculation after insertion, the Left-Left and Right-Right single-rotation cases. | Code: Implement AVL node structure, balance factor calculation, and single rotation (LL case) function. | Practice: None yet.",
+            "achievement": "Can identify an LL or RR imbalance from a balance factor calculation and apply the correct single rotation.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 91,
+            "topic": "\ud83c\udd95 AVL Rotations: LR & RL Cases (Heavy, Day 2/3)",
+            "tasks": "Learn: The Left-Right and Right-Left double-rotation cases (rotate child first, then the node). | Code: Implement the LR and RL double-rotation functions. | Practice: None yet.",
+            "achievement": "Can identify an LR or RL imbalance and apply the correct two-step rotation sequence.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 92,
+            "topic": "\ud83c\udd95 AVL Tree: Full Insert with Self-Balancing (Heavy, Day 3/3)",
+            "tasks": "Learn: Wiring all 4 rotation cases into a complete AVL insert function that rebalances on the way back up the recursion. | Code: Finish a complete, working AVL tree insert method. | Practice: 2 problems (insert a sequence into an AVL tree by hand and verify against your code's output).",
+            "achievement": "Has a fully working, self-balancing AVL insert implementation handling all 4 rotation cases correctly.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 93,
+            "topic": "Heaps: Binary Heap Representation (Light)",
+            "tasks": "Learn: Array-based heap representation, parent/child index formulas, Min-Heap vs Max-Heap. | Code: Implement siftUp and siftDown functions. | Practice: 2 problems (kth largest element using a heap, top K frequent elements).",
+            "achievement": "Can implement siftUp/siftDown from memory and explain the parent/child index math.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 94,
+            "topic": "Heaps: Heapify & PriorityQueue Usage (Light)",
+            "tasks": "Learn: Building a heap from an unsorted array in O(N) (heapify), Java's `PriorityQueue` with custom comparators. | Code: Implement heapify and use Java's `PriorityQueue` with a custom comparator for a problem. | Practice: 2 problems (merge K sorted lists using a heap, find median from data stream).",
+            "achievement": "Can explain why heapify is O(N) (not O(N log N)) and use `PriorityQueue` fluently with custom orderings.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 95,
+            "topic": "Tries: Node Structure & Insert/Search (Light)",
+            "tasks": "Learn: Trie node structure (array or map of children), insert and search operations. | Code: Implement Trie insert and search. | Practice: 2 problems (implement Trie, word search II setup).",
+            "achievement": "Can implement Trie insert and search in O(L) per operation.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 96,
+            "topic": "Tries: Prefix Search & Autocomplete Design (Medium, Day 1/2)",
+            "tasks": "Learn: `startsWith` prefix matching, extending Trie nodes to support autocomplete suggestions. | Code: Begin implementing the autocomplete system (storing top suggestions per node, or DFS-collecting from a prefix). | Practice: None yet.",
+            "achievement": "Trie now supports `startsWith` and can list all words under a given prefix.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 97,
+            "topic": "Autocomplete System: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 ranking suggestions (frequency-based) for a production-quality autocomplete. | Code: Finish the autocomplete system, returning top-K ranked suggestions. | Practice: 2 problems (design search autocomplete system, replace words using Trie).",
+            "achievement": "Has a working Trie-based autocomplete system returning ranked top-K suggestions for any prefix.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 98,
+            "topic": "Segment Trees: Construction & Range Query (Heavy, Day 1/3)",
+            "tasks": "Learn: Segment tree structure for range queries, recursive construction, range-sum query logic. | Code: Begin implementing segment tree construction and the range sum query function. | Practice: None yet.",
+            "achievement": "Has a working segment tree that answers range-sum queries in O(log N).",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 99,
+            "topic": "Segment Trees: Point Update (Heavy, Day 2/3)",
+            "tasks": "Learn: Point update logic \u2014 updating a single index and propagating the change up to ancestor nodes. | Code: Implement the point-update function. | Practice: None yet.",
+            "achievement": "Segment tree now supports both range queries and point updates correctly.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 100,
+            "topic": "Segment Trees: Lazy Propagation for Range Updates (Heavy, Day 3/3)",
+            "tasks": "Learn: Lazy propagation \u2014 deferring updates to child nodes until they're actually queried, avoiding O(N) range updates. | Code: Implement lazy propagation for range updates. | Practice: 2 problems (range sum query mutable, range update + range query).",
+            "achievement": "Has a complete segment tree supporting range updates AND range queries in O(log N) using lazy propagation.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 101,
+            "topic": "Fenwick Tree (Binary Indexed Tree) (Medium, Day 1/2)",
+            "tasks": "Learn: Fenwick Tree structure (implicit binary representation), prefix sum query and point update via bit manipulation on indices. | Code: Begin implementing Fenwick Tree update and query functions. | Practice: None yet.",
+            "achievement": "Understands the `i & (-i)` bit trick that drives Fenwick Tree traversal.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 102,
+            "topic": "Fenwick Tree: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review \u2014 when to prefer Fenwick over Segment Tree (simpler code, less memory, but point-update/range-query only by default). | Code: Finish and test the Fenwick Tree. | Practice: 2 problems (range sum query mutable using Fenwick, count of smaller numbers after self).",
+            "achievement": "Can implement Fenwick Tree from scratch and justify choosing it over a Segment Tree for a given problem.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 103,
+            "topic": "Disjoint Set Union: Path Compression & Union by Rank (Medium, Day 1/2)",
+            "tasks": "Learn: Union-Find structure, path compression optimization, union by rank optimization. | Code: Begin implementing DSU with both optimizations. | Practice: None yet.",
+            "achievement": "Has a working `find()` function with path compression.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 104,
+            "topic": "DSU: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review the near-O(1) amortized complexity argument for combined path compression + union by rank. | Code: Finish DSU with union by rank. | Practice: 2 problems (number of provinces, redundant connection).",
+            "achievement": "Has a fully optimized DSU achieving near-O(1) amortized find/union.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 105,
+            "topic": "HANDS-ON LAB: Trie-Based Autocomplete Extension + Phase Cheat Sheet",
+            "tasks": "Learn: Review the entire Hierarchical Data Structures cheat sheet (Trees, BST, AVL, Heaps, Tries, Segment/Fenwick, DSU). | Code: Extend the Day 97 autocomplete system with a new feature (e.g., fuzzy matching or recency weighting). | Practice: Timed mixed review (4 problems spanning the entire phase).",
+            "achievement": "Can recite the full phase cheat sheet and confidently pick the right tree-based structure for any new problem.",
+            "priority": "IMPORTANT"
+          }
+        ]
+      },
+      {
+        "id": "7-9",
+        "title": "GRAPHS & GRAPH ALGORITHMS",
+        "days": "",
+        "items": [
+          {
+            "day": 106,
+            "topic": "Graph Fundamentals & Representations (Light)",
+            "tasks": "Learn: Adjacency matrix vs adjacency list vs edge list, directed/undirected, weighted/unweighted, cyclic/acyclic (DAG). | Code: Implement both adjacency matrix and adjacency list representations for the same graph. | Practice: 2 problems (build graph from edge list, count connected components via simple traversal).",
+            "achievement": "Can choose the correct representation for a given problem based on density and required operations.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 107,
+            "topic": "Breadth-First Search (BFS) (Light)",
+            "tasks": "Learn: BFS using a queue, shortest path in unweighted graphs, level-by-level exploration. | Code: Implement BFS from scratch. | Practice: 2 problems (shortest path in unweighted graph, rotting oranges \u2014 multi-source BFS).",
+            "achievement": "Can implement BFS and use it for shortest path in an unweighted graph.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 108,
+            "topic": "Depth-First Search (DFS) (Light)",
+            "tasks": "Learn: DFS using recursion and explicit stack, connected components via DFS. | Code: Implement DFS both recursively and iteratively. | Practice: 2 problems (number of islands, flood fill).",
+            "achievement": "Can implement DFS both ways and explain when iterative DFS is necessary (avoiding stack overflow on deep graphs).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 109,
+            "topic": "Topological Sort: Kahn's Algorithm (Medium, Day 1/2)",
+            "tasks": "Learn: BFS-based topological sort using in-degree tracking. | Code: Begin implementing Kahn's Algorithm. | Practice: None yet.",
+            "achievement": "Understands why nodes with in-degree 0 are the correct starting points.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 110,
+            "topic": "Topological Sort: DFS-Based + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: DFS-based topological sort (postorder reversal) as an alternative to Kahn's. | Code: Finish Kahn's Algorithm; implement DFS-based topological sort. | Practice: 2 problems (course schedule, course schedule II).",
+            "achievement": "Can implement topological sort both ways and detect a cycle (no valid ordering exists) in the process.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 111,
+            "topic": "\ud83c\udd95 Bipartite Graph Check (Light)",
+            "tasks": "Learn: 2-coloring via BFS/DFS \u2014 a graph is bipartite iff it has no odd-length cycle. | Code: Implement bipartite check using BFS-based 2-coloring. | Practice: 2 problems (is graph bipartite, possible bipartition).",
+            "achievement": "Can implement a bipartite check and explain why an odd cycle makes a graph non-bipartite.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 112,
+            "topic": "Dijkstra's Algorithm: Setup & PriorityQueue Approach (Heavy, Day 1/3)",
+            "tasks": "Learn: Single-source shortest path for non-negative weights, edge relaxation, why a PriorityQueue (not a plain queue) is essential. | Code: Begin implementing Dijkstra's Algorithm. | Practice: None yet.",
+            "achievement": "Understands edge relaxation and why Dijkstra fails with negative weights (conceptually, before finishing code).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 113,
+            "topic": "Dijkstra's Algorithm: Finish Implementation (Heavy, Day 2/3)",
+            "tasks": "Learn: Review handling of \"already finalized\" nodes and lazy deletion in the PriorityQueue. | Code: Finish and test Dijkstra's Algorithm. | Practice: None yet.",
+            "achievement": "Has a fully working Dijkstra's implementation using `PriorityQueue<int[]>`.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 114,
+            "topic": "Dijkstra's Algorithm: Practice (Heavy, Day 3/3)",
+            "tasks": "Learn: Review variants \u2014 network delay time, cheapest flights with K stops (Dijkstra variant). | Code: None \u2014 pure practice. | Practice: 2 problems (network delay time, path with maximum probability).",
+            "achievement": "Can adapt Dijkstra's Algorithm to non-standard variants (probability maximization, K-stop constraints).",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 115,
+            "topic": "Bellman-Ford Algorithm (Medium, Day 1/2)",
+            "tasks": "Learn: Handling negative weights, V-1 relaxation rounds, negative cycle detection via a Vth round. | Code: Begin implementing Bellman-Ford. | Practice: None yet.",
+            "achievement": "Understands why exactly V-1 rounds of relaxation guarantee correctness.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 116,
+            "topic": "Bellman-Ford: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review negative cycle detection (extra round still relaxes an edge \u2192 cycle exists). | Code: Finish Bellman-Ford with negative cycle detection. | Practice: 2 problems (cheapest flights with K stops via Bellman-Ford-style relaxation, detect negative cycle).",
+            "achievement": "Can implement Bellman-Ford and correctly detect negative cycles.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 117,
+            "topic": "Floyd-Warshall Algorithm (Medium, Day 1/2)",
+            "tasks": "Learn: All-pairs shortest path via DP, the `dp[i][j] = min(dp[i][j], dp[i][k]+dp[k][j])` transition. | Code: Begin implementing Floyd-Warshall. | Practice: None yet.",
+            "achievement": "Understands why the loop order (k outermost) is essential for correctness.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 118,
+            "topic": "Floyd-Warshall: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review when Floyd-Warshall beats running Dijkstra V times (dense small graphs). | Code: Finish and test Floyd-Warshall. | Practice: 2 problems (find the city with smallest number of neighbors, all-pairs shortest path applications).",
+            "achievement": "Can implement Floyd-Warshall in O(V\u00b3) and justify when it's preferable to V calls to Dijkstra.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 119,
+            "topic": "Minimum Spanning Tree: Kruskal's Algorithm (Medium, Day 1/2)",
+            "tasks": "Learn: Edge-selection greedy approach using Union-Find to avoid cycles. | Code: Begin implementing Kruskal's Algorithm (reusing your Phase 8 DSU). | Practice: None yet.",
+            "achievement": "Understands why sorting edges by weight first makes the greedy choice correct.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 120,
+            "topic": "Kruskal's: Finish + Prim's Algorithm Intro (Medium, Day 2/2)",
+            "tasks": "Learn: Finish Kruskal's; learn Prim's Algorithm (vertex-addition greedy using a PriorityQueue). | Code: Finish Kruskal's Algorithm; begin Prim's Algorithm. | Practice: 1 problem (minimum cost to connect all points using Kruskal's).",
+            "achievement": "Has a working Kruskal's implementation and understands Prim's core mechanic.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 121,
+            "topic": "Prim's Algorithm: Finish + Practice (Medium, Day 1/2 \u2014 continuing)",
+            "tasks": "Learn: Review Prim's PriorityQueue-based vertex selection in detail. | Code: Finish Prim's Algorithm. | Practice: 2 problems (minimum cost to connect all points using Prim's, comparing both MST approaches on the same input).",
+            "achievement": "Can implement both Kruskal's and Prim's, and explain which is more efficient for sparse vs dense graphs.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 122,
+            "topic": "Cycle Detection: Directed & Undirected Graphs (Light)",
+            "tasks": "Learn: Directed graph cycle detection (DFS with 3-color marking: white/gray/black), undirected graph cycle detection (DFS or Union-Find). | Code: Implement cycle detection for both directed and undirected graphs. | Practice: 2 problems (course schedule revisited through the cycle-detection lens, redundant connection).",
+            "achievement": "Can implement cycle detection for both graph types and explain why undirected cycle detection can't reuse the directed 3-color approach directly.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 123,
+            "topic": "Strongly Connected Components: Tarjan's/Kosaraju's (Heavy, Day 1/2)",
+            "tasks": "Learn: SCC concept, the high-level idea behind Tarjan's algorithm (low-link values) or Kosaraju's (two-pass DFS). | Code: Begin implementing Tarjan's SCC algorithm. | Practice: None yet.",
+            "achievement": "Understands what a low-link value represents and how it identifies an SCC root.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 124,
+            "topic": "SCC: Finish Implementation (Heavy, Day 2/2)",
+            "tasks": "Learn: Review the full algorithm trace on a small example graph. | Code: Finish and test the SCC implementation. | Practice: 1 problem (number of strongly connected components).",
+            "achievement": "Has a working SCC detection algorithm and can trace it by hand on a small graph.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 125,
+            "topic": "Graph Bridges: Tarjan's Bridge Discovery (Medium, Day 1/2)",
+            "tasks": "Learn: Bridge-finding via DFS discovery times and low-link values (closely related to SCC's low-link concept from Day 123). | Code: Begin implementing Tarjan's Bridges algorithm. | Practice: None yet.",
+            "achievement": "Understands the bridge condition (`low[child] > disc[node]`) and why it identifies a critical edge.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 126,
+            "topic": "Bridges: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review articulation points as a closely related concept (briefly, for awareness). | Code: Finish and test the bridge-finding algorithm (LeetCode 1192 \u2014 Critical Connections). | Practice: 2 problems (critical connections in a network, articulation points awareness problem).",
+            "achievement": "Can implement Tarjan's Bridge Discovery and solve Critical Connections in a Network.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 127,
+            "topic": "HANDS-ON LAB: Network Router Optimizer + Phase Cheat Sheet",
+            "tasks": "Learn: Review the full Graphs cheat sheet (representations, BFS/DFS, topo sort, bipartite, shortest path, MST, SCC, bridges). | Code: Complete the Network Router Optimizer lab, combining traversal + shortest-path techniques. | Practice: Timed mixed review (4 problems spanning the entire Graphs phase).",
+            "achievement": "Can recite the full Graphs cheat sheet and confidently select the right algorithm family for any new graph problem.",
+            "priority": "IMPORTANT"
+          }
+        ]
+      },
+      {
+        "id": "7-10",
+        "title": "GREEDY ALGORITHMS",
+        "days": "",
+        "items": [
+          {
+            "day": 128,
+            "topic": "Greedy Fundamentals: Proving Correctness (Light)",
+            "tasks": "Learn: Greedy choice property, optimal substructure, how to argue (exchange argument) that a greedy approach is correct. | Code: None \u2014 conceptual day with worked proof sketches. | Practice: 2 conceptual problems (is this greedy approach correct? prove or disprove).",
+            "achievement": "Can sketch an exchange-argument proof for why a proposed greedy strategy is or isn't correct.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 129,
+            "topic": "Activity Selection / Interval Scheduling (Light)",
+            "tasks": "Learn: Sort-by-end-time greedy strategy, why sorting by start time fails. | Code: Implement Activity Selection. | Practice: 2 problems (activity selection, non-overlapping intervals).",
+            "achievement": "Can solve Activity Selection optimally and explain precisely why sorting by start time produces a wrong answer.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 130,
+            "topic": "Merge Intervals (Light)",
+            "tasks": "Learn: Interval merging \u2014 sort by start time, then linear merge pass. | Code: Implement Merge Intervals. | Practice: 2 problems (merge intervals, insert interval).",
+            "achievement": "Can implement Merge Intervals in O(N log N) and explain why this sort uses start time (unlike Day 129).",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 131,
+            "topic": "Jump Game Variants (Medium, Day 1/2)",
+            "tasks": "Learn: Reachability (Jump Game I) and minimum jumps (Jump Game II) via greedy range-extension. | Code: Begin implementing Jump Game II. | Practice: None yet.",
+            "achievement": "Understands the \"farthest reachable from current window\" greedy invariant before finishing the code.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 132,
+            "topic": "Jump Game: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review Jump Game I (simpler reachability-only variant) by contrast. | Code: Finish Jump Game II; implement Jump Game I. | Practice: 2 problems (Jump Game I & II, Jump Game III as an extension).",
+            "achievement": "Can solve Jump Game II in O(N) using greedy range tracking, distinct from a BFS-based approach.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 133,
+            "topic": "Huffman Coding (Medium, Day 1/2)",
+            "tasks": "Learn: Optimal prefix-free encoding, building the encoding tree using a min-heap of frequencies. | Code: Begin implementing Huffman Coding tree construction. | Practice: None yet.",
+            "achievement": "Can construct a Huffman tree by hand for a small frequency table before finishing the code.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 134,
+            "topic": "Huffman Coding: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review how the tree generates variable-length prefix codes per character. | Code: Finish Huffman Coding, generating the actual code table. | Practice: 1 problem (implement Huffman encode/decode end-to-end).",
+            "achievement": "Has a complete working Huffman encoder that produces a valid prefix-free code table.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 135,
+            "topic": "Task Scheduling: Job Sequencing & Task Scheduler (Medium, Day 1/2)",
+            "tasks": "Learn: Job Sequencing with Deadlines (greedy by profit, then by feasibility), Task Scheduler (LeetCode 621 \u2014 frequency-based cooldown logic). | Code: Begin implementing Task Scheduler. | Practice: None yet.",
+            "achievement": "Understands the formula-based approach to Task Scheduler (max frequency \u00d7 (n+1) + ties) before finishing code.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 136,
+            "topic": "Task Scheduling: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review Job Sequencing with Deadlines as a separate but related greedy pattern. | Code: Finish Task Scheduler; implement Job Sequencing with Deadlines. | Practice: 2 problems (task scheduler, job sequencing with deadlines).",
+            "achievement": "Can implement both task-scheduling variants and explain the formula-based shortcut for Task Scheduler.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 137,
+            "topic": "Fractional Knapsack + Gas Station (Light)",
+            "tasks": "Learn: Fractional Knapsack (value/weight ratio greedy \u2014 contrast with 0/1 Knapsack, which is NOT greedy), Gas Station's circular feasibility check. | Code: Implement Fractional Knapsack and Gas Station. | Practice: 2 problems (fractional knapsack, gas station).",
+            "achievement": "Can explain precisely why Fractional Knapsack is greedy-solvable but 0/1 Knapsack is not, and solve Gas Station in O(N).",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 138,
+            "topic": "Partitioning & Assignment Problems (Light)",
+            "tasks": "Learn: Greedy partitioning patterns (assign cookies, two-city scheduling) \u2014 the sorting criterion that enables the greedy choice. | Code: Implement Assign Cookies and Two City Scheduling. | Practice: 2 problems (assign cookies, two city scheduling).",
+            "achievement": "Can identify the correct sorting criterion for a new greedy partitioning problem within the first read.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 139,
+            "topic": "Advanced Greedy Problems + Phase Cheat Sheet",
+            "tasks": "Learn: Review the handbook's advanced greedy problems section. Review the full Greedy Algorithms phase cheat sheet. | Code: None \u2014 review day. | Practice: Timed mixed review (3 problems spanning the entire Greedy phase).",
+            "achievement": "Can distinguish, for any new unseen problem, whether greedy is provably correct or whether it secretly requires DP.",
+            "priority": "IMPORTANT"
+          }
+        ]
+      },
+      {
+        "id": "7-11",
+        "title": "DYNAMIC PROGRAMMING",
+        "days": "",
+        "items": [
+          {
+            "day": 140,
+            "topic": "DP Fundamentals: Memoization vs Tabulation (Light)",
+            "tasks": "Learn: State definition, transition relation, base cases; converting brute-force recursion \u2192 memoization \u2192 tabulation. | Code: Take naive recursive Fibonacci and convert it step-by-step to memoized, then tabulated. | Practice: 2 problems (Fibonacci variants, climbing stairs via all 3 forms).",
+            "achievement": "Can convert any brute-force recursive solution to memoized, then to tabulated, as a repeatable 3-step process.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 141,
+            "topic": "1D DP: Climbing Stairs & House Robber (Light)",
+            "tasks": "Learn: Climbing Stairs DP transition, House Robber's \"skip-adjacent\" transition. | Code: Implement Climbing Stairs and House Robber. | Practice: 2 problems (climbing stairs, house robber).",
+            "achievement": "Can write the House Robber transition and explain why it generalizes to a wide class of \"skip-adjacent\" problems.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 142,
+            "topic": "1D DP: House Robber II & Min Cost Climbing Stairs (Light)",
+            "tasks": "Learn: House Robber II's circular-array adaptation (run the linear version twice, excluding first/last). | Code: Implement House Robber II and Min Cost Climbing Stairs. | Practice: 2 problems (house robber II, min cost climbing stairs).",
+            "achievement": "Can adapt a linear 1D DP solution to a circular-array variant by running it twice with different exclusions.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 143,
+            "topic": "0/1 Knapsack: 2D DP Table (Medium, Day 1/2)",
+            "tasks": "Learn: Weight/value representation, the classic 2D DP table construction for 0/1 Knapsack. | Code: Begin implementing 0/1 Knapsack with a full 2D DP table. | Practice: None yet.",
+            "achievement": "Has a working 2D Knapsack DP table and can read off the optimal value.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 144,
+            "topic": "0/1 Knapsack: Space Optimization + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Reducing 2D DP to 1D by iterating weights in reverse order \u2014 why iteration order matters. | Code: Refactor to a space-optimized 1D DP array. | Practice: 2 problems (partition equal subset sum, target sum \u2014 both Knapsack-shaped).",
+            "achievement": "Can implement 0/1 Knapsack with O(capacity) space instead of O(N \u00d7 capacity).",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 145,
+            "topic": "Unbounded Knapsack & Coin Change (Medium, Day 1/2)",
+            "tasks": "Learn: Unbounded Knapsack's forward iteration (vs 0/1's reverse iteration) \u2014 items can be reused. | Code: Begin implementing Coin Change (minimum coins). | Practice: None yet.",
+            "achievement": "Understands precisely why forward iteration allows item reuse while reverse iteration (Day 144) prevents it.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 146,
+            "topic": "Coin Change: Finish + Subset Sum Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review Coin Change II (count combinations, not minimum) as a closely related variant. | Code: Finish Coin Change; implement Coin Change II. | Practice: 2 problems (coin change, coin change II).",
+            "achievement": "Can distinguish \"minimum coins\" DP from \"count combinations\" DP and implement both correctly.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 147,
+            "topic": "DP on Strings: Longest Common Subsequence (Light)",
+            "tasks": "Learn: LCS 2D DP table construction, the diagonal/up/left transition logic. | Code: Implement LCS. | Practice: 2 problems (LCS, longest common substring as a contrast).",
+            "achievement": "Can implement LCS in O(N\u00d7M) and explain the difference between \"subsequence\" and \"substring\" DP transitions.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 148,
+            "topic": "DP on Strings: Longest Palindromic Subsequence (Light)",
+            "tasks": "Learn: Reframing palindrome-subsequence as LCS(string, reverse(string)) \u2014 connecting back to Day 147. | Code: Implement Longest Palindromic Subsequence. | Practice: 2 problems (longest palindromic subsequence, minimum insertions to make palindrome).",
+            "achievement": "Can solve Longest Palindromic Subsequence by recognizing it as a disguised LCS problem.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 149,
+            "topic": "Edit Distance (Medium, Day 1/2)",
+            "tasks": "Learn: The three-operation (insert/delete/replace) DP transition, base case setup for empty-string comparisons. | Code: Begin implementing Edit Distance. | Practice: None yet.",
+            "achievement": "Can write all 3 transition cases (insert/delete/replace) for the Edit Distance DP table by hand.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 150,
+            "topic": "Edit Distance: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review applications \u2014 spell-checkers, diff tools. | Code: Finish and test Edit Distance. | Practice: 2 problems (edit distance, one edit distance \u2014 simplified variant).",
+            "achievement": "Can implement Edit Distance in O(N\u00d7M) cold and explain each of the three operations' contribution to the transition.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 151,
+            "topic": "Wildcard & Regex Matching (Heavy, Day 1/2)",
+            "tasks": "Learn: DP-based pattern matching with `*` and `?` (wildcard) or `*` and `.` (regex) \u2014 the trickiest string DP transition. | Code: Begin implementing Wildcard Matching. | Practice: None yet.",
+            "achievement": "Understands the special handling required for `*` (matches empty OR extends match) before finishing code.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 152,
+            "topic": "Wildcard/Regex Matching: Finish + Practice (Heavy, Day 2/2)",
+            "tasks": "Learn: Review Regex Matching's `*` semantics (tied to the preceding character, unlike Wildcard's standalone `*`). | Code: Finish Wildcard Matching; implement Regex Matching. | Practice: 2 problems (wildcard matching, regular expression matching).",
+            "achievement": "Can implement both Wildcard and Regex matching DP, clearly articulating how their `*` semantics differ.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 153,
+            "topic": "\ud83c\udd95 DP on Trees: House Robber III (Heavy, Day 1/2)",
+            "tasks": "Learn: DP on trees as a distinct mental model \u2014 recursive functions returning a 2-state result per subtree (rob this node / don't rob this node), combined post-order. | Code: Begin implementing House Robber III. | Practice: None yet.",
+            "achievement": "Understands why a single return value per node is insufficient and a 2-state return is required.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 154,
+            "topic": "\ud83c\udd95 DP on Trees: Diameter & Max Path Sum (Heavy, Day 2/2)",
+            "tasks": "Learn: Generalizing tree DP to Diameter of Binary Tree (revisited through the DP lens) and Binary Tree Maximum Path Sum. | Code: Finish House Robber III; implement Binary Tree Maximum Path Sum. | Practice: 2 problems (House Robber III, binary tree maximum path sum).",
+            "achievement": "Can solve House Robber III and Max Path Sum, both using single-pass post-order DP on trees.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 155,
+            "topic": "\ud83c\udd95 Interval DP: Matrix Chain Multiplication (Heavy, Day 1/2)",
+            "tasks": "Learn: The canonical interval DP pattern \u2014 `dp[i][j]` as the optimal cost spanning indices i to j, iterating over all split points k between i and j. | Code: Begin implementing Matrix Chain Multiplication. | Practice: None yet.",
+            "achievement": "Can write the MCM transition `dp[i][j] = min over k of dp[i][k] + dp[k+1][j] + cost(k)` from memory.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 156,
+            "topic": "\ud83c\udd95 Interval DP: Burst Balloons & Palindrome Partitioning (Heavy, Day 2/2)",
+            "tasks": "Learn: Recognizing the same \"split point k between i and j\" signature in Burst Balloons (LeetCode 312, the true DP version) and Palindrome Partitioning II. | Code: Finish Matrix Chain Multiplication; implement Burst Balloons (DP version). | Practice: 2 problems (Burst Balloons, Palindrome Partitioning II).",
+            "achievement": "Can recognize the interval-DP signature in a new, unseen problem and set up the split-point iteration correctly.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 157,
+            "topic": "Bitmask DP: Traveling Salesman Problem (Heavy, Day 1/2)",
+            "tasks": "Learn: Representing visited-vertex sets as integer bitmasks, the `dp[mask][u]` state definition. | Code: Begin implementing TSP via Bitmask DP. | Practice: None yet.",
+            "achievement": "Understands why bitmask DP is only feasible for small N (typically N \u2264 20) due to the 2^N state space.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 158,
+            "topic": "Bitmask DP: Finish + Practice (Heavy, Day 2/2)",
+            "tasks": "Learn: Review \u2014 other bitmask DP applications (e.g., Partition to K Equal Sum Subsets). | Code: Finish TSP Bitmask DP. | Practice: 2 problems (TSP via bitmask, partition to K equal sum subsets).",
+            "achievement": "Can implement TSP using Bitmask DP in O(N\u00b2 \u00d7 2^N) and adapt the bitmask pattern to a new subset-tracking problem.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 159,
+            "topic": "Advanced DP Practice Day 1 (Light)",
+            "tasks": "Learn: Review \u2014 mixed advanced DP problems combining patterns learned so far (e.g., DP + greedy hybrid problems). | Code: None \u2014 pure practice. | Practice: 3 mixed-pattern problems.",
+            "achievement": "Can classify any new DP problem (1D/2D/Knapsack/String/Tree/Interval/Bitmask) within the first minute of reading it.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 160,
+            "topic": "HANDS-ON LAB: Coin Change Optimization (Light)",
+            "tasks": "Learn: Review the Coin Change Optimization hands-on lab problem set. | Code: Complete the lab exercises. | Practice: 2 problems from the lab.",
+            "achievement": "Can complete the Coin Change Optimization lab within its suggested time.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 161,
+            "topic": "Phase Cheat Sheet + Mixed DP Review",
+            "tasks": "Learn: Review the complete Dynamic Programming cheat sheet, including all new additions (Tree DP, Interval DP). | Code: None \u2014 review day. | Practice: Timed mixed review (4 problems spanning the entire DP phase).",
+            "achievement": "Can recite the full DP phase cheat sheet and correctly classify/solve any of the last 22 days' problem types under time pressure.",
+            "priority": "IMPORTANT"
+          }
+        ]
+      },
+      {
+        "id": "7-12",
+        "title": "CUSTOM DESIGN PROBLEMS",
+        "days": "",
+        "items": [
+          {
+            "day": 162,
+            "topic": "The Design Interview Strategy + LRU Cache: Design (Medium, Day 1/2)",
+            "tasks": "Learn: General strategy for \"design X\" problems (clarify requirements \u2192 pick data structures \u2192 implement). LRU Cache's HashMap + Doubly Linked List combination. | Code: Begin implementing LRU Cache. | Practice: None yet.",
+            "achievement": "Understands exactly why HashMap alone (no recency tracking) and DLL alone (no O(1) lookup) each fail individually.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 163,
+            "topic": "LRU Cache: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review eviction logic \u2014 moving an accessed node to the front, evicting from the back on overflow. | Code: Finish and test LRU Cache with O(1) get/put. | Practice: 1 problem (LRU Cache, then re-implement using Java's `LinkedHashMap` access-order mode for comparison).",
+            "achievement": "Has a fully working hand-rolled LRU Cache and can also implement it via `LinkedHashMap` for comparison.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 164,
+            "topic": "LFU Cache: Design & Frequency Buckets (Heavy, Day 1/2)",
+            "tasks": "Learn: LFU's added complexity over LRU \u2014 tracking both recency AND frequency, frequency-bucketed DLLs. | Code: Begin implementing LFU Cache. | Practice: None yet.",
+            "achievement": "Understands the frequency-bucket design (each frequency maps to its own DLL of recency-ordered keys) before finishing code.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 165,
+            "topic": "LFU Cache: Finish + Practice (Heavy, Day 2/2)",
+            "tasks": "Learn: Review the min-frequency tracking that enables O(1) eviction. | Code: Finish and test LFU Cache with O(1) get/put. | Practice: 1 problem (LFU Cache full implementation).",
+            "achievement": "Has a fully working LFU Cache achieving true O(1) get/put.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 166,
+            "topic": "Min Stack/Max Stack Revisited + Design Twitter (Medium, Day 1/2)",
+            "tasks": "Learn: Design Twitter's feed-generation problem \u2014 merging each followee's recent tweets using a max-heap (similar to Merge K Sorted Lists). | Code: Begin implementing Design Twitter. | Practice: None yet.",
+            "achievement": "Understands why a max-heap merge (not sorting everything) is the efficient approach to `getNewsFeed`.",
+            "priority": "MUST KNOW"
+          },
+          {
+            "day": 167,
+            "topic": "Design Twitter: Finish + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Review follow/unfollow bookkeeping and timestamp-based tweet ordering. | Code: Finish and test Design Twitter. | Practice: 1 problem (Design Twitter full implementation).",
+            "achievement": "Has a complete working Design Twitter implementation with efficient `getNewsFeed`.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 168,
+            "topic": "Browser History + Hit Counter/Rate Limiter (Light)",
+            "tasks": "Learn: Browser History (array/stack-based forward-back navigation), Rate Limiter via sliding window counter vs token bucket. | Code: Implement Browser History and a sliding-window Rate Limiter. | Practice: 2 problems (browser history, design hit counter).",
+            "achievement": "Can implement a sliding-window rate limiter and explain why fixed-window counters allow burst abuse at window boundaries.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 169,
+            "topic": "HANDS-ON LAB: Designing an LFU Cache Extension + Phase Cheat Sheet",
+            "tasks": "Learn: Review gotchas/edge cases for the entire Custom Design Problems chapter. | Code: Extend your LFU Cache (Day 164-165) with a TTL (time-to-live) feature. | Practice: Timed mixed review (2 design problems, explained out loud as if in an interview).",
+            "achievement": "Can design and defend, end-to-end, the data structure choices behind any \"design X\" problem in a mock interview setting.",
+            "priority": "IMPORTANT"
+          }
+        ]
+      },
+      {
+        "id": "7-13",
+        "title": "MATH & BIT MANIPULATION",
+        "days": "",
+        "items": [
+          {
+            "day": 170,
+            "topic": "Number Theory: GCD & LCM (Light)",
+            "tasks": "Learn: Euclidean algorithm for GCD, deriving LCM from GCD. | Code: Implement Euclidean GCD (iterative and recursive) and LCM. | Practice: 2 problems (GCD/LCM applications, e.g., simplify fraction).",
+            "achievement": "Can implement Euclidean GCD in both forms and derive LCM from it in O(log(min(A,B))).",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 171,
+            "topic": "Sieve of Eratosthenes (Light)",
+            "tasks": "Learn: Prime generation up to N in O(N log log N), the marking mechanism. | Code: Implement the Sieve of Eratosthenes. | Practice: 2 problems (count primes, prime factorization using a precomputed sieve).",
+            "achievement": "Can implement the Sieve and explain why it's vastly faster than checking primality one number at a time.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 172,
+            "topic": "Fast (Binary) Exponentiation (Light)",
+            "tasks": "Learn: O(log N) exponentiation via repeated squaring. | Code: Implement fast exponentiation (iterative and recursive). | Practice: 2 problems (pow(x,n), super pow with large exponents).",
+            "achievement": "Can implement fast exponentiation in O(log N) and explain the repeated-squaring insight.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 173,
+            "topic": "\ud83c\udd95 Modular Arithmetic: Addition, Subtraction, Multiplication (Light)",
+            "tasks": "Learn: Modular addition/subtraction/multiplication, handling overflow with modulus applied at each step (not just at the end). | Code: Implement safe modular add/subtract/multiply helper functions. | Practice: 2 problems involving large-number modular arithmetic (e.g., count ways mod 10^9+7).",
+            "achievement": "Can implement overflow-safe modular arithmetic helpers and explain why applying the modulus only at the end is unsafe.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 174,
+            "topic": "\ud83c\udd95 Modular Multiplicative Inverse via Fermat's Little Theorem (Medium, Day 1/2)",
+            "tasks": "Learn: Fermat's Little Theorem, deriving the modular inverse as `a^(p-2) mod p` for prime modulus p, using fast exponentiation (Day 172) to compute it. | Code: Begin implementing modular inverse using fast exponentiation. | Practice: None yet.",
+            "achievement": "Understands why Fermat's Little Theorem requires a PRIME modulus and what breaks if it isn't.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 175,
+            "topic": "\ud83c\udd95 Modular Inverse: Computing nCr mod p + Practice (Medium, Day 2/2)",
+            "tasks": "Learn: Combining factorials, modular inverse, and modular multiplication to compute nCr mod a large prime \u2014 a common combinatorics-DP building block. | Code: Finish modular inverse; implement nCr mod p using precomputed factorials and their modular inverses. | Practice: 2 problems (combinatorics problems requiring nCr mod 10^9+7).",
+            "achievement": "Can compute nCr mod a large prime in O(1) per query after O(N) precomputation of factorials and inverse factorials.",
+            "priority": "NICE TO HAVE"
+          },
+          {
+            "day": 176,
+            "topic": "Bit Manipulation: Core Tricks + HANDS-ON LAB: Bitwise Division Engine + Phase Cheat Sheet",
+            "tasks": "Learn: Hamming Weight (Brian Kernighan's algorithm), XOR tricks (single number, swap without temp). Review the full Math & Bit Manipulation cheat sheet including modular arithmetic additions. | Code: Implement Brian Kernighan's algorithm; complete the Bitwise Division Engine lab (integer division using only shifts/subtraction). | Practice: 2 problems (single number, counting bits).",
+            "achievement": "Can implement bitwise integer division and recite the full phase cheat sheet, including the new modular arithmetic section.",
+            "priority": "NICE TO HAVE"
+          }
+        ]
+      },
+      {
+        "id": "7-14",
+        "title": "INTERVIEW STRATEGY & BACKEND BRIDGE",
+        "days": "",
+        "items": [
+          {
+            "day": 177,
+            "topic": "The 15 Problem-Solving Patterns + Interview Framework",
+            "tasks": "Learn: The full list of 15 problem-solving patterns as a unified mental map. The step-by-step interview framework (clarify \u2192 identify pattern \u2192 outline approach \u2192 code \u2192 test edge cases \u2192 analyze complexity). | Code: None \u2014 pure strategy day. | Practice: Pick 3 random problems from across the entire 176-day journey and apply the framework out loud, mapping each to its pattern within seconds.",
+            "achievement": "Can map any previously-solved problem to one of the 15 patterns instantly, and apply the full interview framework live to a brand-new problem.",
+            "priority": "IMPORTANT"
+          },
+          {
+            "day": 178,
+            "topic": "\ud83c\udd95 DSA-to-Backend Pattern Bridge + Final Review",
+            "tasks": "Learn: Map each major DSA pattern to a real production backend use case: Monotonic Stack \u2192 log/event trimming and stock-span-style analytics; Trie \u2192 autocomplete/search-suggestion microservices; DSU \u2192 network partition/connected-component detection in distributed systems; LRU/LFU Cache \u2192 the exact mechanism behind Redis/Caffeine eviction policies; Sliding Window \u2192 rate limiters and real-time metrics aggregation; Graph BFS/Dijkstra \u2192 service-dependency analysis and shortest-path routing in infrastructure; Segment Tree/Fenwick Tree \u2192 real-time analytics dashboards needing fast range aggregation. | Code: None \u2014 synthesis day. | Practice: Use the Java Collections Decision Tree and Complexity Cheat Sheet appendices to rapid-fire answer 5 \"which data structure would you use for X production scenario\" questions.",
+            "achievement": "Can answer \"where would you actually use [DSA structure] in a production backend system?\" with a concrete, named example for at least 6 different structures \u2014 directly bridging this DSA roadmap into the System Design and Spring Boot phases of your master roadmap.",
             "priority": "IMPORTANT"
           }
         ]

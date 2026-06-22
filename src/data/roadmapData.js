@@ -6228,7 +6228,7 @@ export const roadmapData = [
         ]
       },
       {
-        "id": "7-1",
+        "id": "7-9",
         "title": "GRAPHS & GRAPH ALGORITHMS",
         "days": "",
         "items": [
@@ -6389,7 +6389,7 @@ export const roadmapData = [
         ]
       },
       {
-        "id": "7-2",
+        "id": "7-10",
         "title": "GREEDY ALGORITHMS",
         "days": "",
         "items": [
@@ -6480,7 +6480,7 @@ export const roadmapData = [
         ]
       },
       {
-        "id": "7-3",
+        "id": "7-11",
         "title": "DYNAMIC PROGRAMMING",
         "days": "",
         "items": [
@@ -6641,7 +6641,7 @@ export const roadmapData = [
         ]
       },
       {
-        "id": "7-4",
+        "id": "7-12",
         "title": "CUSTOM DESIGN PROBLEMS",
         "days": "",
         "items": [
@@ -6704,7 +6704,7 @@ export const roadmapData = [
         ]
       },
       {
-        "id": "7-5",
+        "id": "7-13",
         "title": "MATH & BIT MANIPULATION",
         "days": "",
         "items": [
@@ -6760,7 +6760,7 @@ export const roadmapData = [
         ]
       },
       {
-        "id": "7-6",
+        "id": "7-14",
         "title": "INTERVIEW STRATEGY & BACKEND BRIDGE",
         "days": "",
         "items": [

@@ -2,7 +2,7 @@ export const roadmapData = [
   {
     "id": 1,
     "title": "System Design & Architecture",
-    "days": 350,
+    "days": 349,
     "color": "cyan",
     "phases": [
       {
@@ -1849,7 +1849,7 @@ export const roadmapData = [
       {
         "id": "1-5",
         "title": "PRACTICAL SYSTEM DESIGN (REAL WORLD)",
-        "days": "Days 260\u2013350",
+        "days": "Days 260\u2013349",
         "items": [
           {
             "topic": "Web Crawler (Implementation) (Part 1: Theoretical Architecture)",
@@ -2475,7 +2475,7 @@ export const roadmapData = [
             "achievement": "Ready to ace a FAANG-level System Design interview."
           },
           {
-            "day": 350,
+            "day": 349,
             "topic": "Weekly Buffer & Revision Day (Week 50)",
             "priority": "MUST KNOW",
             "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
@@ -2488,7 +2488,7 @@ export const roadmapData = [
   {
     "id": 2,
     "title": "Spring Boot & Microservices",
-    "days": 518,
+    "days": 515,
     "color": "emerald",
     "phases": [
       {
@@ -4699,7 +4699,7 @@ export const roadmapData = [
       {
         "id": "2-4",
         "title": "MICROSERVICES, KAFKA, SPRING AI & RESILIENCY",
-        "days": "Days 313\u2013518",
+        "days": "Days 313\u2013515",
         "items": [
           {
             "topic": "gRPC Services in Spring Boot (Part 1: Theoretical Architecture)",
@@ -6116,7 +6116,7 @@ export const roadmapData = [
             "day": 514
           },
           {
-            "day": 518,
+            "day": 515,
             "topic": "Weekly Buffer & Revision Day (Week 74)",
             "priority": "MUST KNOW",
             "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
@@ -6129,7 +6129,7 @@ export const roadmapData = [
   {
     "id": 3,
     "title": "Gen AI & LLM Engineering",
-    "days": 560,
+    "days": 556,
     "color": "purple",
     "phases": [
       {
@@ -8508,7 +8508,7 @@ export const roadmapData = [
       {
         "id": "3-4",
         "title": "AUTONOMOUS AGENTS & LANGGRAPH",
-        "days": "Days 337\u2013560",
+        "days": "Days 337\u2013556",
         "items": [
           {
             "topic": "Introduction to Autonomous Agents (Part 1: Theoretical Architecture)",
@@ -10044,7 +10044,7 @@ export const roadmapData = [
             "day": 555
           },
           {
-            "day": 560,
+            "day": 556,
             "topic": "Weekly Buffer & Revision Day (Week 80)",
             "priority": "MUST KNOW",
             "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
@@ -10057,7 +10057,7 @@ export const roadmapData = [
   {
     "id": 4,
     "title": "Linux, OS & Databases",
-    "days": 238,
+    "days": 236,
     "color": "amber",
     "phases": [
       {
@@ -11519,7 +11519,7 @@ export const roadmapData = [
       {
         "id": "4-5",
         "title": "DB ADMINISTRATION & REAL-WORLD ARCHITECTURE",
-        "days": "Days 205\u2013238",
+        "days": "Days 205\u2013236",
         "items": [
           {
             "day": 205,
@@ -11739,7 +11739,7 @@ export const roadmapData = [
             "achievement": "You are now an Elite Database and Systems Engineer."
           },
           {
-            "day": 238,
+            "day": 236,
             "topic": "Weekly Buffer & Revision Day (Week 34)",
             "priority": "MUST KNOW",
             "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
@@ -14441,7 +14441,7 @@ export const roadmapData = [
   {
     "id": 6,
     "title": "Java Core & Advanced",
-    "days": 273,
+    "days": 268,
     "color": "rose",
     "phases": [
       {
@@ -15763,7 +15763,7 @@ export const roadmapData = [
       {
         "id": "6-6",
         "title": "JVM INTERNALS & MODERN JAVA",
-        "days": "Days 184\u2013273",
+        "days": "Days 184\u2013268",
         "items": [
           {
             "topic": "JVM Architecture Deep Dive (Part 1: Theoretical Architecture)",
@@ -16354,7 +16354,7 @@ export const roadmapData = [
             "day": 267
           },
           {
-            "day": 273,
+            "day": 268,
             "topic": "Weekly Buffer & Revision Day (Week 39)",
             "priority": "MUST KNOW",
             "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
@@ -16367,7 +16367,7 @@ export const roadmapData = [
   {
     "id": 7,
     "title": "Master DSA Roadmap",
-    "days": 393,
+    "days": 389,
     "color": "teal",
     "phases": [
       {
@@ -19138,7 +19138,7 @@ export const roadmapData = [
       {
         "id": "7-14",
         "title": "INTERVIEW STRATEGY & BACKEND BRIDGE",
-        "days": "Days 383\u2013392",
+        "days": "Days 383\u2013388",
         "items": [
           {
             "day": 383,
@@ -19176,7 +19176,7 @@ export const roadmapData = [
             "day": 387
           },
           {
-            "day": 392,
+            "day": 388,
             "topic": "Weekly Buffer & Revision Day (Week 56)",
             "priority": "MUST KNOW",
             "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
@@ -19187,10 +19187,10 @@ export const roadmapData = [
       {
         "id": "7-15",
         "title": "FREQUENTLY ASKED QUESTIONS (COLLEGE PLACEMENT)",
-        "days": "Day 393",
+        "days": "Day 389",
         "items": [
           {
-            "day": 393,
+            "day": 389,
             "topic": "Top 50+ Frequently Asked Questions",
             "tasks": "Arrays & Strings: Two Sum, Valid Anagram, Longest Substring... | Linked Lists: Reverse Linked List, Merge Two Sorted Lists... | Trees & Graphs: Max Depth, Number of Islands, Course Schedule... | DP & Greedy: Climbing Stairs, Coin Change, LIS... | Sorting, Searching: Binary Search, Merge Intervals, Top K...",
             "achievement": "Completed practice on the top 50+ most frequently asked DSA questions for college placements.",

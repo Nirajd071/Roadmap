@@ -1,11 +1,11 @@
 🚀 **[View the Interactive Dashboard Live](https://Nirajd071.github.io/Roadmap)**
 
-Welcome to the ultimate, comprehensive 739-day journey from Backend basics to advanced AI & LLM Engineering. 
+Welcome to the ultimate, comprehensive 918-day journey from Backend basics to advanced AI, System Design & DSA.
 This repository contains the source code for the interactive React dashboard and the full daily curriculum below.
 
 ---
 
-# 739-Day Master Backend & AI Engineering Roadmap
+# 918-Day Master Backend, AI & DSA Roadmap
 
 ## System Design & Architecture (128 Days)
 
@@ -3776,4 +3776,6 @@ This repository contains the source code for the interactive React dashboard and
 - **Priority:** MUST KNOW
 - **Tasks:** Run a full mock technical interview covering OOP design, a collections-based coding problem, and a concurrency conceptual question.
 - **Achievement:** Ready to confidently handle a Core + Advanced Java technical interview round.
+
+## Master DSA Roadmap (179 Days)
 

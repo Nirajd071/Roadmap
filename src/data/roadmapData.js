@@ -16367,7 +16367,7 @@ export const roadmapData = [
   {
     "id": 7,
     "title": "Master DSA Roadmap",
-    "days": 417,
+    "days": 389,
     "color": "teal",
     "phases": [
       {
@@ -19186,210 +19186,14 @@ export const roadmapData = [
       },
       {
         "id": "7-15",
-        "title": "THE FINAL GRIND: BLIND 75 & NEETCODE 150",
-        "days": "Days 389\u2013417",
+        "title": "THE FINAL GRIND",
+        "days": "Day 389",
         "items": [
           {
             "day": 389,
-            "topic": "Arrays & Hashing (Blind 75)",
-            "tasks": "Solve and Master: Contains Duplicate, Valid Anagram, Two Sum, Group Anagrams, Top K Frequent Elements, Product of Array Except Self, Valid Sudoku, Longest Consecutive Sequence.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Arrays & Hashing.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 390,
-            "topic": "Two Pointers (Blind 75)",
-            "tasks": "Solve and Master: Valid Palindrome, Two Sum II, 3Sum, Container With Most Water, Trapping Rain Water.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Two Pointers.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 391,
-            "topic": "Sliding Window (Blind 75)",
-            "tasks": "Solve and Master: Best Time to Buy & Sell Stock, Longest Substring Without Repeating Characters, Longest Repeating Character Replacement, Minimum Window Substring.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Sliding Window.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 392,
-            "topic": "Stack (NeetCode 150)",
-            "tasks": "Solve and Master: Valid Parentheses, Min Stack, Evaluate Reverse Polish Notation, Generate Parentheses, Daily Temperatures, Car Fleet, Largest Rectangle in Histogram.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Stack.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 393,
-            "topic": "Binary Search (NeetCode 150)",
-            "tasks": "Solve and Master: Binary Search, Search a 2D Matrix, Koko Eating Bananas, Find Minimum in Rotated Sorted Array, Search in Rotated Sorted Array, Time Based Key-Value Store, Median of Two Sorted Arrays.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Binary Search.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 394,
-            "topic": "Linked List (Blind 75)",
-            "tasks": "Solve and Master: Reverse Linked List, Merge Two Sorted Lists, Reorder List, Remove Nth Node From End of List, Copy List with Random Pointer, Add Two Numbers, Linked List Cycle, Find the Duplicate Number, LRU Cache, Merge K Sorted Lists.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Linked List.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 395,
-            "topic": "Trees Part 1 (Blind 75)",
-            "tasks": "Solve and Master: Invert Binary Tree, Maximum Depth of Binary Tree, Diameter of Binary Tree, Balanced Binary Tree, Same Tree, Subtree of Another Tree, Lowest Common Ancestor of a BST.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Trees Part 1.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 396,
-            "topic": "Weekly Buffer & Revision Day",
-            "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
-            "achievement": "Cleared all backlogs, completed revision loops, and refreshed mind for the next week.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 397,
-            "topic": "Trees Part 2 (Blind 75)",
-            "tasks": "Solve and Master: Binary Tree Level Order Traversal, Binary Tree Right Side View, Count Good Nodes in Binary Tree, Validate Binary Search Tree, Kth Smallest Element in a BST, Construct Binary Tree from Preorder and Inorder Traversal, Binary Tree Maximum Path Sum, Serialize and Deserialize Binary Tree.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Trees Part 2.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 398,
-            "topic": "Tries (Blind 75)",
-            "tasks": "Solve and Master: Implement Trie (Prefix Tree), Design Add and Search Words Data Structure, Word Search II.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Tries.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 399,
-            "topic": "Heap / Priority Queue (Blind 75)",
-            "tasks": "Solve and Master: Kth Largest Element in a Stream, Last Stone Weight, K Closest Points to Origin, Kth Largest Element in an Array, Task Scheduler, Design Twitter, Find Median from Data Stream.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Heap / Priority Queue.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 400,
-            "topic": "Backtracking (Blind 75)",
-            "tasks": "Solve and Master: Subsets, Combination Sum, Permutations, Subsets II, Combination Sum II, Word Search, Palindrome Partitioning, N-Queens.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Backtracking.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 401,
-            "topic": "Graphs Part 1 (Blind 75)",
-            "tasks": "Solve and Master: Number of Islands, Max Area of Island, Clone Graph, Walls and Gates, Rotting Oranges, Pacific Atlantic Water Flow, Surrounded Regions.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Graphs Part 1.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 402,
-            "topic": "Graphs Part 2 (Blind 75)",
-            "tasks": "Solve and Master: Course Schedule, Course Schedule II, Redundant Connection, Number of Connected Components in an Undirected Graph, Graph Valid Tree, Word Ladder.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Graphs Part 2.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 403,
-            "topic": "Weekly Buffer & Revision Day",
-            "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
-            "achievement": "Cleared all backlogs, completed revision loops, and refreshed mind for the next week.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 404,
-            "topic": "Advanced Graphs (NeetCode 150)",
-            "tasks": "Solve and Master: Reconstruct Itinerary, Min Cost to Connect All Points, Network Delay Time, Swim in Rising Water, Alien Dictionary, Cheapest Flights Within K Stops.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Advanced Graphs.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 405,
-            "topic": "1-D Dynamic Programming Part 1 (Blind 75)",
-            "tasks": "Solve and Master: Climbing Stairs, Min Cost Climbing Stairs, House Robber, House Robber II, Longest Palindromic Substring, Palindromic Substrings.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for 1-D Dynamic Programming Part 1.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 406,
-            "topic": "1-D Dynamic Programming Part 2 (Blind 75)",
-            "tasks": "Solve and Master: Decode Ways, Coin Change, Maximum Product Subarray, Word Break, Longest Increasing Subsequence, Partition Equal Subset Sum.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for 1-D Dynamic Programming Part 2.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 407,
-            "topic": "2-D Dynamic Programming Part 1 (NeetCode 150)",
-            "tasks": "Solve and Master: Unique Paths, Longest Common Subsequence, Best Time to Buy and Sell Stock with Cooldown, Coin Change II.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for 2-D Dynamic Programming Part 1.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 408,
-            "topic": "2-D Dynamic Programming Part 2 (NeetCode 150)",
-            "tasks": "Solve and Master: Target Sum, Interleaving String, Longest Increasing Path in a Matrix, Distinct Subsequences, Edit Distance, Burst Balloons, Regular Expression Matching.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for 2-D Dynamic Programming Part 2.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 409,
-            "topic": "Greedy (Blind 75)",
-            "tasks": "Solve and Master: Maximum Subarray, Jump Game, Jump Game II, Gas Station, Hand of Straights, Merge Triplets to Form Target Triplet, Partition Labels, Valid Parenthesis String.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Greedy.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 410,
-            "topic": "Weekly Buffer & Revision Day",
-            "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
-            "achievement": "Cleared all backlogs, completed revision loops, and refreshed mind for the next week.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 411,
-            "topic": "Intervals (Blind 75)",
-            "tasks": "Solve and Master: Insert Interval, Merge Intervals, Non-Overlapping Intervals, Meeting Rooms, Meeting Rooms II, Minimum Interval to Include Each Query.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Intervals.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 412,
-            "topic": "Math & Geometry (NeetCode 150)",
-            "tasks": "Solve and Master: Rotate Image, Spiral Matrix, Set Matrix Zeroes, Happy Number, Plus One, Pow(x, n), Multiply Strings, Detect Squares.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Math & Geometry.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 413,
-            "topic": "Bit Manipulation (Blind 75)",
-            "tasks": "Solve and Master: Single Number, Number of 1 Bits, Counting Bits, Reverse Bits, Missing Number, Sum of Two Integers, Reverse Integer.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Bit Manipulation.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 414,
-            "topic": "Final Mock OAs",
-            "tasks": "Solve and Master: Take 2 full 90-minute Mock Online Assessments using a mix of Random NeetCode 150 Hard/Mediums.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Final Mock OAs.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 415,
-            "topic": "Final Mock Interviews",
-            "tasks": "Solve and Master: Do 2 peer mock interviews focusing on communication and the 15 problem-solving patterns.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for Final Mock Interviews.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 416,
-            "topic": "The Ultimate Assessment",
-            "tasks": "Solve and Master: Attempt to solve 10 random Blind 75 questions in under 3 hours without any hints.",
-            "achievement": "Can perfectly solve and explain the optimal approaches for The Ultimate Assessment.",
-            "priority": "MUST KNOW"
-          },
-          {
-            "day": 417,
-            "topic": "Weekly Buffer & Revision Day",
-            "tasks": "1. Active Recall: Review notes and concepts from 7 days ago. | 2. Spaced Repetition: Review notes from 30 days ago. | 3. Backlog Catchup: Complete any unfinished tasks from this week. | 4. Rest & Reset.",
-            "achievement": "Cleared all backlogs, completed revision loops, and refreshed mind for the next week.",
+            "topic": "\ud83d\udd25 BLIND 75 & NEETCODE 150 (Complete Checklist)",
+            "tasks": "**Arrays & Hashing**: Contains Duplicate, Valid Anagram, Two Sum, Group Anagrams, Top K Frequent Elements, Product of Array Except Self, Valid Sudoku, Longest Consecutive Sequence. | **Two Pointers**: Valid Palindrome, Two Sum II, 3Sum, Container With Most Water, Trapping Rain Water. | **Sliding Window**: Best Time to Buy & Sell Stock, Longest Substring, Longest Repeating Character Replacement, Minimum Window Substring. | **Stack**: Valid Parentheses, Min Stack, Evaluate RPN, Generate Parentheses, Daily Temperatures, Car Fleet, Largest Rectangle in Histogram. | **Binary Search**: Binary Search, Search 2D Matrix, Koko Eating Bananas, Find Min in Rotated Sorted Array, Search in Rotated Sorted Array, Time Based KV Store, Median of Two Sorted Arrays. | **Linked List**: Reverse LL, Merge Two Sorted Lists, Reorder List, Remove Nth Node, Copy List with Random Pointer, Add Two Numbers, LL Cycle, Find Duplicate, LRU Cache, Merge K Sorted Lists. | **Trees**: Invert BT, Max Depth, Diameter, Balanced, Same, Subtree, LCA of BST, Level Order, Right Side View, Good Nodes, Validate BST, Kth Smallest, Construct BT, Max Path Sum, Serialize. | **Tries**: Implement Trie, Design Add and Search Words, Word Search II. | **Heap / Priority Queue**: Kth Largest in Stream, Last Stone Weight, K Closest Points, Kth Largest in Array, Task Scheduler, Design Twitter, Find Median from Data Stream. | **Backtracking**: Subsets, Combination Sum, Permutations, Subsets II, Comb Sum II, Word Search, Palindrome Partitioning, N-Queens. | **Graphs**: Islands, Max Area, Clone, Walls & Gates, Rotting Oranges, Pacific Atlantic, Surrounded Regions, Course Schedule I/II, Redundant Conn, Valid Tree, Word Ladder, Reconstruct Itinerary, Network Delay. | **1-D DP**: Climbing Stairs, Min Cost, House Robber I/II, Longest Palindromic Substring, Palindromic Substrings, Decode Ways, Coin Change, Max Product Subarray, Word Break, LIS, Partition Equal Subset Sum. | **2-D DP**: Unique Paths, LCS, Buy/Sell Stock Cooldown, Coin Change II, Target Sum, Interleaving String, Longest Increasing Path, Distinct Subseq, Edit Distance, Burst Balloons, Regex Matching. | **Greedy**: Max Subarray, Jump Game I/II, Gas Station, Hand of Straights, Merge Triplets, Partition Labels, Valid Parenthesis String. | **Intervals**: Insert, Merge, Non-Overlapping, Meeting Rooms I/II, Min Interval. | **Math & Geometry**: Rotate Image, Spiral Matrix, Set Matrix Zeroes, Happy Number, Plus One, Pow(x,n), Multiply Strings, Detect Squares. | **Bit Manipulation**: Single Number, Number of 1 Bits, Counting Bits, Reverse Bits, Missing Number, Sum of Two Integers, Reverse Integer.",
+            "achievement": "Completed all 150 gold-standard questions for placements.",
             "priority": "MUST KNOW"
           }
         ]

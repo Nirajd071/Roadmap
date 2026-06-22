@@ -47,6 +47,15 @@ const themeStyles = {
     dayHover: 'hover:border-indigo-500/50 hover:shadow-[0_0_15px_rgba(99,102,241,0.1)]',
     textIcon: 'text-indigo-500',
     bgCardAchieve: 'bg-indigo-500/5 border-indigo-500/10'
+  },
+  teal: {
+    navActive: 'bg-teal-500/20 text-teal-300 ring-1 ring-teal-500/50 shadow-[0_0_15px_rgba(20,184,166,0.2)]',
+    text: 'text-teal-400',
+    bg: 'bg-teal-500',
+    bgLight: 'bg-teal-500/10 text-teal-400 border-teal-500/20',
+    dayHover: 'hover:border-teal-500/50 hover:shadow-[0_0_15px_rgba(20,184,166,0.1)]',
+    textIcon: 'text-teal-500',
+    bgCardAchieve: 'bg-teal-500/5 border-teal-500/10'
   }
 };
 

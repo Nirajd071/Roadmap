@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import { Search, BookOpen, CheckCircle, Circle, ChevronDown, ChevronUp, Edit3, ExternalLink, RefreshCw, Copy, Check } from 'lucide-react';
 import { roadmapData } from './data/roadmapData';
 import { db, isFirebaseConfigured } from './firebase';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, onSnapshot, setDoc } from 'firebase/firestore';
 
 const themeStyles = {
   cyan: {
@@ -420,64 +420,53 @@ function App() {
   const [filterPriority, setFilterPriority] = useState('ALL');
   const [filterStatus, setFilterStatus] = useState('ALL');
 
-  // Initialize Sync ID and fetch initial data from Firestore
+  // Initialize Sync ID and establish real-time Firestore listener
   useEffect(() => {
-    const initializeSync = async () => {
-      // 1. Check URL query parameters for ?sync=xyz
-      const params = new URLSearchParams(window.location.search);
-      const urlSyncId = params.get('sync');
+    // 1. Check URL query parameters for ?sync=xyz
+    const params = new URLSearchParams(window.location.search);
+    const urlSyncId = params.get('sync');
+    
+    let currentSyncId = localStorage.getItem('roadmap_sync_id');
+    
+    if (urlSyncId) {
+      // User opened a magic sync link. Overwrite local ID and clean the URL
+      currentSyncId = urlSyncId;
+      localStorage.setItem('roadmap_sync_id', urlSyncId);
       
-      let currentSyncId = localStorage.getItem('roadmap_sync_id');
-      
-      if (urlSyncId) {
-        // User opened a magic sync link. Overwrite local ID and clean the URL
-        currentSyncId = urlSyncId;
-        localStorage.setItem('roadmap_sync_id', urlSyncId);
+      // Clean URL query parameters
+      const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+      window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+    } else if (!currentSyncId) {
+      // Generate new random sync ID if none exists
+      currentSyncId = `user-${Math.random().toString(36).substring(2, 11)}`;
+      localStorage.setItem('roadmap_sync_id', currentSyncId);
+    }
+    
+    setSyncId(currentSyncId);
+    
+    let unsubscribe = null;
+    
+    // 2. If Firestore is configured, establish real-time snapshot listener
+    if (isFirebaseConfigured && db) {
+      setSyncStatus('syncing');
+      try {
+        const docRef = doc(db, 'roadmaps', currentSyncId);
         
-        // Clean URL query parameters
-        const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-        window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
-      } else if (!currentSyncId) {
-        // Generate new random sync ID if none exists
-        currentSyncId = `user-${Math.random().toString(36).substring(2, 11)}`;
-        localStorage.setItem('roadmap_sync_id', currentSyncId);
-      }
-      
-      setSyncId(currentSyncId);
-      
-      // 2. If Firestore is configured, load initial data from the cloud
-      if (isFirebaseConfigured && db) {
-        setSyncStatus('syncing');
-        try {
-          const docRef = doc(db, 'roadmaps', currentSyncId);
-          const docSnap = await getDoc(docRef);
-          
+        unsubscribe = onSnapshot(docRef, (docSnap) => {
           if (docSnap.exists()) {
             const cloudData = docSnap.data();
             
-            // Merge cloud data with local data, cloud takes precedence on conflicts
-            const mergedCompleted = {
-              ...JSON.parse(localStorage.getItem('roadmap_completed_tasks') || '{}'),
-              ...(cloudData.completedTasks || {})
-            };
-            const mergedNotes = {
-              ...JSON.parse(localStorage.getItem('roadmap_notes') || '{}'),
-              ...(cloudData.notes || {})
-            };
-            const mergedFaq = {
-              ...JSON.parse(localStorage.getItem('roadmap_faq_completed') || '{}'),
-              ...(cloudData.faqCompleted || {})
-            };
-            
-            setCompletedTasks(mergedCompleted);
-            setNotes(mergedNotes);
-            setFaqCompleted(mergedFaq);
-            
-            localStorage.setItem('roadmap_completed_tasks', JSON.stringify(mergedCompleted));
-            localStorage.setItem('roadmap_notes', JSON.stringify(mergedNotes));
-            localStorage.setItem('roadmap_faq_completed', JSON.stringify(mergedFaq));
-            
-            console.log("Successfully loaded progress from cloud sync!");
+            // Only update local state if there are no pending unsynced local changes
+            if (!hasChanges.current) {
+              setCompletedTasks(cloudData.completedTasks || {});
+              setNotes(cloudData.notes || {});
+              setFaqCompleted(cloudData.faqCompleted || {});
+              
+              localStorage.setItem('roadmap_completed_tasks', JSON.stringify(cloudData.completedTasks || {}));
+              localStorage.setItem('roadmap_notes', JSON.stringify(cloudData.notes || {}));
+              localStorage.setItem('roadmap_faq_completed', JSON.stringify(cloudData.faqCompleted || {}));
+            }
+            setSyncStatus('synced');
           } else {
             // First time this ID is used in the cloud, initialize it with current local progress
             const initialPayload = {
@@ -486,22 +475,33 @@ function App() {
               faqCompleted: JSON.parse(localStorage.getItem('roadmap_faq_completed') || '{}'),
               updatedAt: new Date().toISOString()
             };
-            await setDoc(docRef, initialPayload);
-            console.log("Uploaded initial progress to cloud sync document.");
+            setDoc(docRef, initialPayload)
+              .then(() => {
+                console.log("Initialized new cloud sync document.");
+                setSyncStatus('synced');
+              })
+              .catch((err) => {
+                console.error("Firestore init doc error:", err);
+                setSyncStatus('error');
+              });
           }
-          setSyncStatus('synced');
-        } catch (error) {
-          console.error("Firestore read error on init:", error);
+        }, (error) => {
+          console.error("Firestore subscription error:", error);
           setSyncStatus('error');
-        }
-      } else {
-        setSyncStatus('offline');
+        });
+      } catch (error) {
+        console.error("Firestore subscription setup error:", error);
+        setSyncStatus('error');
       }
-      
-      setIsInitialized(true);
-    };
+    } else {
+      setSyncStatus('offline');
+    }
     
-    initializeSync();
+    setIsInitialized(true);
+    
+    return () => {
+      if (unsubscribe) unsubscribe();
+    };
   }, []);
 
   // Sync state to local storage when changed

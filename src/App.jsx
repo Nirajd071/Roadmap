@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { Search, Filter, BookOpen, CheckCircle, Circle, ChevronDown, ChevronUp, Edit3, ExternalLink } from 'lucide-react';
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { Search, BookOpen, CheckCircle, Circle, ChevronDown, ChevronUp, Edit3, ExternalLink, RefreshCw, Copy, Check } from 'lucide-react';
 import { roadmapData } from './data/roadmapData';
+import { db, isFirebaseConfigured } from './firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 const themeStyles = {
   cyan: {
@@ -406,10 +408,103 @@ function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
+  const [syncId, setSyncId] = useState('');
+  const [syncStatus, setSyncStatus] = useState('offline'); // 'offline', 'synced', 'syncing', 'error'
+  const [isInitialized, setIsInitialized] = useState(false);
+  const [showSyncModal, setShowSyncModal] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const hasChanges = useRef(false);
+
   const [searchQuery, setSearchQuery] = useState('');
   const [filterPriority, setFilterPriority] = useState('ALL');
   const [filterStatus, setFilterStatus] = useState('ALL');
 
+  // Initialize Sync ID and fetch initial data from Firestore
+  useEffect(() => {
+    const initializeSync = async () => {
+      // 1. Check URL query parameters for ?sync=xyz
+      const params = new URLSearchParams(window.location.search);
+      const urlSyncId = params.get('sync');
+      
+      let currentSyncId = localStorage.getItem('roadmap_sync_id');
+      
+      if (urlSyncId) {
+        // User opened a magic sync link. Overwrite local ID and clean the URL
+        currentSyncId = urlSyncId;
+        localStorage.setItem('roadmap_sync_id', urlSyncId);
+        
+        // Clean URL query parameters
+        const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+      } else if (!currentSyncId) {
+        // Generate new random sync ID if none exists
+        currentSyncId = `user-${Math.random().toString(36).substring(2, 11)}`;
+        localStorage.setItem('roadmap_sync_id', currentSyncId);
+      }
+      
+      setSyncId(currentSyncId);
+      
+      // 2. If Firestore is configured, load initial data from the cloud
+      if (isFirebaseConfigured && db) {
+        setSyncStatus('syncing');
+        try {
+          const docRef = doc(db, 'roadmaps', currentSyncId);
+          const docSnap = await getDoc(docRef);
+          
+          if (docSnap.exists()) {
+            const cloudData = docSnap.data();
+            
+            // Merge cloud data with local data, cloud takes precedence on conflicts
+            const mergedCompleted = {
+              ...JSON.parse(localStorage.getItem('roadmap_completed_tasks') || '{}'),
+              ...(cloudData.completedTasks || {})
+            };
+            const mergedNotes = {
+              ...JSON.parse(localStorage.getItem('roadmap_notes') || '{}'),
+              ...(cloudData.notes || {})
+            };
+            const mergedFaq = {
+              ...JSON.parse(localStorage.getItem('roadmap_faq_completed') || '{}'),
+              ...(cloudData.faqCompleted || {})
+            };
+            
+            setCompletedTasks(mergedCompleted);
+            setNotes(mergedNotes);
+            setFaqCompleted(mergedFaq);
+            
+            localStorage.setItem('roadmap_completed_tasks', JSON.stringify(mergedCompleted));
+            localStorage.setItem('roadmap_notes', JSON.stringify(mergedNotes));
+            localStorage.setItem('roadmap_faq_completed', JSON.stringify(mergedFaq));
+            
+            console.log("Successfully loaded progress from cloud sync!");
+          } else {
+            // First time this ID is used in the cloud, initialize it with current local progress
+            const initialPayload = {
+              completedTasks: JSON.parse(localStorage.getItem('roadmap_completed_tasks') || '{}'),
+              notes: JSON.parse(localStorage.getItem('roadmap_notes') || '{}'),
+              faqCompleted: JSON.parse(localStorage.getItem('roadmap_faq_completed') || '{}'),
+              updatedAt: new Date().toISOString()
+            };
+            await setDoc(docRef, initialPayload);
+            console.log("Uploaded initial progress to cloud sync document.");
+          }
+          setSyncStatus('synced');
+        } catch (error) {
+          console.error("Firestore read error on init:", error);
+          setSyncStatus('error');
+        }
+      } else {
+        setSyncStatus('offline');
+      }
+      
+      setIsInitialized(true);
+    };
+    
+    initializeSync();
+  }, []);
+
+  // Sync state to local storage when changed
   useEffect(() => {
     localStorage.setItem('roadmap_completed_tasks', JSON.stringify(completedTasks));
   }, [completedTasks]);
@@ -422,7 +517,35 @@ function App() {
     localStorage.setItem('roadmap_faq_completed', JSON.stringify(faqCompleted));
   }, [faqCompleted]);
 
+  // Debounced push to Firestore when changes occur
+  useEffect(() => {
+    if (!isInitialized || !isFirebaseConfigured || !db || !syncId || !hasChanges.current) return;
+
+    setSyncStatus('syncing');
+
+    const delayDebounceFn = setTimeout(async () => {
+      try {
+        const docRef = doc(db, 'roadmaps', syncId);
+        await setDoc(docRef, {
+          completedTasks,
+          notes,
+          faqCompleted,
+          updatedAt: new Date().toISOString()
+        });
+        setSyncStatus('synced');
+        hasChanges.current = false;
+        console.log("Cloud sync updated successfully.");
+      } catch (error) {
+        console.error("Firestore sync error:", error);
+        setSyncStatus('error');
+      }
+    }, 1000);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [completedTasks, notes, faqCompleted, isInitialized, syncId]);
+
   const toggleTask = (taskId) => {
+    hasChanges.current = true;
     setCompletedTasks(prev => ({
       ...prev,
       [taskId]: !prev[taskId]
@@ -430,6 +553,7 @@ function App() {
   };
 
   const toggleFaq = (faqId) => {
+    hasChanges.current = true;
     setFaqCompleted(prev => ({
       ...prev,
       [faqId]: !prev[faqId]
@@ -437,6 +561,7 @@ function App() {
   };
 
   const updateNote = (taskId, text) => {
+    hasChanges.current = true;
     setNotes(prev => ({
       ...prev,
       [taskId]: text
@@ -496,12 +621,46 @@ function App() {
       {/* Header & Global Progress */}
       <header className="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-indigo-500/20 rounded-lg">
-                <BookOpen className="w-6 h-6 text-indigo-400" />
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full md:w-auto">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-indigo-500/20 rounded-lg">
+                  <BookOpen className="w-6 h-6 text-indigo-400" />
+                </div>
+                <h1 className="text-xl md:text-2xl font-bold text-zinc-100">{globalProgress.total}-Day Master Roadmap</h1>
               </div>
-              <h1 className="text-xl md:text-2xl font-bold text-zinc-100">{globalProgress.total}-Day Master Roadmap</h1>
+              
+              {/* Sync Status Badge & Action */}
+              <div className="flex items-center gap-2 bg-zinc-950/60 border border-zinc-800/80 px-2.5 py-1 rounded-lg text-xs self-stretch sm:self-auto justify-between sm:justify-start">
+                <div className="flex items-center gap-1.5">
+                  <span className="relative flex h-2 w-2">
+                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
+                      syncStatus === 'synced' ? 'bg-emerald-400' :
+                      syncStatus === 'syncing' ? 'bg-amber-400' :
+                      syncStatus === 'offline' ? 'bg-zinc-500' : 'bg-red-400'
+                    }`}></span>
+                    <span className={`relative inline-flex rounded-full h-2 w-2 ${
+                      syncStatus === 'synced' ? 'bg-emerald-500' :
+                      syncStatus === 'syncing' ? 'bg-amber-500' :
+                      syncStatus === 'offline' ? 'bg-zinc-600' : 'bg-red-500'
+                    }`}></span>
+                  </span>
+                  <span className="text-zinc-400 font-medium text-[11px] capitalize">
+                    {syncStatus === 'synced' ? 'Synced' :
+                     syncStatus === 'syncing' ? 'Syncing...' :
+                     syncStatus === 'offline' ? 'Local' : 'Sync Error'}
+                  </span>
+                </div>
+                <div className="h-3 w-px bg-zinc-800"></div>
+                <button 
+                  onClick={() => setShowSyncModal(true)}
+                  className="text-indigo-400 hover:text-indigo-300 font-semibold text-[11px] transition-colors flex items-center gap-1 focus:outline-none"
+                  title="Sync Across Devices"
+                >
+                  <RefreshCw className={`w-3 h-3 ${syncStatus === 'syncing' ? 'animate-spin' : ''}`} />
+                  Sync Devices
+                </button>
+              </div>
             </div>
             
             <div className="w-full md:w-1/3">
@@ -688,6 +847,104 @@ function App() {
         )}
 
       </main>
+
+      {/* Sync Devices Modal */}
+      {showSyncModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-md w-full p-6 shadow-2xl relative overflow-hidden animate-slideUp">
+            {/* Ambient decorative glow */}
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <h3 className="text-lg font-bold text-zinc-100 mb-2 flex items-center gap-2">
+              <RefreshCw className="w-5 h-5 text-indigo-400" />
+              Sync Across Devices
+            </h3>
+            
+            <p className="text-sm text-zinc-400 mb-4 leading-relaxed">
+              Use this link to sync your progress automatically on another phone, tablet, or browser. No login needed!
+            </p>
+            
+            {/* Sync URL Display */}
+            <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-3 mb-4 flex items-center justify-between gap-3">
+              <div className="text-xs font-mono text-zinc-400 overflow-x-auto whitespace-nowrap scrollbar-none py-1 flex-1">
+                {`${window.location.protocol}//${window.location.host}${window.location.pathname}?sync=${syncId}`}
+              </div>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(`${window.location.protocol}//${window.location.host}${window.location.pathname}?sync=${syncId}`);
+                  setCopySuccess(true);
+                  setTimeout(() => setCopySuccess(false), 2000);
+                }}
+                className="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shrink-0"
+              >
+                {copySuccess ? (
+                  <>
+                    <Check className="w-3.5 h-3.5" />
+                    Copied
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    Copy Link
+                  </>
+                )}
+              </button>
+            </div>
+
+            {/* Manual Sync Connection */}
+            <div className="border-t border-zinc-800/80 pt-4 mt-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-2">Connect to another session</h4>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Paste Sync ID or Link..."
+                  id="manual-sync-input"
+                  className="bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-1.5 text-xs text-zinc-300 placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 flex-1"
+                />
+                <button
+                  onClick={async () => {
+                    const inputVal = document.getElementById('manual-sync-input').value.trim();
+                    if (!inputVal) return;
+                    
+                    let targetId = inputVal;
+                    try {
+                      if (inputVal.includes('?')) {
+                        const urlParams = new URLSearchParams(inputVal.split('?')[1]);
+                        const extracted = urlParams.get('sync');
+                        if (extracted) targetId = extracted;
+                      }
+                    } catch (e) {
+                      console.error("Failed to parse input URL:", e);
+                    }
+                    
+                    if (targetId) {
+                      localStorage.setItem('roadmap_sync_id', targetId);
+                      setSyncId(targetId);
+                      setShowSyncModal(false);
+                      window.location.reload();
+                    }
+                  }}
+                  className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-zinc-300 hover:text-zinc-100 rounded-lg text-xs font-semibold transition-colors"
+                >
+                  Connect
+                </button>
+              </div>
+            </div>
+            
+            {/* Close Button */}
+            <div className="flex justify-end mt-6">
+              <button
+                onClick={() => setShowSyncModal(false)}
+                className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 rounded-xl text-sm font-semibold transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

@@ -408,64 +408,92 @@ function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
-  const [syncId, setSyncId] = useState('');
-  const [syncStatus, setSyncStatus] = useState('offline'); // 'offline', 'synced', 'syncing', 'error'
+  const [syncId, setSyncId] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlSyncId = params.get('sync');
+    let currentSyncId = localStorage.getItem('roadmap_sync_id');
+    
+    if (urlSyncId) {
+      localStorage.setItem('roadmap_sync_id', urlSyncId);
+      return urlSyncId;
+    }
+    if (!currentSyncId) {
+      currentSyncId = `user-${Math.random().toString(36).substring(2, 11)}`;
+      localStorage.setItem('roadmap_sync_id', currentSyncId);
+    }
+    return currentSyncId;
+  });
+
+  const [syncStatus, setSyncStatus] = useState(() => {
+    return isFirebaseConfigured ? 'syncing' : 'offline';
+  });
   const [isInitialized, setIsInitialized] = useState(false);
   const [showSyncModal, setShowSyncModal] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
 
-  const hasChanges = useRef(false);
+  const lastCloudState = useRef({ completedTasks: {}, notes: {}, faqCompleted: {} });
+  const isRemoteUpdate = useRef(false);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [filterPriority, setFilterPriority] = useState('ALL');
   const [filterStatus, setFilterStatus] = useState('ALL');
 
-  // Initialize Sync ID and establish real-time Firestore listener
+  // Establish real-time Firestore listener on mount
   useEffect(() => {
-    // 1. Check URL query parameters for ?sync=xyz
+    // Clean URL query parameters if ?sync=... was present
     const params = new URLSearchParams(window.location.search);
-    const urlSyncId = params.get('sync');
-    
-    let currentSyncId = localStorage.getItem('roadmap_sync_id');
-    
-    if (urlSyncId) {
-      // User opened a magic sync link. Overwrite local ID and clean the URL
-      currentSyncId = urlSyncId;
-      localStorage.setItem('roadmap_sync_id', urlSyncId);
-      
-      // Clean URL query parameters
+    if (params.get('sync')) {
       const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
       window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
-    } else if (!currentSyncId) {
-      // Generate new random sync ID if none exists
-      currentSyncId = `user-${Math.random().toString(36).substring(2, 11)}`;
-      localStorage.setItem('roadmap_sync_id', currentSyncId);
     }
-    
-    setSyncId(currentSyncId);
     
     let unsubscribe = null;
     
-    // 2. If Firestore is configured, establish real-time snapshot listener
-    if (isFirebaseConfigured && db) {
-      setSyncStatus('syncing');
+    // If Firestore is configured, establish real-time snapshot listener
+    if (isFirebaseConfigured && db && syncId) {
       try {
-        const docRef = doc(db, 'roadmaps', currentSyncId);
+        const docRef = doc(db, 'roadmaps', syncId);
         
         unsubscribe = onSnapshot(docRef, (docSnap) => {
           if (docSnap.exists()) {
             const cloudData = docSnap.data();
             
-            // Only update local state if there are no pending unsynced local changes
-            if (!hasChanges.current) {
-              setCompletedTasks(cloudData.completedTasks || {});
-              setNotes(cloudData.notes || {});
-              setFaqCompleted(cloudData.faqCompleted || {});
-              
-              localStorage.setItem('roadmap_completed_tasks', JSON.stringify(cloudData.completedTasks || {}));
-              localStorage.setItem('roadmap_notes', JSON.stringify(cloudData.notes || {}));
-              localStorage.setItem('roadmap_faq_completed', JSON.stringify(cloudData.faqCompleted || {}));
+            // Mark this as a remote update so the debounced write effect skips it
+            isRemoteUpdate.current = true;
+            
+            // Update last cloud state to match database state
+            lastCloudState.current = {
+              completedTasks: cloudData.completedTasks || {},
+              notes: cloudData.notes || {},
+              faqCompleted: cloudData.faqCompleted || {}
+            };
+            
+            // 1. Always sync completed tasks and FAQs from the cloud
+            setCompletedTasks(cloudData.completedTasks || {});
+            setFaqCompleted(cloudData.faqCompleted || {});
+            
+            localStorage.setItem('roadmap_completed_tasks', JSON.stringify(cloudData.completedTasks || {}));
+            localStorage.setItem('roadmap_faq_completed', JSON.stringify(cloudData.faqCompleted || {}));
+            
+            // 2. Sync notes, avoiding overwriting the note that is actively being edited to prevent cursor jumping
+            const activeElement = document.activeElement;
+            const isEditingNote = activeElement && activeElement.tagName === 'TEXTAREA' && activeElement.id && activeElement.id.startsWith('note-');
+            
+            let activeTaskId = null;
+            if (isEditingNote) {
+              activeTaskId = activeElement.id.replace('note-', '');
             }
+            
+            setNotes(prevNotes => {
+              const nextNotes = { ...(cloudData.notes || {}) };
+              if (activeTaskId && prevNotes[activeTaskId] !== undefined) {
+                // Keep the local active note to prevent focus loss or cursor jumps
+                nextNotes[activeTaskId] = prevNotes[activeTaskId];
+              }
+              localStorage.setItem('roadmap_notes', JSON.stringify(nextNotes));
+              return nextNotes;
+            });
+            
             setSyncStatus('synced');
           } else {
             // First time this ID is used in the cloud, initialize it with current local progress
@@ -478,6 +506,11 @@ function App() {
             setDoc(docRef, initialPayload)
               .then(() => {
                 console.log("Initialized new cloud sync document.");
+                lastCloudState.current = {
+                  completedTasks: initialPayload.completedTasks,
+                  notes: initialPayload.notes,
+                  faqCompleted: initialPayload.faqCompleted
+                };
                 setSyncStatus('synced');
               })
               .catch((err) => {
@@ -491,18 +524,18 @@ function App() {
         });
       } catch (error) {
         console.error("Firestore subscription setup error:", error);
-        setSyncStatus('error');
+        Promise.resolve().then(() => setSyncStatus('error'));
       }
     } else {
-      setSyncStatus('offline');
+      Promise.resolve().then(() => setSyncStatus('offline'));
     }
     
-    setIsInitialized(true);
+    Promise.resolve().then(() => setIsInitialized(true));
     
     return () => {
       if (unsubscribe) unsubscribe();
     };
-  }, []);
+  }, [syncId]);
 
   // Sync state to local storage when changed
   useEffect(() => {
@@ -517,23 +550,39 @@ function App() {
     localStorage.setItem('roadmap_faq_completed', JSON.stringify(faqCompleted));
   }, [faqCompleted]);
 
-  // Debounced push to Firestore when changes occur
+  // Debounced push to Firestore when LOCAL changes occur (skip remote updates from onSnapshot)
   useEffect(() => {
-    if (!isInitialized || !isFirebaseConfigured || !db || !syncId || !hasChanges.current) return;
+    if (!isInitialized || !isFirebaseConfigured || !db || !syncId) return;
+
+    // If state was just updated by an incoming onSnapshot, don't write it back
+    if (isRemoteUpdate.current) {
+      isRemoteUpdate.current = false;
+      return;
+    }
+
+    // Check if the current React state differs from what is in the database
+    const hasUnsavedChanges = 
+      JSON.stringify(completedTasks) !== JSON.stringify(lastCloudState.current.completedTasks) ||
+      JSON.stringify(notes) !== JSON.stringify(lastCloudState.current.notes) ||
+      JSON.stringify(faqCompleted) !== JSON.stringify(lastCloudState.current.faqCompleted);
+
+    if (!hasUnsavedChanges) return;
 
     setSyncStatus('syncing');
 
     const delayDebounceFn = setTimeout(async () => {
       try {
         const docRef = doc(db, 'roadmaps', syncId);
-        await setDoc(docRef, {
+        const payload = {
           completedTasks,
           notes,
           faqCompleted,
           updatedAt: new Date().toISOString()
-        });
+        };
+        await setDoc(docRef, payload);
+        
+        lastCloudState.current = { completedTasks, notes, faqCompleted };
         setSyncStatus('synced');
-        hasChanges.current = false;
         console.log("Cloud sync updated successfully.");
       } catch (error) {
         console.error("Firestore sync error:", error);
@@ -545,7 +594,6 @@ function App() {
   }, [completedTasks, notes, faqCompleted, isInitialized, syncId]);
 
   const toggleTask = (taskId) => {
-    hasChanges.current = true;
     setCompletedTasks(prev => ({
       ...prev,
       [taskId]: !prev[taskId]
@@ -553,7 +601,6 @@ function App() {
   };
 
   const toggleFaq = (faqId) => {
-    hasChanges.current = true;
     setFaqCompleted(prev => ({
       ...prev,
       [faqId]: !prev[faqId]
@@ -561,7 +608,6 @@ function App() {
   };
 
   const updateNote = (taskId, text) => {
-    hasChanges.current = true;
     setNotes(prev => ({
       ...prev,
       [taskId]: text
@@ -749,7 +795,7 @@ function App() {
                 style={{ width: `${activeProgress.percentage}%` }}
               ></div>
             </div>
-            <span className="text-sm font-medium text-zinc-400">{activeProgress.percentage}%</span>
+            <span className="text-sm font-medium text-zinc-400">{activeProgress.percentage}% ({activeProgress.completed}/{activeProgress.total})</span>
           </div>
         </div>
 
@@ -796,6 +842,7 @@ function App() {
                     return (
                       <DayCard 
                         key={taskId}
+                        taskId={taskId}
                         item={item} 
                         isCompleted={isCompleted} 
                         onToggle={() => toggleTask(taskId)}
@@ -1015,7 +1062,7 @@ function FaqChecklist({ questions, completed, onToggle, styles }) {
 }
 
 // Sub-component for individual days
-function DayCard({ item, isCompleted, onToggle, styles, noteText, onUpdateNote }) {
+function DayCard({ taskId, item, isCompleted, onToggle, styles, noteText, onUpdateNote }) {
   const [notesOpen, setNotesOpen] = useState(false);
 
   // Priority color mapping
@@ -1086,6 +1133,7 @@ function DayCard({ item, isCompleted, onToggle, styles, noteText, onUpdateNote }
         {notesOpen && (
           <div className="mt-3 animate-in fade-in slide-in-from-top-2 duration-200">
             <textarea
+              id={`note-${taskId}`}
               value={noteText}
               onChange={(e) => onUpdateNote(e.target.value)}
               placeholder="Jot down key takeaways, markdown notes, or useful links..."

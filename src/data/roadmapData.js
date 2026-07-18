@@ -4416,7 +4416,7 @@ export const roadmapData = [
   },
   {
     "id": 6,
-    "title": "Roadmap 6",
+    "title": "Java Core & Advanced",
     "days": 0,
     "color": "rose",
     "phases": []

@@ -4417,9 +4417,1039 @@ export const roadmapData = [
   {
     "id": 6,
     "title": "Java Core & Advanced",
-    "days": 0,
+    "days": 150,
     "color": "rose",
-    "phases": []
+    "phases": [
+      {
+        "id": "6-1",
+        "title": "JAVA BASICS & SYNTAX",
+        "days": "Days 1–19",
+        "items": [
+          {
+            "topic": "Java & JVM Architecture (JDK/JRE/JVM, bytecode + JIT)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain the journey of a `.java` file from source to execution",
+            "achievement": "Explain the journey of a `.java` file from source to execution",
+            "day": 1
+          },
+          {
+            "topic": "Variables, Data Types & Literals",
+            "priority": "MUST KNOW",
+            "tasks": "Choose the most memory-efficient primitive for a value range",
+            "achievement": "Choose the most memory-efficient primitive for a value range",
+            "day": 2
+          },
+          {
+            "topic": "Type Casting & Conversion",
+            "priority": "MUST KNOW",
+            "tasks": "Predict output of tricky casting/overflow expressions",
+            "achievement": "Predict output of tricky casting/overflow expressions",
+            "day": 3
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 4
+          },
+          {
+            "topic": "Operators & Precedence",
+            "priority": "MUST KNOW",
+            "tasks": "Evaluate a complex multi-operator expression by hand",
+            "achievement": "Evaluate a complex multi-operator expression by hand",
+            "day": 5
+          },
+          {
+            "topic": "Control Flow: if-else & switch (incl. modern switch expressions)",
+            "priority": "MUST KNOW",
+            "tasks": "Rewrite a nested if-else chain as a switch expression",
+            "achievement": "Rewrite a nested if-else chain as a switch expression",
+            "day": 6
+          },
+          {
+            "topic": "Loops: for/while/do-while, for-each, labeled break/continue",
+            "priority": "MUST KNOW",
+            "tasks": "Use labeled breaks to exit nested loops cleanly",
+            "achievement": "Use labeled breaks to exit nested loops cleanly",
+            "day": 7
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 8
+          },
+          {
+            "topic": "Arrays (1D/multi-dim, memory layout) + Array Utility Methods",
+            "priority": "MUST KNOW",
+            "tasks": "Implement matrix ops with 2D arrays; use `Arrays.sort/binarySearch/fill/copyOf`",
+            "achievement": "Implement matrix ops with 2D arrays; use `Arrays.sort/binarySearch/fill/copyOf`",
+            "day": 9
+          },
+          {
+            "topic": "Methods: Declaration & Overloading (pass-by-value semantics)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why Java is \"pass-by-value\" even for objects",
+            "achievement": "Explain why Java is \"pass-by-value\" even for objects",
+            "day": 11
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 12
+          },
+          {
+            "topic": "Varargs & Recursion",
+            "priority": "MUST KNOW",
+            "tasks": "Trace a recursive call stack, spot a missing base case",
+            "achievement": "Trace a recursive call stack, spot a missing base case",
+            "day": 13
+          },
+          {
+            "topic": "Strings: Basics & Immutability (String Pool)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why `s1 == s2` may be true/false depending on creation method",
+            "achievement": "Explain why `s1 == s2` may be true/false depending on creation method",
+            "day": 14
+          },
+          {
+            "topic": "StringBuilder & StringBuffer",
+            "priority": "MUST KNOW",
+            "tasks": "Refactor a string-concat-in-loop into StringBuilder",
+            "achievement": "Refactor a string-concat-in-loop into StringBuilder",
+            "day": 15
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 16
+          },
+          {
+            "topic": "Wrapper Classes & Autoboxing (Integer cache)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain the `Integer i1 = 127` vs `200` comparison gotcha",
+            "achievement": "Explain the `Integer i1 = 127` vs `200` comparison gotcha",
+            "day": 17
+          },
+          {
+            "topic": "Scanner, User Input & Basic I/O",
+            "priority": "MUST KNOW",
+            "tasks": "Read mixed input types robustly from console",
+            "achievement": "Read mixed input types robustly from console",
+            "day": 18
+          },
+          {
+            "topic": "**Phase 1 Capstone:** console mini-project (calculator/grade calculator)",
+            "priority": "MUST KNOW",
+            "tasks": "Write a complete working program with no IDE autocomplete",
+            "achievement": "Write a complete working program with no IDE autocomplete",
+            "day": 19
+          }
+        ]
+      },
+      {
+        "id": "6-2",
+        "title": "OBJECT-ORIENTED PROGRAMMING",
+        "days": "Days 20–45",
+        "items": [
+          {
+            "topic": "Classes & Objects Fundamentals (`this`, heap refs)",
+            "priority": "MUST KNOW",
+            "tasks": "Draw a memory diagram: stack refs → heap objects",
+            "achievement": "Draw a memory diagram: stack refs → heap objects",
+            "day": 20
+          },
+          {
+            "topic": "Constructors & Overloading (chaining with `this()`)",
+            "priority": "MUST KNOW",
+            "tasks": "Design a multi-constructor class avoiding duplication",
+            "achievement": "Design a multi-constructor class avoiding duplication",
+            "day": 21
+          },
+          {
+            "topic": "Four Pillars of OOP (overview)",
+            "priority": "MUST KNOW",
+            "tasks": "Give a one-sentence, interview-ready definition of each",
+            "achievement": "Give a one-sentence, interview-ready definition of each",
+            "day": 22
+          },
+          {
+            "topic": "Encapsulation & Access Modifiers",
+            "priority": "MUST KNOW",
+            "tasks": "Design a class that fully protects internal state",
+            "achievement": "Design a class that fully protects internal state",
+            "day": 23
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 24
+          },
+          {
+            "topic": "Static Keyword Deep Dive (vars/methods/blocks/nested classes, init order)",
+            "priority": "MUST KNOW",
+            "tasks": "Trace the exact execution order of static/instance blocks/constructors",
+            "achievement": "Trace the exact execution order of static/instance blocks/constructors",
+            "day": 25
+          },
+          {
+            "topic": "Inheritance Fundamentals (`extends`, `super`, diamond problem)",
+            "priority": "MUST KNOW",
+            "tasks": "Design a 3-level hierarchy, explain the diamond problem Java avoids",
+            "achievement": "Design a 3-level hierarchy, explain the diamond problem Java avoids",
+            "day": 26
+          },
+          {
+            "topic": "Method Overriding & `@Override`",
+            "priority": "MUST KNOW",
+            "tasks": "List the 5 rules for valid overriding",
+            "achievement": "List the 5 rules for valid overriding",
+            "day": 27
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 28
+          },
+          {
+            "topic": "Polymorphism: Compile-Time vs Runtime",
+            "priority": "MUST KNOW",
+            "tasks": "Predict output of polymorphic calls through a class hierarchy",
+            "achievement": "Predict output of polymorphic calls through a class hierarchy",
+            "day": 29
+          },
+          {
+            "topic": "Abstract Classes",
+            "priority": "MUST KNOW",
+            "tasks": "Design an abstract base class enforcing a contract",
+            "achievement": "Design an abstract base class enforcing a contract",
+            "day": 30
+          },
+          {
+            "topic": "Interfaces Deep Dive (default/static methods)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain how default methods solve interface evolution",
+            "achievement": "Explain how default methods solve interface evolution",
+            "day": 31
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 32
+          },
+          {
+            "topic": "Abstract Class vs Interface",
+            "priority": "MUST KNOW",
+            "tasks": "Justify the choice in an interview setting",
+            "achievement": "Justify the choice in an interview setting",
+            "day": 33
+          },
+          {
+            "topic": "Composition vs Inheritance (delegation, Spring examples)",
+            "priority": "MUST KNOW",
+            "tasks": "Refactor a fragile inheritance hierarchy into composition",
+            "achievement": "Refactor a fragile inheritance hierarchy into composition",
+            "day": 34
+          },
+          {
+            "topic": "Immutability & Defensive Copying (vs records)",
+            "priority": "MUST KNOW",
+            "tasks": "Design an immutable class with a mutable field, without leaking a reference",
+            "achievement": "Design an immutable class with a mutable field, without leaking a reference",
+            "day": 35
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 36
+          },
+          {
+            "topic": "SOLID Principles in Java",
+            "priority": "MUST KNOW",
+            "tasks": "Refactor a class violating 2-3 SOLID principles",
+            "achievement": "Refactor a class violating 2-3 SOLID principles",
+            "day": 37
+          },
+          {
+            "topic": "Object Class Methods (`equals`/`hashCode`/`toString`/`clone`)",
+            "priority": "MUST KNOW",
+            "tasks": "Correctly override `equals()` and `hashCode()` together",
+            "achievement": "Correctly override `equals()` and `hashCode()` together",
+            "day": 38
+          },
+          {
+            "topic": "Object Cloning (shallow vs deep)",
+            "priority": "MUST KNOW",
+            "tasks": "Implement a deep clone for nested mutable objects",
+            "achievement": "Implement a deep clone for nested mutable objects",
+            "day": 39
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 40
+          },
+          {
+            "topic": "Inner & Nested Classes (member/static/local/anonymous)",
+            "priority": "MUST KNOW",
+            "tasks": "Choose the correct nested class type for a scenario",
+            "achievement": "Choose the correct nested class type for a scenario",
+            "day": 41
+          },
+          {
+            "topic": "Enums Deep Dive (fields/methods/abstract methods)",
+            "priority": "MUST KNOW",
+            "tasks": "Design an enum that encapsulates behavior",
+            "achievement": "Design an enum that encapsulates behavior",
+            "day": 42
+          },
+          {
+            "topic": "Packages & Access Control",
+            "priority": "MUST KNOW",
+            "tasks": "Organize a multi-class project into a clean package structure",
+            "achievement": "Organize a multi-class project into a clean package structure",
+            "day": 43
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 44
+          },
+          {
+            "topic": "**Phase 2 Capstone:** OOP mini-project (Library Mgmt / Shape Calculator)",
+            "priority": "MUST KNOW",
+            "tasks": "Model a domain using all 4 pillars + composition + SOLID",
+            "achievement": "Model a domain using all 4 pillars + composition + SOLID",
+            "day": 45
+          }
+        ]
+      },
+      {
+        "id": "6-3",
+        "title": "COLLECTIONS, GENERICS & STRINGS",
+        "days": "Days 46–70",
+        "items": [
+          {
+            "topic": "Collections Framework Overview",
+            "priority": "MUST KNOW",
+            "tasks": "Draw the full Collections hierarchy from memory",
+            "achievement": "Draw the full Collections hierarchy from memory",
+            "day": 46
+          },
+          {
+            "topic": "ArrayList Deep Dive",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why `add()` is amortized O(1) but `remove(0)` is O(n)",
+            "achievement": "Explain why `add()` is amortized O(1) but `remove(0)` is O(n)",
+            "day": 47
+          },
+          {
+            "topic": "LinkedList Deep Dive",
+            "priority": "MUST KNOW",
+            "tasks": "Recommend ArrayList vs LinkedList by access pattern",
+            "achievement": "Recommend ArrayList vs LinkedList by access pattern",
+            "day": 48
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 49
+          },
+          {
+            "topic": "Iterator & ListIterator (fail-fast)",
+            "priority": "MUST KNOW",
+            "tasks": "Safely remove elements while iterating",
+            "achievement": "Safely remove elements while iterating",
+            "day": 50
+          },
+          {
+            "topic": "HashSet & LinkedHashSet",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why a custom object needs a correct `hashCode()` for HashSet",
+            "achievement": "Explain why a custom object needs a correct `hashCode()` for HashSet",
+            "day": 51
+          },
+          {
+            "topic": "TreeSet & Sorted Collections (Comparable/Comparator)",
+            "priority": "MUST KNOW",
+            "tasks": "Implement both for two different sort orders",
+            "achievement": "Implement both for two different sort orders",
+            "day": 52
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 53
+          },
+          {
+            "topic": "HashMap Internals Deep Dive (buckets, collisions, treeification)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain step-by-step what happens on `put()` with a hash collision",
+            "achievement": "Explain step-by-step what happens on `put()` with a hash collision",
+            "day": 54
+          },
+          {
+            "topic": "Hashing Internals Deep Dive (hashCode contract, collision strategies)",
+            "priority": "MUST KNOW",
+            "tasks": "Design a custom `hashCode()` that minimizes collisions",
+            "achievement": "Design a custom `hashCode()` that minimizes collisions",
+            "day": 55
+          },
+          {
+            "topic": "LinkedHashMap & TreeMap (access-order, navigation methods)",
+            "priority": "MUST KNOW",
+            "tasks": "Implement an LRU cache using LinkedHashMap",
+            "achievement": "Implement an LRU cache using LinkedHashMap",
+            "day": 56
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 57
+          },
+          {
+            "topic": "Map Iteration & Modern Patterns (`computeIfAbsent`, `merge`, `getOrDefault`)",
+            "priority": "MUST KNOW",
+            "tasks": "Refactor null-check-heavy Map code into one-liners",
+            "achievement": "Refactor null-check-heavy Map code into one-liners",
+            "day": 58
+          },
+          {
+            "topic": "Queue, Deque & PriorityQueue",
+            "priority": "MUST KNOW",
+            "tasks": "Solve \"find K largest elements\" with a PriorityQueue",
+            "achievement": "Solve \"find K largest elements\" with a PriorityQueue",
+            "day": 59
+          },
+          {
+            "topic": "Stack & Algorithm Use Cases",
+            "priority": "MUST KNOW",
+            "tasks": "Solve a balanced-bracket problem using a stack",
+            "achievement": "Solve a balanced-bracket problem using a stack",
+            "day": 60
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 61
+          },
+          {
+            "topic": "Generics Fundamentals (type erasure)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why you can't do `new T[]` directly",
+            "achievement": "Explain why you can't do `new T[]` directly",
+            "day": 62
+          },
+          {
+            "topic": "Generic Type Erasure — Full Deep Dive (bridge methods, heap pollution)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain heap pollution with varargs+generics and `@SafeVarargs`",
+            "achievement": "Explain heap pollution with varargs+generics and `@SafeVarargs`",
+            "day": 63
+          },
+          {
+            "topic": "Bounded Types & Wildcards (PECS)",
+            "priority": "MUST KNOW",
+            "tasks": "Apply PECS in a generic copy-between-collections method",
+            "achievement": "Apply PECS in a generic copy-between-collections method",
+            "day": 64
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 65
+          },
+          {
+            "topic": "Comparable vs Comparator (`thenComparing`)",
+            "priority": "MUST KNOW",
+            "tasks": "Write a chained multi-field comparator in one line",
+            "achievement": "Write a chained multi-field comparator in one line",
+            "day": 66
+          },
+          {
+            "topic": "Collections Utility Class (`sort`/`unmodifiable`/`synchronized`)",
+            "priority": "MUST KNOW",
+            "tasks": "Make a collection read-only or thread-safe via built-ins",
+            "achievement": "Make a collection read-only or thread-safe via built-ins",
+            "day": 67
+          },
+          {
+            "topic": "String Internals: Pool & Memory (`intern()`)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why caching immutable Strings is thread-safe",
+            "achievement": "Explain why caching immutable Strings is thread-safe",
+            "day": 68
+          },
+          {
+            "topic": "Regular Expressions in Java (Pattern/Matcher)",
+            "priority": "MUST KNOW",
+            "tasks": "Write a regex to validate an email and extract groups",
+            "achievement": "Write a regex to validate an email and extract groups",
+            "day": 69
+          },
+          {
+            "topic": "**Phase 3 Capstone:** data-structures mini-project (inventory/contact system)",
+            "priority": "MUST KNOW",
+            "tasks": "Justify every collection choice by its access pattern",
+            "achievement": "Justify every collection choice by its access pattern",
+            "day": 70
+          }
+        ]
+      },
+      {
+        "id": "6-4",
+        "title": "EXCEPTIONS, I/O, REFLECTION & ANNOTATIONS",
+        "days": "Days 71–87",
+        "items": [
+          {
+            "topic": "Exception Hierarchy & Basics (checked vs unchecked)",
+            "priority": "MUST KNOW",
+            "tasks": "Correctly classify any exception and explain why it matters",
+            "achievement": "Correctly classify any exception and explain why it matters",
+            "day": 71
+          },
+          {
+            "topic": "Multi-Catch & Try-With-Resources (`AutoCloseable`)",
+            "priority": "MUST KNOW",
+            "tasks": "Convert a `finally`-block cleanup into try-with-resources",
+            "achievement": "Convert a `finally`-block cleanup into try-with-resources",
+            "day": 72
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 73
+          },
+          {
+            "topic": "Custom Exceptions & Exception Chaining",
+            "priority": "MUST KNOW",
+            "tasks": "Design a custom exception hierarchy for a domain",
+            "achievement": "Design a custom exception hierarchy for a domain",
+            "day": 74
+          },
+          {
+            "topic": "Exception Best Practices (anti-patterns, fail-fast)",
+            "priority": "MUST KNOW",
+            "tasks": "Review and fix poorly-handled exception code",
+            "achievement": "Review and fix poorly-handled exception code",
+            "day": 75
+          },
+          {
+            "topic": "File I/O: `java.io` Basics (buffered streams)",
+            "priority": "MUST KNOW",
+            "tasks": "Read/write a text file line-by-line efficiently",
+            "achievement": "Read/write a text file line-by-line efficiently",
+            "day": 76
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 77
+          },
+          {
+            "topic": "NIO.2 (`java.nio.file`: Path/Files/Paths)",
+            "priority": "MUST KNOW",
+            "tasks": "Copy/move/delete/walk a directory tree via NIO.2",
+            "achievement": "Copy/move/delete/walk a directory tree via NIO.2",
+            "day": 78
+          },
+          {
+            "topic": "Serialization & Deserialization (`Serializable`, `transient`, security risk)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why deserializing untrusted data is a security risk",
+            "achievement": "Explain why deserializing untrusted data is a security risk",
+            "day": 79
+          },
+          {
+            "topic": "Serialization Alternatives (JSON/Jackson internals vs Protobuf)",
+            "priority": "MUST KNOW",
+            "tasks": "Build a comparison table and justify Jackson vs Protobuf for a Spring API",
+            "achievement": "Build a comparison table and justify Jackson vs Protobuf for a Spring API",
+            "day": 80
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 81
+          },
+          {
+            "topic": "Reflection API (Class/Method/Field/Constructor, `invoke`)",
+            "priority": "MUST KNOW",
+            "tasks": "Print all fields/values of any object using only reflection",
+            "achievement": "Print all fields/values of any object using only reflection",
+            "day": 82
+          },
+          {
+            "topic": "Reflection & Spring (`setAccessible`, DI mechanics)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain Spring's reflection path from `@Component` to a wired bean",
+            "achievement": "Explain Spring's reflection path from `@Component` to a wired bean",
+            "day": 83
+          },
+          {
+            "topic": "Annotations Deep Dive (built-ins + meta-annotations)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why `@Service` needs `RUNTIME` retention but `@Override` doesn't",
+            "achievement": "Explain why `@Service` needs `RUNTIME` retention but `@Override` doesn't",
+            "day": 84
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 85
+          },
+          {
+            "topic": "Custom Annotations + Classpath Scanning (`@LogExecutionTime`, `@Component` scanning)",
+            "priority": "MUST KNOW",
+            "tasks": "Design and reflectively read a custom annotation end-to-end",
+            "achievement": "Design and reflectively read a custom annotation end-to-end",
+            "day": 86
+          },
+          {
+            "topic": "**Phase 4 Capstone:** Robust File Processor",
+            "priority": "MUST KNOW",
+            "tasks": "Program that never crashes ungracefully on malformed input",
+            "achievement": "Program that never crashes ungracefully on malformed input",
+            "day": 87
+          }
+        ]
+      },
+      {
+        "id": "6-5",
+        "title": "MULTITHREADING & CONCURRENCY",
+        "days": "Days 88–120",
+        "items": [
+          {
+            "topic": "Process vs Thread & Thread Basics (lifecycle states)",
+            "priority": "MUST KNOW",
+            "tasks": "Draw and explain the full thread lifecycle diagram",
+            "achievement": "Draw and explain the full thread lifecycle diagram",
+            "day": 88
+          },
+          {
+            "topic": "Creating Threads: Thread vs Runnable",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why implementing Runnable is generally preferred",
+            "achievement": "Explain why implementing Runnable is generally preferred",
+            "day": 89
+          },
+          {
+            "topic": "Thread Synchronization Basics (race conditions, `synchronized`)",
+            "priority": "MUST KNOW",
+            "tasks": "Reproduce a race condition, then fix it with `synchronized`",
+            "achievement": "Reproduce a race condition, then fix it with `synchronized`",
+            "day": 90
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 91
+          },
+          {
+            "topic": "Intrinsic Locks & Monitor Concept (reentrant locking)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why a thread can re-enter its own lock without deadlocking itself",
+            "achievement": "Explain why a thread can re-enter its own lock without deadlocking itself",
+            "day": 92
+          },
+          {
+            "topic": "Deadlock, Livelock & Starvation (4 conditions, lock ordering)",
+            "priority": "MUST KNOW",
+            "tasks": "Reproduce a two-lock deadlock, fix it via consistent lock ordering",
+            "achievement": "Reproduce a two-lock deadlock, fix it via consistent lock ordering",
+            "day": 93
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 95
+          },
+          {
+            "topic": "`volatile` Keyword & Memory Visibility",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why `volatile` alone isn't enough for a counter increment",
+            "achievement": "Explain why `volatile` alone isn't enough for a counter increment",
+            "day": 96
+          },
+          {
+            "topic": "Java Memory Model Deep Dive (happens-before, reordering, memory barriers)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain, using happens-before, why a non-volatile flag write may never be seen",
+            "achievement": "Explain, using happens-before, why a non-volatile flag write may never be seen",
+            "day": 97
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 99
+          },
+          {
+            "topic": "`wait()`/`notify()`/`notifyAll()`",
+            "priority": "MUST KNOW",
+            "tasks": "Implement a working Producer-Consumer pattern from scratch",
+            "achievement": "Implement a working Producer-Consumer pattern from scratch",
+            "day": 100
+          },
+          {
+            "topic": "Atomic Classes & CAS (`AtomicInteger`/`Long`/`Reference`)",
+            "priority": "MUST KNOW",
+            "tasks": "Replace a synchronized counter with AtomicInteger, explain the CAS benefit",
+            "achievement": "Replace a synchronized counter with AtomicInteger, explain the CAS benefit",
+            "day": 102
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 103
+          },
+          {
+            "topic": "Lock Interface & ReentrantLock (`tryLock`, fairness)",
+            "priority": "MUST KNOW",
+            "tasks": "Justify ReentrantLock over `synchronized` for a given case",
+            "achievement": "Justify ReentrantLock over `synchronized` for a given case",
+            "day": 104
+          },
+          {
+            "topic": "ReadWriteLock & StampedLock",
+            "priority": "MUST KNOW",
+            "tasks": "Design a thread-safe cache with many readers, exclusive writer",
+            "achievement": "Design a thread-safe cache with many readers, exclusive writer",
+            "day": 105
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 106
+          },
+          {
+            "topic": "Executor Framework Basics (thread pool types)",
+            "priority": "MUST KNOW",
+            "tasks": "Choose the correct pool type for CPU-bound vs I/O-bound work",
+            "achievement": "Choose the correct pool type for CPU-bound vs I/O-bound work",
+            "day": 107
+          },
+          {
+            "topic": "Callable, Future & CompletableFuture (`thenApply`/`thenCombine`)",
+            "priority": "MUST KNOW",
+            "tasks": "Chain multiple async operations without blocking threads",
+            "achievement": "Chain multiple async operations without blocking threads",
+            "day": 108
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 110
+          },
+          {
+            "topic": "ForkJoinPool (work-stealing, RecursiveTask/Action)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why blocking I/O inside a parallel stream starves the common pool",
+            "achievement": "Explain why blocking I/O inside a parallel stream starves the common pool",
+            "day": 111
+          },
+          {
+            "topic": "ThreadPoolExecutor Internals (core/max size, queue, rejection policy)",
+            "priority": "MUST KNOW",
+            "tasks": "Configure a custom executor for a bursty workload",
+            "achievement": "Configure a custom executor for a bursty workload",
+            "day": 112
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 113
+          },
+          {
+            "topic": "Concurrent Collections (`ConcurrentHashMap`, `CopyOnWriteArrayList`, `BlockingQueue`)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why ConcurrentHashMap outperforms a synchronized HashMap under contention",
+            "achievement": "Explain why ConcurrentHashMap outperforms a synchronized HashMap under contention",
+            "day": 114
+          },
+          {
+            "topic": "Concurrency Utilities: Latches, Barriers, Semaphores",
+            "priority": "MUST KNOW",
+            "tasks": "Use CountDownLatch to make a main thread wait on worker init",
+            "achievement": "Use CountDownLatch to make a main thread wait on worker init",
+            "day": 115
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 116
+          },
+          {
+            "topic": "Structured Concurrency & Scoped Values (Java 21+, `StructuredTaskScope`)",
+            "priority": "MUST KNOW",
+            "tasks": "Rewrite a CompletableFuture workflow using StructuredTaskScope",
+            "achievement": "Rewrite a CompletableFuture workflow using StructuredTaskScope",
+            "day": 117
+          },
+          {
+            "topic": "**Phase 5 Capstone:** concurrent application (parallel file processor / thread-safe task queue)",
+            "priority": "MUST KNOW",
+            "tasks": "Design and defend a complete concurrent system, justifying every sync choice",
+            "achievement": "Design and defend a complete concurrent system, justifying every sync choice",
+            "day": 118
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 120
+          }
+        ]
+      },
+      {
+        "id": "6-6",
+        "title": "JVM INTERNALS & MODERN JAVA",
+        "days": "Days 121–150",
+        "items": [
+          {
+            "topic": "JVM Architecture Deep Dive (class loader, runtime data areas, execution engine)",
+            "priority": "MUST KNOW",
+            "tasks": "Draw the complete JVM architecture, explain each memory area",
+            "achievement": "Draw the complete JVM architecture, explain each memory area",
+            "day": 121
+          },
+          {
+            "topic": "Class Loading Mechanism (bootstrap/platform/app loaders, parent delegation)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why parent delegation prevents malicious core-class overrides",
+            "achievement": "Explain why parent delegation prevents malicious core-class overrides",
+            "day": 122
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 123
+          },
+          {
+            "topic": "Heap Memory Structure (Eden/Survivor/Old Gen, object aging)",
+            "priority": "MUST KNOW",
+            "tasks": "Trace an object's journey from Eden to Old Gen promotion",
+            "achievement": "Trace an object's journey from Eden to Old Gen promotion",
+            "day": 124
+          },
+          {
+            "topic": "Garbage Collection Algorithms (Mark-Sweep, Serial/Parallel/G1/ZGC)",
+            "priority": "MUST KNOW",
+            "tasks": "Recommend a GC algorithm for a given latency vs throughput need",
+            "achievement": "Recommend a GC algorithm for a given latency vs throughput need",
+            "day": 125
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 126
+          },
+          {
+            "topic": "Memory Leaks & Common Pitfalls (static refs, unclosed resources, Weak/SoftReference)",
+            "priority": "MUST KNOW",
+            "tasks": "Identify a leak pattern, fix it with weak references or lifecycle mgmt",
+            "achievement": "Identify a leak pattern, fix it with weak references or lifecycle mgmt",
+            "day": 127
+          },
+          {
+            "topic": "JVM Profiling & Diagnostic Tools (`jstack`, `jmap`, JVisualVM, JMC)",
+            "priority": "MUST KNOW",
+            "tasks": "Take a thread dump, locate a deadlock, identify exactly which locks are contended",
+            "achievement": "Take a thread dump, locate a deadlock, identify exactly which locks are contended",
+            "day": 128
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 130
+          },
+          {
+            "topic": "GC Tuning & JVM Performance Tuning (`-Xms/-Xmx/-Xmn`, reading GC logs)",
+            "priority": "MUST KNOW",
+            "tasks": "Read a GC log, diagnose minor vs major GC issues, recommend a tuning change",
+            "achievement": "Read a GC log, diagnose minor vs major GC issues, recommend a tuning change",
+            "day": 131
+          },
+          {
+            "topic": "Lambda Expressions (syntax, functional interfaces, variable capture)",
+            "priority": "MUST KNOW",
+            "tasks": "Convert an anonymous inner class into a lambda",
+            "achievement": "Convert an anonymous inner class into a lambda",
+            "day": 132
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 133
+          },
+          {
+            "topic": "Functional Interfaces (`Function`/`Predicate`/`Consumer`/`Supplier`/`BiFunction`)",
+            "priority": "MUST KNOW",
+            "tasks": "Select the correct built-in interface for a given method signature",
+            "achievement": "Select the correct built-in interface for a given method signature",
+            "day": 134
+          },
+          {
+            "topic": "Streams API Fundamentals (map/filter/sorted/collect/reduce, laziness)",
+            "priority": "MUST KNOW",
+            "tasks": "Rewrite an imperative loop as a clean stream pipeline",
+            "achievement": "Rewrite an imperative loop as a clean stream pipeline",
+            "day": 135
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 136
+          },
+          {
+            "topic": "Streams: Collectors & Advanced Ops (`groupingBy`/`partitioningBy`/`toMap`, parallel streams)",
+            "priority": "MUST KNOW",
+            "tasks": "Group objects by property into a summary Map with one Collector",
+            "achievement": "Group objects by property into a summary Map with one Collector",
+            "day": 137
+          },
+          {
+            "topic": "Optional Class (`map`/`filter`/`orElseGet`, anti-patterns)",
+            "priority": "MUST KNOW",
+            "tasks": "Refactor null-check-riddled code into an Optional chain",
+            "achievement": "Refactor null-check-riddled code into an Optional chain",
+            "day": 138
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 139
+          },
+          {
+            "topic": "Date & Time API (`LocalDate`/`LocalDateTime`/`ZonedDateTime`/`Duration`/`Period`)",
+            "priority": "MUST KNOW",
+            "tasks": "Calculate date differences and handle timezone conversions",
+            "achievement": "Calculate date differences and handle timezone conversions",
+            "day": 140
+          },
+          {
+            "topic": "Java 9–17 Features (modules, `var`, text blocks, sealed classes)",
+            "priority": "MUST KNOW",
+            "tasks": "Apply the right modern syntax feature to simplify legacy-style code",
+            "achievement": "Apply the right modern syntax feature to simplify legacy-style code",
+            "day": 141
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 142
+          },
+          {
+            "topic": "Records & Pattern Matching (Java 14–21, `instanceof`/`switch` patterns)",
+            "priority": "MUST KNOW",
+            "tasks": "Convert a boilerplate POJO into a one-line record",
+            "achievement": "Convert a boilerplate POJO into a one-line record",
+            "day": 143
+          },
+          {
+            "topic": "Virtual Threads (Java 21, Project Loom)",
+            "priority": "MUST KNOW",
+            "tasks": "Explain why virtual threads make thread-per-request viable at massive scale",
+            "achievement": "Explain why virtual threads make thread-per-request viable at massive scale",
+            "day": 144
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 145
+          },
+          {
+            "topic": "Java Interview Patterns & Tricky Outputs (static init order, overload ambiguity, autoboxing edge cases)",
+            "priority": "MUST KNOW",
+            "tasks": "Correctly predict the output of 10+ classic tricky Java snippets without running them",
+            "achievement": "Correctly predict the output of 10+ classic tricky Java snippets without running them",
+            "day": 146
+          },
+          {
+            "topic": "**Buffer/Revision Day**",
+            "priority": "MUST KNOW",
+            "tasks": "—",
+            "achievement": "—",
+            "day": 148
+          },
+          {
+            "topic": "**Final Capstone: Full Mock Interview** (OOP design + collections coding problem + concurrency conceptual Q)",
+            "priority": "MUST KNOW",
+            "tasks": "Ready to confidently handle a Core + Advanced Java technical interview round",
+            "achievement": "Ready to confidently handle a Core + Advanced Java technical interview round",
+            "day": 149
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 7,

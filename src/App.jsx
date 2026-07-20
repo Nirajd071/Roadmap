@@ -768,26 +768,28 @@ function App() {
     return phase.dependencies.filter(depId => !isPhaseComplete[depId]);
   };
 
-  const behindStatus = useMemo(() => {
-    if (!calendarSettings.startDate) return null;
-    
+  // Compute "today's day number" (non-blocked days since start)
+  const todayDayNum = useMemo(() => {
+    if (!calendarSettings.startDate) return 0;
     const today = new Date();
-    const todayDayNum = (() => {
-      let dayCount = 0;
-      const start = new Date(calendarSettings.startDate);
-      const blocked = calendarSettings.blockedRanges.map(r => ({
-        start: new Date(r.start), end: new Date(r.end)
-      }));
-      let current = new Date(start);
-      while (current <= today) {
-        const isBlocked = blocked.some(b => current >= b.start && current <= b.end);
-        if (!isBlocked) dayCount++;
-        current.setDate(current.getDate() + 1);
-      }
-      return dayCount;
-    })();
+    let dayCount = 0;
+    const start = new Date(calendarSettings.startDate);
+    const blocked = calendarSettings.blockedRanges.map(r => ({
+      start: new Date(r.start), end: new Date(r.end)
+    }));
+    let current = new Date(start);
+    while (current <= today) {
+      const isBlocked = blocked.some(b => current >= b.start && current <= b.end);
+      if (!isBlocked) dayCount++;
+      current.setDate(current.getDate() + 1);
+    }
+    return dayCount;
+  }, [calendarSettings]);
+
+  // Per-roadmap behind-schedule status (computed for the active tab)
+  const behindStatus = useMemo(() => {
+    if (!calendarSettings.startDate || todayDayNum === 0) return null;
     
-    // Find last completed day across active roadmap
     const roadmap = roadmapData.find(r => r.id === activeRoadmap);
     if (!roadmap) return null;
     
@@ -799,7 +801,22 @@ function App() {
     
     const behind = todayDayNum - lastCompleted;
     return behind > 3 ? { daysBehind: behind, todayDayNum, lastCompleted } : null;
-  }, [calendarSettings, activeRoadmap, completedTasks]);
+  }, [calendarSettings, todayDayNum, activeRoadmap, completedTasks]);
+
+  // Count how many total roadmaps are behind (for the summary badge)
+  const tracksBehindCount = useMemo(() => {
+    if (!calendarSettings.startDate || todayDayNum === 0) return 0;
+    let count = 0;
+    roadmapData.forEach(r => {
+      let lastCompleted = 0;
+      r.phases.forEach(p => p.items.forEach(i => {
+        const tid = `${r.id}-${p.id}-${i.day}`;
+        if (completedTasks[tid]?.done && i.day > lastCompleted) lastCompleted = i.day;
+      }));
+      if (todayDayNum - lastCompleted > 3) count++;
+    });
+    return count;
+  }, [calendarSettings, todayDayNum, completedTasks]);
 
   const todaysPlan = useMemo(() => {
     if (!calendarSettings.startDate) return null;
@@ -824,12 +841,18 @@ function App() {
       }
     }
     
-    // 2. Fill with domain items, round-robin across other roadmaps
-    const otherRoadmaps = roadmapData.filter(r => r.id !== 7);
-    let round = 0;
-    while (remaining > 0 && round < 5) {
-      let added = false;
+    // 2. Fill with domain items, sorted by least-progressed roadmap first
+    const otherRoadmaps = roadmapData.filter(r => r.id !== 7).map(r => {
+      const total = r.phases.reduce((s, p) => s + p.items.length, 0);
+      const done = r.phases.reduce((s, p) => s + p.items.filter(i => completedTasks[`${r.id}-${p.id}-${i.day}`]?.done).length, 0);
+      return { ...r, completionPct: total > 0 ? done / total : 1 };
+    }).sort((a, b) => a.completionPct - b.completionPct);
+    
+    let stalled = false;
+    while (remaining > 0 && !stalled) {
+      stalled = true;
       for (const r of otherRoadmaps) {
+        let added = false;
         for (const p of r.phases) {
           if (!isPhaseUnlocked(p)) continue;
           for (const i of p.items) {
@@ -838,14 +861,13 @@ function App() {
               items.push({ ...i, roadmapTitle: r.title, roadmapColor: r.color, taskId: tid });
               remaining -= i.estimatedHours;
               added = true;
+              stalled = false;
               break;
             }
           }
           if (added) break;
         }
       }
-      if (!added) break;
-      round++;
     }
     
     return items.length > 0 ? { items, totalHours: budget - remaining, budget } : null;
@@ -1014,7 +1036,7 @@ function App() {
                 ⚠️ You're {behindStatus.daysBehind} days behind schedule
               </p>
               <p className="text-xs text-zinc-400 mt-1">
-                Drop lower-priority items to catch up?
+                Drop lower-priority items to catch up?{tracksBehindCount > 1 && ` (${tracksBehindCount} tracks behind overall)`}
               </p>
             </div>
             <div className="flex gap-2">

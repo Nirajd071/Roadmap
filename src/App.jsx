@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { Search, BookOpen, CheckCircle, Circle, ChevronDown, ChevronUp, Edit3, ExternalLink, RefreshCw, Copy, Check } from 'lucide-react';
+import { Search, BookOpen, CheckCircle, Circle, ChevronDown, ChevronUp, Edit3, ExternalLink, RefreshCw, Copy, Check, Clock } from 'lucide-react';
 import { roadmapData } from './data/roadmapData';
 import { db, isFirebaseConfigured } from './firebase';
 import { doc, onSnapshot, setDoc } from 'firebase/firestore';
@@ -789,6 +789,11 @@ function App() {
           <h2 className={`text-3xl font-bold mb-2 ${currentStyles.text}`}>{currentRoadmap.title}</h2>
           <div className="flex items-center gap-4">
             <span className="text-zinc-500">{currentRoadmap.days} Days Total</span>
+            {currentRoadmap.phases.reduce((sum, p) => sum + p.items.reduce((s, i) => s + (i.estimatedHours || 0), 0), 0) > 0 && (
+              <span className="text-xs text-zinc-500 ml-2">
+                (~{Math.round(currentRoadmap.phases.reduce((sum, p) => sum + p.items.reduce((s, i) => s + (i.estimatedHours || 0), 0), 0))} hours total)
+              </span>
+            )}
             <div className="h-1.5 flex-1 max-w-md bg-zinc-800 rounded-full overflow-hidden">
               <div 
                 className={`h-full transition-all duration-500 ${currentStyles.bg}`}
@@ -1071,6 +1076,10 @@ function DayCard({ taskId, item, isCompleted, onToggle, styles, noteText, onUpda
     'IMPORTANT': 'text-amber-400 bg-amber-400/10 ring-amber-400/20',
     'GOOD TO KNOW': 'text-blue-400 bg-blue-400/10 ring-blue-400/20',
     'NICE TO HAVE': 'text-sky-400 bg-sky-400/10 ring-sky-400/20',
+    '🔴 P0': 'text-red-400 bg-red-400/10 ring-red-400/20',
+    '🟡 P1': 'text-amber-400 bg-amber-400/10 ring-amber-400/20',
+    '🟢 P2': 'text-emerald-400 bg-emerald-400/10 ring-emerald-400/20',
+    '-': 'text-zinc-500 bg-zinc-500/10 ring-zinc-500/20',
   };
 
   return (
@@ -1096,6 +1105,12 @@ function DayCard({ taskId, item, isCompleted, onToggle, styles, noteText, onUpda
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 mb-2 flex-wrap">
             <span className="text-sm font-medium text-zinc-500">Day {item.day}</span>
+            {item.estimatedHours && (
+              <span className="text-xs text-zinc-500 flex items-center gap-1">
+                <Clock className="w-3 h-3" />
+                {item.estimatedHours}h
+              </span>
+            )}
             <h4 className={`text-lg font-bold truncate ${isCompleted ? 'line-through text-zinc-500' : 'text-zinc-100'}`}>
               {item.topic}
             </h4>
@@ -1114,6 +1129,12 @@ function DayCard({ taskId, item, isCompleted, onToggle, styles, noteText, onUpda
               <span className={`text-xs font-semibold uppercase tracking-wider block mb-1 ${isCompleted ? 'text-zinc-500' : styles.text}`}>Achievement</span>
               <p className={`text-sm ${isCompleted ? 'text-zinc-400' : 'text-zinc-200'}`}>{item.achievement}</p>
             </div>
+            {item.resource && (
+              <div className="mt-2 flex items-start gap-2 text-xs text-zinc-500">
+                <BookOpen className="w-3 h-3 mt-0.5 flex-shrink-0" />
+                <span>{item.resource}</span>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -1114,18 +1114,15 @@ function App() {
 
             if (filteredItems.length === 0) return null;
 
-            const locked = !isPhaseUnlocked(phase);
-            const blockingDeps = getBlockingDeps(phase);
 
             return (
-              <div key={phase.id} className={`relative ${locked ? 'opacity-40' : ''}`}>
+              <div key={phase.id} className="relative">
                 {/* Phase Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`px-3 py-1 rounded text-xs font-bold tracking-wider border ${currentStyles.bgLight}`}>
                     {phase.days}
                   </div>
                   <h3 className="text-xl font-semibold text-zinc-100 flex items-center gap-2">
-                    {locked && <Lock className="w-5 h-5 text-zinc-500" title={`Complete ${blockingDeps.join(', ')} first`} />}
                     {phase.title}
                   </h3>
                   {(() => {
@@ -1160,13 +1157,12 @@ function App() {
                         item={item} 
                         isCompleted={isCompleted} 
                         completionData={completionData}
-                        onToggle={() => locked ? null : toggleTask(taskId)}
+                        onToggle={() => toggleTask(taskId)}
                         onSetConfidence={(level) => setConfidence(taskId, level)}
                         styles={currentStyles}
                         noteText={noteText}
                         onUpdateNote={(text) => updateNote(taskId, text)}
                         mappedDate={mappedDate}
-                        disabled={locked}
                       />
                     );
                   })}

@@ -1,8 +1,8 @@
 export const roadmapMeta = {
-  "lastRevised": "2026-07-20",
-  "totalItems": 1157,
-  "dayCountSourceOfTruth": "computed from items, not hardcoded",
-  "version": "2.0-audit-fix"
+  lastRevised: "2026-07-20",
+  totalItems: 1167,
+  dayCountSourceOfTruth: "computed from items, not hardcoded",
+  version: "2.1-integrity-fix"
 };
 
 export const roadmapData = [
@@ -406,6 +406,24 @@ export const roadmapData = [
             "resource": "Your own notes from other roadmap tracks"
           },
           {
+            "topic": "🛠️ Mini-Project Integration",
+            "priority": "-",
+            "tasks": "Build a small project integrating concepts from the last week of study.",
+            "achievement": "Complete a working mini-project that integrates at least 3 recent concepts",
+            "day": 43,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
+          },
+          {
+            "topic": "📝 Interview Drill",
+            "priority": "-",
+            "tasks": "Run a mock interview drill on the topics covered in the current phase.",
+            "achievement": "Pass a timed mock interview round on recent topics with no hints",
+            "day": 44,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
+          },
+          {
             "topic": "**Phase 2 Review**",
             "priority": "-",
             "tasks": "Design full DB architecture for a complex domain (justify every choice)",
@@ -702,7 +720,7 @@ export const roadmapData = [
       {
         "id": "1-4",
         "title": "THE INTERVIEW FRAMEWORK",
-        "days": "Days 76–89",
+        "days": "Days 76–90",
         "items": [
           {
             "topic": "PEDALS framework + requirements gathering",
@@ -829,6 +847,15 @@ export const roadmapData = [
             "day": 89,
             "estimatedHours": 1,
             "resource": "Review your notes and previous resources"
+          },
+          {
+            "topic": "🔄 Review & Recall",
+            "priority": "-",
+            "tasks": "Revisit the last 3-5 days of topics. Re-explain each from memory, then verify against notes.",
+            "achievement": "Score 80%+ on a self-quiz covering the last 3-5 days without notes",
+            "day": 90,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
           }
         ],
         "dependencies": [
@@ -7487,7 +7514,7 @@ export const roadmapData = [
   {
     "id": 6,
     "title": "Java Core & Advanced",
-    "days": 150,
+    "days": 149,
     "color": "rose",
     "phases": [
       {
@@ -7575,6 +7602,15 @@ export const roadmapData = [
             "day": 9,
             "estimatedHours": 2.5,
             "resource": "Effective Java (Bloch) + Java Concurrency in Practice (Goetz)"
+          },
+          {
+            "topic": "🛠️ Mini-Project Integration",
+            "priority": "-",
+            "tasks": "Build a small project integrating concepts from the last week of study.",
+            "achievement": "Complete a working mini-project that integrates at least 3 recent concepts",
+            "day": 10,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
           },
           {
             "topic": "Methods: Declaration & Overloading (pass-by-value semantics)",
@@ -8356,6 +8392,15 @@ export const roadmapData = [
             "resource": "Effective Java (Bloch) + Java Concurrency in Practice (Goetz)"
           },
           {
+            "topic": "🛠️ Mini-Project Integration",
+            "priority": "-",
+            "tasks": "Build a small project integrating concepts from the last week of study.",
+            "achievement": "Complete a working mini-project that integrates at least 3 recent concepts",
+            "day": 94,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
+          },
+          {
             "topic": "**Buffer/Revision Day**",
             "priority": "-",
             "tasks": "—",
@@ -8408,6 +8453,15 @@ export const roadmapData = [
             "day": 100,
             "estimatedHours": 2.5,
             "resource": "Effective Java (Bloch) + Java Concurrency in Practice (Goetz)"
+          },
+          {
+            "topic": "📝 Interview Drill",
+            "priority": "-",
+            "tasks": "Run a mock interview drill on the topics covered in the current phase.",
+            "achievement": "Pass a timed mock interview round on recent topics with no hints",
+            "day": 101,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
           },
           {
             "topic": "Atomic Classes & CAS (`AtomicInteger`/`Long`/`Reference`)",
@@ -8471,6 +8525,15 @@ export const roadmapData = [
             "day": 108,
             "estimatedHours": 3.5,
             "resource": "Effective Java (Bloch) + Java Concurrency in Practice (Goetz)"
+          },
+          {
+            "topic": "🛠️ Mini-Project Integration",
+            "priority": "-",
+            "tasks": "Build a small project integrating concepts from the last week of study.",
+            "achievement": "Complete a working mini-project that integrates at least 3 recent concepts",
+            "day": 109,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
           },
           {
             "topic": "**Buffer/Revision Day**",
@@ -8552,6 +8615,15 @@ export const roadmapData = [
             "day": 118,
             "estimatedHours": 4.5,
             "resource": "Java Concurrency in Practice (Goetz)"
+          },
+          {
+            "topic": "📝 Interview Drill",
+            "priority": "-",
+            "tasks": "Run a mock interview drill on the topics covered in the current phase.",
+            "achievement": "Pass a timed mock interview round on recent topics with no hints",
+            "day": 119,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
           },
           {
             "topic": "**Buffer/Revision Day**",
@@ -8641,6 +8713,15 @@ export const roadmapData = [
             "day": 128,
             "estimatedHours": 3.5,
             "resource": "Java Performance (Hunt & John)"
+          },
+          {
+            "topic": "🔄 Review & Recall",
+            "priority": "-",
+            "tasks": "Revisit the last 3-5 days of topics. Re-explain each from memory, then verify against notes.",
+            "achievement": "Score 80%+ on a self-quiz covering the last 3-5 days without notes",
+            "day": 129,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
           },
           {
             "topic": "**Buffer/Revision Day**",
@@ -8794,6 +8875,15 @@ export const roadmapData = [
             "day": 146,
             "estimatedHours": 2,
             "resource": "Effective Java (Bloch) + Java Concurrency in Practice (Goetz)"
+          },
+          {
+            "topic": "🔄 Review & Recall",
+            "priority": "-",
+            "tasks": "Revisit the last 3-5 days of topics. Re-explain each from memory, then verify against notes.",
+            "achievement": "Score 80%+ on a self-quiz covering the last 3-5 days without notes",
+            "day": 147,
+            "estimatedHours": 1,
+            "resource": "Review your notes from the last 3-5 days"
           },
           {
             "topic": "**Buffer/Revision Day**",

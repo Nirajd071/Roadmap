@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { Search, BookOpen, CheckCircle, Circle, ChevronDown, ChevronUp, Edit3, ExternalLink, RefreshCw, Copy, Check, Clock } from 'lucide-react';
+import { Search, BookOpen, CheckCircle, Circle, ChevronDown, ChevronUp, Edit3, ExternalLink, RefreshCw, Copy, Check, Clock, Settings, Lock, Calendar } from 'lucide-react';
 import { roadmapData } from './data/roadmapData';
 import { db, isFirebaseConfigured } from './firebase';
 import { doc, onSnapshot, setDoc } from 'firebase/firestore';
@@ -397,8 +397,32 @@ function App() {
   const [activeRoadmap, setActiveRoadmap] = useState(1);
   const [completedTasks, setCompletedTasks] = useState(() => {
     const saved = localStorage.getItem('roadmap_completed_tasks');
-    return saved ? JSON.parse(saved) : {};
+    if (!saved) return {};
+    const parsed = JSON.parse(saved);
+    // Migrate old boolean entries
+    const migrated = {};
+    for (const [key, val] of Object.entries(parsed)) {
+      if (val === true) {
+        migrated[key] = { done: true, completedAt: null, confidence: 3 };
+      } else if (val && typeof val === 'object') {
+        migrated[key] = val;
+      }
+    }
+    return migrated;
   });
+
+  const [calendarSettings, setCalendarSettings] = useState(() => {
+    const saved = localStorage.getItem('roadmap_calendar_settings');
+    return saved ? JSON.parse(saved) : {
+      startDate: '',
+      blockedRanges: [],
+      dailyHoursBudget: 6
+    };
+  });
+  
+  const [adaptiveMode, setAdaptiveMode] = useState({ enabled: false, droppedPriority: null });
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
+
   const [notes, setNotes] = useState(() => {
     const saved = localStorage.getItem('roadmap_notes');
     return saved ? JSON.parse(saved) : {};
@@ -541,6 +565,10 @@ function App() {
   useEffect(() => {
     localStorage.setItem('roadmap_completed_tasks', JSON.stringify(completedTasks));
   }, [completedTasks]);
+  
+  useEffect(() => {
+    localStorage.setItem('roadmap_calendar_settings', JSON.stringify(calendarSettings));
+  }, [calendarSettings]);
 
   useEffect(() => {
     localStorage.setItem('roadmap_notes', JSON.stringify(notes));
@@ -577,11 +605,12 @@ function App() {
           completedTasks,
           notes,
           faqCompleted,
+          calendarSettings,
           updatedAt: new Date().toISOString()
         };
         await setDoc(docRef, payload);
         
-        lastCloudState.current = { completedTasks, notes, faqCompleted };
+        lastCloudState.current = { completedTasks, notes, faqCompleted, calendarSettings };
         setSyncStatus('synced');
         console.log("Cloud sync updated successfully.");
       } catch (error) {
@@ -591,12 +620,30 @@ function App() {
     }, 1000);
 
     return () => clearTimeout(delayDebounceFn);
-  }, [completedTasks, notes, faqCompleted, isInitialized, syncId]);
+  }, [completedTasks, notes, faqCompleted, calendarSettings, isInitialized, syncId]);
 
   const toggleTask = (taskId) => {
+    setCompletedTasks(prev => {
+      const current = prev[taskId];
+      if (current?.done) {
+        // Uncomplete: remove the entry
+        const next = { ...prev };
+        delete next[taskId];
+        return next;
+      } else {
+        // Complete: set with date, show confidence picker
+        return {
+          ...prev,
+          [taskId]: { done: true, completedAt: new Date().toISOString().split('T')[0], confidence: 0 }
+        };
+      }
+    });
+  };
+
+  const setConfidence = (taskId, level) => {
     setCompletedTasks(prev => ({
       ...prev,
-      [taskId]: !prev[taskId]
+      [taskId]: { ...prev[taskId], confidence: level }
     }));
   };
 
@@ -622,7 +669,7 @@ function App() {
       roadmap.phases.forEach(phase => {
         phase.items.forEach(item => {
           total++;
-          if (completedTasks[`${roadmap.id}-${phase.id}-${item.day}`]) {
+          if (completedTasks[`${roadmap.id}-${phase.id}-${item.day}`]?.done) {
             completed++;
           }
         });
@@ -640,7 +687,7 @@ function App() {
       roadmap.phases.forEach(phase => {
         phase.items.forEach(item => {
           total++;
-          if (completedTasks[`${roadmap.id}-${phase.id}-${item.day}`]) {
+          if (completedTasks[`${roadmap.id}-${phase.id}-${item.day}`]?.done) {
             completed++;
           }
         });
@@ -655,6 +702,154 @@ function App() {
     const completed = faqQuestions.filter(q => faqCompleted[q.id]).length;
     return { total, completed, percentage: total === 0 ? 0 : Math.round((completed / total) * 100) };
   }, [faqCompleted]);
+
+  const streak = useMemo(() => {
+    const dates = new Set();
+    Object.values(completedTasks).forEach(v => {
+      if (v?.done && v.completedAt) dates.add(v.completedAt);
+    });
+    let count = 0;
+    const today = new Date();
+    for (let i = 0; i < 365; i++) {
+      const d = new Date(today);
+      d.setDate(d.getDate() - i);
+      const dateStr = d.toISOString().split('T')[0];
+      if (dates.has(dateStr)) count++;
+      else if (i > 0) break; // Allow today to not have completions yet
+    }
+    return count;
+  }, [completedTasks]);
+
+  const dayToDate = useMemo(() => {
+    if (!calendarSettings.startDate) return () => null;
+    const start = new Date(calendarSettings.startDate);
+    const blocked = calendarSettings.blockedRanges.map(r => ({
+      start: new Date(r.start),
+      end: new Date(r.end)
+    }));
+    
+    return (dayNumber) => {
+      let currentDate = new Date(start);
+      let daysToSkip = dayNumber - 1;
+      
+      while (daysToSkip > 0) {
+        currentDate.setDate(currentDate.getDate() + 1);
+        const isBlocked = blocked.some(b => currentDate >= b.start && currentDate <= b.end);
+        if (!isBlocked) daysToSkip--;
+      }
+      
+      return currentDate;
+    };
+  }, [calendarSettings]);
+
+  const isPhaseComplete = useMemo(() => {
+    const result = {};
+    roadmapData.forEach(r => {
+      r.phases.forEach(p => {
+        const p0Items = p.items.filter(i => i.priority === '🔴 P0');
+        if (p0Items.length === 0) {
+          result[p.id] = true;
+        } else {
+          const doneCount = p0Items.filter(i => completedTasks[`${r.id}-${p.id}-${i.day}`]?.done).length;
+          result[p.id] = doneCount >= Math.ceil(p0Items.length * 0.8);
+        }
+      });
+    });
+    return result;
+  }, [completedTasks]);
+
+  const isPhaseUnlocked = (phase) => {
+    if (!phase.dependencies || phase.dependencies.length === 0) return true;
+    return phase.dependencies.every(depId => isPhaseComplete[depId]);
+  };
+
+  const getBlockingDeps = (phase) => {
+    if (!phase.dependencies) return [];
+    return phase.dependencies.filter(depId => !isPhaseComplete[depId]);
+  };
+
+  const behindStatus = useMemo(() => {
+    if (!calendarSettings.startDate) return null;
+    
+    const today = new Date();
+    const todayDayNum = (() => {
+      let dayCount = 0;
+      const start = new Date(calendarSettings.startDate);
+      const blocked = calendarSettings.blockedRanges.map(r => ({
+        start: new Date(r.start), end: new Date(r.end)
+      }));
+      let current = new Date(start);
+      while (current <= today) {
+        const isBlocked = blocked.some(b => current >= b.start && current <= b.end);
+        if (!isBlocked) dayCount++;
+        current.setDate(current.getDate() + 1);
+      }
+      return dayCount;
+    })();
+    
+    // Find last completed day across active roadmap
+    const roadmap = roadmapData.find(r => r.id === activeRoadmap);
+    if (!roadmap) return null;
+    
+    let lastCompleted = 0;
+    roadmap.phases.forEach(p => p.items.forEach(i => {
+      const tid = `${roadmap.id}-${p.id}-${i.day}`;
+      if (completedTasks[tid]?.done && i.day > lastCompleted) lastCompleted = i.day;
+    }));
+    
+    const behind = todayDayNum - lastCompleted;
+    return behind > 3 ? { daysBehind: behind, todayDayNum, lastCompleted } : null;
+  }, [calendarSettings, activeRoadmap, completedTasks]);
+
+  const todaysPlan = useMemo(() => {
+    if (!calendarSettings.startDate) return null;
+    
+    const budget = calendarSettings.dailyHoursBudget;
+    let remaining = budget;
+    const items = [];
+    
+    // 1. Always include next uncompleted DSA item
+    const dsa = roadmapData.find(r => r.id === 7);
+    if (dsa) {
+      for (const p of dsa.phases) {
+        for (const i of p.items) {
+          const tid = `7-${p.id}-${i.day}`;
+          if (!completedTasks[tid]?.done && i.estimatedHours <= remaining) {
+            items.push({ ...i, roadmapTitle: 'DSA', roadmapColor: dsa.color, taskId: tid });
+            remaining -= i.estimatedHours;
+            break;
+          }
+        }
+        if (items.length > 0) break;
+      }
+    }
+    
+    // 2. Fill with domain items, round-robin across other roadmaps
+    const otherRoadmaps = roadmapData.filter(r => r.id !== 7);
+    let round = 0;
+    while (remaining > 0 && round < 5) {
+      let added = false;
+      for (const r of otherRoadmaps) {
+        for (const p of r.phases) {
+          if (!isPhaseUnlocked(p)) continue;
+          for (const i of p.items) {
+            const tid = `${r.id}-${p.id}-${i.day}`;
+            if (!completedTasks[tid]?.done && i.estimatedHours <= remaining && !items.find(x => x.taskId === tid)) {
+              items.push({ ...i, roadmapTitle: r.title, roadmapColor: r.color, taskId: tid });
+              remaining -= i.estimatedHours;
+              added = true;
+              break;
+            }
+          }
+          if (added) break;
+        }
+      }
+      if (!added) break;
+      round++;
+    }
+    
+    return items.length > 0 ? { items, totalHours: budget - remaining, budget } : null;
+  }, [calendarSettings, completedTasks, isPhaseComplete]);
 
   const currentRoadmap = roadmapData.find(r => r.id === activeRoadmap);
   const currentStyles = themeStyles[currentRoadmap.color] || themeStyles.indigo;
@@ -703,15 +898,22 @@ function App() {
                   className="text-indigo-400 hover:text-indigo-300 font-semibold text-[11px] transition-colors flex items-center gap-1 focus:outline-none"
                   title="Sync Across Devices"
                 >
-                  <RefreshCw className={`w-3 h-3 ${syncStatus === 'syncing' ? 'animate-spin' : ''}`} />
                   Sync Devices
+                </button>
+                <div className="h-3 w-px bg-zinc-800"></div>
+                <button
+                  onClick={() => setShowSettingsModal(true)}
+                  className="text-zinc-400 hover:text-zinc-300 font-semibold text-[11px] transition-colors flex items-center gap-1 focus:outline-none"
+                  title="Calendar Settings"
+                >
+                  <Settings className="w-3 h-3" />
                 </button>
               </div>
             </div>
             
             <div className="w-full md:w-1/3">
               <div className="flex justify-between text-xs font-medium text-zinc-400 mb-1">
-                <span>Global Progress</span>
+                <span className="flex items-center gap-2">Global Progress <span className="text-amber-500 font-bold ml-1">🔥 {streak} day streak</span></span>
                 <span>{globalProgress.percentage}% ({globalProgress.completed}/{globalProgress.total})</span>
               </div>
               <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
@@ -768,9 +970,10 @@ function App() {
               className="bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-2 text-zinc-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
             >
               <option value="ALL">All Priorities</option>
-              <option value="MUST KNOW">Must Know</option>
-              <option value="IMPORTANT">Important</option>
-              <option value="GOOD TO KNOW">Good to Know</option>
+              <option value="🔴 P0">🔴 P0 (Must Know)</option>
+              <option value="🟡 P1">🟡 P1 (Important)</option>
+              <option value="🟢 P2">🟢 P2 (Good to Know)</option>
+              <option value="-">Buffer / Review</option>
             </select>
             <select 
               value={filterStatus}
@@ -804,6 +1007,61 @@ function App() {
           </div>
         </div>
 
+        {behindStatus && !adaptiveMode.enabled && (
+          <div className="mb-6 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-amber-300">
+                ⚠️ You're {behindStatus.daysBehind} days behind schedule
+              </p>
+              <p className="text-xs text-zinc-400 mt-1">
+                Drop lower-priority items to catch up?
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <button onClick={() => setAdaptiveMode({ enabled: true, droppedPriority: behindStatus.daysBehind > 10 ? 'P1' : 'P2' })}
+                className="px-3 py-1.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold rounded-lg transition-colors">
+                Adapt Schedule
+              </button>
+              <button onClick={() => setAdaptiveMode({ enabled: true, droppedPriority: null })}
+                className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold rounded-lg transition-colors">
+                Keep All
+              </button>
+            </div>
+          </div>
+        )}
+
+        {todaysPlan && (
+          <div className="mb-8 p-5 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-xl">
+            <h3 className="text-lg font-bold text-zinc-100 mb-3 flex items-center gap-2">
+              📋 Today's Plan
+              <span className="text-xs font-normal text-zinc-500">
+                {todaysPlan.totalHours.toFixed(1)}h / {todaysPlan.budget}h budget
+              </span>
+            </h3>
+            <div className="space-y-2">
+              {todaysPlan.items.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-3 bg-zinc-900/60 rounded-lg border border-zinc-800/50">
+                  <button onClick={() => toggleTask(item.taskId)} className="flex-shrink-0">
+                    {completedTasks[item.taskId]?.done ? (
+                      <CheckCircle className="w-5 h-5 text-emerald-500" />
+                    ) : (
+                      <Circle className="w-5 h-5 text-zinc-600" />
+                    )}
+                  </button>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-xs text-zinc-500">{item.roadmapTitle} · Day {item.day}</span>
+                    <p className="text-sm font-medium text-zinc-200 truncate">{item.topic}</p>
+                  </div>
+                  <span className="text-xs text-zinc-500 flex items-center gap-1">
+                    <Clock className="w-3 h-3" /> {item.estimatedHours}h
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+
         {/* Phases & Days */}
         <div className="space-y-12">
           {currentRoadmap.phases.map(phase => {
@@ -811,29 +1069,56 @@ function App() {
             if (phase.title.includes('FREQUENTLY ASKED')) return null;
 
             // Filter items in this phase
-            const filteredItems = phase.items.filter(item => {
+            let filteredItems = phase.items.filter(item => {
               const matchesSearch = item.topic.toLowerCase().includes(searchQuery.toLowerCase()) || 
                                     item.tasks.toLowerCase().includes(searchQuery.toLowerCase()) ||
                                     item.achievement.toLowerCase().includes(searchQuery.toLowerCase());
-              const matchesPriority = filterPriority === 'ALL' || item.priority === filterPriority;
-              const isCompleted = completedTasks[`${currentRoadmap.id}-${phase.id}-${item.day}`];
+              const matchesPriority = filterPriority === 'ALL' || item.priority.includes(filterPriority);
+              const isCompleted = completedTasks[`${currentRoadmap.id}-${phase.id}-${item.day}`]?.done;
               const matchesStatus = filterStatus === 'ALL' || 
                                    (filterStatus === 'COMPLETED' && isCompleted) || 
                                    (filterStatus === 'INCOMPLETE' && !isCompleted);
               
               return matchesSearch && matchesPriority && matchesStatus;
             });
+            
+            if (adaptiveMode.enabled) {
+              if (adaptiveMode.droppedPriority === 'P2') {
+                filteredItems = filteredItems.filter(i => !i.priority.includes('P2'));
+              } else if (adaptiveMode.droppedPriority === 'P1') {
+                filteredItems = filteredItems.filter(i => !i.priority.includes('P2') && !i.priority.includes('P1'));
+              }
+            }
 
             if (filteredItems.length === 0) return null;
 
+            const locked = !isPhaseUnlocked(phase);
+            const blockingDeps = getBlockingDeps(phase);
+
             return (
-              <div key={phase.id} className="relative">
+              <div key={phase.id} className={`relative ${locked ? 'opacity-40' : ''}`}>
                 {/* Phase Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`px-3 py-1 rounded text-xs font-bold tracking-wider border ${currentStyles.bgLight}`}>
                     {phase.days}
                   </div>
-                  <h3 className="text-xl font-semibold text-zinc-100">{phase.title}</h3>
+                  <h3 className="text-xl font-semibold text-zinc-100 flex items-center gap-2">
+                    {locked && <Lock className="w-5 h-5 text-zinc-500" title={`Complete ${blockingDeps.join(', ')} first`} />}
+                    {phase.title}
+                  </h3>
+                  {(() => {
+                    const phaseTotal = phase.items.length;
+                    const phaseDone = phase.items.filter(i => completedTasks[`${currentRoadmap.id}-${phase.id}-${i.day}`]?.done).length;
+                    const phasePct = phaseTotal > 0 ? Math.round((phaseDone / phaseTotal) * 100) : 0;
+                    return (
+                      <div className="flex items-center gap-2 ml-auto">
+                        <div className="h-1.5 w-24 bg-zinc-800 rounded-full overflow-hidden">
+                          <div className={`h-full transition-all duration-500 ${currentStyles.bg}`} style={{ width: `${phasePct}%` }}></div>
+                        </div>
+                        <span className="text-xs text-zinc-500">{phaseDone}/{phaseTotal}</span>
+                      </div>
+                    );
+                  })()}
                   <div className="flex-1 h-px bg-zinc-800"></div>
                 </div>
 
@@ -841,8 +1126,10 @@ function App() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   {filteredItems.map(item => {
                     const taskId = `${currentRoadmap.id}-${phase.id}-${item.day}`;
-                    const isCompleted = !!completedTasks[taskId];
+                    const completionData = completedTasks[taskId];
+                    const isCompleted = !!completionData?.done;
                     const noteText = notes[taskId] || '';
+                    const mappedDate = dayToDate(item.day);
 
                     return (
                       <DayCard 
@@ -850,10 +1137,14 @@ function App() {
                         taskId={taskId}
                         item={item} 
                         isCompleted={isCompleted} 
-                        onToggle={() => toggleTask(taskId)}
+                        completionData={completionData}
+                        onToggle={() => locked ? null : toggleTask(taskId)}
+                        onSetConfidence={(level) => setConfidence(taskId, level)}
                         styles={currentStyles}
                         noteText={noteText}
                         onUpdateNote={(text) => updateNote(taskId, text)}
+                        mappedDate={mappedDate}
+                        disabled={locked}
                       />
                     );
                   })}
@@ -997,6 +1288,49 @@ function App() {
         </div>
       )}
 
+      {showSettingsModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-md w-full p-6 shadow-2xl relative overflow-hidden animate-slideUp">
+            <h3 className="text-lg font-bold text-zinc-100 mb-4 flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-indigo-400" />
+              Calendar Settings
+            </h3>
+            
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 mb-1">Start Date</label>
+                <input 
+                  type="date" 
+                  value={calendarSettings.startDate}
+                  onChange={e => setCalendarSettings(s => ({ ...s, startDate: e.target.value }))}
+                  className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-indigo-500/50"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 mb-1">Daily Hours Budget ({calendarSettings.dailyHoursBudget}h)</label>
+                <input 
+                  type="range" 
+                  min="2" max="10" step="0.5" 
+                  value={calendarSettings.dailyHoursBudget}
+                  onChange={e => setCalendarSettings(s => ({ ...s, dailyHoursBudget: parseFloat(e.target.value) }))}
+                  className="w-full accent-indigo-500"
+                />
+              </div>
+            </div>
+            
+            <div className="flex justify-end mt-6 gap-3">
+              <button
+                onClick={() => setShowSettingsModal(false)}
+                className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-semibold transition-colors"
+              >
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
@@ -1067,7 +1401,7 @@ function FaqChecklist({ questions, completed, onToggle, styles }) {
 }
 
 // Sub-component for individual days
-function DayCard({ taskId, item, isCompleted, onToggle, styles, noteText, onUpdateNote }) {
+function DayCard({ taskId, item, isCompleted, completionData, onToggle, onSetConfidence, styles, noteText, onUpdateNote, mappedDate, disabled }) {
   const [notesOpen, setNotesOpen] = useState(false);
 
   // Priority color mapping
@@ -1086,25 +1420,29 @@ function DayCard({ taskId, item, isCompleted, onToggle, styles, noteText, onUpda
     <div className={`flex flex-col p-5 rounded-xl border transition-all duration-300 ${
       isCompleted 
         ? 'bg-zinc-900/50 border-zinc-800/50 opacity-60' 
-        : `bg-zinc-900 border-zinc-800 ${styles.dayHover}`
+        : disabled ? 'bg-zinc-900/30 border-zinc-800/30 grayscale opacity-80' : `bg-zinc-900 border-zinc-800 ${styles.dayHover}`
     }`}>
       
       <div className="flex items-start gap-4">
         {/* Checkbox */}
         <button 
           onClick={onToggle}
+          disabled={disabled}
           className="mt-1 flex-shrink-0 focus:outline-none"
         >
           {isCompleted ? (
             <CheckCircle className={`w-6 h-6 ${styles.textIcon}`} />
           ) : (
-            <Circle className="w-6 h-6 text-zinc-600 hover:text-zinc-400 transition-colors" />
+            <Circle className={`w-6 h-6 ${disabled ? 'text-zinc-700' : 'text-zinc-600 hover:text-zinc-400'} transition-colors`} />
           )}
         </button>
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 mb-2 flex-wrap">
-            <span className="text-sm font-medium text-zinc-500">Day {item.day}</span>
+            <span className="text-sm font-medium text-zinc-500">
+              Day {item.day}
+              {mappedDate && <span className="ml-1 text-zinc-600">· {mappedDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })}</span>}
+            </span>
             {item.estimatedHours && (
               <span className="text-xs text-zinc-500 flex items-center gap-1">
                 <Clock className="w-3 h-3" />
@@ -1133,6 +1471,25 @@ function DayCard({ taskId, item, isCompleted, onToggle, styles, noteText, onUpda
               <div className="mt-2 flex items-start gap-2 text-xs text-zinc-500">
                 <BookOpen className="w-3 h-3 mt-0.5 flex-shrink-0" />
                 <span>{item.resource}</span>
+              </div>
+            )}
+            {isCompleted && (
+              <div className="flex items-center gap-1.5 mt-1.5">
+                {completionData?.confidence === 0 ? (
+                  <>
+                    <span className="text-[10px] text-zinc-500">Confidence:</span>
+                    {[1,2,3,4,5].map(n => (
+                      <button key={n} onClick={() => onSetConfidence(n)} 
+                        className="w-4 h-4 rounded-full border border-zinc-600 hover:bg-amber-500/50 transition-colors text-[8px] flex items-center justify-center text-zinc-400 hover:text-white">
+                        {n}
+                      </button>
+                    ))}
+                  </>
+                ) : (
+                  <span className="text-[10px] text-zinc-500">
+                    Confidence: {'⭐'.repeat(completionData?.confidence || 0)}
+                  </span>
+                )}
               </div>
             )}
           </div>

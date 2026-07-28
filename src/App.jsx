@@ -489,12 +489,17 @@ function App() {
             lastCloudState.current = {
               completedTasks: cloudData.completedTasks || {},
               notes: cloudData.notes || {},
-              faqCompleted: cloudData.faqCompleted || {}
+              faqCompleted: cloudData.faqCompleted || {},
+              calendarSettings: cloudData.calendarSettings || { startDate: '', blockedRanges: [], dailyHoursBudget: 6 }
             };
             
-            // 1. Always sync completed tasks and FAQs from the cloud
+            // 1. Always sync completed tasks, FAQs, and settings from the cloud
             setCompletedTasks(cloudData.completedTasks || {});
             setFaqCompleted(cloudData.faqCompleted || {});
+            if (cloudData.calendarSettings) {
+              setCalendarSettings(cloudData.calendarSettings);
+              localStorage.setItem('roadmap_calendar_settings', JSON.stringify(cloudData.calendarSettings));
+            }
             
             localStorage.setItem('roadmap_completed_tasks', JSON.stringify(cloudData.completedTasks || {}));
             localStorage.setItem('roadmap_faq_completed', JSON.stringify(cloudData.faqCompleted || {}));
@@ -525,6 +530,7 @@ function App() {
               completedTasks: JSON.parse(localStorage.getItem('roadmap_completed_tasks') || '{}'),
               notes: JSON.parse(localStorage.getItem('roadmap_notes') || '{}'),
               faqCompleted: JSON.parse(localStorage.getItem('roadmap_faq_completed') || '{}'),
+              calendarSettings: JSON.parse(localStorage.getItem('roadmap_calendar_settings') || '{"startDate":"","blockedRanges":[],"dailyHoursBudget":6}'),
               updatedAt: new Date().toISOString()
             };
             setDoc(docRef, initialPayload)
@@ -533,7 +539,8 @@ function App() {
                 lastCloudState.current = {
                   completedTasks: initialPayload.completedTasks,
                   notes: initialPayload.notes,
-                  faqCompleted: initialPayload.faqCompleted
+                  faqCompleted: initialPayload.faqCompleted,
+                  calendarSettings: initialPayload.calendarSettings
                 };
                 setSyncStatus('synced');
               })
@@ -592,7 +599,8 @@ function App() {
     const hasUnsavedChanges = 
       JSON.stringify(completedTasks) !== JSON.stringify(lastCloudState.current.completedTasks) ||
       JSON.stringify(notes) !== JSON.stringify(lastCloudState.current.notes) ||
-      JSON.stringify(faqCompleted) !== JSON.stringify(lastCloudState.current.faqCompleted);
+      JSON.stringify(faqCompleted) !== JSON.stringify(lastCloudState.current.faqCompleted) ||
+      JSON.stringify(calendarSettings) !== JSON.stringify(lastCloudState.current.calendarSettings);
 
     if (!hasUnsavedChanges) return;
 
